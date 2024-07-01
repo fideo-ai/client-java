@@ -72,7 +72,7 @@ import com.google.gson.JsonParseException;
 
 import ai.fideo.client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-01T10:34:47.407093-04:00[America/New_York]", comments = "Generator version: 7.6.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.6.0")
 public class VerifySignalsPost200Response extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(VerifySignalsPost200Response.class.getName());
 

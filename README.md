@@ -2,7 +2,6 @@
 
 Fideo API
 - API version: 1.0.0
-  - Build date: 2024-07-01T10:34:47.407093-04:00[America/New_York]
   - Generator version: 7.6.0
 
 This is a representation of the Fideo API based on the OpenAPI 3.0 specification.  You can find out more about
