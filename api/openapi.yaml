@@ -1,0 +1,933 @@
+openapi: 3.0.3
+info:
+  contact:
+    email: support@fideo.ai
+  description: |-
+    This is a representation of the Fideo API based on the OpenAPI 3.0 specification.  You can find out more about
+    Swagger at [https://swagger.io](https://swagger.io).
+    Some useful links:
+    - [Fideo Privacy Policy](https://www.fideo.ai/privacy-policy/)
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: https://www.fideo.ai/terms-of-use/
+  title: Fideo API
+  version: 1.0.0
+externalDocs:
+  description: Getting Started with Fideo
+  url: https://docs.fideo.ai/docs/getting-started
+servers:
+- url: https://api.fullcontact.com/v3
+security:
+- bearerAuth: []
+tags:
+- description: Verify Signals
+  externalDocs:
+    description: Signals Documentation
+    url: https://docs.fideo.ai/docs/signals
+  name: signals
+- description: Verify Match
+  externalDocs:
+    description: Verify Documentation
+    url: https://docs.fideo.ai/docs/verify
+  name: verify
+paths:
+  /verify.signals:
+    post:
+      parameters:
+      - explode: true
+        in: query
+        name: v
+        required: false
+        schema:
+          type: string
+        style: form
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MultiFieldReq'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_verify_signals_post_200_response'
+          description: Successful response
+      tags:
+      - signals
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /verify.match:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MultiFieldReq'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MatchResponse'
+          description: OK
+      tags:
+      - verify
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+components:
+  schemas:
+    MultiFieldReq:
+      example:
+        birthday: birthday
+        panoramaId: panoramaId
+        partnerKeys:
+          key: partnerKeys
+        phones:
+        - phones
+        - phones
+        maids:
+        - maids
+        - maids
+        linkedin: linkedin
+        title: title
+        generatePid: true
+        recordId: recordId
+        emails:
+        - emails
+        - emails
+        twitter: twitter
+        maid: maid
+        email: email
+        website: website
+        profile:
+          score: 5
+          followers: 1
+          service: service
+          following: 5
+          bio: bio
+          userid: userid
+          url: url
+          username: username
+        confidence: confidence
+        profiles:
+        - score: 5
+          followers: 1
+          service: service
+          following: 5
+          bio: bio
+          userid: userid
+          url: url
+          username: username
+        - score: 5
+          followers: 1
+          service: service
+          following: 5
+          bio: bio
+          userid: userid
+          url: url
+          username: username
+        ipAddress: ipAddress
+        avatar: avatar
+        li_nonid: li_nonid
+        placekey: placekey
+        phone: phone
+        infer: true
+        organization: organization
+        name:
+          given: given
+          middle: middle
+          prefix: prefix
+          nickname: nickname
+          family: family
+          suffix: suffix
+          full: full
+        personId: personId
+        location:
+          country: country
+          city: city
+          formatted: formatted
+          postalCode: postalCode
+          latitude: 0.8008281904610115
+          timeZone: timeZone
+          type: Work
+          regionCode: regionCode
+          countryCode: countryCode
+          addressLine1: addressLine1
+          addressLine2: addressLine2
+          region: region
+          longitude: 6.027456183070403
+        partnerId: partnerId
+      properties:
+        twitter:
+          type: string
+        linkedin:
+          type: string
+        recordId:
+          type: string
+        personId:
+          type: string
+        partnerId:
+          type: string
+        location:
+          $ref: '#/components/schemas/LocationReq'
+        avatar:
+          type: string
+        website:
+          type: string
+        title:
+          type: string
+        organization:
+          type: string
+        emails:
+          items:
+            type: string
+          type: array
+        phones:
+          items:
+            type: string
+          type: array
+        profiles:
+          items:
+            $ref: '#/components/schemas/SocialProfileReq'
+          type: array
+        maids:
+          items:
+            type: string
+          type: array
+        name:
+          $ref: '#/components/schemas/PersonNameReq'
+        partnerKeys:
+          additionalProperties:
+            type: string
+          type: object
+        li_nonid:
+          type: string
+        panoramaId:
+          type: string
+        placekey:
+          type: string
+        generatePid:
+          type: boolean
+        email:
+          type: string
+        phone:
+          type: string
+        profile:
+          $ref: '#/components/schemas/SocialProfileReq'
+        maid:
+          type: string
+        infer:
+          type: boolean
+        confidence:
+          type: string
+        birthday:
+          type: string
+        ipAddress:
+          type: string
+      type: object
+    SignalsResponseV0:
+      example:
+        emails:
+        - sha1: sha1
+          firstSeenMs: 6
+          lastSeenMs: 1
+          sha256: sha256
+          activity: 2.3021358869347655
+          observations: 5
+          confidence: 5.637376656633329
+          label: label
+          md5: md5
+        - sha1: sha1
+          firstSeenMs: 6
+          lastSeenMs: 1
+          sha256: sha256
+          activity: 2.3021358869347655
+          observations: 5
+          confidence: 5.637376656633329
+          label: label
+          md5: md5
+        socialProfiles:
+          linkedInUrl: linkedInUrl
+          twitterUrl: twitterUrl
+        name:
+          givenName: givenName
+          familyName: familyName
+        phones:
+        - firstSeenMs: 7
+          lastSeenMs: 9
+          observations: 3
+          confidence: 2.027123023002322
+          label: label
+          value: value
+        - firstSeenMs: 7
+          lastSeenMs: 9
+          observations: 3
+          confidence: 2.027123023002322
+          label: label
+          value: value
+        personIds:
+        - personIds
+        - personIds
+        locations:
+        - country: country
+          regionCode: regionCode
+          city: city
+          countryCode: countryCode
+          formatted: formatted
+          postalCode: postalCode
+          region: region
+        - country: country
+          regionCode: regionCode
+          city: city
+          countryCode: countryCode
+          formatted: formatted
+          postalCode: postalCode
+          region: region
+        ipAddresses:
+        - firstSeenMs: 4
+          lastSeenMs: 7
+          observations: 1
+          confidence: 1.0246457001441578
+          id: id
+        - firstSeenMs: 4
+          lastSeenMs: 7
+          observations: 1
+          confidence: 1.0246457001441578
+          id: id
+        employment:
+          current: true
+          domain: domain
+          start:
+            month: 6
+            year: 1
+            day: 7
+          company: company
+          end:
+            month: 6
+            year: 1
+            day: 7
+          title: title
+        message: message
+        demographics:
+          ageRange: ageRange
+          gender: gender
+          locationGeneral: locationGeneral
+          age: 0
+      properties:
+        name:
+          $ref: '#/components/schemas/Name'
+        demographics:
+          $ref: '#/components/schemas/Demographics'
+        locations:
+          items:
+            $ref: '#/components/schemas/Location'
+          type: array
+        emails:
+          items:
+            $ref: '#/components/schemas/Email'
+          type: array
+        phones:
+          items:
+            $ref: '#/components/schemas/Phone'
+          type: array
+        personIds:
+          items:
+            type: string
+          type: array
+        ipAddresses:
+          items:
+            $ref: '#/components/schemas/IpAddress'
+          type: array
+        message:
+          type: string
+        socialProfiles:
+          $ref: '#/components/schemas/SocialProfileUrls'
+        employment:
+          $ref: '#/components/schemas/Employment'
+      type: object
+    SignalsResponseV20240424:
+      properties:
+        name:
+          $ref: '#/components/schemas/NameWithAlias'
+        demographics:
+          $ref: '#/components/schemas/Demographics'
+        locations:
+          items:
+            $ref: '#/components/schemas/Location'
+          type: array
+        emails:
+          items:
+            $ref: '#/components/schemas/Email'
+          type: array
+        phones:
+          items:
+            $ref: '#/components/schemas/Phone'
+          type: array
+        personIds:
+          items:
+            type: string
+          type: array
+        ipAddresses:
+          items:
+            $ref: '#/components/schemas/IpAddress'
+          type: array
+        message:
+          type: string
+        socialProfiles:
+          items:
+            $ref: '#/components/schemas/SocialProfileDetails'
+          type: array
+        employment:
+          items:
+            $ref: '#/components/schemas/Employment'
+          type: array
+        education:
+          items:
+            $ref: '#/components/schemas/Education'
+          type: array
+        photos:
+          items:
+            $ref: '#/components/schemas/Photo'
+          type: array
+        economic:
+          $ref: '#/components/schemas/Economic'
+      type: object
+    SocialProfileReq:
+      example:
+        score: 5
+        followers: 1
+        service: service
+        following: 5
+        bio: bio
+        userid: userid
+        url: url
+        username: username
+      properties:
+        username:
+          type: string
+        userid:
+          type: string
+        url:
+          type: string
+        bio:
+          type: string
+        service:
+          type: string
+        followers:
+          format: int32
+          type: integer
+        following:
+          format: int32
+          type: integer
+        score:
+          format: int32
+          type: integer
+      type: object
+    SocialProfileUrls:
+      example:
+        linkedInUrl: linkedInUrl
+        twitterUrl: twitterUrl
+      properties:
+        twitterUrl:
+          type: string
+        linkedInUrl:
+          type: string
+      type: object
+    SocialProfileDetails:
+      properties:
+        username:
+          type: string
+        userid:
+          type: string
+        url:
+          type: string
+        bio:
+          type: string
+        service:
+          type: string
+        followers:
+          format: int32
+          type: integer
+        following:
+          format: int32
+          type: integer
+      type: object
+    Location:
+      example:
+        country: country
+        regionCode: regionCode
+        city: city
+        countryCode: countryCode
+        formatted: formatted
+        postalCode: postalCode
+        region: region
+      properties:
+        city:
+          type: string
+        region:
+          type: string
+        regionCode:
+          type: string
+        country:
+          type: string
+        countryCode:
+          type: string
+        postalCode:
+          type: string
+        formatted:
+          type: string
+      type: object
+    LocationReq:
+      example:
+        country: country
+        city: city
+        formatted: formatted
+        postalCode: postalCode
+        latitude: 0.8008281904610115
+        timeZone: timeZone
+        type: Work
+        regionCode: regionCode
+        countryCode: countryCode
+        addressLine1: addressLine1
+        addressLine2: addressLine2
+        region: region
+        longitude: 6.027456183070403
+      properties:
+        addressLine1:
+          type: string
+        addressLine2:
+          type: string
+        city:
+          type: string
+        region:
+          type: string
+        regionCode:
+          type: string
+        postalCode:
+          type: string
+        country:
+          type: string
+        countryCode:
+          type: string
+        latitude:
+          format: double
+          type: number
+        longitude:
+          format: double
+          type: number
+        timeZone:
+          type: string
+        formatted:
+          type: string
+        type:
+          $ref: '#/components/schemas/LocationType'
+      type: object
+    LocationType:
+      enum:
+      - Work
+      - Primary
+      - Secondary
+      type: string
+    PersonNameReq:
+      example:
+        given: given
+        middle: middle
+        prefix: prefix
+        nickname: nickname
+        family: family
+        suffix: suffix
+        full: full
+      properties:
+        given:
+          type: string
+        family:
+          type: string
+        middle:
+          type: string
+        prefix:
+          type: string
+        suffix:
+          type: string
+        nickname:
+          type: string
+        full:
+          type: string
+      type: object
+    Name:
+      example:
+        givenName: givenName
+        familyName: familyName
+      properties:
+        givenName:
+          type: string
+        familyName:
+          type: string
+      type: object
+    NameWithAlias:
+      properties:
+        first:
+          type: string
+        last:
+          type: string
+        middle:
+          type: string
+        givenName:
+          type: string
+        familyName:
+          type: string
+        aliases:
+          items:
+            $ref: '#/components/schemas/Alias'
+          type: array
+      type: object
+    Alias:
+      properties:
+        first:
+          type: string
+        last:
+          type: string
+        middle:
+          type: string
+      type: object
+    Demographics:
+      example:
+        ageRange: ageRange
+        gender: gender
+        locationGeneral: locationGeneral
+        age: 0
+      properties:
+        age:
+          format: int32
+          type: integer
+        ageRange:
+          type: string
+        gender:
+          type: string
+        locationGeneral:
+          type: string
+      type: object
+    Email:
+      example:
+        sha1: sha1
+        firstSeenMs: 6
+        lastSeenMs: 1
+        sha256: sha256
+        activity: 2.3021358869347655
+        observations: 5
+        confidence: 5.637376656633329
+        label: label
+        md5: md5
+      properties:
+        firstSeenMs:
+          format: int64
+          type: integer
+        lastSeenMs:
+          format: int64
+          type: integer
+        observations:
+          format: int32
+          type: integer
+        confidence:
+          format: double
+          type: number
+        md5:
+          type: string
+        sha1:
+          type: string
+        sha256:
+          type: string
+        label:
+          type: string
+        activity:
+          format: double
+          type: number
+      type: object
+    Phone:
+      example:
+        firstSeenMs: 7
+        lastSeenMs: 9
+        observations: 3
+        confidence: 2.027123023002322
+        label: label
+        value: value
+      properties:
+        firstSeenMs:
+          format: int64
+          type: integer
+        lastSeenMs:
+          format: int64
+          type: integer
+        observations:
+          format: int32
+          type: integer
+        confidence:
+          format: double
+          type: number
+        label:
+          type: string
+        value:
+          type: string
+      type: object
+    IpAddress:
+      example:
+        firstSeenMs: 4
+        lastSeenMs: 7
+        observations: 1
+        confidence: 1.0246457001441578
+        id: id
+      properties:
+        firstSeenMs:
+          format: int64
+          type: integer
+        lastSeenMs:
+          format: int64
+          type: integer
+        observations:
+          format: int32
+          type: integer
+        confidence:
+          format: double
+          type: number
+        id:
+          type: string
+      type: object
+    Employment:
+      example:
+        current: true
+        domain: domain
+        start:
+          month: 6
+          year: 1
+          day: 7
+        company: company
+        end:
+          month: 6
+          year: 1
+          day: 7
+        title: title
+      properties:
+        current:
+          type: boolean
+        company:
+          type: string
+        title:
+          type: string
+        domain:
+          type: string
+        start:
+          $ref: '#/components/schemas/EmploymentDate'
+        end:
+          $ref: '#/components/schemas/EmploymentDate'
+      type: object
+    EmploymentDate:
+      example:
+        month: 6
+        year: 1
+        day: 7
+      properties:
+        year:
+          format: int32
+          type: integer
+        month:
+          format: int32
+          type: integer
+        day:
+          format: int32
+          type: integer
+      type: object
+    EducationDate:
+      properties:
+        year:
+          format: int32
+          type: integer
+        month:
+          format: int32
+          type: integer
+        day:
+          format: int32
+          type: integer
+      type: object
+    Education:
+      properties:
+        name:
+          type: string
+        degree:
+          type: string
+        end:
+          $ref: '#/components/schemas/EducationDate'
+      type: object
+    Photo:
+      properties:
+        url:
+          type: string
+        label:
+          type: string
+      type: object
+    Economic:
+      properties:
+        dwellingType:
+          type: string
+        homeOwnership:
+          type: string
+        maritalStatus:
+          type: string
+        presenceOfChildren:
+          type: string
+        income:
+          type: string
+        netWorth:
+          type: string
+      type: object
+    MatchResponse:
+      example:
+        continent: continent
+        birthday: birthday
+        country: country
+        evidence:
+          ipCountry: DOMESTIC
+          ipTor: true
+          countryOfIp: countryOfIp
+        city: city
+        panoramaId: panoramaId
+        postalCode: postalCode
+        nonId: nonId
+        title: title
+        regionCode: regionCode
+        familyName: familyName
+        addressLine1: addressLine1
+        addressLine2: addressLine2
+        maid: maid
+        email: email
+        social: social
+        givenName: givenName
+        ipAddress: ipAddress
+        scoreDetails:
+        - score: 5.962133916683182
+          scorer: scorer
+          evidence:
+            key: "{}"
+          weight: 5.637376656633329
+        - score: 5.962133916683182
+          scorer: scorer
+          evidence:
+            key: "{}"
+          weight: 5.637376656633329
+        fullName: fullName
+        riskV3: 1.4658129805029452
+        riskV2: 6.027456183070403
+        phone: phone
+        organization: organization
+        risk: 0.8008281904610115
+        region: region
+      properties:
+        addressLine1:
+          type: string
+        addressLine2:
+          type: string
+        city:
+          type: string
+        region:
+          type: string
+        regionCode:
+          type: string
+        country:
+          type: string
+        continent:
+          type: string
+        postalCode:
+          type: string
+        familyName:
+          type: string
+        givenName:
+          type: string
+        fullName:
+          type: string
+        phone:
+          type: string
+        email:
+          type: string
+        maid:
+          type: string
+        social:
+          type: string
+        nonId:
+          type: string
+        panoramaId:
+          type: string
+        ipAddress:
+          type: string
+        birthday:
+          type: string
+        title:
+          type: string
+        organization:
+          type: string
+        risk:
+          format: double
+          type: number
+        evidence:
+          $ref: '#/components/schemas/Evidence'
+        riskV2:
+          format: double
+          type: number
+        riskV3:
+          format: double
+          type: number
+        scoreDetails:
+          items:
+            $ref: '#/components/schemas/ScoreDetails'
+          type: array
+      type: object
+    Evidence:
+      example:
+        ipCountry: DOMESTIC
+        ipTor: true
+        countryOfIp: countryOfIp
+      properties:
+        ipTor:
+          type: boolean
+        ipCountry:
+          $ref: '#/components/schemas/IPCountry'
+        countryOfIp:
+          type: string
+      type: object
+    IPCountry:
+      enum:
+      - DOMESTIC
+      - FOREIGN
+      - UNKNOWN
+      type: string
+    ScoreDetails:
+      example:
+        score: 5.962133916683182
+        scorer: scorer
+        evidence:
+          key: "{}"
+        weight: 5.637376656633329
+      properties:
+        scorer:
+          type: string
+        score:
+          format: double
+          type: number
+        evidence:
+          additionalProperties:
+            type: object
+          type: object
+        weight:
+          format: double
+          type: number
+      type: object
+    _verify_signals_post_200_response:
+      oneOf:
+      - $ref: '#/components/schemas/SignalsResponseV0'
+      - $ref: '#/components/schemas/SignalsResponseV20240424'
+  securitySchemes:
+    bearerAuth:
+      scheme: bearer
+      type: http
+
