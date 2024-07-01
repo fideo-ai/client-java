@@ -21,51 +21,8 @@ Building the API client library requires:
 
 ## Installation
 
-To install the API client library to your local Maven repository, simply execute:
-
 ### Important Note: 
 This is an early access client library, and is not yet available on Maven Central. We are actively working to make this happen, and should happen in the next couple weeks.
-
-
-```shell
-mvn clean install
-```
-
-To deploy it to a remote Maven repository instead, configure the settings of the repository and execute:
-
-```shell
-mvn clean deploy
-```
-
-Refer to the [OSSRH Guide](http://central.sonatype.org/pages/ossrh-guide.html) for more information.
-
-### Maven users
-
-Add this dependency to your project's POM:
-
-```xml
-<dependency>
-  <groupId>ai.fideo</groupId>
-  <artifactId>client-java</artifactId>
-  <version>1.0.0</version>
-  <scope>compile</scope>
-</dependency>
-```
-
-### Gradle users
-
-Add this dependency to your project's build file:
-
-```groovy
-  repositories {
-    mavenCentral()     // Needed if the 'client-java' jar has been published to maven central.
-    mavenLocal()       // Needed if the 'client-java' jar has been published to the local maven repo.
-  }
-
-  dependencies {
-     implementation "ai.fideo:client-java:1.0.0"
-  }
-```
 
 ### Others
 
