@@ -48,7 +48,7 @@ import ai.fideo.client.ApiClient;
 import ai.fideo.client.ApiException;
 import ai.fideo.client.Configuration;
 import ai.fideo.client.auth.*;
-import ai.fideo.client.models.*;
+import ai.fideo.model.*;
 import ai.fideo.api.SignalsApi;
 
 public class Example {
