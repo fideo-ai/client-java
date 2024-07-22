@@ -6,8 +6,8 @@
     <packaging>jar</packaging>
     <name>client-java</name>
     <version>1.0.0</version>
-    <url>https://github.com/openapitools/openapi-generator</url>
-    <description>OpenAPI Java</description>
+    <url>https://github.com/fideo-ai/client-java</url>
+    <description>Fideo API Client</description>
     <inceptionYear>2024</inceptionYear>
     <scm>
         <connection>scm:git:git@github.com:fideo-ai/client-java.git</connection>
