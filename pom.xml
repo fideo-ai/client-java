@@ -9,9 +9,9 @@
     <url>https://github.com/openapitools/openapi-generator</url>
     <description>OpenAPI Java</description>
     <scm>
-        <connection>scm:git:git@github.com:openapitools/openapi-generator.git</connection>
-        <developerConnection>scm:git:git@github.com:openapitools/openapi-generator.git</developerConnection>
-        <url>https://github.com/openapitools/openapi-generator</url>
+        <connection>scm:git:git@github.com:fideo-ai/client-java.git</connection>
+        <developerConnection>scm:git:git@github.com:fideo-ai/client-java.git</developerConnection>
+        <url>https://github.com/fideo-ai/client-java</url>
     </scm>
 
     <licenses>
