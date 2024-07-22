@@ -8,6 +8,7 @@
     <version>1.0.0</version>
     <url>https://github.com/openapitools/openapi-generator</url>
     <description>OpenAPI Java</description>
+    <inceptionYear>2024</inceptionYear>
     <scm>
         <connection>scm:git:git@github.com:fideo-ai/client-java.git</connection>
         <developerConnection>scm:git:git@github.com:fideo-ai/client-java.git</developerConnection>
@@ -16,7 +17,7 @@
 
     <licenses>
         <license>
-            <name>Unlicense</name>
+            <name>Apache-2.0</name>
             <url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
             <distribution>repo</distribution>
         </license>
@@ -24,10 +25,10 @@
 
     <developers>
         <developer>
-            <name>OpenAPI-Generator Contributors</name>
-            <email>team@openapitools.org</email>
-            <organization>OpenAPITools.org</organization>
-            <organizationUrl>http://openapitools.org</organizationUrl>
+            <name>Fideo</name>
+            <email>support@fideo.ai</email>
+            <organization>Fideo</organization>
+            <organizationUrl>https://www.fideo.ai</organizationUrl>
         </developer>
     </developers>
 
@@ -328,6 +329,7 @@
         <java.version>1.8</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
+        <maven.compiler.release>${java.version}</maven.compiler.release>
         <gson-fire-version>1.9.0</gson-fire-version>
         <okhttp-version>4.11.0</okhttp-version>
         <gson-version>2.10.1</gson-version>
