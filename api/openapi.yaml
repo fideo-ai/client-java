@@ -3,16 +3,14 @@ info:
   contact:
     email: support@fideo.ai
   description: |-
-    This is a representation of the Fideo API based on the OpenAPI 3.0 specification.  You can find out more about
-    Swagger at [https://swagger.io](https://swagger.io).
-    Some useful links:
+    Fideo Intelligence offers an identity intelligence product that protects the public good.
     - [Fideo Privacy Policy](https://www.fideo.ai/privacy-policy/)
   license:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.fideo.ai/terms-of-use/
   title: Fideo API
-  version: 1.0.0
+  version: 1.0.2
 externalDocs:
   description: Getting Started with Fideo
   url: https://docs.fideo.ai/docs/getting-started
@@ -240,6 +238,7 @@ components:
           observations: 5
           confidence: 5.637376656633329
           label: label
+          value: value
           md5: md5
         - sha1: sha1
           firstSeenMs: 6
@@ -249,6 +248,7 @@ components:
           observations: 5
           confidence: 5.637376656633329
           label: label
+          value: value
           md5: md5
         socialProfiles:
           linkedInUrl: linkedInUrl
@@ -279,6 +279,8 @@ components:
           countryCode: countryCode
           formatted: formatted
           postalCode: postalCode
+          addressLine1: addressLine1
+          addressLine2: addressLine2
           region: region
         - country: country
           regionCode: regionCode
@@ -286,6 +288,8 @@ components:
           countryCode: countryCode
           formatted: formatted
           postalCode: postalCode
+          addressLine1: addressLine1
+          addressLine2: addressLine2
           region: region
         ipAddresses:
         - firstSeenMs: 4
@@ -464,8 +468,14 @@ components:
         countryCode: countryCode
         formatted: formatted
         postalCode: postalCode
+        addressLine1: addressLine1
+        addressLine2: addressLine2
         region: region
       properties:
+        addressLine1:
+          type: string
+        addressLine2:
+          type: string
         city:
           type: string
         region:
@@ -620,6 +630,7 @@ components:
         observations: 5
         confidence: 5.637376656633329
         label: label
+        value: value
         md5: md5
       properties:
         firstSeenMs:
@@ -634,6 +645,8 @@ components:
         confidence:
           format: double
           type: number
+        value:
+          type: string
         md5:
           type: string
         sha1:
