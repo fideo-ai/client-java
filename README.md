@@ -1,12 +1,10 @@
 # client-java
 
 Fideo API
-- API version: 1.0.0
-  - Generator version: 7.6.0
+- API version: 1.0.2
+  - Generator version: 7.7.0
 
-This is a representation of the Fideo API based on the OpenAPI 3.0 specification.  You can find out more about
-Swagger at [https://swagger.io](https://swagger.io).
-Some useful links:
+Fideo Intelligence offers an identity intelligence product that protects the public good.
 - [Fideo Privacy Policy](https://www.fideo.ai/privacy-policy/)
 
 
@@ -21,8 +19,47 @@ Building the API client library requires:
 
 ## Installation
 
-### Important Note: 
-This is an early access client library, and is not yet available on Maven Central. We are actively working to make this happen, and should happen in the next couple weeks.
+To install the API client library to your local Maven repository, simply execute:
+
+```shell
+mvn clean install
+```
+
+To deploy it to a remote Maven repository instead, configure the settings of the repository and execute:
+
+```shell
+mvn clean deploy
+```
+
+Refer to the [OSSRH Guide](http://central.sonatype.org/pages/ossrh-guide.html) for more information.
+
+### Maven users
+
+Add this dependency to your project's POM:
+
+```xml
+<dependency>
+  <groupId>ai.fideo</groupId>
+  <artifactId>client-java</artifactId>
+  <version>1.0.2</version>
+  <scope>compile</scope>
+</dependency>
+```
+
+### Gradle users
+
+Add this dependency to your project's build file:
+
+```groovy
+  repositories {
+    mavenCentral()     // Needed if the 'client-java' jar has been published to maven central.
+    mavenLocal()       // Needed if the 'client-java' jar has been published to the local maven repo.
+  }
+
+  dependencies {
+     implementation "ai.fideo:client-java:1.0.2"
+  }
+```
 
 ### Others
 
@@ -34,7 +71,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/client-java-1.0.0.jar`
+* `target/client-java-1.0.2.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -48,7 +85,7 @@ import ai.fideo.client.ApiClient;
 import ai.fideo.client.ApiException;
 import ai.fideo.client.Configuration;
 import ai.fideo.client.auth.*;
-import ai.fideo.model.*;
+import ai.fideo.client.models.*;
 import ai.fideo.api.SignalsApi;
 
 public class Example {

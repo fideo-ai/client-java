@@ -5,7 +5,9 @@
     <artifactId>client-java</artifactId>
     <packaging>jar</packaging>
     <name>client-java</name>
-    <version>1.0.0</version>
+
+    <version>1.0.2</version>
+
     <url>https://github.com/openapitools/openapi-generator</url>
     <description>OpenAPI Java</description>
     <scm>
@@ -33,6 +35,29 @@
 
     <build>
         <plugins>
+           <plugin>
+             <groupId>org.apache.maven.plugins</groupId>
+             <artifactId>maven-gpg-plugin</artifactId>
+             <version>3.2.1</version>
+             <executions>
+               <execution>
+                 <id>sign-artifacts</id>
+                 <phase>verify</phase>
+                 <goals>
+                   <goal>sign</goal>
+                 </goals>
+               </execution>
+             </executions>
+           </plugin>
+           <plugin>
+             <groupId>org.sonatype.central</groupId>
+             <artifactId>central-publishing-maven-plugin</artifactId>
+             <version>0.5.0</version>
+             <extensions>true</extensions>
+             <configuration>
+               <publishingServerId>central</publishingServerId>
+             </configuration>
+           </plugin>
            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -229,29 +254,6 @@
 
                 </java>
               </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-gpg-plugin</artifactId>
-                <version>3.2.1</version>
-                <executions>
-                    <execution>
-                        <id>sign-artifacts</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>sign</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.sonatype.central</groupId>
-                <artifactId>central-publishing-maven-plugin</artifactId>
-                <version>0.5.0</version>
-                <extensions>true</extensions>
-                <configuration>
-                    <publishingServerId>central</publishingServerId>
-                </configuration>
             </plugin>
         </plugins>
     </build>
