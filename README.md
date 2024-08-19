@@ -41,7 +41,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>ai.fideo</groupId>
   <artifactId>client-java</artifactId>
-  <version>1.0.2</version>
+  <version></version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -57,7 +57,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "ai.fideo:client-java:1.0.2"
+     implementation "ai.fideo:client-java:"
   }
 ```
 
@@ -71,7 +71,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/client-java-1.0.2.jar`
+* `target/client-java-.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
