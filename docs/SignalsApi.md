@@ -9,7 +9,7 @@ All URIs are relative to *https://api.fullcontact.com/v3*
 
 <a id="verifySignalsPost"></a>
 # **verifySignalsPost**
-> VerifySignalsPost200Response verifySignalsPost(v, multiFieldReq)
+> VerifySignalsPost200Response verifySignalsPost(v, multiFieldReqWithOptions)
 
 
 
@@ -34,9 +34,9 @@ public class Example {
 
     SignalsApi apiInstance = new SignalsApi(defaultClient);
     String v = "v_example"; // String | 
-    MultiFieldReq multiFieldReq = new MultiFieldReq(); // MultiFieldReq | 
+    MultiFieldReqWithOptions multiFieldReqWithOptions = new MultiFieldReqWithOptions(); // MultiFieldReqWithOptions | 
     try {
-      VerifySignalsPost200Response result = apiInstance.verifySignalsPost(v, multiFieldReq);
+      VerifySignalsPost200Response result = apiInstance.verifySignalsPost(v, multiFieldReqWithOptions);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SignalsApi#verifySignalsPost");
@@ -54,7 +54,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **v** | **String**|  | [optional] |
-| **multiFieldReq** | [**MultiFieldReq**](MultiFieldReq.md)|  | [optional] |
+| **multiFieldReqWithOptions** | [**MultiFieldReqWithOptions**](MultiFieldReqWithOptions.md)|  | [optional] |
 
 ### Return type
 

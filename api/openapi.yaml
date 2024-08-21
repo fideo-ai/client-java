@@ -10,7 +10,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.fideo.ai/terms-of-use/
   title: Fideo API
-  version: 1.0.2
+  version: 1.0.3
 externalDocs:
   description: Getting Started with Fideo
   url: https://docs.fideo.ai/docs/getting-started
@@ -44,7 +44,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/MultiFieldReq'
+              $ref: '#/components/schemas/MultiFieldReqWithOptions'
       responses:
         "200":
           content:
@@ -78,6 +78,169 @@ paths:
       - application/json
 components:
   schemas:
+    MultiFieldReqWithOptions:
+      example:
+        birthday: birthday
+        panoramaId: panoramaId
+        partnerKeys:
+          key: partnerKeys
+        phones:
+        - phones
+        - phones
+        maids:
+        - maids
+        - maids
+        linkedin: linkedin
+        title: title
+        generatePid: true
+        recordId: recordId
+        emails:
+        - emails
+        - emails
+        twitter: twitter
+        maid: maid
+        email: email
+        website: website
+        profile:
+          score: 5
+          followers: 1
+          service: service
+          following: 5
+          bio: bio
+          userid: userid
+          url: url
+          username: username
+        confidence: confidence
+        profiles:
+        - score: 5
+          followers: 1
+          service: service
+          following: 5
+          bio: bio
+          userid: userid
+          url: url
+          username: username
+        - score: 5
+          followers: 1
+          service: service
+          following: 5
+          bio: bio
+          userid: userid
+          url: url
+          username: username
+        ipAddress: ipAddress
+        avatar: avatar
+        countries:
+        - countries
+        - countries
+        li_nonid: li_nonid
+        placekey: placekey
+        phone: phone
+        infer: true
+        organization: organization
+        name:
+          given: given
+          middle: middle
+          prefix: prefix
+          nickname: nickname
+          family: family
+          suffix: suffix
+          full: full
+        excludeCountries:
+        - excludeCountries
+        - excludeCountries
+        personId: personId
+        location:
+          country: country
+          city: city
+          formatted: formatted
+          postalCode: postalCode
+          latitude: 0.8008281904610115
+          timeZone: timeZone
+          type: Work
+          regionCode: regionCode
+          countryCode: countryCode
+          addressLine1: addressLine1
+          addressLine2: addressLine2
+          region: region
+          longitude: 6.027456183070403
+        partnerId: partnerId
+      properties:
+        twitter:
+          type: string
+        linkedin:
+          type: string
+        recordId:
+          type: string
+        personId:
+          type: string
+        partnerId:
+          type: string
+        location:
+          $ref: '#/components/schemas/LocationReq'
+        avatar:
+          type: string
+        website:
+          type: string
+        title:
+          type: string
+        organization:
+          type: string
+        emails:
+          items:
+            type: string
+          type: array
+        phones:
+          items:
+            type: string
+          type: array
+        profiles:
+          items:
+            $ref: '#/components/schemas/SocialProfileReq'
+          type: array
+        maids:
+          items:
+            type: string
+          type: array
+        name:
+          $ref: '#/components/schemas/PersonNameReq'
+        partnerKeys:
+          additionalProperties:
+            type: string
+          type: object
+        li_nonid:
+          type: string
+        panoramaId:
+          type: string
+        placekey:
+          type: string
+        generatePid:
+          type: boolean
+        email:
+          type: string
+        phone:
+          type: string
+        profile:
+          $ref: '#/components/schemas/SocialProfileReq'
+        maid:
+          type: string
+        infer:
+          type: boolean
+        confidence:
+          type: string
+        birthday:
+          type: string
+        ipAddress:
+          type: string
+        countries:
+          items:
+            type: string
+          type: array
+        excludeCountries:
+          items:
+            type: string
+          type: array
+      type: object
     MultiFieldReq:
       example:
         birthday: birthday

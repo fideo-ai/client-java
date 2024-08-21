@@ -1,7 +1,7 @@
 # client-java
 
 Fideo API
-- API version: 1.0.2
+- API version: 1.0.3
   - Generator version: 7.7.0
 
 Fideo Intelligence offers an identity intelligence product that protects the public good.
@@ -41,7 +41,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>ai.fideo</groupId>
   <artifactId>client-java</artifactId>
-  <version>1.0.2</version>
+  <version>1.0.3</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -57,7 +57,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "ai.fideo:client-java:1.0.2"
+     implementation "ai.fideo:client-java:1.0.3"
   }
 ```
 
@@ -71,7 +71,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/client-java-1.0.2.jar`
+* `target/client-java-1.0.3.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -99,9 +99,9 @@ public class Example {
 
     SignalsApi apiInstance = new SignalsApi(defaultClient);
     String v = "v_example"; // String | 
-    MultiFieldReq multiFieldReq = new MultiFieldReq(); // MultiFieldReq | 
+    MultiFieldReqWithOptions multiFieldReqWithOptions = new MultiFieldReqWithOptions(); // MultiFieldReqWithOptions | 
     try {
-      VerifySignalsPost200Response result = apiInstance.verifySignalsPost(v, multiFieldReq);
+      VerifySignalsPost200Response result = apiInstance.verifySignalsPost(v, multiFieldReqWithOptions);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SignalsApi#verifySignalsPost");
@@ -143,6 +143,7 @@ Class | Method | HTTP request | Description
  - [LocationType](docs/LocationType.md)
  - [MatchResponse](docs/MatchResponse.md)
  - [MultiFieldReq](docs/MultiFieldReq.md)
+ - [MultiFieldReqWithOptions](docs/MultiFieldReqWithOptions.md)
  - [Name](docs/Name.md)
  - [NameWithAlias](docs/NameWithAlias.md)
  - [PersonNameReq](docs/PersonNameReq.md)

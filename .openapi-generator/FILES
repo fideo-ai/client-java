@@ -21,6 +21,7 @@ docs/LocationReq.md
 docs/LocationType.md
 docs/MatchResponse.md
 docs/MultiFieldReq.md
+docs/MultiFieldReqWithOptions.md
 docs/Name.md
 docs/NameWithAlias.md
 docs/PersonNameReq.md
@@ -80,6 +81,7 @@ src/main/java/ai/fideo/model/LocationReq.java
 src/main/java/ai/fideo/model/LocationType.java
 src/main/java/ai/fideo/model/MatchResponse.java
 src/main/java/ai/fideo/model/MultiFieldReq.java
+src/main/java/ai/fideo/model/MultiFieldReqWithOptions.java
 src/main/java/ai/fideo/model/Name.java
 src/main/java/ai/fideo/model/NameWithAlias.java
 src/main/java/ai/fideo/model/PersonNameReq.java
@@ -92,3 +94,4 @@ src/main/java/ai/fideo/model/SocialProfileDetails.java
 src/main/java/ai/fideo/model/SocialProfileReq.java
 src/main/java/ai/fideo/model/SocialProfileUrls.java
 src/main/java/ai/fideo/model/VerifySignalsPost200Response.java
+src/test/java/ai/fideo/model/MultiFieldReqWithOptionsTest.java
