@@ -31,10 +31,6 @@
 |**phone** | **String** |  |  [optional] |
 |**profile** | [**SocialProfileReq**](SocialProfileReq.md) |  |  [optional] |
 |**maid** | **String** |  |  [optional] |
-|**infer** | **Boolean** |  |  [optional] |
-|**confidence** | **String** |  |  [optional] |
-|**birthday** | **String** |  |  [optional] |
-|**ipAddress** | **String** |  |  [optional] |
 
 
 
