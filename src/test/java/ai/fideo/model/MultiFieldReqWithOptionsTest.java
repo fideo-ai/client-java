@@ -14,6 +14,7 @@
 package ai.fideo.model;
 
 import ai.fideo.model.LocationReq;
+import ai.fideo.model.MultiFieldReq;
 import ai.fideo.model.PersonNameReq;
 import ai.fideo.model.SocialProfileReq;
 import com.google.gson.TypeAdapter;
@@ -27,21 +28,22 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for MultiFieldReq
+ * Model tests for MultiFieldReqWithOptions
  */
-public class MultiFieldReqTest {
-    private final MultiFieldReq model = new MultiFieldReq();
+public class MultiFieldReqWithOptionsTest {
+    private final MultiFieldReqWithOptions model = new MultiFieldReqWithOptions();
 
     /**
-     * Model tests for MultiFieldReq
+     * Model tests for MultiFieldReqWithOptions
      */
     @Test
-    public void testMultiFieldReq() {
-        // TODO: test MultiFieldReq
+    public void testMultiFieldReqWithOptions() {
+        // TODO: test MultiFieldReqWithOptions
     }
 
     /**
@@ -234,6 +236,54 @@ public class MultiFieldReqTest {
     @Test
     public void maidTest() {
         // TODO: test maid
+    }
+
+    /**
+     * Test the property 'infer'
+     */
+    @Test
+    public void inferTest() {
+        // TODO: test infer
+    }
+
+    /**
+     * Test the property 'confidence'
+     */
+    @Test
+    public void confidenceTest() {
+        // TODO: test confidence
+    }
+
+    /**
+     * Test the property 'birthday'
+     */
+    @Test
+    public void birthdayTest() {
+        // TODO: test birthday
+    }
+
+    /**
+     * Test the property 'ipAddress'
+     */
+    @Test
+    public void ipAddressTest() {
+        // TODO: test ipAddress
+    }
+
+    /**
+     * Test the property 'countries'
+     */
+    @Test
+    public void countriesTest() {
+        // TODO: test countries
+    }
+
+    /**
+     * Test the property 'excludedCountries'
+     */
+    @Test
+    public void excludedCountriesTest() {
+        // TODO: test excludedCountries
     }
 
 }

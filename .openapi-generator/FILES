@@ -21,6 +21,7 @@ docs/LocationReq.md
 docs/LocationType.md
 docs/MatchResponse.md
 docs/MultiFieldReq.md
+docs/MultiFieldReqWithOptions.md
 docs/Name.md
 docs/NameWithAlias.md
 docs/PersonNameReq.md
@@ -33,8 +34,8 @@ docs/SignalsResponseV20240424.md
 docs/SocialProfileDetails.md
 docs/SocialProfileReq.md
 docs/SocialProfileUrls.md
+docs/V3VerifySignalsPost200Response.md
 docs/VerifyApi.md
-docs/VerifySignalsPost200Response.md
 git_push.sh
 gradle.properties
 gradle/wrapper/gradle-wrapper.jar
@@ -80,6 +81,7 @@ src/main/java/ai/fideo/model/LocationReq.java
 src/main/java/ai/fideo/model/LocationType.java
 src/main/java/ai/fideo/model/MatchResponse.java
 src/main/java/ai/fideo/model/MultiFieldReq.java
+src/main/java/ai/fideo/model/MultiFieldReqWithOptions.java
 src/main/java/ai/fideo/model/Name.java
 src/main/java/ai/fideo/model/NameWithAlias.java
 src/main/java/ai/fideo/model/PersonNameReq.java
@@ -91,4 +93,4 @@ src/main/java/ai/fideo/model/SignalsResponseV20240424.java
 src/main/java/ai/fideo/model/SocialProfileDetails.java
 src/main/java/ai/fideo/model/SocialProfileReq.java
 src/main/java/ai/fideo/model/SocialProfileUrls.java
-src/main/java/ai/fideo/model/VerifySignalsPost200Response.java
+src/main/java/ai/fideo/model/V3VerifySignalsPost200Response.java
