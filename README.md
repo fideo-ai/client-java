@@ -123,8 +123,8 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *SignalsApi* | [**signalsPost**](docs/SignalsApi.md#signalsPost) | **POST** /signals | 
 *SignalsApi* | [**v3VerifySignalsPost**](docs/SignalsApi.md#v3VerifySignalsPost) | **POST** /v3/verify.signals | 
-*VerifyApi* | [**matchPost**](docs/VerifyApi.md#matchPost) | **POST** /match | 
 *VerifyApi* | [**v3VerifyMatchPost**](docs/VerifyApi.md#v3VerifyMatchPost) | **POST** /v3/verify.match | 
+*VerifyApi* | [**verifyPost**](docs/VerifyApi.md#verifyPost) | **POST** /verify | 
 
 
 ## Documentation for Models

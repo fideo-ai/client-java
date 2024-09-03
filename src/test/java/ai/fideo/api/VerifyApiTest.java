@@ -36,9 +36,9 @@ public class VerifyApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void matchPostTest() throws ApiException {
+    public void v3VerifyMatchPostTest() throws ApiException {
         MultiFieldReq multiFieldReq = null;
-        MatchResponse response = api.matchPost(multiFieldReq);
+        MatchResponse response = api.v3VerifyMatchPost(multiFieldReq);
         // TODO: test validations
     }
 
@@ -46,9 +46,9 @@ public class VerifyApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void v3VerifyMatchPostTest() throws ApiException {
+    public void verifyPostTest() throws ApiException {
         MultiFieldReq multiFieldReq = null;
-        MatchResponse response = api.v3VerifyMatchPost(multiFieldReq);
+        MatchResponse response = api.verifyPost(multiFieldReq);
         // TODO: test validations
     }
 
