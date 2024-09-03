@@ -30,52 +30,6 @@ tags:
     url: https://docs.fideo.ai/docs/verify
   name: verify
 paths:
-  /v3/verify.signals:
-    post:
-      parameters:
-      - explode: true
-        in: query
-        name: v
-        required: false
-        schema:
-          type: string
-        style: form
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/MultiFieldReqWithOptions'
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/_v3_verify_signals_post_200_response'
-          description: Successful response
-      tags:
-      - signals
-      x-content-type: application/json
-      x-accepts:
-      - application/json
-  /v3/verify.match:
-    post:
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/MultiFieldReq'
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MatchResponse'
-          description: OK
-      tags:
-      - verify
-      x-content-type: application/json
-      x-accepts:
-      - application/json
   /signals:
     post:
       parameters:
@@ -96,7 +50,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/_v3_verify_signals_post_200_response'
+                $ref: '#/components/schemas/_signals_post_200_response'
           description: Successful response
       tags:
       - signals
@@ -115,7 +69,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/MatchResponse'
+                $ref: '#/components/schemas/VerifyResponse'
           description: OK
       tags:
       - verify
@@ -940,7 +894,7 @@ components:
         netWorth:
           type: string
       type: object
-    MatchResponse:
+    VerifyResponse:
       example:
         continent: continent
         birthday: birthday
@@ -1080,7 +1034,7 @@ components:
           format: double
           type: number
       type: object
-    _v3_verify_signals_post_200_response:
+    _signals_post_200_response:
       oneOf:
       - $ref: '#/components/schemas/SignalsResponseV0'
       - $ref: '#/components/schemas/SignalsResponseV20240424'

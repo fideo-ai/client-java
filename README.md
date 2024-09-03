@@ -101,7 +101,7 @@ public class Example {
     String v = "v_example"; // String | 
     MultiFieldReqWithOptions multiFieldReqWithOptions = new MultiFieldReqWithOptions(); // MultiFieldReqWithOptions | 
     try {
-      V3VerifySignalsPost200Response result = apiInstance.signalsPost(v, multiFieldReqWithOptions);
+      SignalsPost200Response result = apiInstance.signalsPost(v, multiFieldReqWithOptions);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SignalsApi#signalsPost");
@@ -122,8 +122,6 @@ All URIs are relative to *https://api.fideo.ai*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *SignalsApi* | [**signalsPost**](docs/SignalsApi.md#signalsPost) | **POST** /signals | 
-*SignalsApi* | [**v3VerifySignalsPost**](docs/SignalsApi.md#v3VerifySignalsPost) | **POST** /v3/verify.signals | 
-*VerifyApi* | [**v3VerifyMatchPost**](docs/VerifyApi.md#v3VerifyMatchPost) | **POST** /v3/verify.match | 
 *VerifyApi* | [**verifyPost**](docs/VerifyApi.md#verifyPost) | **POST** /verify | 
 
 
@@ -143,7 +141,6 @@ Class | Method | HTTP request | Description
  - [Location](docs/Location.md)
  - [LocationReq](docs/LocationReq.md)
  - [LocationType](docs/LocationType.md)
- - [MatchResponse](docs/MatchResponse.md)
  - [MultiFieldReq](docs/MultiFieldReq.md)
  - [MultiFieldReqWithOptions](docs/MultiFieldReqWithOptions.md)
  - [Name](docs/Name.md)
@@ -152,12 +149,13 @@ Class | Method | HTTP request | Description
  - [Phone](docs/Phone.md)
  - [Photo](docs/Photo.md)
  - [ScoreDetails](docs/ScoreDetails.md)
+ - [SignalsPost200Response](docs/SignalsPost200Response.md)
  - [SignalsResponseV0](docs/SignalsResponseV0.md)
  - [SignalsResponseV20240424](docs/SignalsResponseV20240424.md)
  - [SocialProfileDetails](docs/SocialProfileDetails.md)
  - [SocialProfileReq](docs/SocialProfileReq.md)
  - [SocialProfileUrls](docs/SocialProfileUrls.md)
- - [V3VerifySignalsPost200Response](docs/V3VerifySignalsPost200Response.md)
+ - [VerifyResponse](docs/VerifyResponse.md)
 
 
 <a id="documentation-for-authorization"></a>

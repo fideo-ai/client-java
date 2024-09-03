@@ -28,17 +28,17 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for MatchResponse
+ * Model tests for VerifyResponse
  */
-public class MatchResponseTest {
-    private final MatchResponse model = new MatchResponse();
+public class VerifyResponseTest {
+    private final VerifyResponse model = new VerifyResponse();
 
     /**
-     * Model tests for MatchResponse
+     * Model tests for VerifyResponse
      */
     @Test
-    public void testMatchResponse() {
-        // TODO: test MatchResponse
+    public void testVerifyResponse() {
+        // TODO: test VerifyResponse
     }
 
     /**

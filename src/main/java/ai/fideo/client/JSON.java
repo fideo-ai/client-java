@@ -105,7 +105,6 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.IpAddress.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.Location.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.LocationReq.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.MatchResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.MultiFieldReqWithOptions.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.Name.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.NameWithAlias.CustomTypeAdapterFactory());
@@ -113,12 +112,13 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.Phone.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.Photo.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.ScoreDetails.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.SignalsPost200Response.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.SignalsResponseV0.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.SignalsResponseV20240424.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.SocialProfileDetails.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.SocialProfileReq.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.SocialProfileUrls.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.V3VerifySignalsPost200Response.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.VerifyResponse.CustomTypeAdapterFactory());
         gson = gsonBuilder.create();
     }
 

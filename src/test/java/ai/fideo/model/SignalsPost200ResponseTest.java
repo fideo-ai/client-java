@@ -39,17 +39,17 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for V3VerifySignalsPost200Response
+ * Model tests for SignalsPost200Response
  */
-public class V3VerifySignalsPost200ResponseTest {
-    private final V3VerifySignalsPost200Response model = new V3VerifySignalsPost200Response();
+public class SignalsPost200ResponseTest {
+    private final SignalsPost200Response model = new SignalsPost200Response();
 
     /**
-     * Model tests for V3VerifySignalsPost200Response
+     * Model tests for SignalsPost200Response
      */
     @Test
-    public void testV3VerifySignalsPost200Response() {
-        // TODO: test V3VerifySignalsPost200Response
+    public void testSignalsPost200Response() {
+        // TODO: test SignalsPost200Response
     }
 
     /**

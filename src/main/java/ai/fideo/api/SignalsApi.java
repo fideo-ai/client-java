@@ -28,7 +28,7 @@ import java.io.IOException;
 
 
 import ai.fideo.model.MultiFieldReqWithOptions;
-import ai.fideo.model.V3VerifySignalsPost200Response;
+import ai.fideo.model.SignalsPost200Response;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -146,7 +146,7 @@ public class SignalsApi {
      * 
      * @param v  (optional)
      * @param multiFieldReqWithOptions  (optional)
-     * @return V3VerifySignalsPost200Response
+     * @return SignalsPost200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -154,8 +154,8 @@ public class SignalsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public V3VerifySignalsPost200Response signalsPost(String v, MultiFieldReqWithOptions multiFieldReqWithOptions) throws ApiException {
-        ApiResponse<V3VerifySignalsPost200Response> localVarResp = signalsPostWithHttpInfo(v, multiFieldReqWithOptions);
+    public SignalsPost200Response signalsPost(String v, MultiFieldReqWithOptions multiFieldReqWithOptions) throws ApiException {
+        ApiResponse<SignalsPost200Response> localVarResp = signalsPostWithHttpInfo(v, multiFieldReqWithOptions);
         return localVarResp.getData();
     }
 
@@ -164,7 +164,7 @@ public class SignalsApi {
      * 
      * @param v  (optional)
      * @param multiFieldReqWithOptions  (optional)
-     * @return ApiResponse&lt;V3VerifySignalsPost200Response&gt;
+     * @return ApiResponse&lt;SignalsPost200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -172,9 +172,9 @@ public class SignalsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<V3VerifySignalsPost200Response> signalsPostWithHttpInfo(String v, MultiFieldReqWithOptions multiFieldReqWithOptions) throws ApiException {
+    public ApiResponse<SignalsPost200Response> signalsPostWithHttpInfo(String v, MultiFieldReqWithOptions multiFieldReqWithOptions) throws ApiException {
         okhttp3.Call localVarCall = signalsPostValidateBeforeCall(v, multiFieldReqWithOptions, null);
-        Type localVarReturnType = new TypeToken<V3VerifySignalsPost200Response>(){}.getType();
+        Type localVarReturnType = new TypeToken<SignalsPost200Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -192,136 +192,10 @@ public class SignalsApi {
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call signalsPostAsync(String v, MultiFieldReqWithOptions multiFieldReqWithOptions, final ApiCallback<V3VerifySignalsPost200Response> _callback) throws ApiException {
+    public okhttp3.Call signalsPostAsync(String v, MultiFieldReqWithOptions multiFieldReqWithOptions, final ApiCallback<SignalsPost200Response> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = signalsPostValidateBeforeCall(v, multiFieldReqWithOptions, _callback);
-        Type localVarReturnType = new TypeToken<V3VerifySignalsPost200Response>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for v3VerifySignalsPost
-     * @param v  (optional)
-     * @param multiFieldReqWithOptions  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call v3VerifySignalsPostCall(String v, MultiFieldReqWithOptions multiFieldReqWithOptions, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = multiFieldReqWithOptions;
-
-        // create path and map variables
-        String localVarPath = "/v3/verify.signals";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        if (v != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("v", v));
-        }
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] { "bearerAuth" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call v3VerifySignalsPostValidateBeforeCall(String v, MultiFieldReqWithOptions multiFieldReqWithOptions, final ApiCallback _callback) throws ApiException {
-        return v3VerifySignalsPostCall(v, multiFieldReqWithOptions, _callback);
-
-    }
-
-    /**
-     * 
-     * 
-     * @param v  (optional)
-     * @param multiFieldReqWithOptions  (optional)
-     * @return V3VerifySignalsPost200Response
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public V3VerifySignalsPost200Response v3VerifySignalsPost(String v, MultiFieldReqWithOptions multiFieldReqWithOptions) throws ApiException {
-        ApiResponse<V3VerifySignalsPost200Response> localVarResp = v3VerifySignalsPostWithHttpInfo(v, multiFieldReqWithOptions);
-        return localVarResp.getData();
-    }
-
-    /**
-     * 
-     * 
-     * @param v  (optional)
-     * @param multiFieldReqWithOptions  (optional)
-     * @return ApiResponse&lt;V3VerifySignalsPost200Response&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<V3VerifySignalsPost200Response> v3VerifySignalsPostWithHttpInfo(String v, MultiFieldReqWithOptions multiFieldReqWithOptions) throws ApiException {
-        okhttp3.Call localVarCall = v3VerifySignalsPostValidateBeforeCall(v, multiFieldReqWithOptions, null);
-        Type localVarReturnType = new TypeToken<V3VerifySignalsPost200Response>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     *  (asynchronously)
-     * 
-     * @param v  (optional)
-     * @param multiFieldReqWithOptions  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call v3VerifySignalsPostAsync(String v, MultiFieldReqWithOptions multiFieldReqWithOptions, final ApiCallback<V3VerifySignalsPost200Response> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = v3VerifySignalsPostValidateBeforeCall(v, multiFieldReqWithOptions, _callback);
-        Type localVarReturnType = new TypeToken<V3VerifySignalsPost200Response>(){}.getType();
+        Type localVarReturnType = new TypeToken<SignalsPost200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

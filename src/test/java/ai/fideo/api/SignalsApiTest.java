@@ -15,7 +15,7 @@ package ai.fideo.api;
 
 import ai.fideo.client.ApiException;
 import ai.fideo.model.MultiFieldReqWithOptions;
-import ai.fideo.model.V3VerifySignalsPost200Response;
+import ai.fideo.model.SignalsPost200Response;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -39,18 +39,7 @@ public class SignalsApiTest {
     public void signalsPostTest() throws ApiException {
         String v = null;
         MultiFieldReqWithOptions multiFieldReqWithOptions = null;
-        V3VerifySignalsPost200Response response = api.signalsPost(v, multiFieldReqWithOptions);
-        // TODO: test validations
-    }
-
-    /**
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void v3VerifySignalsPostTest() throws ApiException {
-        String v = null;
-        MultiFieldReqWithOptions multiFieldReqWithOptions = null;
-        V3VerifySignalsPost200Response response = api.v3VerifySignalsPost(v, multiFieldReqWithOptions);
+        SignalsPost200Response response = api.signalsPost(v, multiFieldReqWithOptions);
         // TODO: test validations
     }
 
