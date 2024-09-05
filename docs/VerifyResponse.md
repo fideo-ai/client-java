@@ -1,6 +1,6 @@
 
 
-# MatchResponse
+# VerifyResponse
 
 
 ## Properties

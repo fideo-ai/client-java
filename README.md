@@ -1,8 +1,8 @@
 # client-java
 
 Fideo API
-- API version: 1.0.2
-  - Generator version: 7.7.0
+- API version: 1.0.4
+  - Generator version: 7.8.0
 
 Fideo Intelligence offers an identity intelligence product that protects the public good.
 - [Fideo Privacy Policy](https://www.fideo.ai/privacy-policy/)
@@ -41,7 +41,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>ai.fideo</groupId>
   <artifactId>client-java</artifactId>
-  <version>1.0.2</version>
+  <version>1.0.4</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -57,7 +57,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "ai.fideo:client-java:1.0.2"
+     implementation "ai.fideo:client-java:1.0.4"
   }
 ```
 
@@ -71,7 +71,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/client-java-1.0.2.jar`
+* `target/client-java-1.0.4.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -91,7 +91,7 @@ import ai.fideo.api.SignalsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.fullcontact.com/v3");
+    defaultClient.setBasePath("https://api.fideo.ai");
     
     // Configure HTTP bearer authorization: bearerAuth
     HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
@@ -99,12 +99,12 @@ public class Example {
 
     SignalsApi apiInstance = new SignalsApi(defaultClient);
     String v = "v_example"; // String | 
-    MultiFieldReq multiFieldReq = new MultiFieldReq(); // MultiFieldReq | 
+    MultiFieldReqWithOptions multiFieldReqWithOptions = new MultiFieldReqWithOptions(); // MultiFieldReqWithOptions | 
     try {
-      VerifySignalsPost200Response result = apiInstance.verifySignalsPost(v, multiFieldReq);
+      SignalsPost200Response result = apiInstance.signalsPost(v, multiFieldReqWithOptions);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling SignalsApi#verifySignalsPost");
+      System.err.println("Exception when calling SignalsApi#signalsPost");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -117,12 +117,12 @@ public class Example {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://api.fullcontact.com/v3*
+All URIs are relative to *https://api.fideo.ai*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*SignalsApi* | [**verifySignalsPost**](docs/SignalsApi.md#verifySignalsPost) | **POST** /verify.signals | 
-*VerifyApi* | [**verifyMatchPost**](docs/VerifyApi.md#verifyMatchPost) | **POST** /verify.match | 
+*SignalsApi* | [**signalsPost**](docs/SignalsApi.md#signalsPost) | **POST** /signals | 
+*VerifyApi* | [**verifyPost**](docs/VerifyApi.md#verifyPost) | **POST** /verify | 
 
 
 ## Documentation for Models
@@ -141,20 +141,21 @@ Class | Method | HTTP request | Description
  - [Location](docs/Location.md)
  - [LocationReq](docs/LocationReq.md)
  - [LocationType](docs/LocationType.md)
- - [MatchResponse](docs/MatchResponse.md)
  - [MultiFieldReq](docs/MultiFieldReq.md)
+ - [MultiFieldReqWithOptions](docs/MultiFieldReqWithOptions.md)
  - [Name](docs/Name.md)
  - [NameWithAlias](docs/NameWithAlias.md)
  - [PersonNameReq](docs/PersonNameReq.md)
  - [Phone](docs/Phone.md)
  - [Photo](docs/Photo.md)
  - [ScoreDetails](docs/ScoreDetails.md)
+ - [SignalsPost200Response](docs/SignalsPost200Response.md)
  - [SignalsResponseV0](docs/SignalsResponseV0.md)
  - [SignalsResponseV20240424](docs/SignalsResponseV20240424.md)
  - [SocialProfileDetails](docs/SocialProfileDetails.md)
  - [SocialProfileReq](docs/SocialProfileReq.md)
  - [SocialProfileUrls](docs/SocialProfileUrls.md)
- - [VerifySignalsPost200Response](docs/VerifySignalsPost200Response.md)
+ - [VerifyResponse](docs/VerifyResponse.md)
 
 
 <a id="documentation-for-authorization"></a>

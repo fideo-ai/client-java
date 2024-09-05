@@ -1,6 +1,6 @@
 
 
-# VerifySignalsPost200Response
+# SignalsPost200Response
 
 
 ## Properties

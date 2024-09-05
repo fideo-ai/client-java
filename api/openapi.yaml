@@ -10,12 +10,12 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.fideo.ai/terms-of-use/
   title: Fideo API
-  version: 1.0.2
+  version: 1.0.4
 externalDocs:
   description: Getting Started with Fideo
   url: https://docs.fideo.ai/docs/getting-started
 servers:
-- url: https://api.fullcontact.com/v3
+- url: https://api.fideo.ai/
 security:
 - bearerAuth: []
 tags:
@@ -30,7 +30,7 @@ tags:
     url: https://docs.fideo.ai/docs/verify
   name: verify
 paths:
-  /verify.signals:
+  /signals:
     post:
       parameters:
       - explode: true
@@ -44,20 +44,20 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/MultiFieldReq'
+              $ref: '#/components/schemas/MultiFieldReqWithOptions'
       responses:
         "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/_verify_signals_post_200_response'
+                $ref: '#/components/schemas/_signals_post_200_response'
           description: Successful response
       tags:
       - signals
       x-content-type: application/json
       x-accepts:
       - application/json
-  /verify.match:
+  /verify:
     post:
       requestBody:
         content:
@@ -69,7 +69,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/MatchResponse'
+                $ref: '#/components/schemas/VerifyResponse'
           description: OK
       tags:
       - verify
@@ -78,7 +78,30 @@ paths:
       - application/json
 components:
   schemas:
-    MultiFieldReq:
+    MultiFieldReqWithOptions:
+      allOf:
+      - $ref: '#/components/schemas/MultiFieldReq'
+      - properties:
+          infer:
+            type: boolean
+          confidence:
+            default: LOW
+            type: string
+          birthday:
+            type: string
+          ipAddress:
+            type: string
+          countries:
+            items:
+              type: string
+            nullable: true
+            type: array
+          excludedCountries:
+            items:
+              type: string
+            nullable: true
+            type: array
+        type: object
       example:
         birthday: birthday
         panoramaId: panoramaId
@@ -98,6 +121,9 @@ components:
         - emails
         - emails
         twitter: twitter
+        excludedCountries:
+        - excludedCountries
+        - excludedCountries
         maid: maid
         email: email
         website: website
@@ -110,7 +136,7 @@ components:
           userid: userid
           url: url
           username: username
-        confidence: confidence
+        confidence: LOW
         profiles:
         - score: 5
           followers: 1
@@ -130,6 +156,9 @@ components:
           username: username
         ipAddress: ipAddress
         avatar: avatar
+        countries:
+        - countries
+        - countries
         li_nonid: li_nonid
         placekey: placekey
         phone: phone
@@ -159,6 +188,83 @@ components:
           region: region
           longitude: 6.027456183070403
         partnerId: partnerId
+    MultiFieldReq:
+      example:
+        website: website
+        panoramaId: panoramaId
+        profile:
+          score: 5
+          followers: 1
+          service: service
+          following: 5
+          bio: bio
+          userid: userid
+          url: url
+          username: username
+        profiles:
+        - score: 5
+          followers: 1
+          service: service
+          following: 5
+          bio: bio
+          userid: userid
+          url: url
+          username: username
+        - score: 5
+          followers: 1
+          service: service
+          following: 5
+          bio: bio
+          userid: userid
+          url: url
+          username: username
+        partnerKeys:
+          key: partnerKeys
+        phones:
+        - phones
+        - phones
+        maids:
+        - maids
+        - maids
+        linkedin: linkedin
+        avatar: avatar
+        title: title
+        generatePid: true
+        li_nonid: li_nonid
+        recordId: recordId
+        emails:
+        - emails
+        - emails
+        twitter: twitter
+        placekey: placekey
+        phone: phone
+        organization: organization
+        name:
+          given: given
+          middle: middle
+          prefix: prefix
+          nickname: nickname
+          family: family
+          suffix: suffix
+          full: full
+        personId: personId
+        location:
+          country: country
+          city: city
+          formatted: formatted
+          postalCode: postalCode
+          latitude: 0.8008281904610115
+          timeZone: timeZone
+          type: Work
+          regionCode: regionCode
+          countryCode: countryCode
+          addressLine1: addressLine1
+          addressLine2: addressLine2
+          region: region
+          longitude: 6.027456183070403
+        partnerId: partnerId
+        maid: maid
+        email: email
       properties:
         twitter:
           type: string
@@ -218,15 +324,8 @@ components:
           $ref: '#/components/schemas/SocialProfileReq'
         maid:
           type: string
-        infer:
-          type: boolean
-        confidence:
-          type: string
-        birthday:
-          type: string
-        ipAddress:
-          type: string
       type: object
+      x-parent: true
     SignalsResponseV0:
       example:
         emails:
@@ -795,7 +894,7 @@ components:
         netWorth:
           type: string
       type: object
-    MatchResponse:
+    VerifyResponse:
       example:
         continent: continent
         birthday: birthday
@@ -935,7 +1034,7 @@ components:
           format: double
           type: number
       type: object
-    _verify_signals_post_200_response:
+    _signals_post_200_response:
       oneOf:
       - $ref: '#/components/schemas/SignalsResponseV0'
       - $ref: '#/components/schemas/SignalsResponseV20240424'

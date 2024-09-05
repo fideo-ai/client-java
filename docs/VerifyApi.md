@@ -1,15 +1,15 @@
 # VerifyApi
 
-All URIs are relative to *https://api.fullcontact.com/v3*
+All URIs are relative to *https://api.fideo.ai*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**verifyMatchPost**](VerifyApi.md#verifyMatchPost) | **POST** /verify.match |  |
+| [**verifyPost**](VerifyApi.md#verifyPost) | **POST** /verify |  |
 
 
-<a id="verifyMatchPost"></a>
-# **verifyMatchPost**
-> MatchResponse verifyMatchPost(multiFieldReq)
+<a id="verifyPost"></a>
+# **verifyPost**
+> VerifyResponse verifyPost(multiFieldReq)
 
 
 
@@ -26,7 +26,7 @@ import ai.fideo.api.VerifyApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.fullcontact.com/v3");
+    defaultClient.setBasePath("https://api.fideo.ai");
     
     // Configure HTTP bearer authorization: bearerAuth
     HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
@@ -35,10 +35,10 @@ public class Example {
     VerifyApi apiInstance = new VerifyApi(defaultClient);
     MultiFieldReq multiFieldReq = new MultiFieldReq(); // MultiFieldReq | 
     try {
-      MatchResponse result = apiInstance.verifyMatchPost(multiFieldReq);
+      VerifyResponse result = apiInstance.verifyPost(multiFieldReq);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling VerifyApi#verifyMatchPost");
+      System.err.println("Exception when calling VerifyApi#verifyPost");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -56,7 +56,7 @@ public class Example {
 
 ### Return type
 
-[**MatchResponse**](MatchResponse.md)
+[**VerifyResponse**](VerifyResponse.md)
 
 ### Authorization
 

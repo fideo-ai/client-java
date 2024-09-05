@@ -1,15 +1,15 @@
 # SignalsApi
 
-All URIs are relative to *https://api.fullcontact.com/v3*
+All URIs are relative to *https://api.fideo.ai*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**verifySignalsPost**](SignalsApi.md#verifySignalsPost) | **POST** /verify.signals |  |
+| [**signalsPost**](SignalsApi.md#signalsPost) | **POST** /signals |  |
 
 
-<a id="verifySignalsPost"></a>
-# **verifySignalsPost**
-> VerifySignalsPost200Response verifySignalsPost(v, multiFieldReq)
+<a id="signalsPost"></a>
+# **signalsPost**
+> SignalsPost200Response signalsPost(v, multiFieldReqWithOptions)
 
 
 
@@ -26,7 +26,7 @@ import ai.fideo.api.SignalsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.fullcontact.com/v3");
+    defaultClient.setBasePath("https://api.fideo.ai");
     
     // Configure HTTP bearer authorization: bearerAuth
     HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
@@ -34,12 +34,12 @@ public class Example {
 
     SignalsApi apiInstance = new SignalsApi(defaultClient);
     String v = "v_example"; // String | 
-    MultiFieldReq multiFieldReq = new MultiFieldReq(); // MultiFieldReq | 
+    MultiFieldReqWithOptions multiFieldReqWithOptions = new MultiFieldReqWithOptions(); // MultiFieldReqWithOptions | 
     try {
-      VerifySignalsPost200Response result = apiInstance.verifySignalsPost(v, multiFieldReq);
+      SignalsPost200Response result = apiInstance.signalsPost(v, multiFieldReqWithOptions);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling SignalsApi#verifySignalsPost");
+      System.err.println("Exception when calling SignalsApi#signalsPost");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -54,11 +54,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **v** | **String**|  | [optional] |
-| **multiFieldReq** | [**MultiFieldReq**](MultiFieldReq.md)|  | [optional] |
+| **multiFieldReqWithOptions** | [**MultiFieldReqWithOptions**](MultiFieldReqWithOptions.md)|  | [optional] |
 
 ### Return type
 
-[**VerifySignalsPost200Response**](VerifySignalsPost200Response.md)
+[**SignalsPost200Response**](SignalsPost200Response.md)
 
 ### Authorization
 
