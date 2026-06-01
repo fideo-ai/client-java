@@ -1,5 +1,5 @@
 /*
- * Fideo API
+ * Fideo Production API
  * Fideo Intelligence offers an identity intelligence product that protects the public good. - [Fideo Privacy Policy](https://www.fideo.ai/privacy-policy/)
  *
  * The version of the OpenAPI document: 1.0.4
@@ -48,52 +48,62 @@ import ai.fideo.client.JSON;
 /**
  * Email
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class Email {
   public static final String SERIALIZED_NAME_FIRST_SEEN_MS = "firstSeenMs";
   @SerializedName(SERIALIZED_NAME_FIRST_SEEN_MS)
+  @javax.annotation.Nullable
   private Long firstSeenMs;
 
   public static final String SERIALIZED_NAME_LAST_SEEN_MS = "lastSeenMs";
   @SerializedName(SERIALIZED_NAME_LAST_SEEN_MS)
+  @javax.annotation.Nullable
   private Long lastSeenMs;
 
   public static final String SERIALIZED_NAME_OBSERVATIONS = "observations";
   @SerializedName(SERIALIZED_NAME_OBSERVATIONS)
+  @javax.annotation.Nullable
   private Integer observations;
 
   public static final String SERIALIZED_NAME_CONFIDENCE = "confidence";
   @SerializedName(SERIALIZED_NAME_CONFIDENCE)
+  @javax.annotation.Nullable
   private Double confidence;
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
+  @javax.annotation.Nullable
   private String value;
 
   public static final String SERIALIZED_NAME_MD5 = "md5";
   @SerializedName(SERIALIZED_NAME_MD5)
+  @javax.annotation.Nullable
   private String md5;
 
   public static final String SERIALIZED_NAME_SHA1 = "sha1";
   @SerializedName(SERIALIZED_NAME_SHA1)
+  @javax.annotation.Nullable
   private String sha1;
 
   public static final String SERIALIZED_NAME_SHA256 = "sha256";
   @SerializedName(SERIALIZED_NAME_SHA256)
+  @javax.annotation.Nullable
   private String sha256;
 
   public static final String SERIALIZED_NAME_LABEL = "label";
   @SerializedName(SERIALIZED_NAME_LABEL)
+  @javax.annotation.Nullable
   private String label;
 
   public static final String SERIALIZED_NAME_ACTIVITY = "activity";
   @SerializedName(SERIALIZED_NAME_ACTIVITY)
+  @javax.annotation.Nullable
   private Double activity;
 
   public Email() {
   }
 
-  public Email firstSeenMs(Long firstSeenMs) {
+  public Email firstSeenMs(@javax.annotation.Nullable Long firstSeenMs) {
     this.firstSeenMs = firstSeenMs;
     return this;
   }
@@ -107,12 +117,12 @@ public class Email {
     return firstSeenMs;
   }
 
-  public void setFirstSeenMs(Long firstSeenMs) {
+  public void setFirstSeenMs(@javax.annotation.Nullable Long firstSeenMs) {
     this.firstSeenMs = firstSeenMs;
   }
 
 
-  public Email lastSeenMs(Long lastSeenMs) {
+  public Email lastSeenMs(@javax.annotation.Nullable Long lastSeenMs) {
     this.lastSeenMs = lastSeenMs;
     return this;
   }
@@ -126,12 +136,12 @@ public class Email {
     return lastSeenMs;
   }
 
-  public void setLastSeenMs(Long lastSeenMs) {
+  public void setLastSeenMs(@javax.annotation.Nullable Long lastSeenMs) {
     this.lastSeenMs = lastSeenMs;
   }
 
 
-  public Email observations(Integer observations) {
+  public Email observations(@javax.annotation.Nullable Integer observations) {
     this.observations = observations;
     return this;
   }
@@ -145,12 +155,12 @@ public class Email {
     return observations;
   }
 
-  public void setObservations(Integer observations) {
+  public void setObservations(@javax.annotation.Nullable Integer observations) {
     this.observations = observations;
   }
 
 
-  public Email confidence(Double confidence) {
+  public Email confidence(@javax.annotation.Nullable Double confidence) {
     this.confidence = confidence;
     return this;
   }
@@ -164,12 +174,12 @@ public class Email {
     return confidence;
   }
 
-  public void setConfidence(Double confidence) {
+  public void setConfidence(@javax.annotation.Nullable Double confidence) {
     this.confidence = confidence;
   }
 
 
-  public Email value(String value) {
+  public Email value(@javax.annotation.Nullable String value) {
     this.value = value;
     return this;
   }
@@ -183,12 +193,12 @@ public class Email {
     return value;
   }
 
-  public void setValue(String value) {
+  public void setValue(@javax.annotation.Nullable String value) {
     this.value = value;
   }
 
 
-  public Email md5(String md5) {
+  public Email md5(@javax.annotation.Nullable String md5) {
     this.md5 = md5;
     return this;
   }
@@ -202,12 +212,12 @@ public class Email {
     return md5;
   }
 
-  public void setMd5(String md5) {
+  public void setMd5(@javax.annotation.Nullable String md5) {
     this.md5 = md5;
   }
 
 
-  public Email sha1(String sha1) {
+  public Email sha1(@javax.annotation.Nullable String sha1) {
     this.sha1 = sha1;
     return this;
   }
@@ -221,12 +231,12 @@ public class Email {
     return sha1;
   }
 
-  public void setSha1(String sha1) {
+  public void setSha1(@javax.annotation.Nullable String sha1) {
     this.sha1 = sha1;
   }
 
 
-  public Email sha256(String sha256) {
+  public Email sha256(@javax.annotation.Nullable String sha256) {
     this.sha256 = sha256;
     return this;
   }
@@ -240,12 +250,12 @@ public class Email {
     return sha256;
   }
 
-  public void setSha256(String sha256) {
+  public void setSha256(@javax.annotation.Nullable String sha256) {
     this.sha256 = sha256;
   }
 
 
-  public Email label(String label) {
+  public Email label(@javax.annotation.Nullable String label) {
     this.label = label;
     return this;
   }
@@ -259,12 +269,12 @@ public class Email {
     return label;
   }
 
-  public void setLabel(String label) {
+  public void setLabel(@javax.annotation.Nullable String label) {
     this.label = label;
   }
 
 
-  public Email activity(Double activity) {
+  public Email activity(@javax.annotation.Nullable Double activity) {
     this.activity = activity;
     return this;
   }
@@ -278,7 +288,7 @@ public class Email {
     return activity;
   }
 
-  public void setActivity(Double activity) {
+  public void setActivity(@javax.annotation.Nullable Double activity) {
     this.activity = activity;
   }
 

@@ -1,5 +1,5 @@
 /*
- * Fideo API
+ * Fideo Production API
  * Fideo Intelligence offers an identity intelligence product that protects the public good. - [Fideo Privacy Policy](https://www.fideo.ai/privacy-policy/)
  *
  * The version of the OpenAPI document: 1.0.4
@@ -48,20 +48,22 @@ import ai.fideo.client.JSON;
 /**
  * Name
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class Name {
   public static final String SERIALIZED_NAME_GIVEN_NAME = "givenName";
   @SerializedName(SERIALIZED_NAME_GIVEN_NAME)
+  @javax.annotation.Nullable
   private String givenName;
 
   public static final String SERIALIZED_NAME_FAMILY_NAME = "familyName";
   @SerializedName(SERIALIZED_NAME_FAMILY_NAME)
+  @javax.annotation.Nullable
   private String familyName;
 
   public Name() {
   }
 
-  public Name givenName(String givenName) {
+  public Name givenName(@javax.annotation.Nullable String givenName) {
     this.givenName = givenName;
     return this;
   }
@@ -75,12 +77,12 @@ public class Name {
     return givenName;
   }
 
-  public void setGivenName(String givenName) {
+  public void setGivenName(@javax.annotation.Nullable String givenName) {
     this.givenName = givenName;
   }
 
 
-  public Name familyName(String familyName) {
+  public Name familyName(@javax.annotation.Nullable String familyName) {
     this.familyName = familyName;
     return this;
   }
@@ -94,7 +96,7 @@ public class Name {
     return familyName;
   }
 
-  public void setFamilyName(String familyName) {
+  public void setFamilyName(@javax.annotation.Nullable String familyName) {
     this.familyName = familyName;
   }
 

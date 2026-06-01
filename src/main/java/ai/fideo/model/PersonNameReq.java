@@ -1,5 +1,5 @@
 /*
- * Fideo API
+ * Fideo Production API
  * Fideo Intelligence offers an identity intelligence product that protects the public good. - [Fideo Privacy Policy](https://www.fideo.ai/privacy-policy/)
  *
  * The version of the OpenAPI document: 1.0.4
@@ -48,40 +48,47 @@ import ai.fideo.client.JSON;
 /**
  * PersonNameReq
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class PersonNameReq {
   public static final String SERIALIZED_NAME_GIVEN = "given";
   @SerializedName(SERIALIZED_NAME_GIVEN)
+  @javax.annotation.Nullable
   private String given;
 
   public static final String SERIALIZED_NAME_FAMILY = "family";
   @SerializedName(SERIALIZED_NAME_FAMILY)
+  @javax.annotation.Nullable
   private String family;
 
   public static final String SERIALIZED_NAME_MIDDLE = "middle";
   @SerializedName(SERIALIZED_NAME_MIDDLE)
+  @javax.annotation.Nullable
   private String middle;
 
   public static final String SERIALIZED_NAME_PREFIX = "prefix";
   @SerializedName(SERIALIZED_NAME_PREFIX)
+  @javax.annotation.Nullable
   private String prefix;
 
   public static final String SERIALIZED_NAME_SUFFIX = "suffix";
   @SerializedName(SERIALIZED_NAME_SUFFIX)
+  @javax.annotation.Nullable
   private String suffix;
 
   public static final String SERIALIZED_NAME_NICKNAME = "nickname";
   @SerializedName(SERIALIZED_NAME_NICKNAME)
+  @javax.annotation.Nullable
   private String nickname;
 
   public static final String SERIALIZED_NAME_FULL = "full";
   @SerializedName(SERIALIZED_NAME_FULL)
+  @javax.annotation.Nullable
   private String full;
 
   public PersonNameReq() {
   }
 
-  public PersonNameReq given(String given) {
+  public PersonNameReq given(@javax.annotation.Nullable String given) {
     this.given = given;
     return this;
   }
@@ -95,12 +102,12 @@ public class PersonNameReq {
     return given;
   }
 
-  public void setGiven(String given) {
+  public void setGiven(@javax.annotation.Nullable String given) {
     this.given = given;
   }
 
 
-  public PersonNameReq family(String family) {
+  public PersonNameReq family(@javax.annotation.Nullable String family) {
     this.family = family;
     return this;
   }
@@ -114,12 +121,12 @@ public class PersonNameReq {
     return family;
   }
 
-  public void setFamily(String family) {
+  public void setFamily(@javax.annotation.Nullable String family) {
     this.family = family;
   }
 
 
-  public PersonNameReq middle(String middle) {
+  public PersonNameReq middle(@javax.annotation.Nullable String middle) {
     this.middle = middle;
     return this;
   }
@@ -133,12 +140,12 @@ public class PersonNameReq {
     return middle;
   }
 
-  public void setMiddle(String middle) {
+  public void setMiddle(@javax.annotation.Nullable String middle) {
     this.middle = middle;
   }
 
 
-  public PersonNameReq prefix(String prefix) {
+  public PersonNameReq prefix(@javax.annotation.Nullable String prefix) {
     this.prefix = prefix;
     return this;
   }
@@ -152,12 +159,12 @@ public class PersonNameReq {
     return prefix;
   }
 
-  public void setPrefix(String prefix) {
+  public void setPrefix(@javax.annotation.Nullable String prefix) {
     this.prefix = prefix;
   }
 
 
-  public PersonNameReq suffix(String suffix) {
+  public PersonNameReq suffix(@javax.annotation.Nullable String suffix) {
     this.suffix = suffix;
     return this;
   }
@@ -171,12 +178,12 @@ public class PersonNameReq {
     return suffix;
   }
 
-  public void setSuffix(String suffix) {
+  public void setSuffix(@javax.annotation.Nullable String suffix) {
     this.suffix = suffix;
   }
 
 
-  public PersonNameReq nickname(String nickname) {
+  public PersonNameReq nickname(@javax.annotation.Nullable String nickname) {
     this.nickname = nickname;
     return this;
   }
@@ -190,12 +197,12 @@ public class PersonNameReq {
     return nickname;
   }
 
-  public void setNickname(String nickname) {
+  public void setNickname(@javax.annotation.Nullable String nickname) {
     this.nickname = nickname;
   }
 
 
-  public PersonNameReq full(String full) {
+  public PersonNameReq full(@javax.annotation.Nullable String full) {
     this.full = full;
     return this;
   }
@@ -209,7 +216,7 @@ public class PersonNameReq {
     return full;
   }
 
-  public void setFull(String full) {
+  public void setFull(@javax.annotation.Nullable String full) {
     this.full = full;
   }
 

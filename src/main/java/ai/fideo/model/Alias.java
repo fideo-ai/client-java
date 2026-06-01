@@ -1,5 +1,5 @@
 /*
- * Fideo API
+ * Fideo Production API
  * Fideo Intelligence offers an identity intelligence product that protects the public good. - [Fideo Privacy Policy](https://www.fideo.ai/privacy-policy/)
  *
  * The version of the OpenAPI document: 1.0.4
@@ -48,24 +48,27 @@ import ai.fideo.client.JSON;
 /**
  * Alias
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class Alias {
   public static final String SERIALIZED_NAME_FIRST = "first";
   @SerializedName(SERIALIZED_NAME_FIRST)
+  @javax.annotation.Nullable
   private String first;
 
   public static final String SERIALIZED_NAME_LAST = "last";
   @SerializedName(SERIALIZED_NAME_LAST)
+  @javax.annotation.Nullable
   private String last;
 
   public static final String SERIALIZED_NAME_MIDDLE = "middle";
   @SerializedName(SERIALIZED_NAME_MIDDLE)
+  @javax.annotation.Nullable
   private String middle;
 
   public Alias() {
   }
 
-  public Alias first(String first) {
+  public Alias first(@javax.annotation.Nullable String first) {
     this.first = first;
     return this;
   }
@@ -79,12 +82,12 @@ public class Alias {
     return first;
   }
 
-  public void setFirst(String first) {
+  public void setFirst(@javax.annotation.Nullable String first) {
     this.first = first;
   }
 
 
-  public Alias last(String last) {
+  public Alias last(@javax.annotation.Nullable String last) {
     this.last = last;
     return this;
   }
@@ -98,12 +101,12 @@ public class Alias {
     return last;
   }
 
-  public void setLast(String last) {
+  public void setLast(@javax.annotation.Nullable String last) {
     this.last = last;
   }
 
 
-  public Alias middle(String middle) {
+  public Alias middle(@javax.annotation.Nullable String middle) {
     this.middle = middle;
     return this;
   }
@@ -117,7 +120,7 @@ public class Alias {
     return middle;
   }
 
-  public void setMiddle(String middle) {
+  public void setMiddle(@javax.annotation.Nullable String middle) {
     this.middle = middle;
   }
 

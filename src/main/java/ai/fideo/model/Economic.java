@@ -1,5 +1,5 @@
 /*
- * Fideo API
+ * Fideo Production API
  * Fideo Intelligence offers an identity intelligence product that protects the public good. - [Fideo Privacy Policy](https://www.fideo.ai/privacy-policy/)
  *
  * The version of the OpenAPI document: 1.0.4
@@ -48,36 +48,42 @@ import ai.fideo.client.JSON;
 /**
  * Economic
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class Economic {
   public static final String SERIALIZED_NAME_DWELLING_TYPE = "dwellingType";
   @SerializedName(SERIALIZED_NAME_DWELLING_TYPE)
+  @javax.annotation.Nullable
   private String dwellingType;
 
   public static final String SERIALIZED_NAME_HOME_OWNERSHIP = "homeOwnership";
   @SerializedName(SERIALIZED_NAME_HOME_OWNERSHIP)
+  @javax.annotation.Nullable
   private String homeOwnership;
 
   public static final String SERIALIZED_NAME_MARITAL_STATUS = "maritalStatus";
   @SerializedName(SERIALIZED_NAME_MARITAL_STATUS)
+  @javax.annotation.Nullable
   private String maritalStatus;
 
   public static final String SERIALIZED_NAME_PRESENCE_OF_CHILDREN = "presenceOfChildren";
   @SerializedName(SERIALIZED_NAME_PRESENCE_OF_CHILDREN)
+  @javax.annotation.Nullable
   private String presenceOfChildren;
 
   public static final String SERIALIZED_NAME_INCOME = "income";
   @SerializedName(SERIALIZED_NAME_INCOME)
+  @javax.annotation.Nullable
   private String income;
 
   public static final String SERIALIZED_NAME_NET_WORTH = "netWorth";
   @SerializedName(SERIALIZED_NAME_NET_WORTH)
+  @javax.annotation.Nullable
   private String netWorth;
 
   public Economic() {
   }
 
-  public Economic dwellingType(String dwellingType) {
+  public Economic dwellingType(@javax.annotation.Nullable String dwellingType) {
     this.dwellingType = dwellingType;
     return this;
   }
@@ -91,12 +97,12 @@ public class Economic {
     return dwellingType;
   }
 
-  public void setDwellingType(String dwellingType) {
+  public void setDwellingType(@javax.annotation.Nullable String dwellingType) {
     this.dwellingType = dwellingType;
   }
 
 
-  public Economic homeOwnership(String homeOwnership) {
+  public Economic homeOwnership(@javax.annotation.Nullable String homeOwnership) {
     this.homeOwnership = homeOwnership;
     return this;
   }
@@ -110,12 +116,12 @@ public class Economic {
     return homeOwnership;
   }
 
-  public void setHomeOwnership(String homeOwnership) {
+  public void setHomeOwnership(@javax.annotation.Nullable String homeOwnership) {
     this.homeOwnership = homeOwnership;
   }
 
 
-  public Economic maritalStatus(String maritalStatus) {
+  public Economic maritalStatus(@javax.annotation.Nullable String maritalStatus) {
     this.maritalStatus = maritalStatus;
     return this;
   }
@@ -129,12 +135,12 @@ public class Economic {
     return maritalStatus;
   }
 
-  public void setMaritalStatus(String maritalStatus) {
+  public void setMaritalStatus(@javax.annotation.Nullable String maritalStatus) {
     this.maritalStatus = maritalStatus;
   }
 
 
-  public Economic presenceOfChildren(String presenceOfChildren) {
+  public Economic presenceOfChildren(@javax.annotation.Nullable String presenceOfChildren) {
     this.presenceOfChildren = presenceOfChildren;
     return this;
   }
@@ -148,12 +154,12 @@ public class Economic {
     return presenceOfChildren;
   }
 
-  public void setPresenceOfChildren(String presenceOfChildren) {
+  public void setPresenceOfChildren(@javax.annotation.Nullable String presenceOfChildren) {
     this.presenceOfChildren = presenceOfChildren;
   }
 
 
-  public Economic income(String income) {
+  public Economic income(@javax.annotation.Nullable String income) {
     this.income = income;
     return this;
   }
@@ -167,12 +173,12 @@ public class Economic {
     return income;
   }
 
-  public void setIncome(String income) {
+  public void setIncome(@javax.annotation.Nullable String income) {
     this.income = income;
   }
 
 
-  public Economic netWorth(String netWorth) {
+  public Economic netWorth(@javax.annotation.Nullable String netWorth) {
     this.netWorth = netWorth;
     return this;
   }
@@ -186,7 +192,7 @@ public class Economic {
     return netWorth;
   }
 
-  public void setNetWorth(String netWorth) {
+  public void setNetWorth(@javax.annotation.Nullable String netWorth) {
     this.netWorth = netWorth;
   }
 

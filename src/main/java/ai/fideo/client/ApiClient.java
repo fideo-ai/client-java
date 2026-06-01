@@ -1,5 +1,5 @@
 /*
- * Fideo API
+ * Fideo Production API
  * Fideo Intelligence offers an identity intelligence product that protects the public good. - [Fideo Privacy Policy](https://www.fideo.ai/privacy-policy/)
  *
  * The version of the OpenAPI document: 1.0.4
@@ -757,7 +757,7 @@ public class ApiClient {
         return params;
     }
 
-    /**
+   /**
     * Formats the specified free-form query parameters to a list of {@code Pair} objects.
     *
     * @param value The free-form query parameters.
@@ -771,6 +771,7 @@ public class ApiClient {
             return params;
         }
 
+        @SuppressWarnings("unchecked")
         final Map<String, Object> valuesMap = (Map<String, Object>) value;
 
         for (Map.Entry<String, Object> entry : valuesMap.entrySet()) {

@@ -1,5 +1,5 @@
 /*
- * Fideo API
+ * Fideo Production API
  * Fideo Intelligence offers an identity intelligence product that protects the public good. - [Fideo Privacy Policy](https://www.fideo.ai/privacy-policy/)
  *
  * The version of the OpenAPI document: 1.0.4
@@ -57,36 +57,42 @@ import ai.fideo.client.JSON;
 /**
  * MultiFieldReqWithOptions
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class MultiFieldReqWithOptions extends MultiFieldReq {
   public static final String SERIALIZED_NAME_INFER = "infer";
   @SerializedName(SERIALIZED_NAME_INFER)
+  @javax.annotation.Nullable
   private Boolean infer;
 
   public static final String SERIALIZED_NAME_CONFIDENCE = "confidence";
   @SerializedName(SERIALIZED_NAME_CONFIDENCE)
+  @javax.annotation.Nullable
   private String confidence = "LOW";
 
   public static final String SERIALIZED_NAME_BIRTHDAY = "birthday";
   @SerializedName(SERIALIZED_NAME_BIRTHDAY)
+  @javax.annotation.Nullable
   private String birthday;
 
   public static final String SERIALIZED_NAME_IP_ADDRESS = "ipAddress";
   @SerializedName(SERIALIZED_NAME_IP_ADDRESS)
+  @javax.annotation.Nullable
   private String ipAddress;
 
   public static final String SERIALIZED_NAME_COUNTRIES = "countries";
   @SerializedName(SERIALIZED_NAME_COUNTRIES)
+  @javax.annotation.Nullable
   private List<String> countries;
 
   public static final String SERIALIZED_NAME_EXCLUDED_COUNTRIES = "excludedCountries";
   @SerializedName(SERIALIZED_NAME_EXCLUDED_COUNTRIES)
+  @javax.annotation.Nullable
   private List<String> excludedCountries;
 
   public MultiFieldReqWithOptions() {
   }
 
-  public MultiFieldReqWithOptions infer(Boolean infer) {
+  public MultiFieldReqWithOptions infer(@javax.annotation.Nullable Boolean infer) {
     this.infer = infer;
     return this;
   }
@@ -100,12 +106,12 @@ public class MultiFieldReqWithOptions extends MultiFieldReq {
     return infer;
   }
 
-  public void setInfer(Boolean infer) {
+  public void setInfer(@javax.annotation.Nullable Boolean infer) {
     this.infer = infer;
   }
 
 
-  public MultiFieldReqWithOptions confidence(String confidence) {
+  public MultiFieldReqWithOptions confidence(@javax.annotation.Nullable String confidence) {
     this.confidence = confidence;
     return this;
   }
@@ -119,12 +125,12 @@ public class MultiFieldReqWithOptions extends MultiFieldReq {
     return confidence;
   }
 
-  public void setConfidence(String confidence) {
+  public void setConfidence(@javax.annotation.Nullable String confidence) {
     this.confidence = confidence;
   }
 
 
-  public MultiFieldReqWithOptions birthday(String birthday) {
+  public MultiFieldReqWithOptions birthday(@javax.annotation.Nullable String birthday) {
     this.birthday = birthday;
     return this;
   }
@@ -138,12 +144,12 @@ public class MultiFieldReqWithOptions extends MultiFieldReq {
     return birthday;
   }
 
-  public void setBirthday(String birthday) {
+  public void setBirthday(@javax.annotation.Nullable String birthday) {
     this.birthday = birthday;
   }
 
 
-  public MultiFieldReqWithOptions ipAddress(String ipAddress) {
+  public MultiFieldReqWithOptions ipAddress(@javax.annotation.Nullable String ipAddress) {
     this.ipAddress = ipAddress;
     return this;
   }
@@ -157,12 +163,12 @@ public class MultiFieldReqWithOptions extends MultiFieldReq {
     return ipAddress;
   }
 
-  public void setIpAddress(String ipAddress) {
+  public void setIpAddress(@javax.annotation.Nullable String ipAddress) {
     this.ipAddress = ipAddress;
   }
 
 
-  public MultiFieldReqWithOptions countries(List<String> countries) {
+  public MultiFieldReqWithOptions countries(@javax.annotation.Nullable List<String> countries) {
     this.countries = countries;
     return this;
   }
@@ -184,12 +190,12 @@ public class MultiFieldReqWithOptions extends MultiFieldReq {
     return countries;
   }
 
-  public void setCountries(List<String> countries) {
+  public void setCountries(@javax.annotation.Nullable List<String> countries) {
     this.countries = countries;
   }
 
 
-  public MultiFieldReqWithOptions excludedCountries(List<String> excludedCountries) {
+  public MultiFieldReqWithOptions excludedCountries(@javax.annotation.Nullable List<String> excludedCountries) {
     this.excludedCountries = excludedCountries;
     return this;
   }
@@ -211,7 +217,7 @@ public class MultiFieldReqWithOptions extends MultiFieldReq {
     return excludedCountries;
   }
 
-  public void setExcludedCountries(List<String> excludedCountries) {
+  public void setExcludedCountries(@javax.annotation.Nullable List<String> excludedCountries) {
     this.excludedCountries = excludedCountries;
   }
 
@@ -302,7 +308,6 @@ public class MultiFieldReqWithOptions extends MultiFieldReq {
     openapiFields.add("partnerKeys");
     openapiFields.add("li_nonid");
     openapiFields.add("panoramaId");
-    openapiFields.add("placekey");
     openapiFields.add("generatePid");
     openapiFields.add("email");
     openapiFields.add("phone");

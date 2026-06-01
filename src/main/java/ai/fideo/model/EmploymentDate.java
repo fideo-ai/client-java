@@ -1,5 +1,5 @@
 /*
- * Fideo API
+ * Fideo Production API
  * Fideo Intelligence offers an identity intelligence product that protects the public good. - [Fideo Privacy Policy](https://www.fideo.ai/privacy-policy/)
  *
  * The version of the OpenAPI document: 1.0.4
@@ -48,24 +48,27 @@ import ai.fideo.client.JSON;
 /**
  * EmploymentDate
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class EmploymentDate {
   public static final String SERIALIZED_NAME_YEAR = "year";
   @SerializedName(SERIALIZED_NAME_YEAR)
+  @javax.annotation.Nullable
   private Integer year;
 
   public static final String SERIALIZED_NAME_MONTH = "month";
   @SerializedName(SERIALIZED_NAME_MONTH)
+  @javax.annotation.Nullable
   private Integer month;
 
   public static final String SERIALIZED_NAME_DAY = "day";
   @SerializedName(SERIALIZED_NAME_DAY)
+  @javax.annotation.Nullable
   private Integer day;
 
   public EmploymentDate() {
   }
 
-  public EmploymentDate year(Integer year) {
+  public EmploymentDate year(@javax.annotation.Nullable Integer year) {
     this.year = year;
     return this;
   }
@@ -79,12 +82,12 @@ public class EmploymentDate {
     return year;
   }
 
-  public void setYear(Integer year) {
+  public void setYear(@javax.annotation.Nullable Integer year) {
     this.year = year;
   }
 
 
-  public EmploymentDate month(Integer month) {
+  public EmploymentDate month(@javax.annotation.Nullable Integer month) {
     this.month = month;
     return this;
   }
@@ -98,12 +101,12 @@ public class EmploymentDate {
     return month;
   }
 
-  public void setMonth(Integer month) {
+  public void setMonth(@javax.annotation.Nullable Integer month) {
     this.month = month;
   }
 
 
-  public EmploymentDate day(Integer day) {
+  public EmploymentDate day(@javax.annotation.Nullable Integer day) {
     this.day = day;
     return this;
   }
@@ -117,7 +120,7 @@ public class EmploymentDate {
     return day;
   }
 
-  public void setDay(Integer day) {
+  public void setDay(@javax.annotation.Nullable Integer day) {
     this.day = day;
   }
 

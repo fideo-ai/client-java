@@ -1,5 +1,5 @@
 /*
- * Fideo API
+ * Fideo Production API
  * Fideo Intelligence offers an identity intelligence product that protects the public good. - [Fideo Privacy Policy](https://www.fideo.ai/privacy-policy/)
  *
  * The version of the OpenAPI document: 1.0.4
@@ -49,36 +49,42 @@ import ai.fideo.client.JSON;
 /**
  * Employment
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class Employment {
   public static final String SERIALIZED_NAME_CURRENT = "current";
   @SerializedName(SERIALIZED_NAME_CURRENT)
+  @javax.annotation.Nullable
   private Boolean current;
 
   public static final String SERIALIZED_NAME_COMPANY = "company";
   @SerializedName(SERIALIZED_NAME_COMPANY)
+  @javax.annotation.Nullable
   private String company;
 
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
+  @javax.annotation.Nullable
   private String title;
 
   public static final String SERIALIZED_NAME_DOMAIN = "domain";
   @SerializedName(SERIALIZED_NAME_DOMAIN)
+  @javax.annotation.Nullable
   private String domain;
 
   public static final String SERIALIZED_NAME_START = "start";
   @SerializedName(SERIALIZED_NAME_START)
+  @javax.annotation.Nullable
   private EmploymentDate start;
 
   public static final String SERIALIZED_NAME_END = "end";
   @SerializedName(SERIALIZED_NAME_END)
+  @javax.annotation.Nullable
   private EmploymentDate end;
 
   public Employment() {
   }
 
-  public Employment current(Boolean current) {
+  public Employment current(@javax.annotation.Nullable Boolean current) {
     this.current = current;
     return this;
   }
@@ -92,12 +98,12 @@ public class Employment {
     return current;
   }
 
-  public void setCurrent(Boolean current) {
+  public void setCurrent(@javax.annotation.Nullable Boolean current) {
     this.current = current;
   }
 
 
-  public Employment company(String company) {
+  public Employment company(@javax.annotation.Nullable String company) {
     this.company = company;
     return this;
   }
@@ -111,12 +117,12 @@ public class Employment {
     return company;
   }
 
-  public void setCompany(String company) {
+  public void setCompany(@javax.annotation.Nullable String company) {
     this.company = company;
   }
 
 
-  public Employment title(String title) {
+  public Employment title(@javax.annotation.Nullable String title) {
     this.title = title;
     return this;
   }
@@ -130,12 +136,12 @@ public class Employment {
     return title;
   }
 
-  public void setTitle(String title) {
+  public void setTitle(@javax.annotation.Nullable String title) {
     this.title = title;
   }
 
 
-  public Employment domain(String domain) {
+  public Employment domain(@javax.annotation.Nullable String domain) {
     this.domain = domain;
     return this;
   }
@@ -149,12 +155,12 @@ public class Employment {
     return domain;
   }
 
-  public void setDomain(String domain) {
+  public void setDomain(@javax.annotation.Nullable String domain) {
     this.domain = domain;
   }
 
 
-  public Employment start(EmploymentDate start) {
+  public Employment start(@javax.annotation.Nullable EmploymentDate start) {
     this.start = start;
     return this;
   }
@@ -168,12 +174,12 @@ public class Employment {
     return start;
   }
 
-  public void setStart(EmploymentDate start) {
+  public void setStart(@javax.annotation.Nullable EmploymentDate start) {
     this.start = start;
   }
 
 
-  public Employment end(EmploymentDate end) {
+  public Employment end(@javax.annotation.Nullable EmploymentDate end) {
     this.end = end;
     return this;
   }
@@ -187,7 +193,7 @@ public class Employment {
     return end;
   }
 
-  public void setEnd(EmploymentDate end) {
+  public void setEnd(@javax.annotation.Nullable EmploymentDate end) {
     this.end = end;
   }
 

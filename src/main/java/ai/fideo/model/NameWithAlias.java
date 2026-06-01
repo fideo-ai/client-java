@@ -1,5 +1,5 @@
 /*
- * Fideo API
+ * Fideo Production API
  * Fideo Intelligence offers an identity intelligence product that protects the public good. - [Fideo Privacy Policy](https://www.fideo.ai/privacy-policy/)
  *
  * The version of the OpenAPI document: 1.0.4
@@ -51,36 +51,42 @@ import ai.fideo.client.JSON;
 /**
  * NameWithAlias
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class NameWithAlias {
   public static final String SERIALIZED_NAME_FIRST = "first";
   @SerializedName(SERIALIZED_NAME_FIRST)
+  @javax.annotation.Nullable
   private String first;
 
   public static final String SERIALIZED_NAME_LAST = "last";
   @SerializedName(SERIALIZED_NAME_LAST)
+  @javax.annotation.Nullable
   private String last;
 
   public static final String SERIALIZED_NAME_MIDDLE = "middle";
   @SerializedName(SERIALIZED_NAME_MIDDLE)
+  @javax.annotation.Nullable
   private String middle;
 
   public static final String SERIALIZED_NAME_GIVEN_NAME = "givenName";
   @SerializedName(SERIALIZED_NAME_GIVEN_NAME)
+  @javax.annotation.Nullable
   private String givenName;
 
   public static final String SERIALIZED_NAME_FAMILY_NAME = "familyName";
   @SerializedName(SERIALIZED_NAME_FAMILY_NAME)
+  @javax.annotation.Nullable
   private String familyName;
 
   public static final String SERIALIZED_NAME_ALIASES = "aliases";
   @SerializedName(SERIALIZED_NAME_ALIASES)
+  @javax.annotation.Nullable
   private List<Alias> aliases = new ArrayList<>();
 
   public NameWithAlias() {
   }
 
-  public NameWithAlias first(String first) {
+  public NameWithAlias first(@javax.annotation.Nullable String first) {
     this.first = first;
     return this;
   }
@@ -94,12 +100,12 @@ public class NameWithAlias {
     return first;
   }
 
-  public void setFirst(String first) {
+  public void setFirst(@javax.annotation.Nullable String first) {
     this.first = first;
   }
 
 
-  public NameWithAlias last(String last) {
+  public NameWithAlias last(@javax.annotation.Nullable String last) {
     this.last = last;
     return this;
   }
@@ -113,12 +119,12 @@ public class NameWithAlias {
     return last;
   }
 
-  public void setLast(String last) {
+  public void setLast(@javax.annotation.Nullable String last) {
     this.last = last;
   }
 
 
-  public NameWithAlias middle(String middle) {
+  public NameWithAlias middle(@javax.annotation.Nullable String middle) {
     this.middle = middle;
     return this;
   }
@@ -132,12 +138,12 @@ public class NameWithAlias {
     return middle;
   }
 
-  public void setMiddle(String middle) {
+  public void setMiddle(@javax.annotation.Nullable String middle) {
     this.middle = middle;
   }
 
 
-  public NameWithAlias givenName(String givenName) {
+  public NameWithAlias givenName(@javax.annotation.Nullable String givenName) {
     this.givenName = givenName;
     return this;
   }
@@ -151,12 +157,12 @@ public class NameWithAlias {
     return givenName;
   }
 
-  public void setGivenName(String givenName) {
+  public void setGivenName(@javax.annotation.Nullable String givenName) {
     this.givenName = givenName;
   }
 
 
-  public NameWithAlias familyName(String familyName) {
+  public NameWithAlias familyName(@javax.annotation.Nullable String familyName) {
     this.familyName = familyName;
     return this;
   }
@@ -170,12 +176,12 @@ public class NameWithAlias {
     return familyName;
   }
 
-  public void setFamilyName(String familyName) {
+  public void setFamilyName(@javax.annotation.Nullable String familyName) {
     this.familyName = familyName;
   }
 
 
-  public NameWithAlias aliases(List<Alias> aliases) {
+  public NameWithAlias aliases(@javax.annotation.Nullable List<Alias> aliases) {
     this.aliases = aliases;
     return this;
   }
@@ -197,7 +203,7 @@ public class NameWithAlias {
     return aliases;
   }
 
-  public void setAliases(List<Alias> aliases) {
+  public void setAliases(@javax.annotation.Nullable List<Alias> aliases) {
     this.aliases = aliases;
   }
 

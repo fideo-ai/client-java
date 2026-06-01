@@ -1,5 +1,5 @@
 /*
- * Fideo API
+ * Fideo Production API
  * Fideo Intelligence offers an identity intelligence product that protects the public good. - [Fideo Privacy Policy](https://www.fideo.ai/privacy-policy/)
  *
  * The version of the OpenAPI document: 1.0.4
@@ -48,32 +48,37 @@ import ai.fideo.client.JSON;
 /**
  * IpAddress
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class IpAddress {
   public static final String SERIALIZED_NAME_FIRST_SEEN_MS = "firstSeenMs";
   @SerializedName(SERIALIZED_NAME_FIRST_SEEN_MS)
+  @javax.annotation.Nullable
   private Long firstSeenMs;
 
   public static final String SERIALIZED_NAME_LAST_SEEN_MS = "lastSeenMs";
   @SerializedName(SERIALIZED_NAME_LAST_SEEN_MS)
+  @javax.annotation.Nullable
   private Long lastSeenMs;
 
   public static final String SERIALIZED_NAME_OBSERVATIONS = "observations";
   @SerializedName(SERIALIZED_NAME_OBSERVATIONS)
+  @javax.annotation.Nullable
   private Integer observations;
 
   public static final String SERIALIZED_NAME_CONFIDENCE = "confidence";
   @SerializedName(SERIALIZED_NAME_CONFIDENCE)
+  @javax.annotation.Nullable
   private Double confidence;
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nullable
   private String id;
 
   public IpAddress() {
   }
 
-  public IpAddress firstSeenMs(Long firstSeenMs) {
+  public IpAddress firstSeenMs(@javax.annotation.Nullable Long firstSeenMs) {
     this.firstSeenMs = firstSeenMs;
     return this;
   }
@@ -87,12 +92,12 @@ public class IpAddress {
     return firstSeenMs;
   }
 
-  public void setFirstSeenMs(Long firstSeenMs) {
+  public void setFirstSeenMs(@javax.annotation.Nullable Long firstSeenMs) {
     this.firstSeenMs = firstSeenMs;
   }
 
 
-  public IpAddress lastSeenMs(Long lastSeenMs) {
+  public IpAddress lastSeenMs(@javax.annotation.Nullable Long lastSeenMs) {
     this.lastSeenMs = lastSeenMs;
     return this;
   }
@@ -106,12 +111,12 @@ public class IpAddress {
     return lastSeenMs;
   }
 
-  public void setLastSeenMs(Long lastSeenMs) {
+  public void setLastSeenMs(@javax.annotation.Nullable Long lastSeenMs) {
     this.lastSeenMs = lastSeenMs;
   }
 
 
-  public IpAddress observations(Integer observations) {
+  public IpAddress observations(@javax.annotation.Nullable Integer observations) {
     this.observations = observations;
     return this;
   }
@@ -125,12 +130,12 @@ public class IpAddress {
     return observations;
   }
 
-  public void setObservations(Integer observations) {
+  public void setObservations(@javax.annotation.Nullable Integer observations) {
     this.observations = observations;
   }
 
 
-  public IpAddress confidence(Double confidence) {
+  public IpAddress confidence(@javax.annotation.Nullable Double confidence) {
     this.confidence = confidence;
     return this;
   }
@@ -144,12 +149,12 @@ public class IpAddress {
     return confidence;
   }
 
-  public void setConfidence(Double confidence) {
+  public void setConfidence(@javax.annotation.Nullable Double confidence) {
     this.confidence = confidence;
   }
 
 
-  public IpAddress id(String id) {
+  public IpAddress id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
@@ -163,7 +168,7 @@ public class IpAddress {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
   }
 

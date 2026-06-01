@@ -1,8 +1,8 @@
 # client-java
 
-Fideo API
+Fideo Production API
 - API version: 1.0.4
-  - Generator version: 7.8.0
+  - Generator version: 7.10.0
 
 Fideo Intelligence offers an identity intelligence product that protects the public good.
 - [Fideo Privacy Policy](https://www.fideo.ai/privacy-policy/)
@@ -85,8 +85,8 @@ import ai.fideo.client.ApiClient;
 import ai.fideo.client.ApiException;
 import ai.fideo.client.Configuration;
 import ai.fideo.client.auth.*;
-import ai.fideo.client.models.*;
-import ai.fideo.api.SignalsApi;
+import ai.fideo.model.*;
+import ai.fideo.api.BetaApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -97,14 +97,13 @@ public class Example {
     HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
     bearerAuth.setBearerToken("BEARER TOKEN");
 
-    SignalsApi apiInstance = new SignalsApi(defaultClient);
-    String v = "v_example"; // String | 
-    MultiFieldReqWithOptions multiFieldReqWithOptions = new MultiFieldReqWithOptions(); // MultiFieldReqWithOptions | 
+    BetaApi apiInstance = new BetaApi(defaultClient);
+    SignalPatternsRequest signalPatternsRequest = new SignalPatternsRequest(); // SignalPatternsRequest | 
     try {
-      SignalsPost200Response result = apiInstance.signalsPost(v, multiFieldReqWithOptions);
+      SignalPatternRecencyResponse result = apiInstance.betaSignalsPatternsSummaryPost(signalPatternsRequest);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling SignalsApi#signalsPost");
+      System.err.println("Exception when calling BetaApi#betaSignalsPatternsSummaryPost");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -121,6 +120,8 @@ All URIs are relative to *https://api.fideo.ai*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*BetaApi* | [**betaSignalsPatternsSummaryPost**](docs/BetaApi.md#betaSignalsPatternsSummaryPost) | **POST** /beta/signals/patterns/summary | Get signal patterns summary
+*BetaApi* | [**betaSignalsPatternsTimeseriesPost**](docs/BetaApi.md#betaSignalsPatternsTimeseriesPost) | **POST** /beta/signals/patterns/timeseries | Get signal patterns timeseries
 *SignalsApi* | [**signalsPost**](docs/SignalsApi.md#signalsPost) | **POST** /signals | 
 *VerifyApi* | [**verifyPost**](docs/VerifyApi.md#verifyPost) | **POST** /verify | 
 
@@ -128,6 +129,7 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [Alias](docs/Alias.md)
+ - [BetaSignalsPatternsSummaryPost400Response](docs/BetaSignalsPatternsSummaryPost400Response.md)
  - [Demographics](docs/Demographics.md)
  - [Economic](docs/Economic.md)
  - [Education](docs/Education.md)
@@ -149,6 +151,10 @@ Class | Method | HTTP request | Description
  - [Phone](docs/Phone.md)
  - [Photo](docs/Photo.md)
  - [ScoreDetails](docs/ScoreDetails.md)
+ - [SignalPatternRecencyResponse](docs/SignalPatternRecencyResponse.md)
+ - [SignalPatternResponseUnit](docs/SignalPatternResponseUnit.md)
+ - [SignalPatternResponseUnitCount](docs/SignalPatternResponseUnitCount.md)
+ - [SignalPatternsRequest](docs/SignalPatternsRequest.md)
  - [SignalsPost200Response](docs/SignalsPost200Response.md)
  - [SignalsResponseV0](docs/SignalsResponseV0.md)
  - [SignalsResponseV20240424](docs/SignalsResponseV20240424.md)

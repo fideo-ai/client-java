@@ -1,5 +1,5 @@
 /*
- * Fideo API
+ * Fideo Production API
  * Fideo Intelligence offers an identity intelligence product that protects the public good. - [Fideo Privacy Policy](https://www.fideo.ai/privacy-policy/)
  *
  * The version of the OpenAPI document: 1.0.4
@@ -50,28 +50,32 @@ import ai.fideo.client.JSON;
 /**
  * ScoreDetails
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class ScoreDetails {
   public static final String SERIALIZED_NAME_SCORER = "scorer";
   @SerializedName(SERIALIZED_NAME_SCORER)
+  @javax.annotation.Nullable
   private String scorer;
 
   public static final String SERIALIZED_NAME_SCORE = "score";
   @SerializedName(SERIALIZED_NAME_SCORE)
+  @javax.annotation.Nullable
   private Double score;
 
   public static final String SERIALIZED_NAME_EVIDENCE = "evidence";
   @SerializedName(SERIALIZED_NAME_EVIDENCE)
+  @javax.annotation.Nullable
   private Map<String, Object> evidence = new HashMap<>();
 
   public static final String SERIALIZED_NAME_WEIGHT = "weight";
   @SerializedName(SERIALIZED_NAME_WEIGHT)
+  @javax.annotation.Nullable
   private Double weight;
 
   public ScoreDetails() {
   }
 
-  public ScoreDetails scorer(String scorer) {
+  public ScoreDetails scorer(@javax.annotation.Nullable String scorer) {
     this.scorer = scorer;
     return this;
   }
@@ -85,12 +89,12 @@ public class ScoreDetails {
     return scorer;
   }
 
-  public void setScorer(String scorer) {
+  public void setScorer(@javax.annotation.Nullable String scorer) {
     this.scorer = scorer;
   }
 
 
-  public ScoreDetails score(Double score) {
+  public ScoreDetails score(@javax.annotation.Nullable Double score) {
     this.score = score;
     return this;
   }
@@ -104,12 +108,12 @@ public class ScoreDetails {
     return score;
   }
 
-  public void setScore(Double score) {
+  public void setScore(@javax.annotation.Nullable Double score) {
     this.score = score;
   }
 
 
-  public ScoreDetails evidence(Map<String, Object> evidence) {
+  public ScoreDetails evidence(@javax.annotation.Nullable Map<String, Object> evidence) {
     this.evidence = evidence;
     return this;
   }
@@ -131,12 +135,12 @@ public class ScoreDetails {
     return evidence;
   }
 
-  public void setEvidence(Map<String, Object> evidence) {
+  public void setEvidence(@javax.annotation.Nullable Map<String, Object> evidence) {
     this.evidence = evidence;
   }
 
 
-  public ScoreDetails weight(Double weight) {
+  public ScoreDetails weight(@javax.annotation.Nullable Double weight) {
     this.weight = weight;
     return this;
   }
@@ -150,7 +154,7 @@ public class ScoreDetails {
     return weight;
   }
 
-  public void setWeight(Double weight) {
+  public void setWeight(@javax.annotation.Nullable Double weight) {
     this.weight = weight;
   }
 

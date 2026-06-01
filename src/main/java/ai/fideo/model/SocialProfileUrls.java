@@ -1,5 +1,5 @@
 /*
- * Fideo API
+ * Fideo Production API
  * Fideo Intelligence offers an identity intelligence product that protects the public good. - [Fideo Privacy Policy](https://www.fideo.ai/privacy-policy/)
  *
  * The version of the OpenAPI document: 1.0.4
@@ -48,20 +48,22 @@ import ai.fideo.client.JSON;
 /**
  * SocialProfileUrls
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class SocialProfileUrls {
   public static final String SERIALIZED_NAME_TWITTER_URL = "twitterUrl";
   @SerializedName(SERIALIZED_NAME_TWITTER_URL)
+  @javax.annotation.Nullable
   private String twitterUrl;
 
   public static final String SERIALIZED_NAME_LINKED_IN_URL = "linkedInUrl";
   @SerializedName(SERIALIZED_NAME_LINKED_IN_URL)
+  @javax.annotation.Nullable
   private String linkedInUrl;
 
   public SocialProfileUrls() {
   }
 
-  public SocialProfileUrls twitterUrl(String twitterUrl) {
+  public SocialProfileUrls twitterUrl(@javax.annotation.Nullable String twitterUrl) {
     this.twitterUrl = twitterUrl;
     return this;
   }
@@ -75,12 +77,12 @@ public class SocialProfileUrls {
     return twitterUrl;
   }
 
-  public void setTwitterUrl(String twitterUrl) {
+  public void setTwitterUrl(@javax.annotation.Nullable String twitterUrl) {
     this.twitterUrl = twitterUrl;
   }
 
 
-  public SocialProfileUrls linkedInUrl(String linkedInUrl) {
+  public SocialProfileUrls linkedInUrl(@javax.annotation.Nullable String linkedInUrl) {
     this.linkedInUrl = linkedInUrl;
     return this;
   }
@@ -94,7 +96,7 @@ public class SocialProfileUrls {
     return linkedInUrl;
   }
 
-  public void setLinkedInUrl(String linkedInUrl) {
+  public void setLinkedInUrl(@javax.annotation.Nullable String linkedInUrl) {
     this.linkedInUrl = linkedInUrl;
   }
 

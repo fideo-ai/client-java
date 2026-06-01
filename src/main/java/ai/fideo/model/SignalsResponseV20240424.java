@@ -1,5 +1,5 @@
 /*
- * Fideo API
+ * Fideo Production API
  * Fideo Intelligence offers an identity intelligence product that protects the public good. - [Fideo Privacy Policy](https://www.fideo.ai/privacy-policy/)
  *
  * The version of the OpenAPI document: 1.0.4
@@ -61,64 +61,77 @@ import ai.fideo.client.JSON;
 /**
  * SignalsResponseV20240424
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class SignalsResponseV20240424 {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private NameWithAlias name;
 
   public static final String SERIALIZED_NAME_DEMOGRAPHICS = "demographics";
   @SerializedName(SERIALIZED_NAME_DEMOGRAPHICS)
+  @javax.annotation.Nullable
   private Demographics demographics;
 
   public static final String SERIALIZED_NAME_LOCATIONS = "locations";
   @SerializedName(SERIALIZED_NAME_LOCATIONS)
+  @javax.annotation.Nullable
   private List<Location> locations = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_EMAILS = "emails";
   @SerializedName(SERIALIZED_NAME_EMAILS)
+  @javax.annotation.Nullable
   private List<Email> emails = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PHONES = "phones";
   @SerializedName(SERIALIZED_NAME_PHONES)
+  @javax.annotation.Nullable
   private List<Phone> phones = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PERSON_IDS = "personIds";
   @SerializedName(SERIALIZED_NAME_PERSON_IDS)
+  @javax.annotation.Nullable
   private List<String> personIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_IP_ADDRESSES = "ipAddresses";
   @SerializedName(SERIALIZED_NAME_IP_ADDRESSES)
+  @javax.annotation.Nullable
   private List<IpAddress> ipAddresses = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_MESSAGE = "message";
   @SerializedName(SERIALIZED_NAME_MESSAGE)
+  @javax.annotation.Nullable
   private String message;
 
   public static final String SERIALIZED_NAME_SOCIAL_PROFILES = "socialProfiles";
   @SerializedName(SERIALIZED_NAME_SOCIAL_PROFILES)
+  @javax.annotation.Nullable
   private List<SocialProfileDetails> socialProfiles = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_EMPLOYMENT = "employment";
   @SerializedName(SERIALIZED_NAME_EMPLOYMENT)
+  @javax.annotation.Nullable
   private List<Employment> employment = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_EDUCATION = "education";
   @SerializedName(SERIALIZED_NAME_EDUCATION)
+  @javax.annotation.Nullable
   private List<Education> education = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PHOTOS = "photos";
   @SerializedName(SERIALIZED_NAME_PHOTOS)
+  @javax.annotation.Nullable
   private List<Photo> photos = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ECONOMIC = "economic";
   @SerializedName(SERIALIZED_NAME_ECONOMIC)
+  @javax.annotation.Nullable
   private Economic economic;
 
   public SignalsResponseV20240424() {
   }
 
-  public SignalsResponseV20240424 name(NameWithAlias name) {
+  public SignalsResponseV20240424 name(@javax.annotation.Nullable NameWithAlias name) {
     this.name = name;
     return this;
   }
@@ -132,12 +145,12 @@ public class SignalsResponseV20240424 {
     return name;
   }
 
-  public void setName(NameWithAlias name) {
+  public void setName(@javax.annotation.Nullable NameWithAlias name) {
     this.name = name;
   }
 
 
-  public SignalsResponseV20240424 demographics(Demographics demographics) {
+  public SignalsResponseV20240424 demographics(@javax.annotation.Nullable Demographics demographics) {
     this.demographics = demographics;
     return this;
   }
@@ -151,12 +164,12 @@ public class SignalsResponseV20240424 {
     return demographics;
   }
 
-  public void setDemographics(Demographics demographics) {
+  public void setDemographics(@javax.annotation.Nullable Demographics demographics) {
     this.demographics = demographics;
   }
 
 
-  public SignalsResponseV20240424 locations(List<Location> locations) {
+  public SignalsResponseV20240424 locations(@javax.annotation.Nullable List<Location> locations) {
     this.locations = locations;
     return this;
   }
@@ -178,12 +191,12 @@ public class SignalsResponseV20240424 {
     return locations;
   }
 
-  public void setLocations(List<Location> locations) {
+  public void setLocations(@javax.annotation.Nullable List<Location> locations) {
     this.locations = locations;
   }
 
 
-  public SignalsResponseV20240424 emails(List<Email> emails) {
+  public SignalsResponseV20240424 emails(@javax.annotation.Nullable List<Email> emails) {
     this.emails = emails;
     return this;
   }
@@ -205,12 +218,12 @@ public class SignalsResponseV20240424 {
     return emails;
   }
 
-  public void setEmails(List<Email> emails) {
+  public void setEmails(@javax.annotation.Nullable List<Email> emails) {
     this.emails = emails;
   }
 
 
-  public SignalsResponseV20240424 phones(List<Phone> phones) {
+  public SignalsResponseV20240424 phones(@javax.annotation.Nullable List<Phone> phones) {
     this.phones = phones;
     return this;
   }
@@ -232,12 +245,12 @@ public class SignalsResponseV20240424 {
     return phones;
   }
 
-  public void setPhones(List<Phone> phones) {
+  public void setPhones(@javax.annotation.Nullable List<Phone> phones) {
     this.phones = phones;
   }
 
 
-  public SignalsResponseV20240424 personIds(List<String> personIds) {
+  public SignalsResponseV20240424 personIds(@javax.annotation.Nullable List<String> personIds) {
     this.personIds = personIds;
     return this;
   }
@@ -259,12 +272,12 @@ public class SignalsResponseV20240424 {
     return personIds;
   }
 
-  public void setPersonIds(List<String> personIds) {
+  public void setPersonIds(@javax.annotation.Nullable List<String> personIds) {
     this.personIds = personIds;
   }
 
 
-  public SignalsResponseV20240424 ipAddresses(List<IpAddress> ipAddresses) {
+  public SignalsResponseV20240424 ipAddresses(@javax.annotation.Nullable List<IpAddress> ipAddresses) {
     this.ipAddresses = ipAddresses;
     return this;
   }
@@ -286,12 +299,12 @@ public class SignalsResponseV20240424 {
     return ipAddresses;
   }
 
-  public void setIpAddresses(List<IpAddress> ipAddresses) {
+  public void setIpAddresses(@javax.annotation.Nullable List<IpAddress> ipAddresses) {
     this.ipAddresses = ipAddresses;
   }
 
 
-  public SignalsResponseV20240424 message(String message) {
+  public SignalsResponseV20240424 message(@javax.annotation.Nullable String message) {
     this.message = message;
     return this;
   }
@@ -305,12 +318,12 @@ public class SignalsResponseV20240424 {
     return message;
   }
 
-  public void setMessage(String message) {
+  public void setMessage(@javax.annotation.Nullable String message) {
     this.message = message;
   }
 
 
-  public SignalsResponseV20240424 socialProfiles(List<SocialProfileDetails> socialProfiles) {
+  public SignalsResponseV20240424 socialProfiles(@javax.annotation.Nullable List<SocialProfileDetails> socialProfiles) {
     this.socialProfiles = socialProfiles;
     return this;
   }
@@ -332,12 +345,12 @@ public class SignalsResponseV20240424 {
     return socialProfiles;
   }
 
-  public void setSocialProfiles(List<SocialProfileDetails> socialProfiles) {
+  public void setSocialProfiles(@javax.annotation.Nullable List<SocialProfileDetails> socialProfiles) {
     this.socialProfiles = socialProfiles;
   }
 
 
-  public SignalsResponseV20240424 employment(List<Employment> employment) {
+  public SignalsResponseV20240424 employment(@javax.annotation.Nullable List<Employment> employment) {
     this.employment = employment;
     return this;
   }
@@ -359,12 +372,12 @@ public class SignalsResponseV20240424 {
     return employment;
   }
 
-  public void setEmployment(List<Employment> employment) {
+  public void setEmployment(@javax.annotation.Nullable List<Employment> employment) {
     this.employment = employment;
   }
 
 
-  public SignalsResponseV20240424 education(List<Education> education) {
+  public SignalsResponseV20240424 education(@javax.annotation.Nullable List<Education> education) {
     this.education = education;
     return this;
   }
@@ -386,12 +399,12 @@ public class SignalsResponseV20240424 {
     return education;
   }
 
-  public void setEducation(List<Education> education) {
+  public void setEducation(@javax.annotation.Nullable List<Education> education) {
     this.education = education;
   }
 
 
-  public SignalsResponseV20240424 photos(List<Photo> photos) {
+  public SignalsResponseV20240424 photos(@javax.annotation.Nullable List<Photo> photos) {
     this.photos = photos;
     return this;
   }
@@ -413,12 +426,12 @@ public class SignalsResponseV20240424 {
     return photos;
   }
 
-  public void setPhotos(List<Photo> photos) {
+  public void setPhotos(@javax.annotation.Nullable List<Photo> photos) {
     this.photos = photos;
   }
 
 
-  public SignalsResponseV20240424 economic(Economic economic) {
+  public SignalsResponseV20240424 economic(@javax.annotation.Nullable Economic economic) {
     this.economic = economic;
     return this;
   }
@@ -432,7 +445,7 @@ public class SignalsResponseV20240424 {
     return economic;
   }
 
-  public void setEconomic(Economic economic) {
+  public void setEconomic(@javax.annotation.Nullable Economic economic) {
     this.economic = economic;
   }
 

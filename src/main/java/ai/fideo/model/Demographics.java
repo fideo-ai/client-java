@@ -1,5 +1,5 @@
 /*
- * Fideo API
+ * Fideo Production API
  * Fideo Intelligence offers an identity intelligence product that protects the public good. - [Fideo Privacy Policy](https://www.fideo.ai/privacy-policy/)
  *
  * The version of the OpenAPI document: 1.0.4
@@ -48,28 +48,32 @@ import ai.fideo.client.JSON;
 /**
  * Demographics
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class Demographics {
   public static final String SERIALIZED_NAME_AGE = "age";
   @SerializedName(SERIALIZED_NAME_AGE)
+  @javax.annotation.Nullable
   private Integer age;
 
   public static final String SERIALIZED_NAME_AGE_RANGE = "ageRange";
   @SerializedName(SERIALIZED_NAME_AGE_RANGE)
+  @javax.annotation.Nullable
   private String ageRange;
 
   public static final String SERIALIZED_NAME_GENDER = "gender";
   @SerializedName(SERIALIZED_NAME_GENDER)
+  @javax.annotation.Nullable
   private String gender;
 
   public static final String SERIALIZED_NAME_LOCATION_GENERAL = "locationGeneral";
   @SerializedName(SERIALIZED_NAME_LOCATION_GENERAL)
+  @javax.annotation.Nullable
   private String locationGeneral;
 
   public Demographics() {
   }
 
-  public Demographics age(Integer age) {
+  public Demographics age(@javax.annotation.Nullable Integer age) {
     this.age = age;
     return this;
   }
@@ -83,12 +87,12 @@ public class Demographics {
     return age;
   }
 
-  public void setAge(Integer age) {
+  public void setAge(@javax.annotation.Nullable Integer age) {
     this.age = age;
   }
 
 
-  public Demographics ageRange(String ageRange) {
+  public Demographics ageRange(@javax.annotation.Nullable String ageRange) {
     this.ageRange = ageRange;
     return this;
   }
@@ -102,12 +106,12 @@ public class Demographics {
     return ageRange;
   }
 
-  public void setAgeRange(String ageRange) {
+  public void setAgeRange(@javax.annotation.Nullable String ageRange) {
     this.ageRange = ageRange;
   }
 
 
-  public Demographics gender(String gender) {
+  public Demographics gender(@javax.annotation.Nullable String gender) {
     this.gender = gender;
     return this;
   }
@@ -121,12 +125,12 @@ public class Demographics {
     return gender;
   }
 
-  public void setGender(String gender) {
+  public void setGender(@javax.annotation.Nullable String gender) {
     this.gender = gender;
   }
 
 
-  public Demographics locationGeneral(String locationGeneral) {
+  public Demographics locationGeneral(@javax.annotation.Nullable String locationGeneral) {
     this.locationGeneral = locationGeneral;
     return this;
   }
@@ -140,7 +144,7 @@ public class Demographics {
     return locationGeneral;
   }
 
-  public void setLocationGeneral(String locationGeneral) {
+  public void setLocationGeneral(@javax.annotation.Nullable String locationGeneral) {
     this.locationGeneral = locationGeneral;
   }
 
