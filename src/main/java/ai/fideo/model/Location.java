@@ -1,5 +1,5 @@
 /*
- * Fideo API
+ * Fideo Production API
  * Fideo Intelligence offers an identity intelligence product that protects the public good. - [Fideo Privacy Policy](https://www.fideo.ai/privacy-policy/)
  *
  * The version of the OpenAPI document: 1.0.4
@@ -48,48 +48,57 @@ import ai.fideo.client.JSON;
 /**
  * Location
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class Location {
   public static final String SERIALIZED_NAME_ADDRESS_LINE1 = "addressLine1";
   @SerializedName(SERIALIZED_NAME_ADDRESS_LINE1)
+  @javax.annotation.Nullable
   private String addressLine1;
 
   public static final String SERIALIZED_NAME_ADDRESS_LINE2 = "addressLine2";
   @SerializedName(SERIALIZED_NAME_ADDRESS_LINE2)
+  @javax.annotation.Nullable
   private String addressLine2;
 
   public static final String SERIALIZED_NAME_CITY = "city";
   @SerializedName(SERIALIZED_NAME_CITY)
+  @javax.annotation.Nullable
   private String city;
 
   public static final String SERIALIZED_NAME_REGION = "region";
   @SerializedName(SERIALIZED_NAME_REGION)
+  @javax.annotation.Nullable
   private String region;
 
   public static final String SERIALIZED_NAME_REGION_CODE = "regionCode";
   @SerializedName(SERIALIZED_NAME_REGION_CODE)
+  @javax.annotation.Nullable
   private String regionCode;
 
   public static final String SERIALIZED_NAME_COUNTRY = "country";
   @SerializedName(SERIALIZED_NAME_COUNTRY)
+  @javax.annotation.Nullable
   private String country;
 
   public static final String SERIALIZED_NAME_COUNTRY_CODE = "countryCode";
   @SerializedName(SERIALIZED_NAME_COUNTRY_CODE)
+  @javax.annotation.Nullable
   private String countryCode;
 
   public static final String SERIALIZED_NAME_POSTAL_CODE = "postalCode";
   @SerializedName(SERIALIZED_NAME_POSTAL_CODE)
+  @javax.annotation.Nullable
   private String postalCode;
 
   public static final String SERIALIZED_NAME_FORMATTED = "formatted";
   @SerializedName(SERIALIZED_NAME_FORMATTED)
+  @javax.annotation.Nullable
   private String formatted;
 
   public Location() {
   }
 
-  public Location addressLine1(String addressLine1) {
+  public Location addressLine1(@javax.annotation.Nullable String addressLine1) {
     this.addressLine1 = addressLine1;
     return this;
   }
@@ -103,12 +112,12 @@ public class Location {
     return addressLine1;
   }
 
-  public void setAddressLine1(String addressLine1) {
+  public void setAddressLine1(@javax.annotation.Nullable String addressLine1) {
     this.addressLine1 = addressLine1;
   }
 
 
-  public Location addressLine2(String addressLine2) {
+  public Location addressLine2(@javax.annotation.Nullable String addressLine2) {
     this.addressLine2 = addressLine2;
     return this;
   }
@@ -122,12 +131,12 @@ public class Location {
     return addressLine2;
   }
 
-  public void setAddressLine2(String addressLine2) {
+  public void setAddressLine2(@javax.annotation.Nullable String addressLine2) {
     this.addressLine2 = addressLine2;
   }
 
 
-  public Location city(String city) {
+  public Location city(@javax.annotation.Nullable String city) {
     this.city = city;
     return this;
   }
@@ -141,12 +150,12 @@ public class Location {
     return city;
   }
 
-  public void setCity(String city) {
+  public void setCity(@javax.annotation.Nullable String city) {
     this.city = city;
   }
 
 
-  public Location region(String region) {
+  public Location region(@javax.annotation.Nullable String region) {
     this.region = region;
     return this;
   }
@@ -160,12 +169,12 @@ public class Location {
     return region;
   }
 
-  public void setRegion(String region) {
+  public void setRegion(@javax.annotation.Nullable String region) {
     this.region = region;
   }
 
 
-  public Location regionCode(String regionCode) {
+  public Location regionCode(@javax.annotation.Nullable String regionCode) {
     this.regionCode = regionCode;
     return this;
   }
@@ -179,12 +188,12 @@ public class Location {
     return regionCode;
   }
 
-  public void setRegionCode(String regionCode) {
+  public void setRegionCode(@javax.annotation.Nullable String regionCode) {
     this.regionCode = regionCode;
   }
 
 
-  public Location country(String country) {
+  public Location country(@javax.annotation.Nullable String country) {
     this.country = country;
     return this;
   }
@@ -198,12 +207,12 @@ public class Location {
     return country;
   }
 
-  public void setCountry(String country) {
+  public void setCountry(@javax.annotation.Nullable String country) {
     this.country = country;
   }
 
 
-  public Location countryCode(String countryCode) {
+  public Location countryCode(@javax.annotation.Nullable String countryCode) {
     this.countryCode = countryCode;
     return this;
   }
@@ -217,12 +226,12 @@ public class Location {
     return countryCode;
   }
 
-  public void setCountryCode(String countryCode) {
+  public void setCountryCode(@javax.annotation.Nullable String countryCode) {
     this.countryCode = countryCode;
   }
 
 
-  public Location postalCode(String postalCode) {
+  public Location postalCode(@javax.annotation.Nullable String postalCode) {
     this.postalCode = postalCode;
     return this;
   }
@@ -236,12 +245,12 @@ public class Location {
     return postalCode;
   }
 
-  public void setPostalCode(String postalCode) {
+  public void setPostalCode(@javax.annotation.Nullable String postalCode) {
     this.postalCode = postalCode;
   }
 
 
-  public Location formatted(String formatted) {
+  public Location formatted(@javax.annotation.Nullable String formatted) {
     this.formatted = formatted;
     return this;
   }
@@ -255,7 +264,7 @@ public class Location {
     return formatted;
   }
 
-  public void setFormatted(String formatted) {
+  public void setFormatted(@javax.annotation.Nullable String formatted) {
     this.formatted = formatted;
   }
 

@@ -1,5 +1,5 @@
 /*
- * Fideo API
+ * Fideo Production API
  * Fideo Intelligence offers an identity intelligence product that protects the public good. - [Fideo Privacy Policy](https://www.fideo.ai/privacy-policy/)
  *
  * The version of the OpenAPI document: 1.0.4
@@ -72,7 +72,7 @@ import com.google.gson.JsonParseException;
 
 import ai.fideo.client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class SignalsPost200Response extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(SignalsPost200Response.class.getName());
 
@@ -222,6 +222,7 @@ public class SignalsPost200Response extends AbstractOpenApiSchema {
     public SignalsResponseV0 getSignalsResponseV0() throws ClassCastException {
         return (SignalsResponseV0)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `SignalsResponseV20240424`. If the actual instance is not `SignalsResponseV20240424`,
      * the ClassCastException will be thrown.

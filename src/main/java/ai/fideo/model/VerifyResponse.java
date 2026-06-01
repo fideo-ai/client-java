@@ -1,5 +1,5 @@
 /*
- * Fideo API
+ * Fideo Production API
  * Fideo Intelligence offers an identity intelligence product that protects the public good. - [Fideo Privacy Policy](https://www.fideo.ai/privacy-policy/)
  *
  * The version of the OpenAPI document: 1.0.4
@@ -52,116 +52,142 @@ import ai.fideo.client.JSON;
 /**
  * VerifyResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class VerifyResponse {
   public static final String SERIALIZED_NAME_ADDRESS_LINE1 = "addressLine1";
   @SerializedName(SERIALIZED_NAME_ADDRESS_LINE1)
+  @javax.annotation.Nullable
   private String addressLine1;
 
   public static final String SERIALIZED_NAME_ADDRESS_LINE2 = "addressLine2";
   @SerializedName(SERIALIZED_NAME_ADDRESS_LINE2)
+  @javax.annotation.Nullable
   private String addressLine2;
 
   public static final String SERIALIZED_NAME_CITY = "city";
   @SerializedName(SERIALIZED_NAME_CITY)
+  @javax.annotation.Nullable
   private String city;
 
   public static final String SERIALIZED_NAME_REGION = "region";
   @SerializedName(SERIALIZED_NAME_REGION)
+  @javax.annotation.Nullable
   private String region;
 
   public static final String SERIALIZED_NAME_REGION_CODE = "regionCode";
   @SerializedName(SERIALIZED_NAME_REGION_CODE)
+  @javax.annotation.Nullable
   private String regionCode;
 
   public static final String SERIALIZED_NAME_COUNTRY = "country";
   @SerializedName(SERIALIZED_NAME_COUNTRY)
+  @javax.annotation.Nullable
   private String country;
 
   public static final String SERIALIZED_NAME_CONTINENT = "continent";
   @SerializedName(SERIALIZED_NAME_CONTINENT)
+  @javax.annotation.Nullable
   private String continent;
 
   public static final String SERIALIZED_NAME_POSTAL_CODE = "postalCode";
   @SerializedName(SERIALIZED_NAME_POSTAL_CODE)
+  @javax.annotation.Nullable
   private String postalCode;
 
   public static final String SERIALIZED_NAME_FAMILY_NAME = "familyName";
   @SerializedName(SERIALIZED_NAME_FAMILY_NAME)
+  @javax.annotation.Nullable
   private String familyName;
 
   public static final String SERIALIZED_NAME_GIVEN_NAME = "givenName";
   @SerializedName(SERIALIZED_NAME_GIVEN_NAME)
+  @javax.annotation.Nullable
   private String givenName;
 
   public static final String SERIALIZED_NAME_FULL_NAME = "fullName";
   @SerializedName(SERIALIZED_NAME_FULL_NAME)
+  @javax.annotation.Nullable
   private String fullName;
 
   public static final String SERIALIZED_NAME_PHONE = "phone";
   @SerializedName(SERIALIZED_NAME_PHONE)
+  @javax.annotation.Nullable
   private String phone;
 
   public static final String SERIALIZED_NAME_EMAIL = "email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
+  @javax.annotation.Nullable
   private String email;
 
   public static final String SERIALIZED_NAME_MAID = "maid";
   @SerializedName(SERIALIZED_NAME_MAID)
+  @javax.annotation.Nullable
   private String maid;
 
   public static final String SERIALIZED_NAME_SOCIAL = "social";
   @SerializedName(SERIALIZED_NAME_SOCIAL)
+  @javax.annotation.Nullable
   private String social;
 
   public static final String SERIALIZED_NAME_NON_ID = "nonId";
   @SerializedName(SERIALIZED_NAME_NON_ID)
+  @javax.annotation.Nullable
   private String nonId;
 
   public static final String SERIALIZED_NAME_PANORAMA_ID = "panoramaId";
   @SerializedName(SERIALIZED_NAME_PANORAMA_ID)
+  @javax.annotation.Nullable
   private String panoramaId;
 
   public static final String SERIALIZED_NAME_IP_ADDRESS = "ipAddress";
   @SerializedName(SERIALIZED_NAME_IP_ADDRESS)
+  @javax.annotation.Nullable
   private String ipAddress;
 
   public static final String SERIALIZED_NAME_BIRTHDAY = "birthday";
   @SerializedName(SERIALIZED_NAME_BIRTHDAY)
+  @javax.annotation.Nullable
   private String birthday;
 
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
+  @javax.annotation.Nullable
   private String title;
 
   public static final String SERIALIZED_NAME_ORGANIZATION = "organization";
   @SerializedName(SERIALIZED_NAME_ORGANIZATION)
+  @javax.annotation.Nullable
   private String organization;
 
   public static final String SERIALIZED_NAME_RISK = "risk";
   @SerializedName(SERIALIZED_NAME_RISK)
+  @javax.annotation.Nullable
   private Double risk;
 
   public static final String SERIALIZED_NAME_EVIDENCE = "evidence";
   @SerializedName(SERIALIZED_NAME_EVIDENCE)
+  @javax.annotation.Nullable
   private Evidence evidence;
 
   public static final String SERIALIZED_NAME_RISK_V2 = "riskV2";
   @SerializedName(SERIALIZED_NAME_RISK_V2)
+  @javax.annotation.Nullable
   private Double riskV2;
 
   public static final String SERIALIZED_NAME_RISK_V3 = "riskV3";
   @SerializedName(SERIALIZED_NAME_RISK_V3)
+  @javax.annotation.Nullable
   private Double riskV3;
 
   public static final String SERIALIZED_NAME_SCORE_DETAILS = "scoreDetails";
   @SerializedName(SERIALIZED_NAME_SCORE_DETAILS)
+  @javax.annotation.Nullable
   private List<ScoreDetails> scoreDetails = new ArrayList<>();
 
   public VerifyResponse() {
   }
 
-  public VerifyResponse addressLine1(String addressLine1) {
+  public VerifyResponse addressLine1(@javax.annotation.Nullable String addressLine1) {
     this.addressLine1 = addressLine1;
     return this;
   }
@@ -175,12 +201,12 @@ public class VerifyResponse {
     return addressLine1;
   }
 
-  public void setAddressLine1(String addressLine1) {
+  public void setAddressLine1(@javax.annotation.Nullable String addressLine1) {
     this.addressLine1 = addressLine1;
   }
 
 
-  public VerifyResponse addressLine2(String addressLine2) {
+  public VerifyResponse addressLine2(@javax.annotation.Nullable String addressLine2) {
     this.addressLine2 = addressLine2;
     return this;
   }
@@ -194,12 +220,12 @@ public class VerifyResponse {
     return addressLine2;
   }
 
-  public void setAddressLine2(String addressLine2) {
+  public void setAddressLine2(@javax.annotation.Nullable String addressLine2) {
     this.addressLine2 = addressLine2;
   }
 
 
-  public VerifyResponse city(String city) {
+  public VerifyResponse city(@javax.annotation.Nullable String city) {
     this.city = city;
     return this;
   }
@@ -213,12 +239,12 @@ public class VerifyResponse {
     return city;
   }
 
-  public void setCity(String city) {
+  public void setCity(@javax.annotation.Nullable String city) {
     this.city = city;
   }
 
 
-  public VerifyResponse region(String region) {
+  public VerifyResponse region(@javax.annotation.Nullable String region) {
     this.region = region;
     return this;
   }
@@ -232,12 +258,12 @@ public class VerifyResponse {
     return region;
   }
 
-  public void setRegion(String region) {
+  public void setRegion(@javax.annotation.Nullable String region) {
     this.region = region;
   }
 
 
-  public VerifyResponse regionCode(String regionCode) {
+  public VerifyResponse regionCode(@javax.annotation.Nullable String regionCode) {
     this.regionCode = regionCode;
     return this;
   }
@@ -251,12 +277,12 @@ public class VerifyResponse {
     return regionCode;
   }
 
-  public void setRegionCode(String regionCode) {
+  public void setRegionCode(@javax.annotation.Nullable String regionCode) {
     this.regionCode = regionCode;
   }
 
 
-  public VerifyResponse country(String country) {
+  public VerifyResponse country(@javax.annotation.Nullable String country) {
     this.country = country;
     return this;
   }
@@ -270,12 +296,12 @@ public class VerifyResponse {
     return country;
   }
 
-  public void setCountry(String country) {
+  public void setCountry(@javax.annotation.Nullable String country) {
     this.country = country;
   }
 
 
-  public VerifyResponse continent(String continent) {
+  public VerifyResponse continent(@javax.annotation.Nullable String continent) {
     this.continent = continent;
     return this;
   }
@@ -289,12 +315,12 @@ public class VerifyResponse {
     return continent;
   }
 
-  public void setContinent(String continent) {
+  public void setContinent(@javax.annotation.Nullable String continent) {
     this.continent = continent;
   }
 
 
-  public VerifyResponse postalCode(String postalCode) {
+  public VerifyResponse postalCode(@javax.annotation.Nullable String postalCode) {
     this.postalCode = postalCode;
     return this;
   }
@@ -308,12 +334,12 @@ public class VerifyResponse {
     return postalCode;
   }
 
-  public void setPostalCode(String postalCode) {
+  public void setPostalCode(@javax.annotation.Nullable String postalCode) {
     this.postalCode = postalCode;
   }
 
 
-  public VerifyResponse familyName(String familyName) {
+  public VerifyResponse familyName(@javax.annotation.Nullable String familyName) {
     this.familyName = familyName;
     return this;
   }
@@ -327,12 +353,12 @@ public class VerifyResponse {
     return familyName;
   }
 
-  public void setFamilyName(String familyName) {
+  public void setFamilyName(@javax.annotation.Nullable String familyName) {
     this.familyName = familyName;
   }
 
 
-  public VerifyResponse givenName(String givenName) {
+  public VerifyResponse givenName(@javax.annotation.Nullable String givenName) {
     this.givenName = givenName;
     return this;
   }
@@ -346,12 +372,12 @@ public class VerifyResponse {
     return givenName;
   }
 
-  public void setGivenName(String givenName) {
+  public void setGivenName(@javax.annotation.Nullable String givenName) {
     this.givenName = givenName;
   }
 
 
-  public VerifyResponse fullName(String fullName) {
+  public VerifyResponse fullName(@javax.annotation.Nullable String fullName) {
     this.fullName = fullName;
     return this;
   }
@@ -365,12 +391,12 @@ public class VerifyResponse {
     return fullName;
   }
 
-  public void setFullName(String fullName) {
+  public void setFullName(@javax.annotation.Nullable String fullName) {
     this.fullName = fullName;
   }
 
 
-  public VerifyResponse phone(String phone) {
+  public VerifyResponse phone(@javax.annotation.Nullable String phone) {
     this.phone = phone;
     return this;
   }
@@ -384,12 +410,12 @@ public class VerifyResponse {
     return phone;
   }
 
-  public void setPhone(String phone) {
+  public void setPhone(@javax.annotation.Nullable String phone) {
     this.phone = phone;
   }
 
 
-  public VerifyResponse email(String email) {
+  public VerifyResponse email(@javax.annotation.Nullable String email) {
     this.email = email;
     return this;
   }
@@ -403,12 +429,12 @@ public class VerifyResponse {
     return email;
   }
 
-  public void setEmail(String email) {
+  public void setEmail(@javax.annotation.Nullable String email) {
     this.email = email;
   }
 
 
-  public VerifyResponse maid(String maid) {
+  public VerifyResponse maid(@javax.annotation.Nullable String maid) {
     this.maid = maid;
     return this;
   }
@@ -422,12 +448,12 @@ public class VerifyResponse {
     return maid;
   }
 
-  public void setMaid(String maid) {
+  public void setMaid(@javax.annotation.Nullable String maid) {
     this.maid = maid;
   }
 
 
-  public VerifyResponse social(String social) {
+  public VerifyResponse social(@javax.annotation.Nullable String social) {
     this.social = social;
     return this;
   }
@@ -441,12 +467,12 @@ public class VerifyResponse {
     return social;
   }
 
-  public void setSocial(String social) {
+  public void setSocial(@javax.annotation.Nullable String social) {
     this.social = social;
   }
 
 
-  public VerifyResponse nonId(String nonId) {
+  public VerifyResponse nonId(@javax.annotation.Nullable String nonId) {
     this.nonId = nonId;
     return this;
   }
@@ -460,12 +486,12 @@ public class VerifyResponse {
     return nonId;
   }
 
-  public void setNonId(String nonId) {
+  public void setNonId(@javax.annotation.Nullable String nonId) {
     this.nonId = nonId;
   }
 
 
-  public VerifyResponse panoramaId(String panoramaId) {
+  public VerifyResponse panoramaId(@javax.annotation.Nullable String panoramaId) {
     this.panoramaId = panoramaId;
     return this;
   }
@@ -479,12 +505,12 @@ public class VerifyResponse {
     return panoramaId;
   }
 
-  public void setPanoramaId(String panoramaId) {
+  public void setPanoramaId(@javax.annotation.Nullable String panoramaId) {
     this.panoramaId = panoramaId;
   }
 
 
-  public VerifyResponse ipAddress(String ipAddress) {
+  public VerifyResponse ipAddress(@javax.annotation.Nullable String ipAddress) {
     this.ipAddress = ipAddress;
     return this;
   }
@@ -498,12 +524,12 @@ public class VerifyResponse {
     return ipAddress;
   }
 
-  public void setIpAddress(String ipAddress) {
+  public void setIpAddress(@javax.annotation.Nullable String ipAddress) {
     this.ipAddress = ipAddress;
   }
 
 
-  public VerifyResponse birthday(String birthday) {
+  public VerifyResponse birthday(@javax.annotation.Nullable String birthday) {
     this.birthday = birthday;
     return this;
   }
@@ -517,12 +543,12 @@ public class VerifyResponse {
     return birthday;
   }
 
-  public void setBirthday(String birthday) {
+  public void setBirthday(@javax.annotation.Nullable String birthday) {
     this.birthday = birthday;
   }
 
 
-  public VerifyResponse title(String title) {
+  public VerifyResponse title(@javax.annotation.Nullable String title) {
     this.title = title;
     return this;
   }
@@ -536,12 +562,12 @@ public class VerifyResponse {
     return title;
   }
 
-  public void setTitle(String title) {
+  public void setTitle(@javax.annotation.Nullable String title) {
     this.title = title;
   }
 
 
-  public VerifyResponse organization(String organization) {
+  public VerifyResponse organization(@javax.annotation.Nullable String organization) {
     this.organization = organization;
     return this;
   }
@@ -555,12 +581,12 @@ public class VerifyResponse {
     return organization;
   }
 
-  public void setOrganization(String organization) {
+  public void setOrganization(@javax.annotation.Nullable String organization) {
     this.organization = organization;
   }
 
 
-  public VerifyResponse risk(Double risk) {
+  public VerifyResponse risk(@javax.annotation.Nullable Double risk) {
     this.risk = risk;
     return this;
   }
@@ -574,12 +600,12 @@ public class VerifyResponse {
     return risk;
   }
 
-  public void setRisk(Double risk) {
+  public void setRisk(@javax.annotation.Nullable Double risk) {
     this.risk = risk;
   }
 
 
-  public VerifyResponse evidence(Evidence evidence) {
+  public VerifyResponse evidence(@javax.annotation.Nullable Evidence evidence) {
     this.evidence = evidence;
     return this;
   }
@@ -593,12 +619,12 @@ public class VerifyResponse {
     return evidence;
   }
 
-  public void setEvidence(Evidence evidence) {
+  public void setEvidence(@javax.annotation.Nullable Evidence evidence) {
     this.evidence = evidence;
   }
 
 
-  public VerifyResponse riskV2(Double riskV2) {
+  public VerifyResponse riskV2(@javax.annotation.Nullable Double riskV2) {
     this.riskV2 = riskV2;
     return this;
   }
@@ -612,12 +638,12 @@ public class VerifyResponse {
     return riskV2;
   }
 
-  public void setRiskV2(Double riskV2) {
+  public void setRiskV2(@javax.annotation.Nullable Double riskV2) {
     this.riskV2 = riskV2;
   }
 
 
-  public VerifyResponse riskV3(Double riskV3) {
+  public VerifyResponse riskV3(@javax.annotation.Nullable Double riskV3) {
     this.riskV3 = riskV3;
     return this;
   }
@@ -631,12 +657,12 @@ public class VerifyResponse {
     return riskV3;
   }
 
-  public void setRiskV3(Double riskV3) {
+  public void setRiskV3(@javax.annotation.Nullable Double riskV3) {
     this.riskV3 = riskV3;
   }
 
 
-  public VerifyResponse scoreDetails(List<ScoreDetails> scoreDetails) {
+  public VerifyResponse scoreDetails(@javax.annotation.Nullable List<ScoreDetails> scoreDetails) {
     this.scoreDetails = scoreDetails;
     return this;
   }
@@ -658,7 +684,7 @@ public class VerifyResponse {
     return scoreDetails;
   }
 
-  public void setScoreDetails(List<ScoreDetails> scoreDetails) {
+  public void setScoreDetails(@javax.annotation.Nullable List<ScoreDetails> scoreDetails) {
     this.scoreDetails = scoreDetails;
   }
 

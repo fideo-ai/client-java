@@ -9,7 +9,7 @@ info:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.fideo.ai/terms-of-use/
-  title: Fideo API
+  title: Fideo Production API
   version: 1.0.4
 externalDocs:
   description: Getting Started with Fideo
@@ -29,6 +29,11 @@ tags:
     description: Verify Documentation
     url: https://docs.fideo.ai/docs/verify
   name: verify
+- description: Beta Features
+  externalDocs:
+    description: Beta Features Documentation
+    url: https://docs.fideo.ai/docs/beta
+  name: beta
 paths:
   /signals:
     post:
@@ -76,8 +81,222 @@ paths:
       x-content-type: application/json
       x-accepts:
       - application/json
+  /beta/signals/patterns/summary:
+    post:
+      description: Returns summaries of ALL intervals (hour through year) for an email
+        in the request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SignalPatternsRequest'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SignalPatternRecencyResponse'
+          description: Successful response
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_beta_signals_patterns_summary_post_400_response'
+          description: Bad request
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_beta_signals_patterns_summary_post_400_response'
+          description: Forbidden
+      summary: Get signal patterns summary
+      tags:
+      - beta
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /beta/signals/patterns/timeseries:
+    post:
+      description: Returns timeseries details for signal patterns
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SignalPatternsRequest'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                additionalProperties:
+                  $ref: '#/components/schemas/SignalPatternResponseUnit'
+                type: object
+          description: Successful response
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_beta_signals_patterns_summary_post_400_response'
+          description: Bad request
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_beta_signals_patterns_summary_post_400_response'
+          description: Forbidden
+      summary: Get signal patterns timeseries
+      tags:
+      - beta
+      x-content-type: application/json
+      x-accepts:
+      - application/json
 components:
   schemas:
+    SignalPatternsRequest:
+      example:
+        count: 1
+        interval: minute
+        email: email
+      properties:
+        email:
+          description: Email address to get signal patterns for
+          format: email
+          type: string
+        interval:
+          description: Time interval for timeseries data (used only for timeseries
+            endpoint)
+          enum:
+          - minute
+          - hour
+          - day
+          - month
+          type: string
+        count:
+          description: Number of data points to return (used only for timeseries endpoint)
+          minimum: 1
+          type: integer
+      required:
+      - email
+      type: object
+    SignalPatternRecencyResponse:
+      example:
+        sixMonth:
+          sources: 6
+          observations: 0
+          events:
+          - sources: 5
+            observations: 1
+            type: type
+          - sources: 5
+            observations: 1
+            type: type
+        week:
+          sources: 6
+          observations: 0
+          events:
+          - sources: 5
+            observations: 1
+            type: type
+          - sources: 5
+            observations: 1
+            type: type
+        hour:
+          sources: 6
+          observations: 0
+          events:
+          - sources: 5
+            observations: 1
+            type: type
+          - sources: 5
+            observations: 1
+            type: type
+        month:
+          sources: 6
+          observations: 0
+          events:
+          - sources: 5
+            observations: 1
+            type: type
+          - sources: 5
+            observations: 1
+            type: type
+        year:
+          sources: 6
+          observations: 0
+          events:
+          - sources: 5
+            observations: 1
+            type: type
+          - sources: 5
+            observations: 1
+            type: type
+        day:
+          sources: 6
+          observations: 0
+          events:
+          - sources: 5
+            observations: 1
+            type: type
+          - sources: 5
+            observations: 1
+            type: type
+      properties:
+        hour:
+          $ref: '#/components/schemas/SignalPatternResponseUnit'
+        day:
+          $ref: '#/components/schemas/SignalPatternResponseUnit'
+        week:
+          $ref: '#/components/schemas/SignalPatternResponseUnit'
+        month:
+          $ref: '#/components/schemas/SignalPatternResponseUnit'
+        sixMonth:
+          $ref: '#/components/schemas/SignalPatternResponseUnit'
+        year:
+          $ref: '#/components/schemas/SignalPatternResponseUnit'
+      type: object
+    SignalPatternResponseUnit:
+      example:
+        sources: 6
+        observations: 0
+        events:
+        - sources: 5
+          observations: 1
+          type: type
+        - sources: 5
+          observations: 1
+          type: type
+      properties:
+        observations:
+          description: Number of observations
+          format: int64
+          type: integer
+        sources:
+          description: Number of sources
+          format: int64
+          type: integer
+        events:
+          items:
+            $ref: '#/components/schemas/SignalPatternResponseUnitCount'
+          type: array
+      type: object
+    SignalPatternResponseUnitCount:
+      example:
+        sources: 5
+        observations: 1
+        type: type
+      properties:
+        type:
+          description: Type of event
+          type: string
+        observations:
+          description: Number of observations
+          format: int64
+          type: integer
+        sources:
+          description: Number of sources
+          format: int64
+          type: integer
+      type: object
     MultiFieldReqWithOptions:
       allOf:
       - $ref: '#/components/schemas/MultiFieldReq'
@@ -160,7 +379,6 @@ components:
         - countries
         - countries
         li_nonid: li_nonid
-        placekey: placekey
         phone: phone
         infer: true
         organization: organization
@@ -236,7 +454,6 @@ components:
         - emails
         - emails
         twitter: twitter
-        placekey: placekey
         phone: phone
         organization: organization
         name:
@@ -311,8 +528,6 @@ components:
         li_nonid:
           type: string
         panoramaId:
-          type: string
-        placekey:
           type: string
         generatePid:
           type: boolean
@@ -1038,8 +1253,18 @@ components:
       oneOf:
       - $ref: '#/components/schemas/SignalsResponseV0'
       - $ref: '#/components/schemas/SignalsResponseV20240424'
+    _beta_signals_patterns_summary_post_400_response:
+      example:
+        error: error
+      properties:
+        error:
+          type: string
+      type: object
   securitySchemes:
     bearerAuth:
       scheme: bearer
       type: http
+x-readme:
+  proxy-enabled: false
+  explorer-enabled: true
 

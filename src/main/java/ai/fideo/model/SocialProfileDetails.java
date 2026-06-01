@@ -1,5 +1,5 @@
 /*
- * Fideo API
+ * Fideo Production API
  * Fideo Intelligence offers an identity intelligence product that protects the public good. - [Fideo Privacy Policy](https://www.fideo.ai/privacy-policy/)
  *
  * The version of the OpenAPI document: 1.0.4
@@ -48,40 +48,47 @@ import ai.fideo.client.JSON;
 /**
  * SocialProfileDetails
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class SocialProfileDetails {
   public static final String SERIALIZED_NAME_USERNAME = "username";
   @SerializedName(SERIALIZED_NAME_USERNAME)
+  @javax.annotation.Nullable
   private String username;
 
   public static final String SERIALIZED_NAME_USERID = "userid";
   @SerializedName(SERIALIZED_NAME_USERID)
+  @javax.annotation.Nullable
   private String userid;
 
   public static final String SERIALIZED_NAME_URL = "url";
   @SerializedName(SERIALIZED_NAME_URL)
+  @javax.annotation.Nullable
   private String url;
 
   public static final String SERIALIZED_NAME_BIO = "bio";
   @SerializedName(SERIALIZED_NAME_BIO)
+  @javax.annotation.Nullable
   private String bio;
 
   public static final String SERIALIZED_NAME_SERVICE = "service";
   @SerializedName(SERIALIZED_NAME_SERVICE)
+  @javax.annotation.Nullable
   private String service;
 
   public static final String SERIALIZED_NAME_FOLLOWERS = "followers";
   @SerializedName(SERIALIZED_NAME_FOLLOWERS)
+  @javax.annotation.Nullable
   private Integer followers;
 
   public static final String SERIALIZED_NAME_FOLLOWING = "following";
   @SerializedName(SERIALIZED_NAME_FOLLOWING)
+  @javax.annotation.Nullable
   private Integer following;
 
   public SocialProfileDetails() {
   }
 
-  public SocialProfileDetails username(String username) {
+  public SocialProfileDetails username(@javax.annotation.Nullable String username) {
     this.username = username;
     return this;
   }
@@ -95,12 +102,12 @@ public class SocialProfileDetails {
     return username;
   }
 
-  public void setUsername(String username) {
+  public void setUsername(@javax.annotation.Nullable String username) {
     this.username = username;
   }
 
 
-  public SocialProfileDetails userid(String userid) {
+  public SocialProfileDetails userid(@javax.annotation.Nullable String userid) {
     this.userid = userid;
     return this;
   }
@@ -114,12 +121,12 @@ public class SocialProfileDetails {
     return userid;
   }
 
-  public void setUserid(String userid) {
+  public void setUserid(@javax.annotation.Nullable String userid) {
     this.userid = userid;
   }
 
 
-  public SocialProfileDetails url(String url) {
+  public SocialProfileDetails url(@javax.annotation.Nullable String url) {
     this.url = url;
     return this;
   }
@@ -133,12 +140,12 @@ public class SocialProfileDetails {
     return url;
   }
 
-  public void setUrl(String url) {
+  public void setUrl(@javax.annotation.Nullable String url) {
     this.url = url;
   }
 
 
-  public SocialProfileDetails bio(String bio) {
+  public SocialProfileDetails bio(@javax.annotation.Nullable String bio) {
     this.bio = bio;
     return this;
   }
@@ -152,12 +159,12 @@ public class SocialProfileDetails {
     return bio;
   }
 
-  public void setBio(String bio) {
+  public void setBio(@javax.annotation.Nullable String bio) {
     this.bio = bio;
   }
 
 
-  public SocialProfileDetails service(String service) {
+  public SocialProfileDetails service(@javax.annotation.Nullable String service) {
     this.service = service;
     return this;
   }
@@ -171,12 +178,12 @@ public class SocialProfileDetails {
     return service;
   }
 
-  public void setService(String service) {
+  public void setService(@javax.annotation.Nullable String service) {
     this.service = service;
   }
 
 
-  public SocialProfileDetails followers(Integer followers) {
+  public SocialProfileDetails followers(@javax.annotation.Nullable Integer followers) {
     this.followers = followers;
     return this;
   }
@@ -190,12 +197,12 @@ public class SocialProfileDetails {
     return followers;
   }
 
-  public void setFollowers(Integer followers) {
+  public void setFollowers(@javax.annotation.Nullable Integer followers) {
     this.followers = followers;
   }
 
 
-  public SocialProfileDetails following(Integer following) {
+  public SocialProfileDetails following(@javax.annotation.Nullable Integer following) {
     this.following = following;
     return this;
   }
@@ -209,7 +216,7 @@ public class SocialProfileDetails {
     return following;
   }
 
-  public void setFollowing(Integer following) {
+  public void setFollowing(@javax.annotation.Nullable Integer following) {
     this.following = following;
   }
 

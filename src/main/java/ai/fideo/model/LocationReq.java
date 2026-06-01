@@ -1,5 +1,5 @@
 /*
- * Fideo API
+ * Fideo Production API
  * Fideo Intelligence offers an identity intelligence product that protects the public good. - [Fideo Privacy Policy](https://www.fideo.ai/privacy-policy/)
  *
  * The version of the OpenAPI document: 1.0.4
@@ -49,64 +49,77 @@ import ai.fideo.client.JSON;
 /**
  * LocationReq
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class LocationReq {
   public static final String SERIALIZED_NAME_ADDRESS_LINE1 = "addressLine1";
   @SerializedName(SERIALIZED_NAME_ADDRESS_LINE1)
+  @javax.annotation.Nullable
   private String addressLine1;
 
   public static final String SERIALIZED_NAME_ADDRESS_LINE2 = "addressLine2";
   @SerializedName(SERIALIZED_NAME_ADDRESS_LINE2)
+  @javax.annotation.Nullable
   private String addressLine2;
 
   public static final String SERIALIZED_NAME_CITY = "city";
   @SerializedName(SERIALIZED_NAME_CITY)
+  @javax.annotation.Nullable
   private String city;
 
   public static final String SERIALIZED_NAME_REGION = "region";
   @SerializedName(SERIALIZED_NAME_REGION)
+  @javax.annotation.Nullable
   private String region;
 
   public static final String SERIALIZED_NAME_REGION_CODE = "regionCode";
   @SerializedName(SERIALIZED_NAME_REGION_CODE)
+  @javax.annotation.Nullable
   private String regionCode;
 
   public static final String SERIALIZED_NAME_POSTAL_CODE = "postalCode";
   @SerializedName(SERIALIZED_NAME_POSTAL_CODE)
+  @javax.annotation.Nullable
   private String postalCode;
 
   public static final String SERIALIZED_NAME_COUNTRY = "country";
   @SerializedName(SERIALIZED_NAME_COUNTRY)
+  @javax.annotation.Nullable
   private String country;
 
   public static final String SERIALIZED_NAME_COUNTRY_CODE = "countryCode";
   @SerializedName(SERIALIZED_NAME_COUNTRY_CODE)
+  @javax.annotation.Nullable
   private String countryCode;
 
   public static final String SERIALIZED_NAME_LATITUDE = "latitude";
   @SerializedName(SERIALIZED_NAME_LATITUDE)
+  @javax.annotation.Nullable
   private Double latitude;
 
   public static final String SERIALIZED_NAME_LONGITUDE = "longitude";
   @SerializedName(SERIALIZED_NAME_LONGITUDE)
+  @javax.annotation.Nullable
   private Double longitude;
 
   public static final String SERIALIZED_NAME_TIME_ZONE = "timeZone";
   @SerializedName(SERIALIZED_NAME_TIME_ZONE)
+  @javax.annotation.Nullable
   private String timeZone;
 
   public static final String SERIALIZED_NAME_FORMATTED = "formatted";
   @SerializedName(SERIALIZED_NAME_FORMATTED)
+  @javax.annotation.Nullable
   private String formatted;
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nullable
   private LocationType type;
 
   public LocationReq() {
   }
 
-  public LocationReq addressLine1(String addressLine1) {
+  public LocationReq addressLine1(@javax.annotation.Nullable String addressLine1) {
     this.addressLine1 = addressLine1;
     return this;
   }
@@ -120,12 +133,12 @@ public class LocationReq {
     return addressLine1;
   }
 
-  public void setAddressLine1(String addressLine1) {
+  public void setAddressLine1(@javax.annotation.Nullable String addressLine1) {
     this.addressLine1 = addressLine1;
   }
 
 
-  public LocationReq addressLine2(String addressLine2) {
+  public LocationReq addressLine2(@javax.annotation.Nullable String addressLine2) {
     this.addressLine2 = addressLine2;
     return this;
   }
@@ -139,12 +152,12 @@ public class LocationReq {
     return addressLine2;
   }
 
-  public void setAddressLine2(String addressLine2) {
+  public void setAddressLine2(@javax.annotation.Nullable String addressLine2) {
     this.addressLine2 = addressLine2;
   }
 
 
-  public LocationReq city(String city) {
+  public LocationReq city(@javax.annotation.Nullable String city) {
     this.city = city;
     return this;
   }
@@ -158,12 +171,12 @@ public class LocationReq {
     return city;
   }
 
-  public void setCity(String city) {
+  public void setCity(@javax.annotation.Nullable String city) {
     this.city = city;
   }
 
 
-  public LocationReq region(String region) {
+  public LocationReq region(@javax.annotation.Nullable String region) {
     this.region = region;
     return this;
   }
@@ -177,12 +190,12 @@ public class LocationReq {
     return region;
   }
 
-  public void setRegion(String region) {
+  public void setRegion(@javax.annotation.Nullable String region) {
     this.region = region;
   }
 
 
-  public LocationReq regionCode(String regionCode) {
+  public LocationReq regionCode(@javax.annotation.Nullable String regionCode) {
     this.regionCode = regionCode;
     return this;
   }
@@ -196,12 +209,12 @@ public class LocationReq {
     return regionCode;
   }
 
-  public void setRegionCode(String regionCode) {
+  public void setRegionCode(@javax.annotation.Nullable String regionCode) {
     this.regionCode = regionCode;
   }
 
 
-  public LocationReq postalCode(String postalCode) {
+  public LocationReq postalCode(@javax.annotation.Nullable String postalCode) {
     this.postalCode = postalCode;
     return this;
   }
@@ -215,12 +228,12 @@ public class LocationReq {
     return postalCode;
   }
 
-  public void setPostalCode(String postalCode) {
+  public void setPostalCode(@javax.annotation.Nullable String postalCode) {
     this.postalCode = postalCode;
   }
 
 
-  public LocationReq country(String country) {
+  public LocationReq country(@javax.annotation.Nullable String country) {
     this.country = country;
     return this;
   }
@@ -234,12 +247,12 @@ public class LocationReq {
     return country;
   }
 
-  public void setCountry(String country) {
+  public void setCountry(@javax.annotation.Nullable String country) {
     this.country = country;
   }
 
 
-  public LocationReq countryCode(String countryCode) {
+  public LocationReq countryCode(@javax.annotation.Nullable String countryCode) {
     this.countryCode = countryCode;
     return this;
   }
@@ -253,12 +266,12 @@ public class LocationReq {
     return countryCode;
   }
 
-  public void setCountryCode(String countryCode) {
+  public void setCountryCode(@javax.annotation.Nullable String countryCode) {
     this.countryCode = countryCode;
   }
 
 
-  public LocationReq latitude(Double latitude) {
+  public LocationReq latitude(@javax.annotation.Nullable Double latitude) {
     this.latitude = latitude;
     return this;
   }
@@ -272,12 +285,12 @@ public class LocationReq {
     return latitude;
   }
 
-  public void setLatitude(Double latitude) {
+  public void setLatitude(@javax.annotation.Nullable Double latitude) {
     this.latitude = latitude;
   }
 
 
-  public LocationReq longitude(Double longitude) {
+  public LocationReq longitude(@javax.annotation.Nullable Double longitude) {
     this.longitude = longitude;
     return this;
   }
@@ -291,12 +304,12 @@ public class LocationReq {
     return longitude;
   }
 
-  public void setLongitude(Double longitude) {
+  public void setLongitude(@javax.annotation.Nullable Double longitude) {
     this.longitude = longitude;
   }
 
 
-  public LocationReq timeZone(String timeZone) {
+  public LocationReq timeZone(@javax.annotation.Nullable String timeZone) {
     this.timeZone = timeZone;
     return this;
   }
@@ -310,12 +323,12 @@ public class LocationReq {
     return timeZone;
   }
 
-  public void setTimeZone(String timeZone) {
+  public void setTimeZone(@javax.annotation.Nullable String timeZone) {
     this.timeZone = timeZone;
   }
 
 
-  public LocationReq formatted(String formatted) {
+  public LocationReq formatted(@javax.annotation.Nullable String formatted) {
     this.formatted = formatted;
     return this;
   }
@@ -329,12 +342,12 @@ public class LocationReq {
     return formatted;
   }
 
-  public void setFormatted(String formatted) {
+  public void setFormatted(@javax.annotation.Nullable String formatted) {
     this.formatted = formatted;
   }
 
 
-  public LocationReq type(LocationType type) {
+  public LocationReq type(@javax.annotation.Nullable LocationType type) {
     this.type = type;
     return this;
   }
@@ -348,7 +361,7 @@ public class LocationReq {
     return type;
   }
 
-  public void setType(LocationType type) {
+  public void setType(@javax.annotation.Nullable LocationType type) {
     this.type = type;
   }
 

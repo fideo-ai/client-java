@@ -1,5 +1,5 @@
 /*
- * Fideo API
+ * Fideo Production API
  * Fideo Intelligence offers an identity intelligence product that protects the public good. - [Fideo Privacy Policy](https://www.fideo.ai/privacy-policy/)
  *
  * The version of the OpenAPI document: 1.0.4
@@ -94,6 +94,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapter(LocalDate.class, localDateTypeAdapter);
         gsonBuilder.registerTypeAdapter(byte[].class, byteArrayAdapter);
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.Alias.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.BetaSignalsPatternsSummaryPost400Response.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.Demographics.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.Economic.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.Education.CustomTypeAdapterFactory());
@@ -112,6 +113,10 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.Phone.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.Photo.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.ScoreDetails.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.SignalPatternRecencyResponse.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.SignalPatternResponseUnit.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.SignalPatternResponseUnitCount.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.SignalPatternsRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.SignalsPost200Response.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.SignalsResponseV0.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.SignalsResponseV20240424.CustomTypeAdapterFactory());

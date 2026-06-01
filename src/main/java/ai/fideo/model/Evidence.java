@@ -1,5 +1,5 @@
 /*
- * Fideo API
+ * Fideo Production API
  * Fideo Intelligence offers an identity intelligence product that protects the public good. - [Fideo Privacy Policy](https://www.fideo.ai/privacy-policy/)
  *
  * The version of the OpenAPI document: 1.0.4
@@ -49,24 +49,27 @@ import ai.fideo.client.JSON;
 /**
  * Evidence
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class Evidence {
   public static final String SERIALIZED_NAME_IP_TOR = "ipTor";
   @SerializedName(SERIALIZED_NAME_IP_TOR)
+  @javax.annotation.Nullable
   private Boolean ipTor;
 
   public static final String SERIALIZED_NAME_IP_COUNTRY = "ipCountry";
   @SerializedName(SERIALIZED_NAME_IP_COUNTRY)
+  @javax.annotation.Nullable
   private IPCountry ipCountry;
 
   public static final String SERIALIZED_NAME_COUNTRY_OF_IP = "countryOfIp";
   @SerializedName(SERIALIZED_NAME_COUNTRY_OF_IP)
+  @javax.annotation.Nullable
   private String countryOfIp;
 
   public Evidence() {
   }
 
-  public Evidence ipTor(Boolean ipTor) {
+  public Evidence ipTor(@javax.annotation.Nullable Boolean ipTor) {
     this.ipTor = ipTor;
     return this;
   }
@@ -80,12 +83,12 @@ public class Evidence {
     return ipTor;
   }
 
-  public void setIpTor(Boolean ipTor) {
+  public void setIpTor(@javax.annotation.Nullable Boolean ipTor) {
     this.ipTor = ipTor;
   }
 
 
-  public Evidence ipCountry(IPCountry ipCountry) {
+  public Evidence ipCountry(@javax.annotation.Nullable IPCountry ipCountry) {
     this.ipCountry = ipCountry;
     return this;
   }
@@ -99,12 +102,12 @@ public class Evidence {
     return ipCountry;
   }
 
-  public void setIpCountry(IPCountry ipCountry) {
+  public void setIpCountry(@javax.annotation.Nullable IPCountry ipCountry) {
     this.ipCountry = ipCountry;
   }
 
 
-  public Evidence countryOfIp(String countryOfIp) {
+  public Evidence countryOfIp(@javax.annotation.Nullable String countryOfIp) {
     this.countryOfIp = countryOfIp;
     return this;
   }
@@ -118,7 +121,7 @@ public class Evidence {
     return countryOfIp;
   }
 
-  public void setCountryOfIp(String countryOfIp) {
+  public void setCountryOfIp(@javax.annotation.Nullable String countryOfIp) {
     this.countryOfIp = countryOfIp;
   }
 

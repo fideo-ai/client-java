@@ -1,5 +1,5 @@
 /*
- * Fideo API
+ * Fideo Production API
  * Fideo Intelligence offers an identity intelligence product that protects the public good. - [Fideo Privacy Policy](https://www.fideo.ai/privacy-policy/)
  *
  * The version of the OpenAPI document: 1.0.4
@@ -49,24 +49,27 @@ import ai.fideo.client.JSON;
 /**
  * Education
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.10.0")
 public class Education {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_DEGREE = "degree";
   @SerializedName(SERIALIZED_NAME_DEGREE)
+  @javax.annotation.Nullable
   private String degree;
 
   public static final String SERIALIZED_NAME_END = "end";
   @SerializedName(SERIALIZED_NAME_END)
+  @javax.annotation.Nullable
   private EducationDate end;
 
   public Education() {
   }
 
-  public Education name(String name) {
+  public Education name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -80,12 +83,12 @@ public class Education {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public Education degree(String degree) {
+  public Education degree(@javax.annotation.Nullable String degree) {
     this.degree = degree;
     return this;
   }
@@ -99,12 +102,12 @@ public class Education {
     return degree;
   }
 
-  public void setDegree(String degree) {
+  public void setDegree(@javax.annotation.Nullable String degree) {
     this.degree = degree;
   }
 
 
-  public Education end(EducationDate end) {
+  public Education end(@javax.annotation.Nullable EducationDate end) {
     this.end = end;
     return this;
   }
@@ -118,7 +121,7 @@ public class Education {
     return end;
   }
 
-  public void setEnd(EducationDate end) {
+  public void setEnd(@javax.annotation.Nullable EducationDate end) {
     this.end = end;
   }
 
