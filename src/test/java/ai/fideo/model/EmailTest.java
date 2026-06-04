@@ -13,6 +13,7 @@
 
 package ai.fideo.model;
 
+import ai.fideo.model.SignalPatternResponseUnit;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -115,6 +116,54 @@ public class EmailTest {
     @Test
     public void activityTest() {
         // TODO: test activity
+    }
+
+    /**
+     * Test the property 'hour'
+     */
+    @Test
+    public void hourTest() {
+        // TODO: test hour
+    }
+
+    /**
+     * Test the property 'day'
+     */
+    @Test
+    public void dayTest() {
+        // TODO: test day
+    }
+
+    /**
+     * Test the property 'week'
+     */
+    @Test
+    public void weekTest() {
+        // TODO: test week
+    }
+
+    /**
+     * Test the property 'month'
+     */
+    @Test
+    public void monthTest() {
+        // TODO: test month
+    }
+
+    /**
+     * Test the property 'sixMonth'
+     */
+    @Test
+    public void sixMonthTest() {
+        // TODO: test sixMonth
+    }
+
+    /**
+     * Test the property 'year'
+     */
+    @Test
+    public void yearTest() {
+        // TODO: test year
     }
 
 }

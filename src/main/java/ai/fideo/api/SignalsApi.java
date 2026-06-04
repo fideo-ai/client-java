@@ -29,6 +29,7 @@ import java.io.IOException;
 
 import ai.fideo.model.MultiFieldReqWithOptions;
 import ai.fideo.model.SignalsPost200Response;
+import ai.fideo.model.StatusResponseWithMessage;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -81,12 +82,17 @@ public class SignalsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> No data found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 410 </td><td> Claimed or deleted data </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call signalsPostCall(String v, MultiFieldReqWithOptions multiFieldReqWithOptions, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call signalsPostCall(@javax.annotation.Nullable String v, @javax.annotation.Nullable MultiFieldReqWithOptions multiFieldReqWithOptions, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -136,7 +142,7 @@ public class SignalsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call signalsPostValidateBeforeCall(String v, MultiFieldReqWithOptions multiFieldReqWithOptions, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call signalsPostValidateBeforeCall(@javax.annotation.Nullable String v, @javax.annotation.Nullable MultiFieldReqWithOptions multiFieldReqWithOptions, final ApiCallback _callback) throws ApiException {
         return signalsPostCall(v, multiFieldReqWithOptions, _callback);
 
     }
@@ -149,12 +155,17 @@ public class SignalsApi {
      * @return SignalsPost200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> No data found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 410 </td><td> Claimed or deleted data </td><td>  -  </td></tr>
      </table>
      */
-    public SignalsPost200Response signalsPost(String v, MultiFieldReqWithOptions multiFieldReqWithOptions) throws ApiException {
+    public SignalsPost200Response signalsPost(@javax.annotation.Nullable String v, @javax.annotation.Nullable MultiFieldReqWithOptions multiFieldReqWithOptions) throws ApiException {
         ApiResponse<SignalsPost200Response> localVarResp = signalsPostWithHttpInfo(v, multiFieldReqWithOptions);
         return localVarResp.getData();
     }
@@ -167,12 +178,17 @@ public class SignalsApi {
      * @return ApiResponse&lt;SignalsPost200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> No data found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 410 </td><td> Claimed or deleted data </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SignalsPost200Response> signalsPostWithHttpInfo(String v, MultiFieldReqWithOptions multiFieldReqWithOptions) throws ApiException {
+    public ApiResponse<SignalsPost200Response> signalsPostWithHttpInfo(@javax.annotation.Nullable String v, @javax.annotation.Nullable MultiFieldReqWithOptions multiFieldReqWithOptions) throws ApiException {
         okhttp3.Call localVarCall = signalsPostValidateBeforeCall(v, multiFieldReqWithOptions, null);
         Type localVarReturnType = new TypeToken<SignalsPost200Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -187,12 +203,17 @@ public class SignalsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Successful response </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> No data found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 410 </td><td> Claimed or deleted data </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call signalsPostAsync(String v, MultiFieldReqWithOptions multiFieldReqWithOptions, final ApiCallback<SignalsPost200Response> _callback) throws ApiException {
+    public okhttp3.Call signalsPostAsync(@javax.annotation.Nullable String v, @javax.annotation.Nullable MultiFieldReqWithOptions multiFieldReqWithOptions, final ApiCallback<SignalsPost200Response> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = signalsPostValidateBeforeCall(v, multiFieldReqWithOptions, _callback);
         Type localVarReturnType = new TypeToken<SignalsPost200Response>(){}.getType();

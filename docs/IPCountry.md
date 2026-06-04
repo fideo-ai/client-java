@@ -5,11 +5,11 @@
 ## Enum
 
 
-* `DOMESTIC` (value: `"DOMESTIC"`)
+* `DOMESTIC` (value: `"domestic"`)
 
-* `FOREIGN` (value: `"FOREIGN"`)
+* `FOREIGN` (value: `"foreign"`)
 
-* `UNKNOWN` (value: `"UNKNOWN"`)
+* `UNKNOWN` (value: `"unknown"`)
 
 
 

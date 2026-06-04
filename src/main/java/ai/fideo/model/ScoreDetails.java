@@ -50,28 +50,32 @@ import ai.fideo.client.JSON;
 /**
  * ScoreDetails
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
 public class ScoreDetails {
   public static final String SERIALIZED_NAME_SCORER = "scorer";
   @SerializedName(SERIALIZED_NAME_SCORER)
+  @javax.annotation.Nullable
   private String scorer;
 
   public static final String SERIALIZED_NAME_SCORE = "score";
   @SerializedName(SERIALIZED_NAME_SCORE)
+  @javax.annotation.Nullable
   private Double score;
 
   public static final String SERIALIZED_NAME_EVIDENCE = "evidence";
   @SerializedName(SERIALIZED_NAME_EVIDENCE)
+  @javax.annotation.Nullable
   private Map<String, Object> evidence = new HashMap<>();
 
   public static final String SERIALIZED_NAME_WEIGHT = "weight";
   @SerializedName(SERIALIZED_NAME_WEIGHT)
+  @javax.annotation.Nullable
   private Double weight;
 
   public ScoreDetails() {
   }
 
-  public ScoreDetails scorer(String scorer) {
+  public ScoreDetails scorer(@javax.annotation.Nullable String scorer) {
     this.scorer = scorer;
     return this;
   }
@@ -85,12 +89,12 @@ public class ScoreDetails {
     return scorer;
   }
 
-  public void setScorer(String scorer) {
+  public void setScorer(@javax.annotation.Nullable String scorer) {
     this.scorer = scorer;
   }
 
 
-  public ScoreDetails score(Double score) {
+  public ScoreDetails score(@javax.annotation.Nullable Double score) {
     this.score = score;
     return this;
   }
@@ -104,12 +108,12 @@ public class ScoreDetails {
     return score;
   }
 
-  public void setScore(Double score) {
+  public void setScore(@javax.annotation.Nullable Double score) {
     this.score = score;
   }
 
 
-  public ScoreDetails evidence(Map<String, Object> evidence) {
+  public ScoreDetails evidence(@javax.annotation.Nullable Map<String, Object> evidence) {
     this.evidence = evidence;
     return this;
   }
@@ -131,12 +135,12 @@ public class ScoreDetails {
     return evidence;
   }
 
-  public void setEvidence(Map<String, Object> evidence) {
+  public void setEvidence(@javax.annotation.Nullable Map<String, Object> evidence) {
     this.evidence = evidence;
   }
 
 
-  public ScoreDetails weight(Double weight) {
+  public ScoreDetails weight(@javax.annotation.Nullable Double weight) {
     this.weight = weight;
     return this;
   }
@@ -150,7 +154,7 @@ public class ScoreDetails {
     return weight;
   }
 
-  public void setWeight(Double weight) {
+  public void setWeight(@javax.annotation.Nullable Double weight) {
     this.weight = weight;
   }
 
@@ -193,10 +197,7 @@ public class ScoreDetails {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -205,14 +206,10 @@ public class ScoreDetails {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("scorer");
-    openapiFields.add("score");
-    openapiFields.add("evidence");
-    openapiFields.add("weight");
+    openapiFields = new HashSet<String>(Arrays.asList("scorer", "score", "evidence", "weight"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -224,7 +221,7 @@ public class ScoreDetails {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ScoreDetails.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ScoreDetails is not found in the empty JSON string", ScoreDetails.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in ScoreDetails is not found in the empty JSON string", ScoreDetails.openapiRequiredFields.toString()));
         }
       }
 
@@ -232,12 +229,12 @@ public class ScoreDetails {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!ScoreDetails.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ScoreDetails` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `ScoreDetails` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("scorer") != null && !jsonObj.get("scorer").isJsonNull()) && !jsonObj.get("scorer").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `scorer` to be a primitive type in the JSON string but got `%s`", jsonObj.get("scorer").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `scorer` to be a primitive type in the JSON string but got `%s`", jsonObj.get("scorer").toString()));
       }
   }
 

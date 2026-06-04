@@ -72,7 +72,7 @@ import com.google.gson.JsonParseException;
 
 import ai.fideo.client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
 public class SignalsPost200Response extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(SignalsPost200Response.class.getName());
 
@@ -128,7 +128,7 @@ public class SignalsPost200Response extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'SignalsResponseV0'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for SignalsResponseV0 failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for SignalsResponseV0 failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'SignalsResponseV0'", e);
                     }
                     // deserialize SignalsResponseV20240424
@@ -140,7 +140,7 @@ public class SignalsPost200Response extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'SignalsResponseV20240424'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for SignalsResponseV20240424 failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for SignalsResponseV20240424 failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'SignalsResponseV20240424'", e);
                     }
 
@@ -150,7 +150,7 @@ public class SignalsPost200Response extends AbstractOpenApiSchema {
                         return ret;
                     }
 
-                    throw new IOException(String.format("Failed deserialization for SignalsPost200Response: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonElement.toString()));
+                    throw new IOException(String.format(java.util.Locale.ROOT, "Failed deserialization for SignalsPost200Response: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonElement.toString()));
                 }
             }.nullSafe();
         }
@@ -219,9 +219,11 @@ public class SignalsPost200Response extends AbstractOpenApiSchema {
      * @return The actual instance of `SignalsResponseV0`
      * @throws ClassCastException if the instance is not `SignalsResponseV0`
      */
+    @SuppressWarnings("unchecked")
     public SignalsResponseV0 getSignalsResponseV0() throws ClassCastException {
         return (SignalsResponseV0)super.getActualInstance();
     }
+
     /**
      * Get the actual instance of `SignalsResponseV20240424`. If the actual instance is not `SignalsResponseV20240424`,
      * the ClassCastException will be thrown.
@@ -229,6 +231,7 @@ public class SignalsPost200Response extends AbstractOpenApiSchema {
      * @return The actual instance of `SignalsResponseV20240424`
      * @throws ClassCastException if the instance is not `SignalsResponseV20240424`
      */
+    @SuppressWarnings("unchecked")
     public SignalsResponseV20240424 getSignalsResponseV20240424() throws ClassCastException {
         return (SignalsResponseV20240424)super.getActualInstance();
     }
@@ -248,7 +251,7 @@ public class SignalsPost200Response extends AbstractOpenApiSchema {
             SignalsResponseV0.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for SignalsResponseV0 failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for SignalsResponseV0 failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with SignalsResponseV20240424
@@ -256,11 +259,11 @@ public class SignalsPost200Response extends AbstractOpenApiSchema {
             SignalsResponseV20240424.validateJsonElement(jsonElement);
             validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for SignalsResponseV20240424 failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for SignalsResponseV20240424 failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         if (validCount != 1) {
-            throw new IOException(String.format("The JSON string is invalid for SignalsPost200Response with oneOf schemas: SignalsResponseV0, SignalsResponseV20240424. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
+            throw new IOException(String.format(java.util.Locale.ROOT, "The JSON string is invalid for SignalsPost200Response with oneOf schemas: SignalsResponseV0, SignalsResponseV20240424. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
         }
     }
 

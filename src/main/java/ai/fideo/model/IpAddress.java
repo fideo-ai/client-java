@@ -48,32 +48,37 @@ import ai.fideo.client.JSON;
 /**
  * IpAddress
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
 public class IpAddress {
   public static final String SERIALIZED_NAME_FIRST_SEEN_MS = "firstSeenMs";
   @SerializedName(SERIALIZED_NAME_FIRST_SEEN_MS)
+  @javax.annotation.Nullable
   private Long firstSeenMs;
 
   public static final String SERIALIZED_NAME_LAST_SEEN_MS = "lastSeenMs";
   @SerializedName(SERIALIZED_NAME_LAST_SEEN_MS)
+  @javax.annotation.Nullable
   private Long lastSeenMs;
 
   public static final String SERIALIZED_NAME_OBSERVATIONS = "observations";
   @SerializedName(SERIALIZED_NAME_OBSERVATIONS)
+  @javax.annotation.Nullable
   private Integer observations;
 
   public static final String SERIALIZED_NAME_CONFIDENCE = "confidence";
   @SerializedName(SERIALIZED_NAME_CONFIDENCE)
+  @javax.annotation.Nullable
   private Double confidence;
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nullable
   private String id;
 
   public IpAddress() {
   }
 
-  public IpAddress firstSeenMs(Long firstSeenMs) {
+  public IpAddress firstSeenMs(@javax.annotation.Nullable Long firstSeenMs) {
     this.firstSeenMs = firstSeenMs;
     return this;
   }
@@ -87,12 +92,12 @@ public class IpAddress {
     return firstSeenMs;
   }
 
-  public void setFirstSeenMs(Long firstSeenMs) {
+  public void setFirstSeenMs(@javax.annotation.Nullable Long firstSeenMs) {
     this.firstSeenMs = firstSeenMs;
   }
 
 
-  public IpAddress lastSeenMs(Long lastSeenMs) {
+  public IpAddress lastSeenMs(@javax.annotation.Nullable Long lastSeenMs) {
     this.lastSeenMs = lastSeenMs;
     return this;
   }
@@ -106,12 +111,12 @@ public class IpAddress {
     return lastSeenMs;
   }
 
-  public void setLastSeenMs(Long lastSeenMs) {
+  public void setLastSeenMs(@javax.annotation.Nullable Long lastSeenMs) {
     this.lastSeenMs = lastSeenMs;
   }
 
 
-  public IpAddress observations(Integer observations) {
+  public IpAddress observations(@javax.annotation.Nullable Integer observations) {
     this.observations = observations;
     return this;
   }
@@ -125,12 +130,12 @@ public class IpAddress {
     return observations;
   }
 
-  public void setObservations(Integer observations) {
+  public void setObservations(@javax.annotation.Nullable Integer observations) {
     this.observations = observations;
   }
 
 
-  public IpAddress confidence(Double confidence) {
+  public IpAddress confidence(@javax.annotation.Nullable Double confidence) {
     this.confidence = confidence;
     return this;
   }
@@ -144,12 +149,12 @@ public class IpAddress {
     return confidence;
   }
 
-  public void setConfidence(Double confidence) {
+  public void setConfidence(@javax.annotation.Nullable Double confidence) {
     this.confidence = confidence;
   }
 
 
-  public IpAddress id(String id) {
+  public IpAddress id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
@@ -163,7 +168,7 @@ public class IpAddress {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(@javax.annotation.Nullable String id) {
     this.id = id;
   }
 
@@ -208,10 +213,7 @@ public class IpAddress {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -220,15 +222,10 @@ public class IpAddress {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("firstSeenMs");
-    openapiFields.add("lastSeenMs");
-    openapiFields.add("observations");
-    openapiFields.add("confidence");
-    openapiFields.add("id");
+    openapiFields = new HashSet<String>(Arrays.asList("firstSeenMs", "lastSeenMs", "observations", "confidence", "id"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -240,7 +237,7 @@ public class IpAddress {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!IpAddress.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in IpAddress is not found in the empty JSON string", IpAddress.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in IpAddress is not found in the empty JSON string", IpAddress.openapiRequiredFields.toString()));
         }
       }
 
@@ -248,12 +245,12 @@ public class IpAddress {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!IpAddress.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `IpAddress` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `IpAddress` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
   }
 

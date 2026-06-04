@@ -48,28 +48,32 @@ import ai.fideo.client.JSON;
 /**
  * Demographics
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
 public class Demographics {
   public static final String SERIALIZED_NAME_AGE = "age";
   @SerializedName(SERIALIZED_NAME_AGE)
+  @javax.annotation.Nullable
   private Integer age;
 
   public static final String SERIALIZED_NAME_AGE_RANGE = "ageRange";
   @SerializedName(SERIALIZED_NAME_AGE_RANGE)
+  @javax.annotation.Nullable
   private String ageRange;
 
   public static final String SERIALIZED_NAME_GENDER = "gender";
   @SerializedName(SERIALIZED_NAME_GENDER)
+  @javax.annotation.Nullable
   private String gender;
 
   public static final String SERIALIZED_NAME_LOCATION_GENERAL = "locationGeneral";
   @SerializedName(SERIALIZED_NAME_LOCATION_GENERAL)
+  @javax.annotation.Nullable
   private String locationGeneral;
 
   public Demographics() {
   }
 
-  public Demographics age(Integer age) {
+  public Demographics age(@javax.annotation.Nullable Integer age) {
     this.age = age;
     return this;
   }
@@ -83,12 +87,12 @@ public class Demographics {
     return age;
   }
 
-  public void setAge(Integer age) {
+  public void setAge(@javax.annotation.Nullable Integer age) {
     this.age = age;
   }
 
 
-  public Demographics ageRange(String ageRange) {
+  public Demographics ageRange(@javax.annotation.Nullable String ageRange) {
     this.ageRange = ageRange;
     return this;
   }
@@ -102,12 +106,12 @@ public class Demographics {
     return ageRange;
   }
 
-  public void setAgeRange(String ageRange) {
+  public void setAgeRange(@javax.annotation.Nullable String ageRange) {
     this.ageRange = ageRange;
   }
 
 
-  public Demographics gender(String gender) {
+  public Demographics gender(@javax.annotation.Nullable String gender) {
     this.gender = gender;
     return this;
   }
@@ -121,12 +125,12 @@ public class Demographics {
     return gender;
   }
 
-  public void setGender(String gender) {
+  public void setGender(@javax.annotation.Nullable String gender) {
     this.gender = gender;
   }
 
 
-  public Demographics locationGeneral(String locationGeneral) {
+  public Demographics locationGeneral(@javax.annotation.Nullable String locationGeneral) {
     this.locationGeneral = locationGeneral;
     return this;
   }
@@ -140,7 +144,7 @@ public class Demographics {
     return locationGeneral;
   }
 
-  public void setLocationGeneral(String locationGeneral) {
+  public void setLocationGeneral(@javax.annotation.Nullable String locationGeneral) {
     this.locationGeneral = locationGeneral;
   }
 
@@ -183,10 +187,7 @@ public class Demographics {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -195,14 +196,10 @@ public class Demographics {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("age");
-    openapiFields.add("ageRange");
-    openapiFields.add("gender");
-    openapiFields.add("locationGeneral");
+    openapiFields = new HashSet<String>(Arrays.asList("age", "ageRange", "gender", "locationGeneral"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -214,7 +211,7 @@ public class Demographics {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Demographics.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in Demographics is not found in the empty JSON string", Demographics.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in Demographics is not found in the empty JSON string", Demographics.openapiRequiredFields.toString()));
         }
       }
 
@@ -222,18 +219,18 @@ public class Demographics {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!Demographics.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Demographics` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `Demographics` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("ageRange") != null && !jsonObj.get("ageRange").isJsonNull()) && !jsonObj.get("ageRange").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `ageRange` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ageRange").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `ageRange` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ageRange").toString()));
       }
       if ((jsonObj.get("gender") != null && !jsonObj.get("gender").isJsonNull()) && !jsonObj.get("gender").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `gender` to be a primitive type in the JSON string but got `%s`", jsonObj.get("gender").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `gender` to be a primitive type in the JSON string but got `%s`", jsonObj.get("gender").toString()));
       }
       if ((jsonObj.get("locationGeneral") != null && !jsonObj.get("locationGeneral").isJsonNull()) && !jsonObj.get("locationGeneral").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `locationGeneral` to be a primitive type in the JSON string but got `%s`", jsonObj.get("locationGeneral").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `locationGeneral` to be a primitive type in the JSON string but got `%s`", jsonObj.get("locationGeneral").toString()));
       }
   }
 

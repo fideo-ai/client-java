@@ -9,7 +9,7 @@ All URIs are relative to *https://api.fideo.ai*
 
 <a id="verifyPost"></a>
 # **verifyPost**
-> VerifyResponse verifyPost(multiFieldReq)
+> VerifyResponse verifyPost(v, multiFieldReqWithOptions)
 
 
 
@@ -33,9 +33,10 @@ public class Example {
     bearerAuth.setBearerToken("BEARER TOKEN");
 
     VerifyApi apiInstance = new VerifyApi(defaultClient);
-    MultiFieldReq multiFieldReq = new MultiFieldReq(); // MultiFieldReq | 
+    String v = "v_example"; // String | 
+    MultiFieldReqWithOptions multiFieldReqWithOptions = new MultiFieldReqWithOptions(); // MultiFieldReqWithOptions | 
     try {
-      VerifyResponse result = apiInstance.verifyPost(multiFieldReq);
+      VerifyResponse result = apiInstance.verifyPost(v, multiFieldReqWithOptions);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling VerifyApi#verifyPost");
@@ -52,7 +53,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **multiFieldReq** | [**MultiFieldReq**](MultiFieldReq.md)|  | [optional] |
+| **v** | **String**|  | [optional] |
+| **multiFieldReqWithOptions** | [**MultiFieldReqWithOptions**](MultiFieldReqWithOptions.md)|  | [optional] |
 
 ### Return type
 
@@ -71,4 +73,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
+| **201** | Created new verify session |  -  |
+| **400** | Bad request |  -  |
+| **410** | Claimed or deleted data |  -  |
 

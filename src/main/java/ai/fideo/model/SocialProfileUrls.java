@@ -48,20 +48,22 @@ import ai.fideo.client.JSON;
 /**
  * SocialProfileUrls
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
 public class SocialProfileUrls {
   public static final String SERIALIZED_NAME_TWITTER_URL = "twitterUrl";
   @SerializedName(SERIALIZED_NAME_TWITTER_URL)
+  @javax.annotation.Nullable
   private String twitterUrl;
 
   public static final String SERIALIZED_NAME_LINKED_IN_URL = "linkedInUrl";
   @SerializedName(SERIALIZED_NAME_LINKED_IN_URL)
+  @javax.annotation.Nullable
   private String linkedInUrl;
 
   public SocialProfileUrls() {
   }
 
-  public SocialProfileUrls twitterUrl(String twitterUrl) {
+  public SocialProfileUrls twitterUrl(@javax.annotation.Nullable String twitterUrl) {
     this.twitterUrl = twitterUrl;
     return this;
   }
@@ -75,12 +77,12 @@ public class SocialProfileUrls {
     return twitterUrl;
   }
 
-  public void setTwitterUrl(String twitterUrl) {
+  public void setTwitterUrl(@javax.annotation.Nullable String twitterUrl) {
     this.twitterUrl = twitterUrl;
   }
 
 
-  public SocialProfileUrls linkedInUrl(String linkedInUrl) {
+  public SocialProfileUrls linkedInUrl(@javax.annotation.Nullable String linkedInUrl) {
     this.linkedInUrl = linkedInUrl;
     return this;
   }
@@ -94,7 +96,7 @@ public class SocialProfileUrls {
     return linkedInUrl;
   }
 
-  public void setLinkedInUrl(String linkedInUrl) {
+  public void setLinkedInUrl(@javax.annotation.Nullable String linkedInUrl) {
     this.linkedInUrl = linkedInUrl;
   }
 
@@ -133,10 +135,7 @@ public class SocialProfileUrls {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -145,12 +144,10 @@ public class SocialProfileUrls {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("twitterUrl");
-    openapiFields.add("linkedInUrl");
+    openapiFields = new HashSet<String>(Arrays.asList("twitterUrl", "linkedInUrl"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -162,7 +159,7 @@ public class SocialProfileUrls {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!SocialProfileUrls.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in SocialProfileUrls is not found in the empty JSON string", SocialProfileUrls.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in SocialProfileUrls is not found in the empty JSON string", SocialProfileUrls.openapiRequiredFields.toString()));
         }
       }
 
@@ -170,15 +167,15 @@ public class SocialProfileUrls {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!SocialProfileUrls.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `SocialProfileUrls` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `SocialProfileUrls` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("twitterUrl") != null && !jsonObj.get("twitterUrl").isJsonNull()) && !jsonObj.get("twitterUrl").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `twitterUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("twitterUrl").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `twitterUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("twitterUrl").toString()));
       }
       if ((jsonObj.get("linkedInUrl") != null && !jsonObj.get("linkedInUrl").isJsonNull()) && !jsonObj.get("linkedInUrl").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `linkedInUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("linkedInUrl").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `linkedInUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("linkedInUrl").toString()));
       }
   }
 

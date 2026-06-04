@@ -61,64 +61,77 @@ import ai.fideo.client.JSON;
 /**
  * SignalsResponseV20240424
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
 public class SignalsResponseV20240424 {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private NameWithAlias name;
 
   public static final String SERIALIZED_NAME_DEMOGRAPHICS = "demographics";
   @SerializedName(SERIALIZED_NAME_DEMOGRAPHICS)
+  @javax.annotation.Nullable
   private Demographics demographics;
 
   public static final String SERIALIZED_NAME_LOCATIONS = "locations";
   @SerializedName(SERIALIZED_NAME_LOCATIONS)
+  @javax.annotation.Nullable
   private List<Location> locations = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_EMAILS = "emails";
   @SerializedName(SERIALIZED_NAME_EMAILS)
+  @javax.annotation.Nullable
   private List<Email> emails = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PHONES = "phones";
   @SerializedName(SERIALIZED_NAME_PHONES)
+  @javax.annotation.Nullable
   private List<Phone> phones = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PERSON_IDS = "personIds";
   @SerializedName(SERIALIZED_NAME_PERSON_IDS)
+  @javax.annotation.Nullable
   private List<String> personIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_IP_ADDRESSES = "ipAddresses";
   @SerializedName(SERIALIZED_NAME_IP_ADDRESSES)
+  @javax.annotation.Nullable
   private List<IpAddress> ipAddresses = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_MESSAGE = "message";
   @SerializedName(SERIALIZED_NAME_MESSAGE)
+  @javax.annotation.Nullable
   private String message;
 
   public static final String SERIALIZED_NAME_SOCIAL_PROFILES = "socialProfiles";
   @SerializedName(SERIALIZED_NAME_SOCIAL_PROFILES)
+  @javax.annotation.Nullable
   private List<SocialProfileDetails> socialProfiles = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_EMPLOYMENT = "employment";
   @SerializedName(SERIALIZED_NAME_EMPLOYMENT)
+  @javax.annotation.Nullable
   private List<Employment> employment = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_EDUCATION = "education";
   @SerializedName(SERIALIZED_NAME_EDUCATION)
+  @javax.annotation.Nullable
   private List<Education> education = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PHOTOS = "photos";
   @SerializedName(SERIALIZED_NAME_PHOTOS)
+  @javax.annotation.Nullable
   private List<Photo> photos = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ECONOMIC = "economic";
   @SerializedName(SERIALIZED_NAME_ECONOMIC)
+  @javax.annotation.Nullable
   private Economic economic;
 
   public SignalsResponseV20240424() {
   }
 
-  public SignalsResponseV20240424 name(NameWithAlias name) {
+  public SignalsResponseV20240424 name(@javax.annotation.Nullable NameWithAlias name) {
     this.name = name;
     return this;
   }
@@ -132,12 +145,12 @@ public class SignalsResponseV20240424 {
     return name;
   }
 
-  public void setName(NameWithAlias name) {
+  public void setName(@javax.annotation.Nullable NameWithAlias name) {
     this.name = name;
   }
 
 
-  public SignalsResponseV20240424 demographics(Demographics demographics) {
+  public SignalsResponseV20240424 demographics(@javax.annotation.Nullable Demographics demographics) {
     this.demographics = demographics;
     return this;
   }
@@ -151,12 +164,12 @@ public class SignalsResponseV20240424 {
     return demographics;
   }
 
-  public void setDemographics(Demographics demographics) {
+  public void setDemographics(@javax.annotation.Nullable Demographics demographics) {
     this.demographics = demographics;
   }
 
 
-  public SignalsResponseV20240424 locations(List<Location> locations) {
+  public SignalsResponseV20240424 locations(@javax.annotation.Nullable List<Location> locations) {
     this.locations = locations;
     return this;
   }
@@ -178,12 +191,12 @@ public class SignalsResponseV20240424 {
     return locations;
   }
 
-  public void setLocations(List<Location> locations) {
+  public void setLocations(@javax.annotation.Nullable List<Location> locations) {
     this.locations = locations;
   }
 
 
-  public SignalsResponseV20240424 emails(List<Email> emails) {
+  public SignalsResponseV20240424 emails(@javax.annotation.Nullable List<Email> emails) {
     this.emails = emails;
     return this;
   }
@@ -205,12 +218,12 @@ public class SignalsResponseV20240424 {
     return emails;
   }
 
-  public void setEmails(List<Email> emails) {
+  public void setEmails(@javax.annotation.Nullable List<Email> emails) {
     this.emails = emails;
   }
 
 
-  public SignalsResponseV20240424 phones(List<Phone> phones) {
+  public SignalsResponseV20240424 phones(@javax.annotation.Nullable List<Phone> phones) {
     this.phones = phones;
     return this;
   }
@@ -232,12 +245,12 @@ public class SignalsResponseV20240424 {
     return phones;
   }
 
-  public void setPhones(List<Phone> phones) {
+  public void setPhones(@javax.annotation.Nullable List<Phone> phones) {
     this.phones = phones;
   }
 
 
-  public SignalsResponseV20240424 personIds(List<String> personIds) {
+  public SignalsResponseV20240424 personIds(@javax.annotation.Nullable List<String> personIds) {
     this.personIds = personIds;
     return this;
   }
@@ -259,12 +272,12 @@ public class SignalsResponseV20240424 {
     return personIds;
   }
 
-  public void setPersonIds(List<String> personIds) {
+  public void setPersonIds(@javax.annotation.Nullable List<String> personIds) {
     this.personIds = personIds;
   }
 
 
-  public SignalsResponseV20240424 ipAddresses(List<IpAddress> ipAddresses) {
+  public SignalsResponseV20240424 ipAddresses(@javax.annotation.Nullable List<IpAddress> ipAddresses) {
     this.ipAddresses = ipAddresses;
     return this;
   }
@@ -286,12 +299,12 @@ public class SignalsResponseV20240424 {
     return ipAddresses;
   }
 
-  public void setIpAddresses(List<IpAddress> ipAddresses) {
+  public void setIpAddresses(@javax.annotation.Nullable List<IpAddress> ipAddresses) {
     this.ipAddresses = ipAddresses;
   }
 
 
-  public SignalsResponseV20240424 message(String message) {
+  public SignalsResponseV20240424 message(@javax.annotation.Nullable String message) {
     this.message = message;
     return this;
   }
@@ -305,12 +318,12 @@ public class SignalsResponseV20240424 {
     return message;
   }
 
-  public void setMessage(String message) {
+  public void setMessage(@javax.annotation.Nullable String message) {
     this.message = message;
   }
 
 
-  public SignalsResponseV20240424 socialProfiles(List<SocialProfileDetails> socialProfiles) {
+  public SignalsResponseV20240424 socialProfiles(@javax.annotation.Nullable List<SocialProfileDetails> socialProfiles) {
     this.socialProfiles = socialProfiles;
     return this;
   }
@@ -332,12 +345,12 @@ public class SignalsResponseV20240424 {
     return socialProfiles;
   }
 
-  public void setSocialProfiles(List<SocialProfileDetails> socialProfiles) {
+  public void setSocialProfiles(@javax.annotation.Nullable List<SocialProfileDetails> socialProfiles) {
     this.socialProfiles = socialProfiles;
   }
 
 
-  public SignalsResponseV20240424 employment(List<Employment> employment) {
+  public SignalsResponseV20240424 employment(@javax.annotation.Nullable List<Employment> employment) {
     this.employment = employment;
     return this;
   }
@@ -359,12 +372,12 @@ public class SignalsResponseV20240424 {
     return employment;
   }
 
-  public void setEmployment(List<Employment> employment) {
+  public void setEmployment(@javax.annotation.Nullable List<Employment> employment) {
     this.employment = employment;
   }
 
 
-  public SignalsResponseV20240424 education(List<Education> education) {
+  public SignalsResponseV20240424 education(@javax.annotation.Nullable List<Education> education) {
     this.education = education;
     return this;
   }
@@ -386,12 +399,12 @@ public class SignalsResponseV20240424 {
     return education;
   }
 
-  public void setEducation(List<Education> education) {
+  public void setEducation(@javax.annotation.Nullable List<Education> education) {
     this.education = education;
   }
 
 
-  public SignalsResponseV20240424 photos(List<Photo> photos) {
+  public SignalsResponseV20240424 photos(@javax.annotation.Nullable List<Photo> photos) {
     this.photos = photos;
     return this;
   }
@@ -413,12 +426,12 @@ public class SignalsResponseV20240424 {
     return photos;
   }
 
-  public void setPhotos(List<Photo> photos) {
+  public void setPhotos(@javax.annotation.Nullable List<Photo> photos) {
     this.photos = photos;
   }
 
 
-  public SignalsResponseV20240424 economic(Economic economic) {
+  public SignalsResponseV20240424 economic(@javax.annotation.Nullable Economic economic) {
     this.economic = economic;
     return this;
   }
@@ -432,7 +445,7 @@ public class SignalsResponseV20240424 {
     return economic;
   }
 
-  public void setEconomic(Economic economic) {
+  public void setEconomic(@javax.annotation.Nullable Economic economic) {
     this.economic = economic;
   }
 
@@ -493,10 +506,7 @@ public class SignalsResponseV20240424 {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -505,23 +515,10 @@ public class SignalsResponseV20240424 {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("name");
-    openapiFields.add("demographics");
-    openapiFields.add("locations");
-    openapiFields.add("emails");
-    openapiFields.add("phones");
-    openapiFields.add("personIds");
-    openapiFields.add("ipAddresses");
-    openapiFields.add("message");
-    openapiFields.add("socialProfiles");
-    openapiFields.add("employment");
-    openapiFields.add("education");
-    openapiFields.add("photos");
-    openapiFields.add("economic");
+    openapiFields = new HashSet<String>(Arrays.asList("name", "demographics", "locations", "emails", "phones", "personIds", "ipAddresses", "message", "socialProfiles", "employment", "education", "photos", "economic"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -533,7 +530,7 @@ public class SignalsResponseV20240424 {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!SignalsResponseV20240424.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in SignalsResponseV20240424 is not found in the empty JSON string", SignalsResponseV20240424.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in SignalsResponseV20240424 is not found in the empty JSON string", SignalsResponseV20240424.openapiRequiredFields.toString()));
         }
       }
 
@@ -541,7 +538,7 @@ public class SignalsResponseV20240424 {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!SignalsResponseV20240424.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `SignalsResponseV20240424` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `SignalsResponseV20240424` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -558,7 +555,7 @@ public class SignalsResponseV20240424 {
         if (jsonArraylocations != null) {
           // ensure the json data is an array
           if (!jsonObj.get("locations").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `locations` to be an array in the JSON string but got `%s`", jsonObj.get("locations").toString()));
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `locations` to be an array in the JSON string but got `%s`", jsonObj.get("locations").toString()));
           }
 
           // validate the optional field `locations` (array)
@@ -572,7 +569,7 @@ public class SignalsResponseV20240424 {
         if (jsonArrayemails != null) {
           // ensure the json data is an array
           if (!jsonObj.get("emails").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `emails` to be an array in the JSON string but got `%s`", jsonObj.get("emails").toString()));
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `emails` to be an array in the JSON string but got `%s`", jsonObj.get("emails").toString()));
           }
 
           // validate the optional field `emails` (array)
@@ -586,7 +583,7 @@ public class SignalsResponseV20240424 {
         if (jsonArrayphones != null) {
           // ensure the json data is an array
           if (!jsonObj.get("phones").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `phones` to be an array in the JSON string but got `%s`", jsonObj.get("phones").toString()));
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `phones` to be an array in the JSON string but got `%s`", jsonObj.get("phones").toString()));
           }
 
           // validate the optional field `phones` (array)
@@ -597,14 +594,14 @@ public class SignalsResponseV20240424 {
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("personIds") != null && !jsonObj.get("personIds").isJsonNull() && !jsonObj.get("personIds").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `personIds` to be an array in the JSON string but got `%s`", jsonObj.get("personIds").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `personIds` to be an array in the JSON string but got `%s`", jsonObj.get("personIds").toString()));
       }
       if (jsonObj.get("ipAddresses") != null && !jsonObj.get("ipAddresses").isJsonNull()) {
         JsonArray jsonArrayipAddresses = jsonObj.getAsJsonArray("ipAddresses");
         if (jsonArrayipAddresses != null) {
           // ensure the json data is an array
           if (!jsonObj.get("ipAddresses").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `ipAddresses` to be an array in the JSON string but got `%s`", jsonObj.get("ipAddresses").toString()));
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `ipAddresses` to be an array in the JSON string but got `%s`", jsonObj.get("ipAddresses").toString()));
           }
 
           // validate the optional field `ipAddresses` (array)
@@ -614,14 +611,14 @@ public class SignalsResponseV20240424 {
         }
       }
       if ((jsonObj.get("message") != null && !jsonObj.get("message").isJsonNull()) && !jsonObj.get("message").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `message` to be a primitive type in the JSON string but got `%s`", jsonObj.get("message").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `message` to be a primitive type in the JSON string but got `%s`", jsonObj.get("message").toString()));
       }
       if (jsonObj.get("socialProfiles") != null && !jsonObj.get("socialProfiles").isJsonNull()) {
         JsonArray jsonArraysocialProfiles = jsonObj.getAsJsonArray("socialProfiles");
         if (jsonArraysocialProfiles != null) {
           // ensure the json data is an array
           if (!jsonObj.get("socialProfiles").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `socialProfiles` to be an array in the JSON string but got `%s`", jsonObj.get("socialProfiles").toString()));
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `socialProfiles` to be an array in the JSON string but got `%s`", jsonObj.get("socialProfiles").toString()));
           }
 
           // validate the optional field `socialProfiles` (array)
@@ -635,7 +632,7 @@ public class SignalsResponseV20240424 {
         if (jsonArrayemployment != null) {
           // ensure the json data is an array
           if (!jsonObj.get("employment").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `employment` to be an array in the JSON string but got `%s`", jsonObj.get("employment").toString()));
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `employment` to be an array in the JSON string but got `%s`", jsonObj.get("employment").toString()));
           }
 
           // validate the optional field `employment` (array)
@@ -649,7 +646,7 @@ public class SignalsResponseV20240424 {
         if (jsonArrayeducation != null) {
           // ensure the json data is an array
           if (!jsonObj.get("education").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `education` to be an array in the JSON string but got `%s`", jsonObj.get("education").toString()));
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `education` to be an array in the JSON string but got `%s`", jsonObj.get("education").toString()));
           }
 
           // validate the optional field `education` (array)
@@ -663,7 +660,7 @@ public class SignalsResponseV20240424 {
         if (jsonArrayphotos != null) {
           // ensure the json data is an array
           if (!jsonObj.get("photos").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `photos` to be an array in the JSON string but got `%s`", jsonObj.get("photos").toString()));
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `photos` to be an array in the JSON string but got `%s`", jsonObj.get("photos").toString()));
           }
 
           // validate the optional field `photos` (array)

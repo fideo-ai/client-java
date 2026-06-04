@@ -14,7 +14,8 @@
 package ai.fideo.api;
 
 import ai.fideo.client.ApiException;
-import ai.fideo.model.MultiFieldReq;
+import ai.fideo.model.MultiFieldReqWithOptions;
+import ai.fideo.model.StatusResponseWithMessage;
 import ai.fideo.model.VerifyResponse;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -37,8 +38,9 @@ public class VerifyApiTest {
      */
     @Test
     public void verifyPostTest() throws ApiException {
-        MultiFieldReq multiFieldReq = null;
-        VerifyResponse response = api.verifyPost(multiFieldReq);
+        String v = null;
+        MultiFieldReqWithOptions multiFieldReqWithOptions = null;
+        VerifyResponse response = api.verifyPost(v, multiFieldReqWithOptions);
         // TODO: test validations
     }
 

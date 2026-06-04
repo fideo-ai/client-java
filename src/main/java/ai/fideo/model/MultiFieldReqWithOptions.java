@@ -29,6 +29,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -57,36 +58,112 @@ import ai.fideo.client.JSON;
 /**
  * MultiFieldReqWithOptions
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
 public class MultiFieldReqWithOptions extends MultiFieldReq {
   public static final String SERIALIZED_NAME_INFER = "infer";
   @SerializedName(SERIALIZED_NAME_INFER)
+  @javax.annotation.Nullable
   private Boolean infer;
 
   public static final String SERIALIZED_NAME_CONFIDENCE = "confidence";
   @SerializedName(SERIALIZED_NAME_CONFIDENCE)
+  @javax.annotation.Nullable
   private String confidence = "LOW";
 
   public static final String SERIALIZED_NAME_BIRTHDAY = "birthday";
   @SerializedName(SERIALIZED_NAME_BIRTHDAY)
+  @javax.annotation.Nullable
   private String birthday;
 
   public static final String SERIALIZED_NAME_IP_ADDRESS = "ipAddress";
   @SerializedName(SERIALIZED_NAME_IP_ADDRESS)
+  @javax.annotation.Nullable
   private String ipAddress;
+
+  public static final String SERIALIZED_NAME_SESSION_ID = "sessionId";
+  @SerializedName(SERIALIZED_NAME_SESSION_ID)
+  @javax.annotation.Nullable
+  private UUID sessionId;
+
+  /**
+   * Optional signal-pattern interval to decorate signal email responses
+   */
+  @JsonAdapter(PatternIntervalEnum.Adapter.class)
+  public enum PatternIntervalEnum {
+    HOUR("hour"),
+    
+    DAY("day"),
+    
+    WEEK("week"),
+    
+    MONTH("month"),
+    
+    _6MONTHS("6months"),
+    
+    YEAR("year");
+
+    private String value;
+
+    PatternIntervalEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static PatternIntervalEnum fromValue(String value) {
+      for (PatternIntervalEnum b : PatternIntervalEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<PatternIntervalEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final PatternIntervalEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public PatternIntervalEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return PatternIntervalEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      PatternIntervalEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_PATTERN_INTERVAL = "patternInterval";
+  @SerializedName(SERIALIZED_NAME_PATTERN_INTERVAL)
+  @javax.annotation.Nullable
+  private PatternIntervalEnum patternInterval;
 
   public static final String SERIALIZED_NAME_COUNTRIES = "countries";
   @SerializedName(SERIALIZED_NAME_COUNTRIES)
+  @javax.annotation.Nullable
   private List<String> countries;
 
   public static final String SERIALIZED_NAME_EXCLUDED_COUNTRIES = "excludedCountries";
   @SerializedName(SERIALIZED_NAME_EXCLUDED_COUNTRIES)
+  @javax.annotation.Nullable
   private List<String> excludedCountries;
 
   public MultiFieldReqWithOptions() {
   }
 
-  public MultiFieldReqWithOptions infer(Boolean infer) {
+  public MultiFieldReqWithOptions infer(@javax.annotation.Nullable Boolean infer) {
     this.infer = infer;
     return this;
   }
@@ -100,12 +177,12 @@ public class MultiFieldReqWithOptions extends MultiFieldReq {
     return infer;
   }
 
-  public void setInfer(Boolean infer) {
+  public void setInfer(@javax.annotation.Nullable Boolean infer) {
     this.infer = infer;
   }
 
 
-  public MultiFieldReqWithOptions confidence(String confidence) {
+  public MultiFieldReqWithOptions confidence(@javax.annotation.Nullable String confidence) {
     this.confidence = confidence;
     return this;
   }
@@ -119,12 +196,12 @@ public class MultiFieldReqWithOptions extends MultiFieldReq {
     return confidence;
   }
 
-  public void setConfidence(String confidence) {
+  public void setConfidence(@javax.annotation.Nullable String confidence) {
     this.confidence = confidence;
   }
 
 
-  public MultiFieldReqWithOptions birthday(String birthday) {
+  public MultiFieldReqWithOptions birthday(@javax.annotation.Nullable String birthday) {
     this.birthday = birthday;
     return this;
   }
@@ -138,12 +215,12 @@ public class MultiFieldReqWithOptions extends MultiFieldReq {
     return birthday;
   }
 
-  public void setBirthday(String birthday) {
+  public void setBirthday(@javax.annotation.Nullable String birthday) {
     this.birthday = birthday;
   }
 
 
-  public MultiFieldReqWithOptions ipAddress(String ipAddress) {
+  public MultiFieldReqWithOptions ipAddress(@javax.annotation.Nullable String ipAddress) {
     this.ipAddress = ipAddress;
     return this;
   }
@@ -157,12 +234,50 @@ public class MultiFieldReqWithOptions extends MultiFieldReq {
     return ipAddress;
   }
 
-  public void setIpAddress(String ipAddress) {
+  public void setIpAddress(@javax.annotation.Nullable String ipAddress) {
     this.ipAddress = ipAddress;
   }
 
 
-  public MultiFieldReqWithOptions countries(List<String> countries) {
+  public MultiFieldReqWithOptions sessionId(@javax.annotation.Nullable UUID sessionId) {
+    this.sessionId = sessionId;
+    return this;
+  }
+
+  /**
+   * Optional UUIDv7 session identifier. A recent valid value reuses an existing verify session and returns 200; omitted, blank, or old values create a new session and return 201.
+   * @return sessionId
+   */
+  @javax.annotation.Nullable
+  public UUID getSessionId() {
+    return sessionId;
+  }
+
+  public void setSessionId(@javax.annotation.Nullable UUID sessionId) {
+    this.sessionId = sessionId;
+  }
+
+
+  public MultiFieldReqWithOptions patternInterval(@javax.annotation.Nullable PatternIntervalEnum patternInterval) {
+    this.patternInterval = patternInterval;
+    return this;
+  }
+
+  /**
+   * Optional signal-pattern interval to decorate signal email responses
+   * @return patternInterval
+   */
+  @javax.annotation.Nullable
+  public PatternIntervalEnum getPatternInterval() {
+    return patternInterval;
+  }
+
+  public void setPatternInterval(@javax.annotation.Nullable PatternIntervalEnum patternInterval) {
+    this.patternInterval = patternInterval;
+  }
+
+
+  public MultiFieldReqWithOptions countries(@javax.annotation.Nullable List<String> countries) {
     this.countries = countries;
     return this;
   }
@@ -184,12 +299,12 @@ public class MultiFieldReqWithOptions extends MultiFieldReq {
     return countries;
   }
 
-  public void setCountries(List<String> countries) {
+  public void setCountries(@javax.annotation.Nullable List<String> countries) {
     this.countries = countries;
   }
 
 
-  public MultiFieldReqWithOptions excludedCountries(List<String> excludedCountries) {
+  public MultiFieldReqWithOptions excludedCountries(@javax.annotation.Nullable List<String> excludedCountries) {
     this.excludedCountries = excludedCountries;
     return this;
   }
@@ -211,7 +326,7 @@ public class MultiFieldReqWithOptions extends MultiFieldReq {
     return excludedCountries;
   }
 
-  public void setExcludedCountries(List<String> excludedCountries) {
+  public void setExcludedCountries(@javax.annotation.Nullable List<String> excludedCountries) {
     this.excludedCountries = excludedCountries;
   }
 
@@ -230,6 +345,8 @@ public class MultiFieldReqWithOptions extends MultiFieldReq {
         Objects.equals(this.confidence, multiFieldReqWithOptions.confidence) &&
         Objects.equals(this.birthday, multiFieldReqWithOptions.birthday) &&
         Objects.equals(this.ipAddress, multiFieldReqWithOptions.ipAddress) &&
+        Objects.equals(this.sessionId, multiFieldReqWithOptions.sessionId) &&
+        Objects.equals(this.patternInterval, multiFieldReqWithOptions.patternInterval) &&
         Objects.equals(this.countries, multiFieldReqWithOptions.countries) &&
         Objects.equals(this.excludedCountries, multiFieldReqWithOptions.excludedCountries) &&
         super.equals(o);
@@ -241,7 +358,7 @@ public class MultiFieldReqWithOptions extends MultiFieldReq {
 
   @Override
   public int hashCode() {
-    return Objects.hash(infer, confidence, birthday, ipAddress, countries, excludedCountries, super.hashCode());
+    return Objects.hash(infer, confidence, birthday, ipAddress, sessionId, patternInterval, countries, excludedCountries, super.hashCode());
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -260,6 +377,8 @@ public class MultiFieldReqWithOptions extends MultiFieldReq {
     sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
     sb.append("    birthday: ").append(toIndentedString(birthday)).append("\n");
     sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
+    sb.append("    sessionId: ").append(toIndentedString(sessionId)).append("\n");
+    sb.append("    patternInterval: ").append(toIndentedString(patternInterval)).append("\n");
     sb.append("    countries: ").append(toIndentedString(countries)).append("\n");
     sb.append("    excludedCountries: ").append(toIndentedString(excludedCountries)).append("\n");
     sb.append("}");
@@ -271,10 +390,7 @@ public class MultiFieldReqWithOptions extends MultiFieldReq {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -283,40 +399,10 @@ public class MultiFieldReqWithOptions extends MultiFieldReq {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("twitter");
-    openapiFields.add("linkedin");
-    openapiFields.add("recordId");
-    openapiFields.add("personId");
-    openapiFields.add("partnerId");
-    openapiFields.add("location");
-    openapiFields.add("avatar");
-    openapiFields.add("website");
-    openapiFields.add("title");
-    openapiFields.add("organization");
-    openapiFields.add("emails");
-    openapiFields.add("phones");
-    openapiFields.add("profiles");
-    openapiFields.add("maids");
-    openapiFields.add("name");
-    openapiFields.add("partnerKeys");
-    openapiFields.add("li_nonid");
-    openapiFields.add("panoramaId");
-    openapiFields.add("placekey");
-    openapiFields.add("generatePid");
-    openapiFields.add("email");
-    openapiFields.add("phone");
-    openapiFields.add("profile");
-    openapiFields.add("maid");
-    openapiFields.add("infer");
-    openapiFields.add("confidence");
-    openapiFields.add("birthday");
-    openapiFields.add("ipAddress");
-    openapiFields.add("countries");
-    openapiFields.add("excludedCountries");
+    openapiFields = new HashSet<String>(Arrays.asList("twitter", "linkedin", "recordId", "personId", "partnerId", "location", "avatar", "website", "title", "organization", "emails", "phones", "profiles", "maids", "name", "partnerKeys", "li_nonid", "panoramaId", "generatePid", "email", "phone", "profile", "maid", "infer", "confidence", "birthday", "ipAddress", "sessionId", "patternInterval", "countries", "excludedCountries"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -328,7 +414,7 @@ public class MultiFieldReqWithOptions extends MultiFieldReq {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!MultiFieldReqWithOptions.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in MultiFieldReqWithOptions is not found in the empty JSON string", MultiFieldReqWithOptions.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in MultiFieldReqWithOptions is not found in the empty JSON string", MultiFieldReqWithOptions.openapiRequiredFields.toString()));
         }
       }
 
@@ -336,26 +422,36 @@ public class MultiFieldReqWithOptions extends MultiFieldReq {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!MultiFieldReqWithOptions.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `MultiFieldReqWithOptions` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `MultiFieldReqWithOptions` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("confidence") != null && !jsonObj.get("confidence").isJsonNull()) && !jsonObj.get("confidence").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `confidence` to be a primitive type in the JSON string but got `%s`", jsonObj.get("confidence").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `confidence` to be a primitive type in the JSON string but got `%s`", jsonObj.get("confidence").toString()));
       }
       if ((jsonObj.get("birthday") != null && !jsonObj.get("birthday").isJsonNull()) && !jsonObj.get("birthday").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `birthday` to be a primitive type in the JSON string but got `%s`", jsonObj.get("birthday").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `birthday` to be a primitive type in the JSON string but got `%s`", jsonObj.get("birthday").toString()));
       }
       if ((jsonObj.get("ipAddress") != null && !jsonObj.get("ipAddress").isJsonNull()) && !jsonObj.get("ipAddress").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `ipAddress` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ipAddress").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `ipAddress` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ipAddress").toString()));
+      }
+      if ((jsonObj.get("sessionId") != null && !jsonObj.get("sessionId").isJsonNull()) && !jsonObj.get("sessionId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `sessionId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sessionId").toString()));
+      }
+      if ((jsonObj.get("patternInterval") != null && !jsonObj.get("patternInterval").isJsonNull()) && !jsonObj.get("patternInterval").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `patternInterval` to be a primitive type in the JSON string but got `%s`", jsonObj.get("patternInterval").toString()));
+      }
+      // validate the optional field `patternInterval`
+      if (jsonObj.get("patternInterval") != null && !jsonObj.get("patternInterval").isJsonNull()) {
+        PatternIntervalEnum.validateJsonElement(jsonObj.get("patternInterval"));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("countries") != null && !jsonObj.get("countries").isJsonNull() && !jsonObj.get("countries").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `countries` to be an array in the JSON string but got `%s`", jsonObj.get("countries").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `countries` to be an array in the JSON string but got `%s`", jsonObj.get("countries").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("excludedCountries") != null && !jsonObj.get("excludedCountries").isJsonNull() && !jsonObj.get("excludedCountries").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `excludedCountries` to be an array in the JSON string but got `%s`", jsonObj.get("excludedCountries").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `excludedCountries` to be an array in the JSON string but got `%s`", jsonObj.get("excludedCountries").toString()));
       }
   }
 

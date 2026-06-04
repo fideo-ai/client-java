@@ -73,4 +73,8 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful response |  -  |
+| **204** | No data found |  -  |
+| **400** | Bad request |  -  |
+| **403** | Forbidden |  -  |
+| **410** | Claimed or deleted data |  -  |
 

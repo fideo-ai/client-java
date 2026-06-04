@@ -49,24 +49,27 @@ import ai.fideo.client.JSON;
 /**
  * Education
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
 public class Education {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_DEGREE = "degree";
   @SerializedName(SERIALIZED_NAME_DEGREE)
+  @javax.annotation.Nullable
   private String degree;
 
   public static final String SERIALIZED_NAME_END = "end";
   @SerializedName(SERIALIZED_NAME_END)
+  @javax.annotation.Nullable
   private EducationDate end;
 
   public Education() {
   }
 
-  public Education name(String name) {
+  public Education name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -80,12 +83,12 @@ public class Education {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public Education degree(String degree) {
+  public Education degree(@javax.annotation.Nullable String degree) {
     this.degree = degree;
     return this;
   }
@@ -99,12 +102,12 @@ public class Education {
     return degree;
   }
 
-  public void setDegree(String degree) {
+  public void setDegree(@javax.annotation.Nullable String degree) {
     this.degree = degree;
   }
 
 
-  public Education end(EducationDate end) {
+  public Education end(@javax.annotation.Nullable EducationDate end) {
     this.end = end;
     return this;
   }
@@ -118,7 +121,7 @@ public class Education {
     return end;
   }
 
-  public void setEnd(EducationDate end) {
+  public void setEnd(@javax.annotation.Nullable EducationDate end) {
     this.end = end;
   }
 
@@ -159,10 +162,7 @@ public class Education {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -171,13 +171,10 @@ public class Education {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("name");
-    openapiFields.add("degree");
-    openapiFields.add("end");
+    openapiFields = new HashSet<String>(Arrays.asList("name", "degree", "end"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -189,7 +186,7 @@ public class Education {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Education.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in Education is not found in the empty JSON string", Education.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in Education is not found in the empty JSON string", Education.openapiRequiredFields.toString()));
         }
       }
 
@@ -197,15 +194,15 @@ public class Education {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!Education.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Education` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `Education` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("degree") != null && !jsonObj.get("degree").isJsonNull()) && !jsonObj.get("degree").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `degree` to be a primitive type in the JSON string but got `%s`", jsonObj.get("degree").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `degree` to be a primitive type in the JSON string but got `%s`", jsonObj.get("degree").toString()));
       }
       // validate the optional field `end`
       if (jsonObj.get("end") != null && !jsonObj.get("end").isJsonNull()) {

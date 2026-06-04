@@ -49,36 +49,42 @@ import ai.fideo.client.JSON;
 /**
  * Employment
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
 public class Employment {
   public static final String SERIALIZED_NAME_CURRENT = "current";
   @SerializedName(SERIALIZED_NAME_CURRENT)
+  @javax.annotation.Nullable
   private Boolean current;
 
   public static final String SERIALIZED_NAME_COMPANY = "company";
   @SerializedName(SERIALIZED_NAME_COMPANY)
+  @javax.annotation.Nullable
   private String company;
 
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
+  @javax.annotation.Nullable
   private String title;
 
   public static final String SERIALIZED_NAME_DOMAIN = "domain";
   @SerializedName(SERIALIZED_NAME_DOMAIN)
+  @javax.annotation.Nullable
   private String domain;
 
   public static final String SERIALIZED_NAME_START = "start";
   @SerializedName(SERIALIZED_NAME_START)
+  @javax.annotation.Nullable
   private EmploymentDate start;
 
   public static final String SERIALIZED_NAME_END = "end";
   @SerializedName(SERIALIZED_NAME_END)
+  @javax.annotation.Nullable
   private EmploymentDate end;
 
   public Employment() {
   }
 
-  public Employment current(Boolean current) {
+  public Employment current(@javax.annotation.Nullable Boolean current) {
     this.current = current;
     return this;
   }
@@ -92,12 +98,12 @@ public class Employment {
     return current;
   }
 
-  public void setCurrent(Boolean current) {
+  public void setCurrent(@javax.annotation.Nullable Boolean current) {
     this.current = current;
   }
 
 
-  public Employment company(String company) {
+  public Employment company(@javax.annotation.Nullable String company) {
     this.company = company;
     return this;
   }
@@ -111,12 +117,12 @@ public class Employment {
     return company;
   }
 
-  public void setCompany(String company) {
+  public void setCompany(@javax.annotation.Nullable String company) {
     this.company = company;
   }
 
 
-  public Employment title(String title) {
+  public Employment title(@javax.annotation.Nullable String title) {
     this.title = title;
     return this;
   }
@@ -130,12 +136,12 @@ public class Employment {
     return title;
   }
 
-  public void setTitle(String title) {
+  public void setTitle(@javax.annotation.Nullable String title) {
     this.title = title;
   }
 
 
-  public Employment domain(String domain) {
+  public Employment domain(@javax.annotation.Nullable String domain) {
     this.domain = domain;
     return this;
   }
@@ -149,12 +155,12 @@ public class Employment {
     return domain;
   }
 
-  public void setDomain(String domain) {
+  public void setDomain(@javax.annotation.Nullable String domain) {
     this.domain = domain;
   }
 
 
-  public Employment start(EmploymentDate start) {
+  public Employment start(@javax.annotation.Nullable EmploymentDate start) {
     this.start = start;
     return this;
   }
@@ -168,12 +174,12 @@ public class Employment {
     return start;
   }
 
-  public void setStart(EmploymentDate start) {
+  public void setStart(@javax.annotation.Nullable EmploymentDate start) {
     this.start = start;
   }
 
 
-  public Employment end(EmploymentDate end) {
+  public Employment end(@javax.annotation.Nullable EmploymentDate end) {
     this.end = end;
     return this;
   }
@@ -187,7 +193,7 @@ public class Employment {
     return end;
   }
 
-  public void setEnd(EmploymentDate end) {
+  public void setEnd(@javax.annotation.Nullable EmploymentDate end) {
     this.end = end;
   }
 
@@ -234,10 +240,7 @@ public class Employment {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -246,16 +249,10 @@ public class Employment {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("current");
-    openapiFields.add("company");
-    openapiFields.add("title");
-    openapiFields.add("domain");
-    openapiFields.add("start");
-    openapiFields.add("end");
+    openapiFields = new HashSet<String>(Arrays.asList("current", "company", "title", "domain", "start", "end"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -267,7 +264,7 @@ public class Employment {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Employment.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in Employment is not found in the empty JSON string", Employment.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in Employment is not found in the empty JSON string", Employment.openapiRequiredFields.toString()));
         }
       }
 
@@ -275,18 +272,18 @@ public class Employment {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!Employment.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Employment` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `Employment` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("company") != null && !jsonObj.get("company").isJsonNull()) && !jsonObj.get("company").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `company` to be a primitive type in the JSON string but got `%s`", jsonObj.get("company").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `company` to be a primitive type in the JSON string but got `%s`", jsonObj.get("company").toString()));
       }
       if ((jsonObj.get("title") != null && !jsonObj.get("title").isJsonNull()) && !jsonObj.get("title").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `title` to be a primitive type in the JSON string but got `%s`", jsonObj.get("title").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `title` to be a primitive type in the JSON string but got `%s`", jsonObj.get("title").toString()));
       }
       if ((jsonObj.get("domain") != null && !jsonObj.get("domain").isJsonNull()) && !jsonObj.get("domain").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `domain` to be a primitive type in the JSON string but got `%s`", jsonObj.get("domain").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `domain` to be a primitive type in the JSON string but got `%s`", jsonObj.get("domain").toString()));
       }
       // validate the optional field `start`
       if (jsonObj.get("start") != null && !jsonObj.get("start").isJsonNull()) {

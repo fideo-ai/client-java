@@ -27,7 +27,8 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import ai.fideo.model.MultiFieldReq;
+import ai.fideo.model.MultiFieldReqWithOptions;
+import ai.fideo.model.StatusResponseWithMessage;
 import ai.fideo.model.VerifyResponse;
 
 import java.lang.reflect.Type;
@@ -75,17 +76,22 @@ public class VerifyApi {
 
     /**
      * Build call for verifyPost
-     * @param multiFieldReq  (optional)
+     * @param v  (optional)
+     * @param multiFieldReqWithOptions  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Created new verify session </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 410 </td><td> Claimed or deleted data </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call verifyPostCall(MultiFieldReq multiFieldReq, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call verifyPostCall(@javax.annotation.Nullable String v, @javax.annotation.Nullable MultiFieldReqWithOptions multiFieldReqWithOptions, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -99,7 +105,7 @@ public class VerifyApi {
             basePath = null;
         }
 
-        Object localVarPostBody = multiFieldReq;
+        Object localVarPostBody = multiFieldReqWithOptions;
 
         // create path and map variables
         String localVarPath = "/verify";
@@ -109,6 +115,10 @@ public class VerifyApi {
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (v != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("v", v));
+        }
 
         final String[] localVarAccepts = {
             "application/json"
@@ -131,42 +141,52 @@ public class VerifyApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call verifyPostValidateBeforeCall(MultiFieldReq multiFieldReq, final ApiCallback _callback) throws ApiException {
-        return verifyPostCall(multiFieldReq, _callback);
+    private okhttp3.Call verifyPostValidateBeforeCall(@javax.annotation.Nullable String v, @javax.annotation.Nullable MultiFieldReqWithOptions multiFieldReqWithOptions, final ApiCallback _callback) throws ApiException {
+        return verifyPostCall(v, multiFieldReqWithOptions, _callback);
 
     }
 
     /**
      * 
      * 
-     * @param multiFieldReq  (optional)
+     * @param v  (optional)
+     * @param multiFieldReqWithOptions  (optional)
      * @return VerifyResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Created new verify session </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 410 </td><td> Claimed or deleted data </td><td>  -  </td></tr>
      </table>
      */
-    public VerifyResponse verifyPost(MultiFieldReq multiFieldReq) throws ApiException {
-        ApiResponse<VerifyResponse> localVarResp = verifyPostWithHttpInfo(multiFieldReq);
+    public VerifyResponse verifyPost(@javax.annotation.Nullable String v, @javax.annotation.Nullable MultiFieldReqWithOptions multiFieldReqWithOptions) throws ApiException {
+        ApiResponse<VerifyResponse> localVarResp = verifyPostWithHttpInfo(v, multiFieldReqWithOptions);
         return localVarResp.getData();
     }
 
     /**
      * 
      * 
-     * @param multiFieldReq  (optional)
+     * @param v  (optional)
+     * @param multiFieldReqWithOptions  (optional)
      * @return ApiResponse&lt;VerifyResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Created new verify session </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 410 </td><td> Claimed or deleted data </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<VerifyResponse> verifyPostWithHttpInfo(MultiFieldReq multiFieldReq) throws ApiException {
-        okhttp3.Call localVarCall = verifyPostValidateBeforeCall(multiFieldReq, null);
+    public ApiResponse<VerifyResponse> verifyPostWithHttpInfo(@javax.annotation.Nullable String v, @javax.annotation.Nullable MultiFieldReqWithOptions multiFieldReqWithOptions) throws ApiException {
+        okhttp3.Call localVarCall = verifyPostValidateBeforeCall(v, multiFieldReqWithOptions, null);
         Type localVarReturnType = new TypeToken<VerifyResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -174,19 +194,24 @@ public class VerifyApi {
     /**
      *  (asynchronously)
      * 
-     * @param multiFieldReq  (optional)
+     * @param v  (optional)
+     * @param multiFieldReqWithOptions  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Created new verify session </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 410 </td><td> Claimed or deleted data </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call verifyPostAsync(MultiFieldReq multiFieldReq, final ApiCallback<VerifyResponse> _callback) throws ApiException {
+    public okhttp3.Call verifyPostAsync(@javax.annotation.Nullable String v, @javax.annotation.Nullable MultiFieldReqWithOptions multiFieldReqWithOptions, final ApiCallback<VerifyResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = verifyPostValidateBeforeCall(multiFieldReq, _callback);
+        okhttp3.Call localVarCall = verifyPostValidateBeforeCall(v, multiFieldReqWithOptions, _callback);
         Type localVarReturnType = new TypeToken<VerifyResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

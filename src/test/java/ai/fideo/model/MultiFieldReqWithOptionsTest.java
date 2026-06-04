@@ -28,6 +28,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -191,14 +192,6 @@ public class MultiFieldReqWithOptionsTest {
     }
 
     /**
-     * Test the property 'placekey'
-     */
-    @Test
-    public void placekeyTest() {
-        // TODO: test placekey
-    }
-
-    /**
      * Test the property 'generatePid'
      */
     @Test
@@ -268,6 +261,22 @@ public class MultiFieldReqWithOptionsTest {
     @Test
     public void ipAddressTest() {
         // TODO: test ipAddress
+    }
+
+    /**
+     * Test the property 'sessionId'
+     */
+    @Test
+    public void sessionIdTest() {
+        // TODO: test sessionId
+    }
+
+    /**
+     * Test the property 'patternInterval'
+     */
+    @Test
+    public void patternIntervalTest() {
+        // TODO: test patternInterval
     }
 
     /**

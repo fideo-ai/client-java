@@ -48,40 +48,47 @@ import ai.fideo.client.JSON;
 /**
  * PersonNameReq
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
 public class PersonNameReq {
   public static final String SERIALIZED_NAME_GIVEN = "given";
   @SerializedName(SERIALIZED_NAME_GIVEN)
+  @javax.annotation.Nullable
   private String given;
 
   public static final String SERIALIZED_NAME_FAMILY = "family";
   @SerializedName(SERIALIZED_NAME_FAMILY)
+  @javax.annotation.Nullable
   private String family;
 
   public static final String SERIALIZED_NAME_MIDDLE = "middle";
   @SerializedName(SERIALIZED_NAME_MIDDLE)
+  @javax.annotation.Nullable
   private String middle;
 
   public static final String SERIALIZED_NAME_PREFIX = "prefix";
   @SerializedName(SERIALIZED_NAME_PREFIX)
+  @javax.annotation.Nullable
   private String prefix;
 
   public static final String SERIALIZED_NAME_SUFFIX = "suffix";
   @SerializedName(SERIALIZED_NAME_SUFFIX)
+  @javax.annotation.Nullable
   private String suffix;
 
   public static final String SERIALIZED_NAME_NICKNAME = "nickname";
   @SerializedName(SERIALIZED_NAME_NICKNAME)
+  @javax.annotation.Nullable
   private String nickname;
 
   public static final String SERIALIZED_NAME_FULL = "full";
   @SerializedName(SERIALIZED_NAME_FULL)
+  @javax.annotation.Nullable
   private String full;
 
   public PersonNameReq() {
   }
 
-  public PersonNameReq given(String given) {
+  public PersonNameReq given(@javax.annotation.Nullable String given) {
     this.given = given;
     return this;
   }
@@ -95,12 +102,12 @@ public class PersonNameReq {
     return given;
   }
 
-  public void setGiven(String given) {
+  public void setGiven(@javax.annotation.Nullable String given) {
     this.given = given;
   }
 
 
-  public PersonNameReq family(String family) {
+  public PersonNameReq family(@javax.annotation.Nullable String family) {
     this.family = family;
     return this;
   }
@@ -114,12 +121,12 @@ public class PersonNameReq {
     return family;
   }
 
-  public void setFamily(String family) {
+  public void setFamily(@javax.annotation.Nullable String family) {
     this.family = family;
   }
 
 
-  public PersonNameReq middle(String middle) {
+  public PersonNameReq middle(@javax.annotation.Nullable String middle) {
     this.middle = middle;
     return this;
   }
@@ -133,12 +140,12 @@ public class PersonNameReq {
     return middle;
   }
 
-  public void setMiddle(String middle) {
+  public void setMiddle(@javax.annotation.Nullable String middle) {
     this.middle = middle;
   }
 
 
-  public PersonNameReq prefix(String prefix) {
+  public PersonNameReq prefix(@javax.annotation.Nullable String prefix) {
     this.prefix = prefix;
     return this;
   }
@@ -152,12 +159,12 @@ public class PersonNameReq {
     return prefix;
   }
 
-  public void setPrefix(String prefix) {
+  public void setPrefix(@javax.annotation.Nullable String prefix) {
     this.prefix = prefix;
   }
 
 
-  public PersonNameReq suffix(String suffix) {
+  public PersonNameReq suffix(@javax.annotation.Nullable String suffix) {
     this.suffix = suffix;
     return this;
   }
@@ -171,12 +178,12 @@ public class PersonNameReq {
     return suffix;
   }
 
-  public void setSuffix(String suffix) {
+  public void setSuffix(@javax.annotation.Nullable String suffix) {
     this.suffix = suffix;
   }
 
 
-  public PersonNameReq nickname(String nickname) {
+  public PersonNameReq nickname(@javax.annotation.Nullable String nickname) {
     this.nickname = nickname;
     return this;
   }
@@ -190,12 +197,12 @@ public class PersonNameReq {
     return nickname;
   }
 
-  public void setNickname(String nickname) {
+  public void setNickname(@javax.annotation.Nullable String nickname) {
     this.nickname = nickname;
   }
 
 
-  public PersonNameReq full(String full) {
+  public PersonNameReq full(@javax.annotation.Nullable String full) {
     this.full = full;
     return this;
   }
@@ -209,7 +216,7 @@ public class PersonNameReq {
     return full;
   }
 
-  public void setFull(String full) {
+  public void setFull(@javax.annotation.Nullable String full) {
     this.full = full;
   }
 
@@ -258,10 +265,7 @@ public class PersonNameReq {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -270,17 +274,10 @@ public class PersonNameReq {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("given");
-    openapiFields.add("family");
-    openapiFields.add("middle");
-    openapiFields.add("prefix");
-    openapiFields.add("suffix");
-    openapiFields.add("nickname");
-    openapiFields.add("full");
+    openapiFields = new HashSet<String>(Arrays.asList("given", "family", "middle", "prefix", "suffix", "nickname", "full"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -292,7 +289,7 @@ public class PersonNameReq {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!PersonNameReq.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in PersonNameReq is not found in the empty JSON string", PersonNameReq.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in PersonNameReq is not found in the empty JSON string", PersonNameReq.openapiRequiredFields.toString()));
         }
       }
 
@@ -300,30 +297,30 @@ public class PersonNameReq {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!PersonNameReq.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `PersonNameReq` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `PersonNameReq` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("given") != null && !jsonObj.get("given").isJsonNull()) && !jsonObj.get("given").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `given` to be a primitive type in the JSON string but got `%s`", jsonObj.get("given").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `given` to be a primitive type in the JSON string but got `%s`", jsonObj.get("given").toString()));
       }
       if ((jsonObj.get("family") != null && !jsonObj.get("family").isJsonNull()) && !jsonObj.get("family").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `family` to be a primitive type in the JSON string but got `%s`", jsonObj.get("family").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `family` to be a primitive type in the JSON string but got `%s`", jsonObj.get("family").toString()));
       }
       if ((jsonObj.get("middle") != null && !jsonObj.get("middle").isJsonNull()) && !jsonObj.get("middle").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `middle` to be a primitive type in the JSON string but got `%s`", jsonObj.get("middle").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `middle` to be a primitive type in the JSON string but got `%s`", jsonObj.get("middle").toString()));
       }
       if ((jsonObj.get("prefix") != null && !jsonObj.get("prefix").isJsonNull()) && !jsonObj.get("prefix").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `prefix` to be a primitive type in the JSON string but got `%s`", jsonObj.get("prefix").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `prefix` to be a primitive type in the JSON string but got `%s`", jsonObj.get("prefix").toString()));
       }
       if ((jsonObj.get("suffix") != null && !jsonObj.get("suffix").isJsonNull()) && !jsonObj.get("suffix").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `suffix` to be a primitive type in the JSON string but got `%s`", jsonObj.get("suffix").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `suffix` to be a primitive type in the JSON string but got `%s`", jsonObj.get("suffix").toString()));
       }
       if ((jsonObj.get("nickname") != null && !jsonObj.get("nickname").isJsonNull()) && !jsonObj.get("nickname").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `nickname` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nickname").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `nickname` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nickname").toString()));
       }
       if ((jsonObj.get("full") != null && !jsonObj.get("full").isJsonNull()) && !jsonObj.get("full").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `full` to be a primitive type in the JSON string but got `%s`", jsonObj.get("full").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `full` to be a primitive type in the JSON string but got `%s`", jsonObj.get("full").toString()));
       }
   }
 

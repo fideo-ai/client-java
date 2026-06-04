@@ -29,6 +29,11 @@ tags:
     description: Verify Documentation
     url: https://docs.fideo.ai/docs/verify
   name: verify
+- description: Beta Features
+  externalDocs:
+    description: Beta Features Documentation
+    url: https://docs.fideo.ai/docs/beta
+  name: beta
 paths:
   /signals:
     post:
@@ -44,14 +49,34 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/MultiFieldReqWithOptions'
+              $ref: "#/components/schemas/MultiFieldReqWithOptions"
       responses:
         "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/_signals_post_200_response'
+                $ref: "#/components/schemas/_signals_post_200_response"
           description: Successful response
+        "204":
+          description: No data found
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/StatusResponseWithMessage"
+          description: Bad request
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/StatusResponseWithMessage"
+          description: Forbidden
+        "410":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/StatusResponseWithMessage"
+          description: Claimed or deleted data
       tags:
       - signals
       x-content-type: application/json
@@ -59,28 +84,294 @@ paths:
       - application/json
   /verify:
     post:
+      parameters:
+      - explode: true
+        in: query
+        name: v
+        required: false
+        schema:
+          type: string
+        style: form
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/MultiFieldReq'
+              $ref: "#/components/schemas/MultiFieldReqWithOptions"
       responses:
         "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/VerifyResponse'
+                $ref: "#/components/schemas/VerifyResponse"
           description: OK
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/VerifyResponse"
+          description: Created new verify session
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/StatusResponseWithMessage"
+          description: Bad request
+        "410":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/StatusResponseWithMessage"
+          description: Claimed or deleted data
       tags:
       - verify
       x-content-type: application/json
       x-accepts:
       - application/json
+  /beta/signals/patterns/summary:
+    post:
+      description: Returns summaries of ALL intervals (hour through year) for an email
+        in the request
+      operationId: getSignalPatternsSummary
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SignalPatternsRequest"
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SignalPatternRecencyResponse"
+          description: Successful response
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/StatusResponseWithMessage"
+          description: Bad request
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/StatusResponseWithMessage"
+          description: Forbidden
+      summary: Get signal patterns summary
+      tags:
+      - beta
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /beta/signals/patterns/timeseries:
+    post:
+      description: Returns timeseries details for signal patterns
+      operationId: getSignalPatternsTimeseries
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SignalPatternsTimeseriesRequest"
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                additionalProperties:
+                  $ref: "#/components/schemas/SignalPatternResponseUnit"
+                type: object
+          description: Successful response
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/StatusResponseWithMessage"
+          description: Bad request
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/StatusResponseWithMessage"
+          description: Forbidden
+      summary: Get signal patterns timeseries
+      tags:
+      - beta
+      x-content-type: application/json
+      x-accepts:
+      - application/json
 components:
   schemas:
+    StatusResponseWithMessage:
+      example:
+        code: code
+        message: message
+        status: 9
+      properties:
+        message:
+          type: string
+        status:
+          format: int32
+          type: integer
+        code:
+          type: string
+      type: object
+    SignalPatternsRequest:
+      example:
+        email: email
+      properties:
+        email:
+          description: Email address to get signal patterns for
+          format: email
+          type: string
+      required:
+      - email
+      type: object
+      x-parent: true
+    SignalPatternsTimeseriesRequest:
+      allOf:
+      - $ref: "#/components/schemas/SignalPatternsRequest"
+      - properties:
+          interval:
+            description: Time interval for timeseries data
+            enum:
+            - minute
+            - hour
+            - day
+            - month
+            type: string
+          count:
+            description: Number of data points to return
+            minimum: 1
+            type: integer
+        required:
+        - count
+        - interval
+        type: object
+      example:
+        count: 1
+        interval: minute
+        email: email
+    SignalPatternRecencyResponse:
+      example:
+        sixMonth:
+          sources: 9
+          observations: 7
+          events:
+          - sources: 2
+            observations: 3
+            type: type
+          - sources: 2
+            observations: 3
+            type: type
+        week:
+          sources: 9
+          observations: 7
+          events:
+          - sources: 2
+            observations: 3
+            type: type
+          - sources: 2
+            observations: 3
+            type: type
+        hour:
+          sources: 9
+          observations: 7
+          events:
+          - sources: 2
+            observations: 3
+            type: type
+          - sources: 2
+            observations: 3
+            type: type
+        month:
+          sources: 9
+          observations: 7
+          events:
+          - sources: 2
+            observations: 3
+            type: type
+          - sources: 2
+            observations: 3
+            type: type
+        year:
+          sources: 9
+          observations: 7
+          events:
+          - sources: 2
+            observations: 3
+            type: type
+          - sources: 2
+            observations: 3
+            type: type
+        day:
+          sources: 9
+          observations: 7
+          events:
+          - sources: 2
+            observations: 3
+            type: type
+          - sources: 2
+            observations: 3
+            type: type
+      properties:
+        hour:
+          $ref: "#/components/schemas/SignalPatternResponseUnit"
+        day:
+          $ref: "#/components/schemas/SignalPatternResponseUnit"
+        week:
+          $ref: "#/components/schemas/SignalPatternResponseUnit"
+        month:
+          $ref: "#/components/schemas/SignalPatternResponseUnit"
+        sixMonth:
+          $ref: "#/components/schemas/SignalPatternResponseUnit"
+        year:
+          $ref: "#/components/schemas/SignalPatternResponseUnit"
+      type: object
+    SignalPatternResponseUnit:
+      example:
+        sources: 9
+        observations: 7
+        events:
+        - sources: 2
+          observations: 3
+          type: type
+        - sources: 2
+          observations: 3
+          type: type
+      properties:
+        observations:
+          description: Number of observations
+          format: int64
+          type: integer
+        sources:
+          description: Number of sources
+          format: int64
+          type: integer
+        events:
+          items:
+            $ref: "#/components/schemas/SignalPatternResponseUnitCount"
+          type: array
+      type: object
+    SignalPatternResponseUnitCount:
+      example:
+        sources: 2
+        observations: 3
+        type: type
+      properties:
+        type:
+          description: Type of event
+          type: string
+        observations:
+          description: Number of observations
+          format: int64
+          type: integer
+        sources:
+          description: Number of sources
+          format: int64
+          type: integer
+      type: object
     MultiFieldReqWithOptions:
       allOf:
-      - $ref: '#/components/schemas/MultiFieldReq'
+      - $ref: "#/components/schemas/MultiFieldReq"
       - properties:
           infer:
             type: boolean
@@ -90,6 +381,23 @@ components:
           birthday:
             type: string
           ipAddress:
+            type: string
+          sessionId:
+            description: "Optional UUIDv7 session identifier. A recent valid value\
+              \ reuses an existing verify session and returns 200; omitted, blank,\
+              \ or old values create a new session and return 201."
+            format: uuid
+            type: string
+          patternInterval:
+            description: Optional signal-pattern interval to decorate signal email
+              responses
+            enum:
+            - hour
+            - day
+            - week
+            - month
+            - 6months
+            - year
             type: string
           countries:
             items:
@@ -127,6 +435,7 @@ components:
         maid: maid
         email: email
         website: website
+        patternInterval: hour
         profile:
           score: 5
           followers: 1
@@ -156,11 +465,11 @@ components:
           username: username
         ipAddress: ipAddress
         avatar: avatar
+        sessionId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
         countries:
         - countries
         - countries
         li_nonid: li_nonid
-        placekey: placekey
         phone: phone
         infer: true
         organization: organization
@@ -189,82 +498,6 @@ components:
           longitude: 6.027456183070403
         partnerId: partnerId
     MultiFieldReq:
-      example:
-        website: website
-        panoramaId: panoramaId
-        profile:
-          score: 5
-          followers: 1
-          service: service
-          following: 5
-          bio: bio
-          userid: userid
-          url: url
-          username: username
-        profiles:
-        - score: 5
-          followers: 1
-          service: service
-          following: 5
-          bio: bio
-          userid: userid
-          url: url
-          username: username
-        - score: 5
-          followers: 1
-          service: service
-          following: 5
-          bio: bio
-          userid: userid
-          url: url
-          username: username
-        partnerKeys:
-          key: partnerKeys
-        phones:
-        - phones
-        - phones
-        maids:
-        - maids
-        - maids
-        linkedin: linkedin
-        avatar: avatar
-        title: title
-        generatePid: true
-        li_nonid: li_nonid
-        recordId: recordId
-        emails:
-        - emails
-        - emails
-        twitter: twitter
-        placekey: placekey
-        phone: phone
-        organization: organization
-        name:
-          given: given
-          middle: middle
-          prefix: prefix
-          nickname: nickname
-          family: family
-          suffix: suffix
-          full: full
-        personId: personId
-        location:
-          country: country
-          city: city
-          formatted: formatted
-          postalCode: postalCode
-          latitude: 0.8008281904610115
-          timeZone: timeZone
-          type: Work
-          regionCode: regionCode
-          countryCode: countryCode
-          addressLine1: addressLine1
-          addressLine2: addressLine2
-          region: region
-          longitude: 6.027456183070403
-        partnerId: partnerId
-        maid: maid
-        email: email
       properties:
         twitter:
           type: string
@@ -277,7 +510,7 @@ components:
         partnerId:
           type: string
         location:
-          $ref: '#/components/schemas/LocationReq'
+          $ref: "#/components/schemas/LocationReq"
         avatar:
           type: string
         website:
@@ -296,14 +529,14 @@ components:
           type: array
         profiles:
           items:
-            $ref: '#/components/schemas/SocialProfileReq'
+            $ref: "#/components/schemas/SocialProfileReq"
           type: array
         maids:
           items:
             type: string
           type: array
         name:
-          $ref: '#/components/schemas/PersonNameReq'
+          $ref: "#/components/schemas/PersonNameReq"
         partnerKeys:
           additionalProperties:
             type: string
@@ -312,8 +545,6 @@ components:
           type: string
         panoramaId:
           type: string
-        placekey:
-          type: string
         generatePid:
           type: boolean
         email:
@@ -321,7 +552,7 @@ components:
         phone:
           type: string
         profile:
-          $ref: '#/components/schemas/SocialProfileReq'
+          $ref: "#/components/schemas/SocialProfileReq"
         maid:
           type: string
       type: object
@@ -329,25 +560,145 @@ components:
     SignalsResponseV0:
       example:
         emails:
-        - sha1: sha1
-          firstSeenMs: 6
-          lastSeenMs: 1
+        - firstSeenMs: 6
+          week:
+            sources: 9
+            observations: 7
+            events:
+            - sources: 2
+              observations: 3
+              type: type
+            - sources: 2
+              observations: 3
+              type: type
           sha256: sha256
           activity: 2.3021358869347655
-          observations: 5
+          year:
+            sources: 9
+            observations: 7
+            events:
+            - sources: 2
+              observations: 3
+              type: type
+            - sources: 2
+              observations: 3
+              type: type
           confidence: 5.637376656633329
           label: label
+          sha1: sha1
+          sixMonth:
+            sources: 9
+            observations: 7
+            events:
+            - sources: 2
+              observations: 3
+              type: type
+            - sources: 2
+              observations: 3
+              type: type
+          lastSeenMs: 1
+          hour:
+            sources: 9
+            observations: 7
+            events:
+            - sources: 2
+              observations: 3
+              type: type
+            - sources: 2
+              observations: 3
+              type: type
+          month:
+            sources: 9
+            observations: 7
+            events:
+            - sources: 2
+              observations: 3
+              type: type
+            - sources: 2
+              observations: 3
+              type: type
+          observations: 5
           value: value
+          day:
+            sources: 9
+            observations: 7
+            events:
+            - sources: 2
+              observations: 3
+              type: type
+            - sources: 2
+              observations: 3
+              type: type
           md5: md5
-        - sha1: sha1
-          firstSeenMs: 6
-          lastSeenMs: 1
+        - firstSeenMs: 6
+          week:
+            sources: 9
+            observations: 7
+            events:
+            - sources: 2
+              observations: 3
+              type: type
+            - sources: 2
+              observations: 3
+              type: type
           sha256: sha256
           activity: 2.3021358869347655
-          observations: 5
+          year:
+            sources: 9
+            observations: 7
+            events:
+            - sources: 2
+              observations: 3
+              type: type
+            - sources: 2
+              observations: 3
+              type: type
           confidence: 5.637376656633329
           label: label
+          sha1: sha1
+          sixMonth:
+            sources: 9
+            observations: 7
+            events:
+            - sources: 2
+              observations: 3
+              type: type
+            - sources: 2
+              observations: 3
+              type: type
+          lastSeenMs: 1
+          hour:
+            sources: 9
+            observations: 7
+            events:
+            - sources: 2
+              observations: 3
+              type: type
+            - sources: 2
+              observations: 3
+              type: type
+          month:
+            sources: 9
+            observations: 7
+            events:
+            - sources: 2
+              observations: 3
+              type: type
+            - sources: 2
+              observations: 3
+              type: type
+          observations: 5
           value: value
+          day:
+            sources: 9
+            observations: 7
+            events:
+            - sources: 2
+              observations: 3
+              type: type
+            - sources: 2
+              observations: 3
+              type: type
           md5: md5
         socialProfiles:
           linkedInUrl: linkedInUrl
@@ -356,16 +707,16 @@ components:
           givenName: givenName
           familyName: familyName
         phones:
-        - firstSeenMs: 7
-          lastSeenMs: 9
-          observations: 3
-          confidence: 2.027123023002322
+        - firstSeenMs: 4
+          lastSeenMs: 7
+          observations: 1
+          confidence: 1.0246457001441578
           label: label
           value: value
-        - firstSeenMs: 7
-          lastSeenMs: 9
-          observations: 3
-          confidence: 2.027123023002322
+        - firstSeenMs: 4
+          lastSeenMs: 7
+          observations: 1
+          confidence: 1.0246457001441578
           label: label
           value: value
         personIds:
@@ -391,28 +742,28 @@ components:
           addressLine2: addressLine2
           region: region
         ipAddresses:
-        - firstSeenMs: 4
-          lastSeenMs: 7
-          observations: 1
-          confidence: 1.0246457001441578
+        - firstSeenMs: 1
+          lastSeenMs: 6
+          observations: 7
+          confidence: 1.1730742509559433
           id: id
-        - firstSeenMs: 4
-          lastSeenMs: 7
-          observations: 1
-          confidence: 1.0246457001441578
+        - firstSeenMs: 1
+          lastSeenMs: 6
+          observations: 7
+          confidence: 1.1730742509559433
           id: id
         employment:
           current: true
           domain: domain
           start:
-            month: 6
-            year: 1
-            day: 7
+            month: 5
+            year: 4
+            day: 9
           company: company
           end:
-            month: 6
-            year: 1
-            day: 7
+            month: 5
+            year: 4
+            day: 9
           title: title
         message: message
         demographics:
@@ -422,20 +773,20 @@ components:
           age: 0
       properties:
         name:
-          $ref: '#/components/schemas/Name'
+          $ref: "#/components/schemas/Name"
         demographics:
-          $ref: '#/components/schemas/Demographics'
+          $ref: "#/components/schemas/Demographics"
         locations:
           items:
-            $ref: '#/components/schemas/Location'
+            $ref: "#/components/schemas/Location"
           type: array
         emails:
           items:
-            $ref: '#/components/schemas/Email'
+            $ref: "#/components/schemas/Email"
           type: array
         phones:
           items:
-            $ref: '#/components/schemas/Phone'
+            $ref: "#/components/schemas/Phone"
           type: array
         personIds:
           items:
@@ -443,32 +794,32 @@ components:
           type: array
         ipAddresses:
           items:
-            $ref: '#/components/schemas/IpAddress'
+            $ref: "#/components/schemas/IpAddress"
           type: array
         message:
           type: string
         socialProfiles:
-          $ref: '#/components/schemas/SocialProfileUrls'
+          $ref: "#/components/schemas/SocialProfileUrls"
         employment:
-          $ref: '#/components/schemas/Employment'
+          $ref: "#/components/schemas/Employment"
       type: object
     SignalsResponseV20240424:
       properties:
         name:
-          $ref: '#/components/schemas/NameWithAlias'
+          $ref: "#/components/schemas/NameWithAlias"
         demographics:
-          $ref: '#/components/schemas/Demographics'
+          $ref: "#/components/schemas/Demographics"
         locations:
           items:
-            $ref: '#/components/schemas/Location'
+            $ref: "#/components/schemas/Location"
           type: array
         emails:
           items:
-            $ref: '#/components/schemas/Email'
+            $ref: "#/components/schemas/Email"
           type: array
         phones:
           items:
-            $ref: '#/components/schemas/Phone'
+            $ref: "#/components/schemas/Phone"
           type: array
         personIds:
           items:
@@ -476,28 +827,28 @@ components:
           type: array
         ipAddresses:
           items:
-            $ref: '#/components/schemas/IpAddress'
+            $ref: "#/components/schemas/IpAddress"
           type: array
         message:
           type: string
         socialProfiles:
           items:
-            $ref: '#/components/schemas/SocialProfileDetails'
+            $ref: "#/components/schemas/SocialProfileDetails"
           type: array
         employment:
           items:
-            $ref: '#/components/schemas/Employment'
+            $ref: "#/components/schemas/Employment"
           type: array
         education:
           items:
-            $ref: '#/components/schemas/Education'
+            $ref: "#/components/schemas/Education"
           type: array
         photos:
           items:
-            $ref: '#/components/schemas/Photo'
+            $ref: "#/components/schemas/Photo"
           type: array
         economic:
-          $ref: '#/components/schemas/Economic'
+          $ref: "#/components/schemas/Economic"
       type: object
     SocialProfileReq:
       example:
@@ -633,7 +984,7 @@ components:
         formatted:
           type: string
         type:
-          $ref: '#/components/schemas/LocationType'
+          $ref: "#/components/schemas/LocationType"
       type: object
     LocationType:
       enum:
@@ -690,7 +1041,7 @@ components:
           type: string
         aliases:
           items:
-            $ref: '#/components/schemas/Alias'
+            $ref: "#/components/schemas/Alias"
           type: array
       type: object
     Alias:
@@ -721,15 +1072,75 @@ components:
       type: object
     Email:
       example:
-        sha1: sha1
         firstSeenMs: 6
-        lastSeenMs: 1
+        week:
+          sources: 9
+          observations: 7
+          events:
+          - sources: 2
+            observations: 3
+            type: type
+          - sources: 2
+            observations: 3
+            type: type
         sha256: sha256
         activity: 2.3021358869347655
-        observations: 5
+        year:
+          sources: 9
+          observations: 7
+          events:
+          - sources: 2
+            observations: 3
+            type: type
+          - sources: 2
+            observations: 3
+            type: type
         confidence: 5.637376656633329
         label: label
+        sha1: sha1
+        sixMonth:
+          sources: 9
+          observations: 7
+          events:
+          - sources: 2
+            observations: 3
+            type: type
+          - sources: 2
+            observations: 3
+            type: type
+        lastSeenMs: 1
+        hour:
+          sources: 9
+          observations: 7
+          events:
+          - sources: 2
+            observations: 3
+            type: type
+          - sources: 2
+            observations: 3
+            type: type
+        month:
+          sources: 9
+          observations: 7
+          events:
+          - sources: 2
+            observations: 3
+            type: type
+          - sources: 2
+            observations: 3
+            type: type
+        observations: 5
         value: value
+        day:
+          sources: 9
+          observations: 7
+          events:
+          - sources: 2
+            observations: 3
+            type: type
+          - sources: 2
+            observations: 3
+            type: type
         md5: md5
       properties:
         firstSeenMs:
@@ -757,13 +1168,25 @@ components:
         activity:
           format: double
           type: number
+        hour:
+          $ref: "#/components/schemas/SignalPatternResponseUnit"
+        day:
+          $ref: "#/components/schemas/SignalPatternResponseUnit"
+        week:
+          $ref: "#/components/schemas/SignalPatternResponseUnit"
+        month:
+          $ref: "#/components/schemas/SignalPatternResponseUnit"
+        sixMonth:
+          $ref: "#/components/schemas/SignalPatternResponseUnit"
+        year:
+          $ref: "#/components/schemas/SignalPatternResponseUnit"
       type: object
     Phone:
       example:
-        firstSeenMs: 7
-        lastSeenMs: 9
-        observations: 3
-        confidence: 2.027123023002322
+        firstSeenMs: 4
+        lastSeenMs: 7
+        observations: 1
+        confidence: 1.0246457001441578
         label: label
         value: value
       properties:
@@ -786,10 +1209,10 @@ components:
       type: object
     IpAddress:
       example:
-        firstSeenMs: 4
-        lastSeenMs: 7
-        observations: 1
-        confidence: 1.0246457001441578
+        firstSeenMs: 1
+        lastSeenMs: 6
+        observations: 7
+        confidence: 1.1730742509559433
         id: id
       properties:
         firstSeenMs:
@@ -812,14 +1235,14 @@ components:
         current: true
         domain: domain
         start:
-          month: 6
-          year: 1
-          day: 7
+          month: 5
+          year: 4
+          day: 9
         company: company
         end:
-          month: 6
-          year: 1
-          day: 7
+          month: 5
+          year: 4
+          day: 9
         title: title
       properties:
         current:
@@ -831,15 +1254,15 @@ components:
         domain:
           type: string
         start:
-          $ref: '#/components/schemas/EmploymentDate'
+          $ref: "#/components/schemas/EmploymentDate"
         end:
-          $ref: '#/components/schemas/EmploymentDate'
+          $ref: "#/components/schemas/EmploymentDate"
       type: object
     EmploymentDate:
       example:
-        month: 6
-        year: 1
-        day: 7
+        month: 5
+        year: 4
+        day: 9
       properties:
         year:
           format: int32
@@ -870,7 +1293,7 @@ components:
         degree:
           type: string
         end:
-          $ref: '#/components/schemas/EducationDate'
+          $ref: "#/components/schemas/EducationDate"
       type: object
     Photo:
       properties:
@@ -900,42 +1323,49 @@ components:
         birthday: birthday
         country: country
         evidence:
-          ipCountry: DOMESTIC
+          ipCountry: domestic
           ipTor: true
-          countryOfIp: countryOfIp
         city: city
-        panoramaId: panoramaId
-        postalCode: postalCode
-        nonId: nonId
-        title: title
-        regionCode: regionCode
-        familyName: familyName
-        addressLine1: addressLine1
-        addressLine2: addressLine2
-        maid: maid
-        email: email
         social: social
+        postalCode: postalCode
         givenName: givenName
         ipAddress: ipAddress
-        scoreDetails:
-        - score: 5.962133916683182
-          scorer: scorer
-          evidence:
-            key: "{}"
-          weight: 5.637376656633329
-        - score: 5.962133916683182
-          scorer: scorer
-          evidence:
-            key: "{}"
-          weight: 5.637376656633329
         fullName: fullName
-        riskV3: 1.4658129805029452
-        riskV2: 6.027456183070403
+        sessionId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+        title: title
+        regionCode: regionCode
+        checks:
+        - name: name
+          description: description
+          checkPackage: checkPackage
+          risk: HIGH
+          id: id
+          state: state
+        - name: name
+          description: description
+          checkPackage: checkPackage
+          risk: HIGH
+          id: id
+          state: state
         phone: phone
+        familyName: familyName
         organization: organization
+        addressLine1: addressLine1
         risk: 0.8008281904610115
+        addressLine2: addressLine2
         region: region
+        email: email
       properties:
+        risk:
+          format: double
+          type: number
+        checks:
+          items:
+            $ref: "#/components/schemas/CheckResult"
+          type: array
+        sessionId:
+          format: uuid
+          type: string
         addressLine1:
           type: string
         addressLine2:
@@ -962,13 +1392,7 @@ components:
           type: string
         email:
           type: string
-        maid:
-          type: string
         social:
-          type: string
-        nonId:
-          type: string
-        panoramaId:
           type: string
         ipAddress:
           type: string
@@ -978,48 +1402,53 @@ components:
           type: string
         organization:
           type: string
-        risk:
-          format: double
-          type: number
         evidence:
-          $ref: '#/components/schemas/Evidence'
-        riskV2:
-          format: double
-          type: number
-        riskV3:
-          format: double
-          type: number
-        scoreDetails:
-          items:
-            $ref: '#/components/schemas/ScoreDetails'
-          type: array
+          $ref: "#/components/schemas/Evidence"
+      type: object
+    CheckResult:
+      example:
+        name: name
+        description: description
+        checkPackage: checkPackage
+        risk: HIGH
+        id: id
+        state: state
+      properties:
+        id:
+          type: string
+        state:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        risk:
+          enum:
+          - HIGH
+          - MED
+          - LOW
+          - NONE
+          type: string
+        checkPackage:
+          type: string
       type: object
     Evidence:
       example:
-        ipCountry: DOMESTIC
+        ipCountry: domestic
         ipTor: true
-        countryOfIp: countryOfIp
       properties:
         ipTor:
           type: boolean
         ipCountry:
-          $ref: '#/components/schemas/IPCountry'
-        countryOfIp:
-          type: string
+          $ref: "#/components/schemas/IPCountry"
       type: object
     IPCountry:
       enum:
-      - DOMESTIC
-      - FOREIGN
-      - UNKNOWN
+      - domestic
+      - foreign
+      - unknown
       type: string
     ScoreDetails:
-      example:
-        score: 5.962133916683182
-        scorer: scorer
-        evidence:
-          key: "{}"
-        weight: 5.637376656633329
       properties:
         scorer:
           type: string
@@ -1036,10 +1465,13 @@ components:
       type: object
     _signals_post_200_response:
       oneOf:
-      - $ref: '#/components/schemas/SignalsResponseV0'
-      - $ref: '#/components/schemas/SignalsResponseV20240424'
+      - $ref: "#/components/schemas/SignalsResponseV0"
+      - $ref: "#/components/schemas/SignalsResponseV20240424"
   securitySchemes:
     bearerAuth:
       scheme: bearer
       type: http
+x-readme:
+  proxy-enabled: false
+  explorer-enabled: true
 

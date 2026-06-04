@@ -14,8 +14,8 @@
 package ai.fideo.model;
 
 import java.util.Objects;
+import ai.fideo.model.CheckResult;
 import ai.fideo.model.Evidence;
-import ai.fideo.model.ScoreDetails;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -25,6 +25,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -52,515 +53,122 @@ import ai.fideo.client.JSON;
 /**
  * VerifyResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
 public class VerifyResponse {
+  public static final String SERIALIZED_NAME_RISK = "risk";
+  @SerializedName(SERIALIZED_NAME_RISK)
+  @javax.annotation.Nullable
+  private Double risk;
+
+  public static final String SERIALIZED_NAME_CHECKS = "checks";
+  @SerializedName(SERIALIZED_NAME_CHECKS)
+  @javax.annotation.Nullable
+  private List<CheckResult> checks = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_SESSION_ID = "sessionId";
+  @SerializedName(SERIALIZED_NAME_SESSION_ID)
+  @javax.annotation.Nullable
+  private UUID sessionId;
+
   public static final String SERIALIZED_NAME_ADDRESS_LINE1 = "addressLine1";
   @SerializedName(SERIALIZED_NAME_ADDRESS_LINE1)
+  @javax.annotation.Nullable
   private String addressLine1;
 
   public static final String SERIALIZED_NAME_ADDRESS_LINE2 = "addressLine2";
   @SerializedName(SERIALIZED_NAME_ADDRESS_LINE2)
+  @javax.annotation.Nullable
   private String addressLine2;
 
   public static final String SERIALIZED_NAME_CITY = "city";
   @SerializedName(SERIALIZED_NAME_CITY)
+  @javax.annotation.Nullable
   private String city;
 
   public static final String SERIALIZED_NAME_REGION = "region";
   @SerializedName(SERIALIZED_NAME_REGION)
+  @javax.annotation.Nullable
   private String region;
 
   public static final String SERIALIZED_NAME_REGION_CODE = "regionCode";
   @SerializedName(SERIALIZED_NAME_REGION_CODE)
+  @javax.annotation.Nullable
   private String regionCode;
 
   public static final String SERIALIZED_NAME_COUNTRY = "country";
   @SerializedName(SERIALIZED_NAME_COUNTRY)
+  @javax.annotation.Nullable
   private String country;
 
   public static final String SERIALIZED_NAME_CONTINENT = "continent";
   @SerializedName(SERIALIZED_NAME_CONTINENT)
+  @javax.annotation.Nullable
   private String continent;
 
   public static final String SERIALIZED_NAME_POSTAL_CODE = "postalCode";
   @SerializedName(SERIALIZED_NAME_POSTAL_CODE)
+  @javax.annotation.Nullable
   private String postalCode;
 
   public static final String SERIALIZED_NAME_FAMILY_NAME = "familyName";
   @SerializedName(SERIALIZED_NAME_FAMILY_NAME)
+  @javax.annotation.Nullable
   private String familyName;
 
   public static final String SERIALIZED_NAME_GIVEN_NAME = "givenName";
   @SerializedName(SERIALIZED_NAME_GIVEN_NAME)
+  @javax.annotation.Nullable
   private String givenName;
 
   public static final String SERIALIZED_NAME_FULL_NAME = "fullName";
   @SerializedName(SERIALIZED_NAME_FULL_NAME)
+  @javax.annotation.Nullable
   private String fullName;
 
   public static final String SERIALIZED_NAME_PHONE = "phone";
   @SerializedName(SERIALIZED_NAME_PHONE)
+  @javax.annotation.Nullable
   private String phone;
 
   public static final String SERIALIZED_NAME_EMAIL = "email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
+  @javax.annotation.Nullable
   private String email;
-
-  public static final String SERIALIZED_NAME_MAID = "maid";
-  @SerializedName(SERIALIZED_NAME_MAID)
-  private String maid;
 
   public static final String SERIALIZED_NAME_SOCIAL = "social";
   @SerializedName(SERIALIZED_NAME_SOCIAL)
+  @javax.annotation.Nullable
   private String social;
-
-  public static final String SERIALIZED_NAME_NON_ID = "nonId";
-  @SerializedName(SERIALIZED_NAME_NON_ID)
-  private String nonId;
-
-  public static final String SERIALIZED_NAME_PANORAMA_ID = "panoramaId";
-  @SerializedName(SERIALIZED_NAME_PANORAMA_ID)
-  private String panoramaId;
 
   public static final String SERIALIZED_NAME_IP_ADDRESS = "ipAddress";
   @SerializedName(SERIALIZED_NAME_IP_ADDRESS)
+  @javax.annotation.Nullable
   private String ipAddress;
 
   public static final String SERIALIZED_NAME_BIRTHDAY = "birthday";
   @SerializedName(SERIALIZED_NAME_BIRTHDAY)
+  @javax.annotation.Nullable
   private String birthday;
 
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
+  @javax.annotation.Nullable
   private String title;
 
   public static final String SERIALIZED_NAME_ORGANIZATION = "organization";
   @SerializedName(SERIALIZED_NAME_ORGANIZATION)
+  @javax.annotation.Nullable
   private String organization;
-
-  public static final String SERIALIZED_NAME_RISK = "risk";
-  @SerializedName(SERIALIZED_NAME_RISK)
-  private Double risk;
 
   public static final String SERIALIZED_NAME_EVIDENCE = "evidence";
   @SerializedName(SERIALIZED_NAME_EVIDENCE)
+  @javax.annotation.Nullable
   private Evidence evidence;
-
-  public static final String SERIALIZED_NAME_RISK_V2 = "riskV2";
-  @SerializedName(SERIALIZED_NAME_RISK_V2)
-  private Double riskV2;
-
-  public static final String SERIALIZED_NAME_RISK_V3 = "riskV3";
-  @SerializedName(SERIALIZED_NAME_RISK_V3)
-  private Double riskV3;
-
-  public static final String SERIALIZED_NAME_SCORE_DETAILS = "scoreDetails";
-  @SerializedName(SERIALIZED_NAME_SCORE_DETAILS)
-  private List<ScoreDetails> scoreDetails = new ArrayList<>();
 
   public VerifyResponse() {
   }
 
-  public VerifyResponse addressLine1(String addressLine1) {
-    this.addressLine1 = addressLine1;
-    return this;
-  }
-
-  /**
-   * Get addressLine1
-   * @return addressLine1
-   */
-  @javax.annotation.Nullable
-  public String getAddressLine1() {
-    return addressLine1;
-  }
-
-  public void setAddressLine1(String addressLine1) {
-    this.addressLine1 = addressLine1;
-  }
-
-
-  public VerifyResponse addressLine2(String addressLine2) {
-    this.addressLine2 = addressLine2;
-    return this;
-  }
-
-  /**
-   * Get addressLine2
-   * @return addressLine2
-   */
-  @javax.annotation.Nullable
-  public String getAddressLine2() {
-    return addressLine2;
-  }
-
-  public void setAddressLine2(String addressLine2) {
-    this.addressLine2 = addressLine2;
-  }
-
-
-  public VerifyResponse city(String city) {
-    this.city = city;
-    return this;
-  }
-
-  /**
-   * Get city
-   * @return city
-   */
-  @javax.annotation.Nullable
-  public String getCity() {
-    return city;
-  }
-
-  public void setCity(String city) {
-    this.city = city;
-  }
-
-
-  public VerifyResponse region(String region) {
-    this.region = region;
-    return this;
-  }
-
-  /**
-   * Get region
-   * @return region
-   */
-  @javax.annotation.Nullable
-  public String getRegion() {
-    return region;
-  }
-
-  public void setRegion(String region) {
-    this.region = region;
-  }
-
-
-  public VerifyResponse regionCode(String regionCode) {
-    this.regionCode = regionCode;
-    return this;
-  }
-
-  /**
-   * Get regionCode
-   * @return regionCode
-   */
-  @javax.annotation.Nullable
-  public String getRegionCode() {
-    return regionCode;
-  }
-
-  public void setRegionCode(String regionCode) {
-    this.regionCode = regionCode;
-  }
-
-
-  public VerifyResponse country(String country) {
-    this.country = country;
-    return this;
-  }
-
-  /**
-   * Get country
-   * @return country
-   */
-  @javax.annotation.Nullable
-  public String getCountry() {
-    return country;
-  }
-
-  public void setCountry(String country) {
-    this.country = country;
-  }
-
-
-  public VerifyResponse continent(String continent) {
-    this.continent = continent;
-    return this;
-  }
-
-  /**
-   * Get continent
-   * @return continent
-   */
-  @javax.annotation.Nullable
-  public String getContinent() {
-    return continent;
-  }
-
-  public void setContinent(String continent) {
-    this.continent = continent;
-  }
-
-
-  public VerifyResponse postalCode(String postalCode) {
-    this.postalCode = postalCode;
-    return this;
-  }
-
-  /**
-   * Get postalCode
-   * @return postalCode
-   */
-  @javax.annotation.Nullable
-  public String getPostalCode() {
-    return postalCode;
-  }
-
-  public void setPostalCode(String postalCode) {
-    this.postalCode = postalCode;
-  }
-
-
-  public VerifyResponse familyName(String familyName) {
-    this.familyName = familyName;
-    return this;
-  }
-
-  /**
-   * Get familyName
-   * @return familyName
-   */
-  @javax.annotation.Nullable
-  public String getFamilyName() {
-    return familyName;
-  }
-
-  public void setFamilyName(String familyName) {
-    this.familyName = familyName;
-  }
-
-
-  public VerifyResponse givenName(String givenName) {
-    this.givenName = givenName;
-    return this;
-  }
-
-  /**
-   * Get givenName
-   * @return givenName
-   */
-  @javax.annotation.Nullable
-  public String getGivenName() {
-    return givenName;
-  }
-
-  public void setGivenName(String givenName) {
-    this.givenName = givenName;
-  }
-
-
-  public VerifyResponse fullName(String fullName) {
-    this.fullName = fullName;
-    return this;
-  }
-
-  /**
-   * Get fullName
-   * @return fullName
-   */
-  @javax.annotation.Nullable
-  public String getFullName() {
-    return fullName;
-  }
-
-  public void setFullName(String fullName) {
-    this.fullName = fullName;
-  }
-
-
-  public VerifyResponse phone(String phone) {
-    this.phone = phone;
-    return this;
-  }
-
-  /**
-   * Get phone
-   * @return phone
-   */
-  @javax.annotation.Nullable
-  public String getPhone() {
-    return phone;
-  }
-
-  public void setPhone(String phone) {
-    this.phone = phone;
-  }
-
-
-  public VerifyResponse email(String email) {
-    this.email = email;
-    return this;
-  }
-
-  /**
-   * Get email
-   * @return email
-   */
-  @javax.annotation.Nullable
-  public String getEmail() {
-    return email;
-  }
-
-  public void setEmail(String email) {
-    this.email = email;
-  }
-
-
-  public VerifyResponse maid(String maid) {
-    this.maid = maid;
-    return this;
-  }
-
-  /**
-   * Get maid
-   * @return maid
-   */
-  @javax.annotation.Nullable
-  public String getMaid() {
-    return maid;
-  }
-
-  public void setMaid(String maid) {
-    this.maid = maid;
-  }
-
-
-  public VerifyResponse social(String social) {
-    this.social = social;
-    return this;
-  }
-
-  /**
-   * Get social
-   * @return social
-   */
-  @javax.annotation.Nullable
-  public String getSocial() {
-    return social;
-  }
-
-  public void setSocial(String social) {
-    this.social = social;
-  }
-
-
-  public VerifyResponse nonId(String nonId) {
-    this.nonId = nonId;
-    return this;
-  }
-
-  /**
-   * Get nonId
-   * @return nonId
-   */
-  @javax.annotation.Nullable
-  public String getNonId() {
-    return nonId;
-  }
-
-  public void setNonId(String nonId) {
-    this.nonId = nonId;
-  }
-
-
-  public VerifyResponse panoramaId(String panoramaId) {
-    this.panoramaId = panoramaId;
-    return this;
-  }
-
-  /**
-   * Get panoramaId
-   * @return panoramaId
-   */
-  @javax.annotation.Nullable
-  public String getPanoramaId() {
-    return panoramaId;
-  }
-
-  public void setPanoramaId(String panoramaId) {
-    this.panoramaId = panoramaId;
-  }
-
-
-  public VerifyResponse ipAddress(String ipAddress) {
-    this.ipAddress = ipAddress;
-    return this;
-  }
-
-  /**
-   * Get ipAddress
-   * @return ipAddress
-   */
-  @javax.annotation.Nullable
-  public String getIpAddress() {
-    return ipAddress;
-  }
-
-  public void setIpAddress(String ipAddress) {
-    this.ipAddress = ipAddress;
-  }
-
-
-  public VerifyResponse birthday(String birthday) {
-    this.birthday = birthday;
-    return this;
-  }
-
-  /**
-   * Get birthday
-   * @return birthday
-   */
-  @javax.annotation.Nullable
-  public String getBirthday() {
-    return birthday;
-  }
-
-  public void setBirthday(String birthday) {
-    this.birthday = birthday;
-  }
-
-
-  public VerifyResponse title(String title) {
-    this.title = title;
-    return this;
-  }
-
-  /**
-   * Get title
-   * @return title
-   */
-  @javax.annotation.Nullable
-  public String getTitle() {
-    return title;
-  }
-
-  public void setTitle(String title) {
-    this.title = title;
-  }
-
-
-  public VerifyResponse organization(String organization) {
-    this.organization = organization;
-    return this;
-  }
-
-  /**
-   * Get organization
-   * @return organization
-   */
-  @javax.annotation.Nullable
-  public String getOrganization() {
-    return organization;
-  }
-
-  public void setOrganization(String organization) {
-    this.organization = organization;
-  }
-
-
-  public VerifyResponse risk(Double risk) {
+  public VerifyResponse risk(@javax.annotation.Nullable Double risk) {
     this.risk = risk;
     return this;
   }
@@ -574,12 +182,400 @@ public class VerifyResponse {
     return risk;
   }
 
-  public void setRisk(Double risk) {
+  public void setRisk(@javax.annotation.Nullable Double risk) {
     this.risk = risk;
   }
 
 
-  public VerifyResponse evidence(Evidence evidence) {
+  public VerifyResponse checks(@javax.annotation.Nullable List<CheckResult> checks) {
+    this.checks = checks;
+    return this;
+  }
+
+  public VerifyResponse addChecksItem(CheckResult checksItem) {
+    if (this.checks == null) {
+      this.checks = new ArrayList<>();
+    }
+    this.checks.add(checksItem);
+    return this;
+  }
+
+  /**
+   * Get checks
+   * @return checks
+   */
+  @javax.annotation.Nullable
+  public List<CheckResult> getChecks() {
+    return checks;
+  }
+
+  public void setChecks(@javax.annotation.Nullable List<CheckResult> checks) {
+    this.checks = checks;
+  }
+
+
+  public VerifyResponse sessionId(@javax.annotation.Nullable UUID sessionId) {
+    this.sessionId = sessionId;
+    return this;
+  }
+
+  /**
+   * Get sessionId
+   * @return sessionId
+   */
+  @javax.annotation.Nullable
+  public UUID getSessionId() {
+    return sessionId;
+  }
+
+  public void setSessionId(@javax.annotation.Nullable UUID sessionId) {
+    this.sessionId = sessionId;
+  }
+
+
+  public VerifyResponse addressLine1(@javax.annotation.Nullable String addressLine1) {
+    this.addressLine1 = addressLine1;
+    return this;
+  }
+
+  /**
+   * Get addressLine1
+   * @return addressLine1
+   */
+  @javax.annotation.Nullable
+  public String getAddressLine1() {
+    return addressLine1;
+  }
+
+  public void setAddressLine1(@javax.annotation.Nullable String addressLine1) {
+    this.addressLine1 = addressLine1;
+  }
+
+
+  public VerifyResponse addressLine2(@javax.annotation.Nullable String addressLine2) {
+    this.addressLine2 = addressLine2;
+    return this;
+  }
+
+  /**
+   * Get addressLine2
+   * @return addressLine2
+   */
+  @javax.annotation.Nullable
+  public String getAddressLine2() {
+    return addressLine2;
+  }
+
+  public void setAddressLine2(@javax.annotation.Nullable String addressLine2) {
+    this.addressLine2 = addressLine2;
+  }
+
+
+  public VerifyResponse city(@javax.annotation.Nullable String city) {
+    this.city = city;
+    return this;
+  }
+
+  /**
+   * Get city
+   * @return city
+   */
+  @javax.annotation.Nullable
+  public String getCity() {
+    return city;
+  }
+
+  public void setCity(@javax.annotation.Nullable String city) {
+    this.city = city;
+  }
+
+
+  public VerifyResponse region(@javax.annotation.Nullable String region) {
+    this.region = region;
+    return this;
+  }
+
+  /**
+   * Get region
+   * @return region
+   */
+  @javax.annotation.Nullable
+  public String getRegion() {
+    return region;
+  }
+
+  public void setRegion(@javax.annotation.Nullable String region) {
+    this.region = region;
+  }
+
+
+  public VerifyResponse regionCode(@javax.annotation.Nullable String regionCode) {
+    this.regionCode = regionCode;
+    return this;
+  }
+
+  /**
+   * Get regionCode
+   * @return regionCode
+   */
+  @javax.annotation.Nullable
+  public String getRegionCode() {
+    return regionCode;
+  }
+
+  public void setRegionCode(@javax.annotation.Nullable String regionCode) {
+    this.regionCode = regionCode;
+  }
+
+
+  public VerifyResponse country(@javax.annotation.Nullable String country) {
+    this.country = country;
+    return this;
+  }
+
+  /**
+   * Get country
+   * @return country
+   */
+  @javax.annotation.Nullable
+  public String getCountry() {
+    return country;
+  }
+
+  public void setCountry(@javax.annotation.Nullable String country) {
+    this.country = country;
+  }
+
+
+  public VerifyResponse continent(@javax.annotation.Nullable String continent) {
+    this.continent = continent;
+    return this;
+  }
+
+  /**
+   * Get continent
+   * @return continent
+   */
+  @javax.annotation.Nullable
+  public String getContinent() {
+    return continent;
+  }
+
+  public void setContinent(@javax.annotation.Nullable String continent) {
+    this.continent = continent;
+  }
+
+
+  public VerifyResponse postalCode(@javax.annotation.Nullable String postalCode) {
+    this.postalCode = postalCode;
+    return this;
+  }
+
+  /**
+   * Get postalCode
+   * @return postalCode
+   */
+  @javax.annotation.Nullable
+  public String getPostalCode() {
+    return postalCode;
+  }
+
+  public void setPostalCode(@javax.annotation.Nullable String postalCode) {
+    this.postalCode = postalCode;
+  }
+
+
+  public VerifyResponse familyName(@javax.annotation.Nullable String familyName) {
+    this.familyName = familyName;
+    return this;
+  }
+
+  /**
+   * Get familyName
+   * @return familyName
+   */
+  @javax.annotation.Nullable
+  public String getFamilyName() {
+    return familyName;
+  }
+
+  public void setFamilyName(@javax.annotation.Nullable String familyName) {
+    this.familyName = familyName;
+  }
+
+
+  public VerifyResponse givenName(@javax.annotation.Nullable String givenName) {
+    this.givenName = givenName;
+    return this;
+  }
+
+  /**
+   * Get givenName
+   * @return givenName
+   */
+  @javax.annotation.Nullable
+  public String getGivenName() {
+    return givenName;
+  }
+
+  public void setGivenName(@javax.annotation.Nullable String givenName) {
+    this.givenName = givenName;
+  }
+
+
+  public VerifyResponse fullName(@javax.annotation.Nullable String fullName) {
+    this.fullName = fullName;
+    return this;
+  }
+
+  /**
+   * Get fullName
+   * @return fullName
+   */
+  @javax.annotation.Nullable
+  public String getFullName() {
+    return fullName;
+  }
+
+  public void setFullName(@javax.annotation.Nullable String fullName) {
+    this.fullName = fullName;
+  }
+
+
+  public VerifyResponse phone(@javax.annotation.Nullable String phone) {
+    this.phone = phone;
+    return this;
+  }
+
+  /**
+   * Get phone
+   * @return phone
+   */
+  @javax.annotation.Nullable
+  public String getPhone() {
+    return phone;
+  }
+
+  public void setPhone(@javax.annotation.Nullable String phone) {
+    this.phone = phone;
+  }
+
+
+  public VerifyResponse email(@javax.annotation.Nullable String email) {
+    this.email = email;
+    return this;
+  }
+
+  /**
+   * Get email
+   * @return email
+   */
+  @javax.annotation.Nullable
+  public String getEmail() {
+    return email;
+  }
+
+  public void setEmail(@javax.annotation.Nullable String email) {
+    this.email = email;
+  }
+
+
+  public VerifyResponse social(@javax.annotation.Nullable String social) {
+    this.social = social;
+    return this;
+  }
+
+  /**
+   * Get social
+   * @return social
+   */
+  @javax.annotation.Nullable
+  public String getSocial() {
+    return social;
+  }
+
+  public void setSocial(@javax.annotation.Nullable String social) {
+    this.social = social;
+  }
+
+
+  public VerifyResponse ipAddress(@javax.annotation.Nullable String ipAddress) {
+    this.ipAddress = ipAddress;
+    return this;
+  }
+
+  /**
+   * Get ipAddress
+   * @return ipAddress
+   */
+  @javax.annotation.Nullable
+  public String getIpAddress() {
+    return ipAddress;
+  }
+
+  public void setIpAddress(@javax.annotation.Nullable String ipAddress) {
+    this.ipAddress = ipAddress;
+  }
+
+
+  public VerifyResponse birthday(@javax.annotation.Nullable String birthday) {
+    this.birthday = birthday;
+    return this;
+  }
+
+  /**
+   * Get birthday
+   * @return birthday
+   */
+  @javax.annotation.Nullable
+  public String getBirthday() {
+    return birthday;
+  }
+
+  public void setBirthday(@javax.annotation.Nullable String birthday) {
+    this.birthday = birthday;
+  }
+
+
+  public VerifyResponse title(@javax.annotation.Nullable String title) {
+    this.title = title;
+    return this;
+  }
+
+  /**
+   * Get title
+   * @return title
+   */
+  @javax.annotation.Nullable
+  public String getTitle() {
+    return title;
+  }
+
+  public void setTitle(@javax.annotation.Nullable String title) {
+    this.title = title;
+  }
+
+
+  public VerifyResponse organization(@javax.annotation.Nullable String organization) {
+    this.organization = organization;
+    return this;
+  }
+
+  /**
+   * Get organization
+   * @return organization
+   */
+  @javax.annotation.Nullable
+  public String getOrganization() {
+    return organization;
+  }
+
+  public void setOrganization(@javax.annotation.Nullable String organization) {
+    this.organization = organization;
+  }
+
+
+  public VerifyResponse evidence(@javax.annotation.Nullable Evidence evidence) {
     this.evidence = evidence;
     return this;
   }
@@ -593,73 +589,8 @@ public class VerifyResponse {
     return evidence;
   }
 
-  public void setEvidence(Evidence evidence) {
+  public void setEvidence(@javax.annotation.Nullable Evidence evidence) {
     this.evidence = evidence;
-  }
-
-
-  public VerifyResponse riskV2(Double riskV2) {
-    this.riskV2 = riskV2;
-    return this;
-  }
-
-  /**
-   * Get riskV2
-   * @return riskV2
-   */
-  @javax.annotation.Nullable
-  public Double getRiskV2() {
-    return riskV2;
-  }
-
-  public void setRiskV2(Double riskV2) {
-    this.riskV2 = riskV2;
-  }
-
-
-  public VerifyResponse riskV3(Double riskV3) {
-    this.riskV3 = riskV3;
-    return this;
-  }
-
-  /**
-   * Get riskV3
-   * @return riskV3
-   */
-  @javax.annotation.Nullable
-  public Double getRiskV3() {
-    return riskV3;
-  }
-
-  public void setRiskV3(Double riskV3) {
-    this.riskV3 = riskV3;
-  }
-
-
-  public VerifyResponse scoreDetails(List<ScoreDetails> scoreDetails) {
-    this.scoreDetails = scoreDetails;
-    return this;
-  }
-
-  public VerifyResponse addScoreDetailsItem(ScoreDetails scoreDetailsItem) {
-    if (this.scoreDetails == null) {
-      this.scoreDetails = new ArrayList<>();
-    }
-    this.scoreDetails.add(scoreDetailsItem);
-    return this;
-  }
-
-  /**
-   * Get scoreDetails
-   * @return scoreDetails
-   */
-  @javax.annotation.Nullable
-  public List<ScoreDetails> getScoreDetails() {
-    return scoreDetails;
-  }
-
-  public void setScoreDetails(List<ScoreDetails> scoreDetails) {
-    this.scoreDetails = scoreDetails;
   }
 
 
@@ -673,7 +604,10 @@ public class VerifyResponse {
       return false;
     }
     VerifyResponse verifyResponse = (VerifyResponse) o;
-    return Objects.equals(this.addressLine1, verifyResponse.addressLine1) &&
+    return Objects.equals(this.risk, verifyResponse.risk) &&
+        Objects.equals(this.checks, verifyResponse.checks) &&
+        Objects.equals(this.sessionId, verifyResponse.sessionId) &&
+        Objects.equals(this.addressLine1, verifyResponse.addressLine1) &&
         Objects.equals(this.addressLine2, verifyResponse.addressLine2) &&
         Objects.equals(this.city, verifyResponse.city) &&
         Objects.equals(this.region, verifyResponse.region) &&
@@ -686,30 +620,26 @@ public class VerifyResponse {
         Objects.equals(this.fullName, verifyResponse.fullName) &&
         Objects.equals(this.phone, verifyResponse.phone) &&
         Objects.equals(this.email, verifyResponse.email) &&
-        Objects.equals(this.maid, verifyResponse.maid) &&
         Objects.equals(this.social, verifyResponse.social) &&
-        Objects.equals(this.nonId, verifyResponse.nonId) &&
-        Objects.equals(this.panoramaId, verifyResponse.panoramaId) &&
         Objects.equals(this.ipAddress, verifyResponse.ipAddress) &&
         Objects.equals(this.birthday, verifyResponse.birthday) &&
         Objects.equals(this.title, verifyResponse.title) &&
         Objects.equals(this.organization, verifyResponse.organization) &&
-        Objects.equals(this.risk, verifyResponse.risk) &&
-        Objects.equals(this.evidence, verifyResponse.evidence) &&
-        Objects.equals(this.riskV2, verifyResponse.riskV2) &&
-        Objects.equals(this.riskV3, verifyResponse.riskV3) &&
-        Objects.equals(this.scoreDetails, verifyResponse.scoreDetails);
+        Objects.equals(this.evidence, verifyResponse.evidence);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(addressLine1, addressLine2, city, region, regionCode, country, continent, postalCode, familyName, givenName, fullName, phone, email, maid, social, nonId, panoramaId, ipAddress, birthday, title, organization, risk, evidence, riskV2, riskV3, scoreDetails);
+    return Objects.hash(risk, checks, sessionId, addressLine1, addressLine2, city, region, regionCode, country, continent, postalCode, familyName, givenName, fullName, phone, email, social, ipAddress, birthday, title, organization, evidence);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class VerifyResponse {\n");
+    sb.append("    risk: ").append(toIndentedString(risk)).append("\n");
+    sb.append("    checks: ").append(toIndentedString(checks)).append("\n");
+    sb.append("    sessionId: ").append(toIndentedString(sessionId)).append("\n");
     sb.append("    addressLine1: ").append(toIndentedString(addressLine1)).append("\n");
     sb.append("    addressLine2: ").append(toIndentedString(addressLine2)).append("\n");
     sb.append("    city: ").append(toIndentedString(city)).append("\n");
@@ -723,19 +653,12 @@ public class VerifyResponse {
     sb.append("    fullName: ").append(toIndentedString(fullName)).append("\n");
     sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
-    sb.append("    maid: ").append(toIndentedString(maid)).append("\n");
     sb.append("    social: ").append(toIndentedString(social)).append("\n");
-    sb.append("    nonId: ").append(toIndentedString(nonId)).append("\n");
-    sb.append("    panoramaId: ").append(toIndentedString(panoramaId)).append("\n");
     sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
     sb.append("    birthday: ").append(toIndentedString(birthday)).append("\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    organization: ").append(toIndentedString(organization)).append("\n");
-    sb.append("    risk: ").append(toIndentedString(risk)).append("\n");
     sb.append("    evidence: ").append(toIndentedString(evidence)).append("\n");
-    sb.append("    riskV2: ").append(toIndentedString(riskV2)).append("\n");
-    sb.append("    riskV3: ").append(toIndentedString(riskV3)).append("\n");
-    sb.append("    scoreDetails: ").append(toIndentedString(scoreDetails)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -745,10 +668,7 @@ public class VerifyResponse {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -757,36 +677,10 @@ public class VerifyResponse {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("addressLine1");
-    openapiFields.add("addressLine2");
-    openapiFields.add("city");
-    openapiFields.add("region");
-    openapiFields.add("regionCode");
-    openapiFields.add("country");
-    openapiFields.add("continent");
-    openapiFields.add("postalCode");
-    openapiFields.add("familyName");
-    openapiFields.add("givenName");
-    openapiFields.add("fullName");
-    openapiFields.add("phone");
-    openapiFields.add("email");
-    openapiFields.add("maid");
-    openapiFields.add("social");
-    openapiFields.add("nonId");
-    openapiFields.add("panoramaId");
-    openapiFields.add("ipAddress");
-    openapiFields.add("birthday");
-    openapiFields.add("title");
-    openapiFields.add("organization");
-    openapiFields.add("risk");
-    openapiFields.add("evidence");
-    openapiFields.add("riskV2");
-    openapiFields.add("riskV3");
-    openapiFields.add("scoreDetails");
+    openapiFields = new HashSet<String>(Arrays.asList("risk", "checks", "sessionId", "addressLine1", "addressLine2", "city", "region", "regionCode", "country", "continent", "postalCode", "familyName", "givenName", "fullName", "phone", "email", "social", "ipAddress", "birthday", "title", "organization", "evidence"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -798,7 +692,7 @@ public class VerifyResponse {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!VerifyResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in VerifyResponse is not found in the empty JSON string", VerifyResponse.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in VerifyResponse is not found in the empty JSON string", VerifyResponse.openapiRequiredFields.toString()));
         }
       }
 
@@ -806,90 +700,84 @@ public class VerifyResponse {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!VerifyResponse.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `VerifyResponse` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `VerifyResponse` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if (jsonObj.get("checks") != null && !jsonObj.get("checks").isJsonNull()) {
+        JsonArray jsonArraychecks = jsonObj.getAsJsonArray("checks");
+        if (jsonArraychecks != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("checks").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `checks` to be an array in the JSON string but got `%s`", jsonObj.get("checks").toString()));
+          }
+
+          // validate the optional field `checks` (array)
+          for (int i = 0; i < jsonArraychecks.size(); i++) {
+            CheckResult.validateJsonElement(jsonArraychecks.get(i));
+          };
+        }
+      }
+      if ((jsonObj.get("sessionId") != null && !jsonObj.get("sessionId").isJsonNull()) && !jsonObj.get("sessionId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `sessionId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sessionId").toString()));
+      }
       if ((jsonObj.get("addressLine1") != null && !jsonObj.get("addressLine1").isJsonNull()) && !jsonObj.get("addressLine1").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `addressLine1` to be a primitive type in the JSON string but got `%s`", jsonObj.get("addressLine1").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `addressLine1` to be a primitive type in the JSON string but got `%s`", jsonObj.get("addressLine1").toString()));
       }
       if ((jsonObj.get("addressLine2") != null && !jsonObj.get("addressLine2").isJsonNull()) && !jsonObj.get("addressLine2").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `addressLine2` to be a primitive type in the JSON string but got `%s`", jsonObj.get("addressLine2").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `addressLine2` to be a primitive type in the JSON string but got `%s`", jsonObj.get("addressLine2").toString()));
       }
       if ((jsonObj.get("city") != null && !jsonObj.get("city").isJsonNull()) && !jsonObj.get("city").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `city` to be a primitive type in the JSON string but got `%s`", jsonObj.get("city").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `city` to be a primitive type in the JSON string but got `%s`", jsonObj.get("city").toString()));
       }
       if ((jsonObj.get("region") != null && !jsonObj.get("region").isJsonNull()) && !jsonObj.get("region").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `region` to be a primitive type in the JSON string but got `%s`", jsonObj.get("region").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `region` to be a primitive type in the JSON string but got `%s`", jsonObj.get("region").toString()));
       }
       if ((jsonObj.get("regionCode") != null && !jsonObj.get("regionCode").isJsonNull()) && !jsonObj.get("regionCode").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `regionCode` to be a primitive type in the JSON string but got `%s`", jsonObj.get("regionCode").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `regionCode` to be a primitive type in the JSON string but got `%s`", jsonObj.get("regionCode").toString()));
       }
       if ((jsonObj.get("country") != null && !jsonObj.get("country").isJsonNull()) && !jsonObj.get("country").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `country` to be a primitive type in the JSON string but got `%s`", jsonObj.get("country").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `country` to be a primitive type in the JSON string but got `%s`", jsonObj.get("country").toString()));
       }
       if ((jsonObj.get("continent") != null && !jsonObj.get("continent").isJsonNull()) && !jsonObj.get("continent").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `continent` to be a primitive type in the JSON string but got `%s`", jsonObj.get("continent").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `continent` to be a primitive type in the JSON string but got `%s`", jsonObj.get("continent").toString()));
       }
       if ((jsonObj.get("postalCode") != null && !jsonObj.get("postalCode").isJsonNull()) && !jsonObj.get("postalCode").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `postalCode` to be a primitive type in the JSON string but got `%s`", jsonObj.get("postalCode").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `postalCode` to be a primitive type in the JSON string but got `%s`", jsonObj.get("postalCode").toString()));
       }
       if ((jsonObj.get("familyName") != null && !jsonObj.get("familyName").isJsonNull()) && !jsonObj.get("familyName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `familyName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("familyName").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `familyName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("familyName").toString()));
       }
       if ((jsonObj.get("givenName") != null && !jsonObj.get("givenName").isJsonNull()) && !jsonObj.get("givenName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `givenName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("givenName").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `givenName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("givenName").toString()));
       }
       if ((jsonObj.get("fullName") != null && !jsonObj.get("fullName").isJsonNull()) && !jsonObj.get("fullName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `fullName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("fullName").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `fullName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("fullName").toString()));
       }
       if ((jsonObj.get("phone") != null && !jsonObj.get("phone").isJsonNull()) && !jsonObj.get("phone").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `phone` to be a primitive type in the JSON string but got `%s`", jsonObj.get("phone").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `phone` to be a primitive type in the JSON string but got `%s`", jsonObj.get("phone").toString()));
       }
       if ((jsonObj.get("email") != null && !jsonObj.get("email").isJsonNull()) && !jsonObj.get("email").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `email` to be a primitive type in the JSON string but got `%s`", jsonObj.get("email").toString()));
-      }
-      if ((jsonObj.get("maid") != null && !jsonObj.get("maid").isJsonNull()) && !jsonObj.get("maid").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `maid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("maid").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `email` to be a primitive type in the JSON string but got `%s`", jsonObj.get("email").toString()));
       }
       if ((jsonObj.get("social") != null && !jsonObj.get("social").isJsonNull()) && !jsonObj.get("social").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `social` to be a primitive type in the JSON string but got `%s`", jsonObj.get("social").toString()));
-      }
-      if ((jsonObj.get("nonId") != null && !jsonObj.get("nonId").isJsonNull()) && !jsonObj.get("nonId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `nonId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nonId").toString()));
-      }
-      if ((jsonObj.get("panoramaId") != null && !jsonObj.get("panoramaId").isJsonNull()) && !jsonObj.get("panoramaId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `panoramaId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("panoramaId").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `social` to be a primitive type in the JSON string but got `%s`", jsonObj.get("social").toString()));
       }
       if ((jsonObj.get("ipAddress") != null && !jsonObj.get("ipAddress").isJsonNull()) && !jsonObj.get("ipAddress").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `ipAddress` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ipAddress").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `ipAddress` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ipAddress").toString()));
       }
       if ((jsonObj.get("birthday") != null && !jsonObj.get("birthday").isJsonNull()) && !jsonObj.get("birthday").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `birthday` to be a primitive type in the JSON string but got `%s`", jsonObj.get("birthday").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `birthday` to be a primitive type in the JSON string but got `%s`", jsonObj.get("birthday").toString()));
       }
       if ((jsonObj.get("title") != null && !jsonObj.get("title").isJsonNull()) && !jsonObj.get("title").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `title` to be a primitive type in the JSON string but got `%s`", jsonObj.get("title").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `title` to be a primitive type in the JSON string but got `%s`", jsonObj.get("title").toString()));
       }
       if ((jsonObj.get("organization") != null && !jsonObj.get("organization").isJsonNull()) && !jsonObj.get("organization").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `organization` to be a primitive type in the JSON string but got `%s`", jsonObj.get("organization").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `organization` to be a primitive type in the JSON string but got `%s`", jsonObj.get("organization").toString()));
       }
       // validate the optional field `evidence`
       if (jsonObj.get("evidence") != null && !jsonObj.get("evidence").isJsonNull()) {
         Evidence.validateJsonElement(jsonObj.get("evidence"));
-      }
-      if (jsonObj.get("scoreDetails") != null && !jsonObj.get("scoreDetails").isJsonNull()) {
-        JsonArray jsonArrayscoreDetails = jsonObj.getAsJsonArray("scoreDetails");
-        if (jsonArrayscoreDetails != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("scoreDetails").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `scoreDetails` to be an array in the JSON string but got `%s`", jsonObj.get("scoreDetails").toString()));
-          }
-
-          // validate the optional field `scoreDetails` (array)
-          for (int i = 0; i < jsonArrayscoreDetails.size(); i++) {
-            ScoreDetails.validateJsonElement(jsonArrayscoreDetails.get(i));
-          };
-        }
       }
   }
 
