@@ -9,7 +9,6 @@
 |------------ | ------------- | ------------- | -------------|
 |**ipTor** | **Boolean** |  |  [optional] |
 |**ipCountry** | **IPCountry** |  |  [optional] |
-|**countryOfIp** | **String** |  |  [optional] |
 
 
 

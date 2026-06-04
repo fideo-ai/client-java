@@ -48,44 +48,52 @@ import ai.fideo.client.JSON;
 /**
  * SocialProfileReq
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
 public class SocialProfileReq {
   public static final String SERIALIZED_NAME_USERNAME = "username";
   @SerializedName(SERIALIZED_NAME_USERNAME)
+  @javax.annotation.Nullable
   private String username;
 
   public static final String SERIALIZED_NAME_USERID = "userid";
   @SerializedName(SERIALIZED_NAME_USERID)
+  @javax.annotation.Nullable
   private String userid;
 
   public static final String SERIALIZED_NAME_URL = "url";
   @SerializedName(SERIALIZED_NAME_URL)
+  @javax.annotation.Nullable
   private String url;
 
   public static final String SERIALIZED_NAME_BIO = "bio";
   @SerializedName(SERIALIZED_NAME_BIO)
+  @javax.annotation.Nullable
   private String bio;
 
   public static final String SERIALIZED_NAME_SERVICE = "service";
   @SerializedName(SERIALIZED_NAME_SERVICE)
+  @javax.annotation.Nullable
   private String service;
 
   public static final String SERIALIZED_NAME_FOLLOWERS = "followers";
   @SerializedName(SERIALIZED_NAME_FOLLOWERS)
+  @javax.annotation.Nullable
   private Integer followers;
 
   public static final String SERIALIZED_NAME_FOLLOWING = "following";
   @SerializedName(SERIALIZED_NAME_FOLLOWING)
+  @javax.annotation.Nullable
   private Integer following;
 
   public static final String SERIALIZED_NAME_SCORE = "score";
   @SerializedName(SERIALIZED_NAME_SCORE)
+  @javax.annotation.Nullable
   private Integer score;
 
   public SocialProfileReq() {
   }
 
-  public SocialProfileReq username(String username) {
+  public SocialProfileReq username(@javax.annotation.Nullable String username) {
     this.username = username;
     return this;
   }
@@ -99,12 +107,12 @@ public class SocialProfileReq {
     return username;
   }
 
-  public void setUsername(String username) {
+  public void setUsername(@javax.annotation.Nullable String username) {
     this.username = username;
   }
 
 
-  public SocialProfileReq userid(String userid) {
+  public SocialProfileReq userid(@javax.annotation.Nullable String userid) {
     this.userid = userid;
     return this;
   }
@@ -118,12 +126,12 @@ public class SocialProfileReq {
     return userid;
   }
 
-  public void setUserid(String userid) {
+  public void setUserid(@javax.annotation.Nullable String userid) {
     this.userid = userid;
   }
 
 
-  public SocialProfileReq url(String url) {
+  public SocialProfileReq url(@javax.annotation.Nullable String url) {
     this.url = url;
     return this;
   }
@@ -137,12 +145,12 @@ public class SocialProfileReq {
     return url;
   }
 
-  public void setUrl(String url) {
+  public void setUrl(@javax.annotation.Nullable String url) {
     this.url = url;
   }
 
 
-  public SocialProfileReq bio(String bio) {
+  public SocialProfileReq bio(@javax.annotation.Nullable String bio) {
     this.bio = bio;
     return this;
   }
@@ -156,12 +164,12 @@ public class SocialProfileReq {
     return bio;
   }
 
-  public void setBio(String bio) {
+  public void setBio(@javax.annotation.Nullable String bio) {
     this.bio = bio;
   }
 
 
-  public SocialProfileReq service(String service) {
+  public SocialProfileReq service(@javax.annotation.Nullable String service) {
     this.service = service;
     return this;
   }
@@ -175,12 +183,12 @@ public class SocialProfileReq {
     return service;
   }
 
-  public void setService(String service) {
+  public void setService(@javax.annotation.Nullable String service) {
     this.service = service;
   }
 
 
-  public SocialProfileReq followers(Integer followers) {
+  public SocialProfileReq followers(@javax.annotation.Nullable Integer followers) {
     this.followers = followers;
     return this;
   }
@@ -194,12 +202,12 @@ public class SocialProfileReq {
     return followers;
   }
 
-  public void setFollowers(Integer followers) {
+  public void setFollowers(@javax.annotation.Nullable Integer followers) {
     this.followers = followers;
   }
 
 
-  public SocialProfileReq following(Integer following) {
+  public SocialProfileReq following(@javax.annotation.Nullable Integer following) {
     this.following = following;
     return this;
   }
@@ -213,12 +221,12 @@ public class SocialProfileReq {
     return following;
   }
 
-  public void setFollowing(Integer following) {
+  public void setFollowing(@javax.annotation.Nullable Integer following) {
     this.following = following;
   }
 
 
-  public SocialProfileReq score(Integer score) {
+  public SocialProfileReq score(@javax.annotation.Nullable Integer score) {
     this.score = score;
     return this;
   }
@@ -232,7 +240,7 @@ public class SocialProfileReq {
     return score;
   }
 
-  public void setScore(Integer score) {
+  public void setScore(@javax.annotation.Nullable Integer score) {
     this.score = score;
   }
 
@@ -283,10 +291,7 @@ public class SocialProfileReq {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -295,18 +300,10 @@ public class SocialProfileReq {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("username");
-    openapiFields.add("userid");
-    openapiFields.add("url");
-    openapiFields.add("bio");
-    openapiFields.add("service");
-    openapiFields.add("followers");
-    openapiFields.add("following");
-    openapiFields.add("score");
+    openapiFields = new HashSet<String>(Arrays.asList("username", "userid", "url", "bio", "service", "followers", "following", "score"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -318,7 +315,7 @@ public class SocialProfileReq {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!SocialProfileReq.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in SocialProfileReq is not found in the empty JSON string", SocialProfileReq.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in SocialProfileReq is not found in the empty JSON string", SocialProfileReq.openapiRequiredFields.toString()));
         }
       }
 
@@ -326,24 +323,24 @@ public class SocialProfileReq {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!SocialProfileReq.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `SocialProfileReq` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `SocialProfileReq` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("username") != null && !jsonObj.get("username").isJsonNull()) && !jsonObj.get("username").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `username` to be a primitive type in the JSON string but got `%s`", jsonObj.get("username").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `username` to be a primitive type in the JSON string but got `%s`", jsonObj.get("username").toString()));
       }
       if ((jsonObj.get("userid") != null && !jsonObj.get("userid").isJsonNull()) && !jsonObj.get("userid").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `userid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("userid").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `userid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("userid").toString()));
       }
       if ((jsonObj.get("url") != null && !jsonObj.get("url").isJsonNull()) && !jsonObj.get("url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("url").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("url").toString()));
       }
       if ((jsonObj.get("bio") != null && !jsonObj.get("bio").isJsonNull()) && !jsonObj.get("bio").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `bio` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bio").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `bio` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bio").toString()));
       }
       if ((jsonObj.get("service") != null && !jsonObj.get("service").isJsonNull()) && !jsonObj.get("service").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `service` to be a primitive type in the JSON string but got `%s`", jsonObj.get("service").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `service` to be a primitive type in the JSON string but got `%s`", jsonObj.get("service").toString()));
       }
   }
 

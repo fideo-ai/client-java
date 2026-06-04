@@ -25,7 +25,6 @@
 |**partnerKeys** | **Map&lt;String, String&gt;** |  |  [optional] |
 |**liNonid** | **String** |  |  [optional] |
 |**panoramaId** | **String** |  |  [optional] |
-|**placekey** | **String** |  |  [optional] |
 |**generatePid** | **Boolean** |  |  [optional] |
 |**email** | **String** |  |  [optional] |
 |**phone** | **String** |  |  [optional] |

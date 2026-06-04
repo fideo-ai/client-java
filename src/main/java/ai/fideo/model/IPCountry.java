@@ -29,11 +29,11 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(IPCountry.Adapter.class)
 public enum IPCountry {
   
-  DOMESTIC("DOMESTIC"),
+  DOMESTIC("domestic"),
   
-  FOREIGN("FOREIGN"),
+  FOREIGN("foreign"),
   
-  UNKNOWN("UNKNOWN");
+  UNKNOWN("unknown");
 
   private String value;
 

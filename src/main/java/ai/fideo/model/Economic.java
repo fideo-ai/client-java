@@ -48,36 +48,42 @@ import ai.fideo.client.JSON;
 /**
  * Economic
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
 public class Economic {
   public static final String SERIALIZED_NAME_DWELLING_TYPE = "dwellingType";
   @SerializedName(SERIALIZED_NAME_DWELLING_TYPE)
+  @javax.annotation.Nullable
   private String dwellingType;
 
   public static final String SERIALIZED_NAME_HOME_OWNERSHIP = "homeOwnership";
   @SerializedName(SERIALIZED_NAME_HOME_OWNERSHIP)
+  @javax.annotation.Nullable
   private String homeOwnership;
 
   public static final String SERIALIZED_NAME_MARITAL_STATUS = "maritalStatus";
   @SerializedName(SERIALIZED_NAME_MARITAL_STATUS)
+  @javax.annotation.Nullable
   private String maritalStatus;
 
   public static final String SERIALIZED_NAME_PRESENCE_OF_CHILDREN = "presenceOfChildren";
   @SerializedName(SERIALIZED_NAME_PRESENCE_OF_CHILDREN)
+  @javax.annotation.Nullable
   private String presenceOfChildren;
 
   public static final String SERIALIZED_NAME_INCOME = "income";
   @SerializedName(SERIALIZED_NAME_INCOME)
+  @javax.annotation.Nullable
   private String income;
 
   public static final String SERIALIZED_NAME_NET_WORTH = "netWorth";
   @SerializedName(SERIALIZED_NAME_NET_WORTH)
+  @javax.annotation.Nullable
   private String netWorth;
 
   public Economic() {
   }
 
-  public Economic dwellingType(String dwellingType) {
+  public Economic dwellingType(@javax.annotation.Nullable String dwellingType) {
     this.dwellingType = dwellingType;
     return this;
   }
@@ -91,12 +97,12 @@ public class Economic {
     return dwellingType;
   }
 
-  public void setDwellingType(String dwellingType) {
+  public void setDwellingType(@javax.annotation.Nullable String dwellingType) {
     this.dwellingType = dwellingType;
   }
 
 
-  public Economic homeOwnership(String homeOwnership) {
+  public Economic homeOwnership(@javax.annotation.Nullable String homeOwnership) {
     this.homeOwnership = homeOwnership;
     return this;
   }
@@ -110,12 +116,12 @@ public class Economic {
     return homeOwnership;
   }
 
-  public void setHomeOwnership(String homeOwnership) {
+  public void setHomeOwnership(@javax.annotation.Nullable String homeOwnership) {
     this.homeOwnership = homeOwnership;
   }
 
 
-  public Economic maritalStatus(String maritalStatus) {
+  public Economic maritalStatus(@javax.annotation.Nullable String maritalStatus) {
     this.maritalStatus = maritalStatus;
     return this;
   }
@@ -129,12 +135,12 @@ public class Economic {
     return maritalStatus;
   }
 
-  public void setMaritalStatus(String maritalStatus) {
+  public void setMaritalStatus(@javax.annotation.Nullable String maritalStatus) {
     this.maritalStatus = maritalStatus;
   }
 
 
-  public Economic presenceOfChildren(String presenceOfChildren) {
+  public Economic presenceOfChildren(@javax.annotation.Nullable String presenceOfChildren) {
     this.presenceOfChildren = presenceOfChildren;
     return this;
   }
@@ -148,12 +154,12 @@ public class Economic {
     return presenceOfChildren;
   }
 
-  public void setPresenceOfChildren(String presenceOfChildren) {
+  public void setPresenceOfChildren(@javax.annotation.Nullable String presenceOfChildren) {
     this.presenceOfChildren = presenceOfChildren;
   }
 
 
-  public Economic income(String income) {
+  public Economic income(@javax.annotation.Nullable String income) {
     this.income = income;
     return this;
   }
@@ -167,12 +173,12 @@ public class Economic {
     return income;
   }
 
-  public void setIncome(String income) {
+  public void setIncome(@javax.annotation.Nullable String income) {
     this.income = income;
   }
 
 
-  public Economic netWorth(String netWorth) {
+  public Economic netWorth(@javax.annotation.Nullable String netWorth) {
     this.netWorth = netWorth;
     return this;
   }
@@ -186,7 +192,7 @@ public class Economic {
     return netWorth;
   }
 
-  public void setNetWorth(String netWorth) {
+  public void setNetWorth(@javax.annotation.Nullable String netWorth) {
     this.netWorth = netWorth;
   }
 
@@ -233,10 +239,7 @@ public class Economic {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -245,16 +248,10 @@ public class Economic {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("dwellingType");
-    openapiFields.add("homeOwnership");
-    openapiFields.add("maritalStatus");
-    openapiFields.add("presenceOfChildren");
-    openapiFields.add("income");
-    openapiFields.add("netWorth");
+    openapiFields = new HashSet<String>(Arrays.asList("dwellingType", "homeOwnership", "maritalStatus", "presenceOfChildren", "income", "netWorth"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -266,7 +263,7 @@ public class Economic {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Economic.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in Economic is not found in the empty JSON string", Economic.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in Economic is not found in the empty JSON string", Economic.openapiRequiredFields.toString()));
         }
       }
 
@@ -274,27 +271,27 @@ public class Economic {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!Economic.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Economic` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `Economic` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("dwellingType") != null && !jsonObj.get("dwellingType").isJsonNull()) && !jsonObj.get("dwellingType").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `dwellingType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("dwellingType").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `dwellingType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("dwellingType").toString()));
       }
       if ((jsonObj.get("homeOwnership") != null && !jsonObj.get("homeOwnership").isJsonNull()) && !jsonObj.get("homeOwnership").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `homeOwnership` to be a primitive type in the JSON string but got `%s`", jsonObj.get("homeOwnership").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `homeOwnership` to be a primitive type in the JSON string but got `%s`", jsonObj.get("homeOwnership").toString()));
       }
       if ((jsonObj.get("maritalStatus") != null && !jsonObj.get("maritalStatus").isJsonNull()) && !jsonObj.get("maritalStatus").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `maritalStatus` to be a primitive type in the JSON string but got `%s`", jsonObj.get("maritalStatus").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `maritalStatus` to be a primitive type in the JSON string but got `%s`", jsonObj.get("maritalStatus").toString()));
       }
       if ((jsonObj.get("presenceOfChildren") != null && !jsonObj.get("presenceOfChildren").isJsonNull()) && !jsonObj.get("presenceOfChildren").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `presenceOfChildren` to be a primitive type in the JSON string but got `%s`", jsonObj.get("presenceOfChildren").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `presenceOfChildren` to be a primitive type in the JSON string but got `%s`", jsonObj.get("presenceOfChildren").toString()));
       }
       if ((jsonObj.get("income") != null && !jsonObj.get("income").isJsonNull()) && !jsonObj.get("income").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `income` to be a primitive type in the JSON string but got `%s`", jsonObj.get("income").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `income` to be a primitive type in the JSON string but got `%s`", jsonObj.get("income").toString()));
       }
       if ((jsonObj.get("netWorth") != null && !jsonObj.get("netWorth").isJsonNull()) && !jsonObj.get("netWorth").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `netWorth` to be a primitive type in the JSON string but got `%s`", jsonObj.get("netWorth").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `netWorth` to be a primitive type in the JSON string but got `%s`", jsonObj.get("netWorth").toString()));
       }
   }
 

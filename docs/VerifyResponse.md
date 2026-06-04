@@ -7,6 +7,9 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+|**risk** | **Double** |  |  [optional] |
+|**checks** | [**List&lt;CheckResult&gt;**](CheckResult.md) |  |  [optional] |
+|**sessionId** | **UUID** |  |  [optional] |
 |**addressLine1** | **String** |  |  [optional] |
 |**addressLine2** | **String** |  |  [optional] |
 |**city** | **String** |  |  [optional] |
@@ -20,19 +23,12 @@
 |**fullName** | **String** |  |  [optional] |
 |**phone** | **String** |  |  [optional] |
 |**email** | **String** |  |  [optional] |
-|**maid** | **String** |  |  [optional] |
 |**social** | **String** |  |  [optional] |
-|**nonId** | **String** |  |  [optional] |
-|**panoramaId** | **String** |  |  [optional] |
 |**ipAddress** | **String** |  |  [optional] |
 |**birthday** | **String** |  |  [optional] |
 |**title** | **String** |  |  [optional] |
 |**organization** | **String** |  |  [optional] |
-|**risk** | **Double** |  |  [optional] |
 |**evidence** | [**Evidence**](Evidence.md) |  |  [optional] |
-|**riskV2** | **Double** |  |  [optional] |
-|**riskV3** | **Double** |  |  [optional] |
-|**scoreDetails** | [**List&lt;ScoreDetails&gt;**](ScoreDetails.md) |  |  [optional] |
 
 
 

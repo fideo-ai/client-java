@@ -189,14 +189,6 @@ public class MultiFieldReqTest {
     }
 
     /**
-     * Test the property 'placekey'
-     */
-    @Test
-    public void placekeyTest() {
-        // TODO: test placekey
-    }
-
-    /**
      * Test the property 'generatePid'
      */
     @Test

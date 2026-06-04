@@ -49,24 +49,22 @@ import ai.fideo.client.JSON;
 /**
  * Evidence
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
 public class Evidence {
   public static final String SERIALIZED_NAME_IP_TOR = "ipTor";
   @SerializedName(SERIALIZED_NAME_IP_TOR)
+  @javax.annotation.Nullable
   private Boolean ipTor;
 
   public static final String SERIALIZED_NAME_IP_COUNTRY = "ipCountry";
   @SerializedName(SERIALIZED_NAME_IP_COUNTRY)
+  @javax.annotation.Nullable
   private IPCountry ipCountry;
-
-  public static final String SERIALIZED_NAME_COUNTRY_OF_IP = "countryOfIp";
-  @SerializedName(SERIALIZED_NAME_COUNTRY_OF_IP)
-  private String countryOfIp;
 
   public Evidence() {
   }
 
-  public Evidence ipTor(Boolean ipTor) {
+  public Evidence ipTor(@javax.annotation.Nullable Boolean ipTor) {
     this.ipTor = ipTor;
     return this;
   }
@@ -80,12 +78,12 @@ public class Evidence {
     return ipTor;
   }
 
-  public void setIpTor(Boolean ipTor) {
+  public void setIpTor(@javax.annotation.Nullable Boolean ipTor) {
     this.ipTor = ipTor;
   }
 
 
-  public Evidence ipCountry(IPCountry ipCountry) {
+  public Evidence ipCountry(@javax.annotation.Nullable IPCountry ipCountry) {
     this.ipCountry = ipCountry;
     return this;
   }
@@ -99,27 +97,8 @@ public class Evidence {
     return ipCountry;
   }
 
-  public void setIpCountry(IPCountry ipCountry) {
+  public void setIpCountry(@javax.annotation.Nullable IPCountry ipCountry) {
     this.ipCountry = ipCountry;
-  }
-
-
-  public Evidence countryOfIp(String countryOfIp) {
-    this.countryOfIp = countryOfIp;
-    return this;
-  }
-
-  /**
-   * Get countryOfIp
-   * @return countryOfIp
-   */
-  @javax.annotation.Nullable
-  public String getCountryOfIp() {
-    return countryOfIp;
-  }
-
-  public void setCountryOfIp(String countryOfIp) {
-    this.countryOfIp = countryOfIp;
   }
 
 
@@ -134,13 +113,12 @@ public class Evidence {
     }
     Evidence evidence = (Evidence) o;
     return Objects.equals(this.ipTor, evidence.ipTor) &&
-        Objects.equals(this.ipCountry, evidence.ipCountry) &&
-        Objects.equals(this.countryOfIp, evidence.countryOfIp);
+        Objects.equals(this.ipCountry, evidence.ipCountry);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(ipTor, ipCountry, countryOfIp);
+    return Objects.hash(ipTor, ipCountry);
   }
 
   @Override
@@ -149,7 +127,6 @@ public class Evidence {
     sb.append("class Evidence {\n");
     sb.append("    ipTor: ").append(toIndentedString(ipTor)).append("\n");
     sb.append("    ipCountry: ").append(toIndentedString(ipCountry)).append("\n");
-    sb.append("    countryOfIp: ").append(toIndentedString(countryOfIp)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -159,10 +136,7 @@ public class Evidence {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -171,13 +145,10 @@ public class Evidence {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("ipTor");
-    openapiFields.add("ipCountry");
-    openapiFields.add("countryOfIp");
+    openapiFields = new HashSet<String>(Arrays.asList("ipTor", "ipCountry"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -189,7 +160,7 @@ public class Evidence {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Evidence.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in Evidence is not found in the empty JSON string", Evidence.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in Evidence is not found in the empty JSON string", Evidence.openapiRequiredFields.toString()));
         }
       }
 
@@ -197,16 +168,13 @@ public class Evidence {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!Evidence.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Evidence` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `Evidence` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // validate the optional field `ipCountry`
       if (jsonObj.get("ipCountry") != null && !jsonObj.get("ipCountry").isJsonNull()) {
         IPCountry.validateJsonElement(jsonObj.get("ipCountry"));
-      }
-      if ((jsonObj.get("countryOfIp") != null && !jsonObj.get("countryOfIp").isJsonNull()) && !jsonObj.get("countryOfIp").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `countryOfIp` to be a primitive type in the JSON string but got `%s`", jsonObj.get("countryOfIp").toString()));
       }
   }
 

@@ -27,8 +27,11 @@ import io.gsonfire.TypeSelector;
 import okio.ByteString;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.StringReader;
 import java.lang.reflect.Type;
+import java.nio.charset.StandardCharsets;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.ParsePosition;
@@ -94,6 +97,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapter(LocalDate.class, localDateTypeAdapter);
         gsonBuilder.registerTypeAdapter(byte[].class, byteArrayAdapter);
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.Alias.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.CheckResult.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.Demographics.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.Economic.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.Education.CustomTypeAdapterFactory());
@@ -112,12 +116,17 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.Phone.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.Photo.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.ScoreDetails.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.SignalPatternRecencyResponse.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.SignalPatternResponseUnit.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.SignalPatternResponseUnitCount.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.SignalPatternsTimeseriesRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.SignalsPost200Response.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.SignalsResponseV0.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.SignalsResponseV20240424.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.SocialProfileDetails.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.SocialProfileReq.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.SocialProfileUrls.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.StatusResponseWithMessage.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.VerifyResponse.CustomTypeAdapterFactory());
         gson = gsonBuilder.create();
     }
@@ -180,6 +189,28 @@ public class JSON {
                 return (T) body;
             } else {
                 throw (e);
+            }
+        }
+    }
+
+    /**
+    * Deserialize the given JSON InputStream to a Java object.
+    *
+    * @param <T>         Type
+    * @param inputStream The JSON InputStream
+    * @param returnType  The type to deserialize into
+    * @return The deserialized Java object
+    */
+    @SuppressWarnings("unchecked")
+    public static <T> T deserialize(InputStream inputStream, Type returnType) throws IOException {
+        try (InputStreamReader reader = new InputStreamReader(inputStream, StandardCharsets.UTF_8)) {
+        if (isLenientOnJson) {
+            // see https://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/stream/JsonReader.html#setLenient(boolean)
+            JsonReader jsonReader = new JsonReader(reader);
+            jsonReader.setLenient(true);
+            return gson.fromJson(jsonReader, returnType);
+            } else {
+                return gson.fromJson(reader, returnType);
             }
         }
     }

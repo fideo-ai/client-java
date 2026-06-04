@@ -48,24 +48,27 @@ import ai.fideo.client.JSON;
 /**
  * EducationDate
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
 public class EducationDate {
   public static final String SERIALIZED_NAME_YEAR = "year";
   @SerializedName(SERIALIZED_NAME_YEAR)
+  @javax.annotation.Nullable
   private Integer year;
 
   public static final String SERIALIZED_NAME_MONTH = "month";
   @SerializedName(SERIALIZED_NAME_MONTH)
+  @javax.annotation.Nullable
   private Integer month;
 
   public static final String SERIALIZED_NAME_DAY = "day";
   @SerializedName(SERIALIZED_NAME_DAY)
+  @javax.annotation.Nullable
   private Integer day;
 
   public EducationDate() {
   }
 
-  public EducationDate year(Integer year) {
+  public EducationDate year(@javax.annotation.Nullable Integer year) {
     this.year = year;
     return this;
   }
@@ -79,12 +82,12 @@ public class EducationDate {
     return year;
   }
 
-  public void setYear(Integer year) {
+  public void setYear(@javax.annotation.Nullable Integer year) {
     this.year = year;
   }
 
 
-  public EducationDate month(Integer month) {
+  public EducationDate month(@javax.annotation.Nullable Integer month) {
     this.month = month;
     return this;
   }
@@ -98,12 +101,12 @@ public class EducationDate {
     return month;
   }
 
-  public void setMonth(Integer month) {
+  public void setMonth(@javax.annotation.Nullable Integer month) {
     this.month = month;
   }
 
 
-  public EducationDate day(Integer day) {
+  public EducationDate day(@javax.annotation.Nullable Integer day) {
     this.day = day;
     return this;
   }
@@ -117,7 +120,7 @@ public class EducationDate {
     return day;
   }
 
-  public void setDay(Integer day) {
+  public void setDay(@javax.annotation.Nullable Integer day) {
     this.day = day;
   }
 
@@ -158,10 +161,7 @@ public class EducationDate {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -170,13 +170,10 @@ public class EducationDate {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("year");
-    openapiFields.add("month");
-    openapiFields.add("day");
+    openapiFields = new HashSet<String>(Arrays.asList("year", "month", "day"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -188,7 +185,7 @@ public class EducationDate {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!EducationDate.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in EducationDate is not found in the empty JSON string", EducationDate.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in EducationDate is not found in the empty JSON string", EducationDate.openapiRequiredFields.toString()));
         }
       }
 
@@ -196,7 +193,7 @@ public class EducationDate {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!EducationDate.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `EducationDate` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `EducationDate` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();

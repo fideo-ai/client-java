@@ -54,12 +54,4 @@ public class EvidenceTest {
         // TODO: test ipCountry
     }
 
-    /**
-     * Test the property 'countryOfIp'
-     */
-    @Test
-    public void countryOfIpTest() {
-        // TODO: test countryOfIp
-    }
-
 }

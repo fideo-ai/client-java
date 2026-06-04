@@ -51,36 +51,42 @@ import ai.fideo.client.JSON;
 /**
  * NameWithAlias
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
 public class NameWithAlias {
   public static final String SERIALIZED_NAME_FIRST = "first";
   @SerializedName(SERIALIZED_NAME_FIRST)
+  @javax.annotation.Nullable
   private String first;
 
   public static final String SERIALIZED_NAME_LAST = "last";
   @SerializedName(SERIALIZED_NAME_LAST)
+  @javax.annotation.Nullable
   private String last;
 
   public static final String SERIALIZED_NAME_MIDDLE = "middle";
   @SerializedName(SERIALIZED_NAME_MIDDLE)
+  @javax.annotation.Nullable
   private String middle;
 
   public static final String SERIALIZED_NAME_GIVEN_NAME = "givenName";
   @SerializedName(SERIALIZED_NAME_GIVEN_NAME)
+  @javax.annotation.Nullable
   private String givenName;
 
   public static final String SERIALIZED_NAME_FAMILY_NAME = "familyName";
   @SerializedName(SERIALIZED_NAME_FAMILY_NAME)
+  @javax.annotation.Nullable
   private String familyName;
 
   public static final String SERIALIZED_NAME_ALIASES = "aliases";
   @SerializedName(SERIALIZED_NAME_ALIASES)
+  @javax.annotation.Nullable
   private List<Alias> aliases = new ArrayList<>();
 
   public NameWithAlias() {
   }
 
-  public NameWithAlias first(String first) {
+  public NameWithAlias first(@javax.annotation.Nullable String first) {
     this.first = first;
     return this;
   }
@@ -94,12 +100,12 @@ public class NameWithAlias {
     return first;
   }
 
-  public void setFirst(String first) {
+  public void setFirst(@javax.annotation.Nullable String first) {
     this.first = first;
   }
 
 
-  public NameWithAlias last(String last) {
+  public NameWithAlias last(@javax.annotation.Nullable String last) {
     this.last = last;
     return this;
   }
@@ -113,12 +119,12 @@ public class NameWithAlias {
     return last;
   }
 
-  public void setLast(String last) {
+  public void setLast(@javax.annotation.Nullable String last) {
     this.last = last;
   }
 
 
-  public NameWithAlias middle(String middle) {
+  public NameWithAlias middle(@javax.annotation.Nullable String middle) {
     this.middle = middle;
     return this;
   }
@@ -132,12 +138,12 @@ public class NameWithAlias {
     return middle;
   }
 
-  public void setMiddle(String middle) {
+  public void setMiddle(@javax.annotation.Nullable String middle) {
     this.middle = middle;
   }
 
 
-  public NameWithAlias givenName(String givenName) {
+  public NameWithAlias givenName(@javax.annotation.Nullable String givenName) {
     this.givenName = givenName;
     return this;
   }
@@ -151,12 +157,12 @@ public class NameWithAlias {
     return givenName;
   }
 
-  public void setGivenName(String givenName) {
+  public void setGivenName(@javax.annotation.Nullable String givenName) {
     this.givenName = givenName;
   }
 
 
-  public NameWithAlias familyName(String familyName) {
+  public NameWithAlias familyName(@javax.annotation.Nullable String familyName) {
     this.familyName = familyName;
     return this;
   }
@@ -170,12 +176,12 @@ public class NameWithAlias {
     return familyName;
   }
 
-  public void setFamilyName(String familyName) {
+  public void setFamilyName(@javax.annotation.Nullable String familyName) {
     this.familyName = familyName;
   }
 
 
-  public NameWithAlias aliases(List<Alias> aliases) {
+  public NameWithAlias aliases(@javax.annotation.Nullable List<Alias> aliases) {
     this.aliases = aliases;
     return this;
   }
@@ -197,7 +203,7 @@ public class NameWithAlias {
     return aliases;
   }
 
-  public void setAliases(List<Alias> aliases) {
+  public void setAliases(@javax.annotation.Nullable List<Alias> aliases) {
     this.aliases = aliases;
   }
 
@@ -244,10 +250,7 @@ public class NameWithAlias {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -256,16 +259,10 @@ public class NameWithAlias {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("first");
-    openapiFields.add("last");
-    openapiFields.add("middle");
-    openapiFields.add("givenName");
-    openapiFields.add("familyName");
-    openapiFields.add("aliases");
+    openapiFields = new HashSet<String>(Arrays.asList("first", "last", "middle", "givenName", "familyName", "aliases"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -277,7 +274,7 @@ public class NameWithAlias {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!NameWithAlias.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in NameWithAlias is not found in the empty JSON string", NameWithAlias.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in NameWithAlias is not found in the empty JSON string", NameWithAlias.openapiRequiredFields.toString()));
         }
       }
 
@@ -285,31 +282,31 @@ public class NameWithAlias {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!NameWithAlias.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `NameWithAlias` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `NameWithAlias` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("first") != null && !jsonObj.get("first").isJsonNull()) && !jsonObj.get("first").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `first` to be a primitive type in the JSON string but got `%s`", jsonObj.get("first").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `first` to be a primitive type in the JSON string but got `%s`", jsonObj.get("first").toString()));
       }
       if ((jsonObj.get("last") != null && !jsonObj.get("last").isJsonNull()) && !jsonObj.get("last").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `last` to be a primitive type in the JSON string but got `%s`", jsonObj.get("last").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `last` to be a primitive type in the JSON string but got `%s`", jsonObj.get("last").toString()));
       }
       if ((jsonObj.get("middle") != null && !jsonObj.get("middle").isJsonNull()) && !jsonObj.get("middle").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `middle` to be a primitive type in the JSON string but got `%s`", jsonObj.get("middle").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `middle` to be a primitive type in the JSON string but got `%s`", jsonObj.get("middle").toString()));
       }
       if ((jsonObj.get("givenName") != null && !jsonObj.get("givenName").isJsonNull()) && !jsonObj.get("givenName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `givenName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("givenName").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `givenName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("givenName").toString()));
       }
       if ((jsonObj.get("familyName") != null && !jsonObj.get("familyName").isJsonNull()) && !jsonObj.get("familyName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `familyName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("familyName").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `familyName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("familyName").toString()));
       }
       if (jsonObj.get("aliases") != null && !jsonObj.get("aliases").isJsonNull()) {
         JsonArray jsonArrayaliases = jsonObj.getAsJsonArray("aliases");
         if (jsonArrayaliases != null) {
           // ensure the json data is an array
           if (!jsonObj.get("aliases").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `aliases` to be an array in the JSON string but got `%s`", jsonObj.get("aliases").toString()));
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `aliases` to be an array in the JSON string but got `%s`", jsonObj.get("aliases").toString()));
           }
 
           // validate the optional field `aliases` (array)

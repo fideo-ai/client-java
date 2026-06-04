@@ -13,8 +13,8 @@
 
 package ai.fideo.model;
 
+import ai.fideo.model.CheckResult;
 import ai.fideo.model.Evidence;
-import ai.fideo.model.ScoreDetails;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -39,6 +40,30 @@ public class VerifyResponseTest {
     @Test
     public void testVerifyResponse() {
         // TODO: test VerifyResponse
+    }
+
+    /**
+     * Test the property 'risk'
+     */
+    @Test
+    public void riskTest() {
+        // TODO: test risk
+    }
+
+    /**
+     * Test the property 'checks'
+     */
+    @Test
+    public void checksTest() {
+        // TODO: test checks
+    }
+
+    /**
+     * Test the property 'sessionId'
+     */
+    @Test
+    public void sessionIdTest() {
+        // TODO: test sessionId
     }
 
     /**
@@ -146,35 +171,11 @@ public class VerifyResponseTest {
     }
 
     /**
-     * Test the property 'maid'
-     */
-    @Test
-    public void maidTest() {
-        // TODO: test maid
-    }
-
-    /**
      * Test the property 'social'
      */
     @Test
     public void socialTest() {
         // TODO: test social
-    }
-
-    /**
-     * Test the property 'nonId'
-     */
-    @Test
-    public void nonIdTest() {
-        // TODO: test nonId
-    }
-
-    /**
-     * Test the property 'panoramaId'
-     */
-    @Test
-    public void panoramaIdTest() {
-        // TODO: test panoramaId
     }
 
     /**
@@ -210,43 +211,11 @@ public class VerifyResponseTest {
     }
 
     /**
-     * Test the property 'risk'
-     */
-    @Test
-    public void riskTest() {
-        // TODO: test risk
-    }
-
-    /**
      * Test the property 'evidence'
      */
     @Test
     public void evidenceTest() {
         // TODO: test evidence
-    }
-
-    /**
-     * Test the property 'riskV2'
-     */
-    @Test
-    public void riskV2Test() {
-        // TODO: test riskV2
-    }
-
-    /**
-     * Test the property 'riskV3'
-     */
-    @Test
-    public void riskV3Test() {
-        // TODO: test riskV3
-    }
-
-    /**
-     * Test the property 'scoreDetails'
-     */
-    @Test
-    public void scoreDetailsTest() {
-        // TODO: test scoreDetails
     }
 
 }

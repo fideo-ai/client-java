@@ -16,6 +16,7 @@ package ai.fideo.api;
 import ai.fideo.client.ApiException;
 import ai.fideo.model.MultiFieldReqWithOptions;
 import ai.fideo.model.SignalsPost200Response;
+import ai.fideo.model.StatusResponseWithMessage;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 

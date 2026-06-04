@@ -55,108 +55,127 @@ import ai.fideo.client.JSON;
 /**
  * MultiFieldReq
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
 public class MultiFieldReq {
   public static final String SERIALIZED_NAME_TWITTER = "twitter";
   @SerializedName(SERIALIZED_NAME_TWITTER)
+  @javax.annotation.Nullable
   private String twitter;
 
   public static final String SERIALIZED_NAME_LINKEDIN = "linkedin";
   @SerializedName(SERIALIZED_NAME_LINKEDIN)
+  @javax.annotation.Nullable
   private String linkedin;
 
   public static final String SERIALIZED_NAME_RECORD_ID = "recordId";
   @SerializedName(SERIALIZED_NAME_RECORD_ID)
+  @javax.annotation.Nullable
   private String recordId;
 
   public static final String SERIALIZED_NAME_PERSON_ID = "personId";
   @SerializedName(SERIALIZED_NAME_PERSON_ID)
+  @javax.annotation.Nullable
   private String personId;
 
   public static final String SERIALIZED_NAME_PARTNER_ID = "partnerId";
   @SerializedName(SERIALIZED_NAME_PARTNER_ID)
+  @javax.annotation.Nullable
   private String partnerId;
 
   public static final String SERIALIZED_NAME_LOCATION = "location";
   @SerializedName(SERIALIZED_NAME_LOCATION)
+  @javax.annotation.Nullable
   private LocationReq location;
 
   public static final String SERIALIZED_NAME_AVATAR = "avatar";
   @SerializedName(SERIALIZED_NAME_AVATAR)
+  @javax.annotation.Nullable
   private String avatar;
 
   public static final String SERIALIZED_NAME_WEBSITE = "website";
   @SerializedName(SERIALIZED_NAME_WEBSITE)
+  @javax.annotation.Nullable
   private String website;
 
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
+  @javax.annotation.Nullable
   private String title;
 
   public static final String SERIALIZED_NAME_ORGANIZATION = "organization";
   @SerializedName(SERIALIZED_NAME_ORGANIZATION)
+  @javax.annotation.Nullable
   private String organization;
 
   public static final String SERIALIZED_NAME_EMAILS = "emails";
   @SerializedName(SERIALIZED_NAME_EMAILS)
+  @javax.annotation.Nullable
   private List<String> emails = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PHONES = "phones";
   @SerializedName(SERIALIZED_NAME_PHONES)
+  @javax.annotation.Nullable
   private List<String> phones = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PROFILES = "profiles";
   @SerializedName(SERIALIZED_NAME_PROFILES)
+  @javax.annotation.Nullable
   private List<SocialProfileReq> profiles = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_MAIDS = "maids";
   @SerializedName(SERIALIZED_NAME_MAIDS)
+  @javax.annotation.Nullable
   private List<String> maids = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private PersonNameReq name;
 
   public static final String SERIALIZED_NAME_PARTNER_KEYS = "partnerKeys";
   @SerializedName(SERIALIZED_NAME_PARTNER_KEYS)
+  @javax.annotation.Nullable
   private Map<String, String> partnerKeys = new HashMap<>();
 
   public static final String SERIALIZED_NAME_LI_NONID = "li_nonid";
   @SerializedName(SERIALIZED_NAME_LI_NONID)
+  @javax.annotation.Nullable
   private String liNonid;
 
   public static final String SERIALIZED_NAME_PANORAMA_ID = "panoramaId";
   @SerializedName(SERIALIZED_NAME_PANORAMA_ID)
+  @javax.annotation.Nullable
   private String panoramaId;
-
-  public static final String SERIALIZED_NAME_PLACEKEY = "placekey";
-  @SerializedName(SERIALIZED_NAME_PLACEKEY)
-  private String placekey;
 
   public static final String SERIALIZED_NAME_GENERATE_PID = "generatePid";
   @SerializedName(SERIALIZED_NAME_GENERATE_PID)
+  @javax.annotation.Nullable
   private Boolean generatePid;
 
   public static final String SERIALIZED_NAME_EMAIL = "email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
+  @javax.annotation.Nullable
   private String email;
 
   public static final String SERIALIZED_NAME_PHONE = "phone";
   @SerializedName(SERIALIZED_NAME_PHONE)
+  @javax.annotation.Nullable
   private String phone;
 
   public static final String SERIALIZED_NAME_PROFILE = "profile";
   @SerializedName(SERIALIZED_NAME_PROFILE)
+  @javax.annotation.Nullable
   private SocialProfileReq profile;
 
   public static final String SERIALIZED_NAME_MAID = "maid";
   @SerializedName(SERIALIZED_NAME_MAID)
+  @javax.annotation.Nullable
   private String maid;
 
   public MultiFieldReq() {
   }
 
-  public MultiFieldReq twitter(String twitter) {
+  public MultiFieldReq twitter(@javax.annotation.Nullable String twitter) {
     this.twitter = twitter;
     return this;
   }
@@ -170,12 +189,12 @@ public class MultiFieldReq {
     return twitter;
   }
 
-  public void setTwitter(String twitter) {
+  public void setTwitter(@javax.annotation.Nullable String twitter) {
     this.twitter = twitter;
   }
 
 
-  public MultiFieldReq linkedin(String linkedin) {
+  public MultiFieldReq linkedin(@javax.annotation.Nullable String linkedin) {
     this.linkedin = linkedin;
     return this;
   }
@@ -189,12 +208,12 @@ public class MultiFieldReq {
     return linkedin;
   }
 
-  public void setLinkedin(String linkedin) {
+  public void setLinkedin(@javax.annotation.Nullable String linkedin) {
     this.linkedin = linkedin;
   }
 
 
-  public MultiFieldReq recordId(String recordId) {
+  public MultiFieldReq recordId(@javax.annotation.Nullable String recordId) {
     this.recordId = recordId;
     return this;
   }
@@ -208,12 +227,12 @@ public class MultiFieldReq {
     return recordId;
   }
 
-  public void setRecordId(String recordId) {
+  public void setRecordId(@javax.annotation.Nullable String recordId) {
     this.recordId = recordId;
   }
 
 
-  public MultiFieldReq personId(String personId) {
+  public MultiFieldReq personId(@javax.annotation.Nullable String personId) {
     this.personId = personId;
     return this;
   }
@@ -227,12 +246,12 @@ public class MultiFieldReq {
     return personId;
   }
 
-  public void setPersonId(String personId) {
+  public void setPersonId(@javax.annotation.Nullable String personId) {
     this.personId = personId;
   }
 
 
-  public MultiFieldReq partnerId(String partnerId) {
+  public MultiFieldReq partnerId(@javax.annotation.Nullable String partnerId) {
     this.partnerId = partnerId;
     return this;
   }
@@ -246,12 +265,12 @@ public class MultiFieldReq {
     return partnerId;
   }
 
-  public void setPartnerId(String partnerId) {
+  public void setPartnerId(@javax.annotation.Nullable String partnerId) {
     this.partnerId = partnerId;
   }
 
 
-  public MultiFieldReq location(LocationReq location) {
+  public MultiFieldReq location(@javax.annotation.Nullable LocationReq location) {
     this.location = location;
     return this;
   }
@@ -265,12 +284,12 @@ public class MultiFieldReq {
     return location;
   }
 
-  public void setLocation(LocationReq location) {
+  public void setLocation(@javax.annotation.Nullable LocationReq location) {
     this.location = location;
   }
 
 
-  public MultiFieldReq avatar(String avatar) {
+  public MultiFieldReq avatar(@javax.annotation.Nullable String avatar) {
     this.avatar = avatar;
     return this;
   }
@@ -284,12 +303,12 @@ public class MultiFieldReq {
     return avatar;
   }
 
-  public void setAvatar(String avatar) {
+  public void setAvatar(@javax.annotation.Nullable String avatar) {
     this.avatar = avatar;
   }
 
 
-  public MultiFieldReq website(String website) {
+  public MultiFieldReq website(@javax.annotation.Nullable String website) {
     this.website = website;
     return this;
   }
@@ -303,12 +322,12 @@ public class MultiFieldReq {
     return website;
   }
 
-  public void setWebsite(String website) {
+  public void setWebsite(@javax.annotation.Nullable String website) {
     this.website = website;
   }
 
 
-  public MultiFieldReq title(String title) {
+  public MultiFieldReq title(@javax.annotation.Nullable String title) {
     this.title = title;
     return this;
   }
@@ -322,12 +341,12 @@ public class MultiFieldReq {
     return title;
   }
 
-  public void setTitle(String title) {
+  public void setTitle(@javax.annotation.Nullable String title) {
     this.title = title;
   }
 
 
-  public MultiFieldReq organization(String organization) {
+  public MultiFieldReq organization(@javax.annotation.Nullable String organization) {
     this.organization = organization;
     return this;
   }
@@ -341,12 +360,12 @@ public class MultiFieldReq {
     return organization;
   }
 
-  public void setOrganization(String organization) {
+  public void setOrganization(@javax.annotation.Nullable String organization) {
     this.organization = organization;
   }
 
 
-  public MultiFieldReq emails(List<String> emails) {
+  public MultiFieldReq emails(@javax.annotation.Nullable List<String> emails) {
     this.emails = emails;
     return this;
   }
@@ -368,12 +387,12 @@ public class MultiFieldReq {
     return emails;
   }
 
-  public void setEmails(List<String> emails) {
+  public void setEmails(@javax.annotation.Nullable List<String> emails) {
     this.emails = emails;
   }
 
 
-  public MultiFieldReq phones(List<String> phones) {
+  public MultiFieldReq phones(@javax.annotation.Nullable List<String> phones) {
     this.phones = phones;
     return this;
   }
@@ -395,12 +414,12 @@ public class MultiFieldReq {
     return phones;
   }
 
-  public void setPhones(List<String> phones) {
+  public void setPhones(@javax.annotation.Nullable List<String> phones) {
     this.phones = phones;
   }
 
 
-  public MultiFieldReq profiles(List<SocialProfileReq> profiles) {
+  public MultiFieldReq profiles(@javax.annotation.Nullable List<SocialProfileReq> profiles) {
     this.profiles = profiles;
     return this;
   }
@@ -422,12 +441,12 @@ public class MultiFieldReq {
     return profiles;
   }
 
-  public void setProfiles(List<SocialProfileReq> profiles) {
+  public void setProfiles(@javax.annotation.Nullable List<SocialProfileReq> profiles) {
     this.profiles = profiles;
   }
 
 
-  public MultiFieldReq maids(List<String> maids) {
+  public MultiFieldReq maids(@javax.annotation.Nullable List<String> maids) {
     this.maids = maids;
     return this;
   }
@@ -449,12 +468,12 @@ public class MultiFieldReq {
     return maids;
   }
 
-  public void setMaids(List<String> maids) {
+  public void setMaids(@javax.annotation.Nullable List<String> maids) {
     this.maids = maids;
   }
 
 
-  public MultiFieldReq name(PersonNameReq name) {
+  public MultiFieldReq name(@javax.annotation.Nullable PersonNameReq name) {
     this.name = name;
     return this;
   }
@@ -468,12 +487,12 @@ public class MultiFieldReq {
     return name;
   }
 
-  public void setName(PersonNameReq name) {
+  public void setName(@javax.annotation.Nullable PersonNameReq name) {
     this.name = name;
   }
 
 
-  public MultiFieldReq partnerKeys(Map<String, String> partnerKeys) {
+  public MultiFieldReq partnerKeys(@javax.annotation.Nullable Map<String, String> partnerKeys) {
     this.partnerKeys = partnerKeys;
     return this;
   }
@@ -495,12 +514,12 @@ public class MultiFieldReq {
     return partnerKeys;
   }
 
-  public void setPartnerKeys(Map<String, String> partnerKeys) {
+  public void setPartnerKeys(@javax.annotation.Nullable Map<String, String> partnerKeys) {
     this.partnerKeys = partnerKeys;
   }
 
 
-  public MultiFieldReq liNonid(String liNonid) {
+  public MultiFieldReq liNonid(@javax.annotation.Nullable String liNonid) {
     this.liNonid = liNonid;
     return this;
   }
@@ -514,12 +533,12 @@ public class MultiFieldReq {
     return liNonid;
   }
 
-  public void setLiNonid(String liNonid) {
+  public void setLiNonid(@javax.annotation.Nullable String liNonid) {
     this.liNonid = liNonid;
   }
 
 
-  public MultiFieldReq panoramaId(String panoramaId) {
+  public MultiFieldReq panoramaId(@javax.annotation.Nullable String panoramaId) {
     this.panoramaId = panoramaId;
     return this;
   }
@@ -533,31 +552,12 @@ public class MultiFieldReq {
     return panoramaId;
   }
 
-  public void setPanoramaId(String panoramaId) {
+  public void setPanoramaId(@javax.annotation.Nullable String panoramaId) {
     this.panoramaId = panoramaId;
   }
 
 
-  public MultiFieldReq placekey(String placekey) {
-    this.placekey = placekey;
-    return this;
-  }
-
-  /**
-   * Get placekey
-   * @return placekey
-   */
-  @javax.annotation.Nullable
-  public String getPlacekey() {
-    return placekey;
-  }
-
-  public void setPlacekey(String placekey) {
-    this.placekey = placekey;
-  }
-
-
-  public MultiFieldReq generatePid(Boolean generatePid) {
+  public MultiFieldReq generatePid(@javax.annotation.Nullable Boolean generatePid) {
     this.generatePid = generatePid;
     return this;
   }
@@ -571,12 +571,12 @@ public class MultiFieldReq {
     return generatePid;
   }
 
-  public void setGeneratePid(Boolean generatePid) {
+  public void setGeneratePid(@javax.annotation.Nullable Boolean generatePid) {
     this.generatePid = generatePid;
   }
 
 
-  public MultiFieldReq email(String email) {
+  public MultiFieldReq email(@javax.annotation.Nullable String email) {
     this.email = email;
     return this;
   }
@@ -590,12 +590,12 @@ public class MultiFieldReq {
     return email;
   }
 
-  public void setEmail(String email) {
+  public void setEmail(@javax.annotation.Nullable String email) {
     this.email = email;
   }
 
 
-  public MultiFieldReq phone(String phone) {
+  public MultiFieldReq phone(@javax.annotation.Nullable String phone) {
     this.phone = phone;
     return this;
   }
@@ -609,12 +609,12 @@ public class MultiFieldReq {
     return phone;
   }
 
-  public void setPhone(String phone) {
+  public void setPhone(@javax.annotation.Nullable String phone) {
     this.phone = phone;
   }
 
 
-  public MultiFieldReq profile(SocialProfileReq profile) {
+  public MultiFieldReq profile(@javax.annotation.Nullable SocialProfileReq profile) {
     this.profile = profile;
     return this;
   }
@@ -628,12 +628,12 @@ public class MultiFieldReq {
     return profile;
   }
 
-  public void setProfile(SocialProfileReq profile) {
+  public void setProfile(@javax.annotation.Nullable SocialProfileReq profile) {
     this.profile = profile;
   }
 
 
-  public MultiFieldReq maid(String maid) {
+  public MultiFieldReq maid(@javax.annotation.Nullable String maid) {
     this.maid = maid;
     return this;
   }
@@ -647,7 +647,7 @@ public class MultiFieldReq {
     return maid;
   }
 
-  public void setMaid(String maid) {
+  public void setMaid(@javax.annotation.Nullable String maid) {
     this.maid = maid;
   }
 
@@ -680,7 +680,6 @@ public class MultiFieldReq {
         Objects.equals(this.partnerKeys, multiFieldReq.partnerKeys) &&
         Objects.equals(this.liNonid, multiFieldReq.liNonid) &&
         Objects.equals(this.panoramaId, multiFieldReq.panoramaId) &&
-        Objects.equals(this.placekey, multiFieldReq.placekey) &&
         Objects.equals(this.generatePid, multiFieldReq.generatePid) &&
         Objects.equals(this.email, multiFieldReq.email) &&
         Objects.equals(this.phone, multiFieldReq.phone) &&
@@ -690,7 +689,7 @@ public class MultiFieldReq {
 
   @Override
   public int hashCode() {
-    return Objects.hash(twitter, linkedin, recordId, personId, partnerId, location, avatar, website, title, organization, emails, phones, profiles, maids, name, partnerKeys, liNonid, panoramaId, placekey, generatePid, email, phone, profile, maid);
+    return Objects.hash(twitter, linkedin, recordId, personId, partnerId, location, avatar, website, title, organization, emails, phones, profiles, maids, name, partnerKeys, liNonid, panoramaId, generatePid, email, phone, profile, maid);
   }
 
   @Override
@@ -715,7 +714,6 @@ public class MultiFieldReq {
     sb.append("    partnerKeys: ").append(toIndentedString(partnerKeys)).append("\n");
     sb.append("    liNonid: ").append(toIndentedString(liNonid)).append("\n");
     sb.append("    panoramaId: ").append(toIndentedString(panoramaId)).append("\n");
-    sb.append("    placekey: ").append(toIndentedString(placekey)).append("\n");
     sb.append("    generatePid: ").append(toIndentedString(generatePid)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
@@ -730,10 +728,7 @@ public class MultiFieldReq {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -742,34 +737,10 @@ public class MultiFieldReq {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("twitter");
-    openapiFields.add("linkedin");
-    openapiFields.add("recordId");
-    openapiFields.add("personId");
-    openapiFields.add("partnerId");
-    openapiFields.add("location");
-    openapiFields.add("avatar");
-    openapiFields.add("website");
-    openapiFields.add("title");
-    openapiFields.add("organization");
-    openapiFields.add("emails");
-    openapiFields.add("phones");
-    openapiFields.add("profiles");
-    openapiFields.add("maids");
-    openapiFields.add("name");
-    openapiFields.add("partnerKeys");
-    openapiFields.add("li_nonid");
-    openapiFields.add("panoramaId");
-    openapiFields.add("placekey");
-    openapiFields.add("generatePid");
-    openapiFields.add("email");
-    openapiFields.add("phone");
-    openapiFields.add("profile");
-    openapiFields.add("maid");
+    openapiFields = new HashSet<String>(Arrays.asList("twitter", "linkedin", "recordId", "personId", "partnerId", "location", "avatar", "website", "title", "organization", "emails", "phones", "profiles", "maids", "name", "partnerKeys", "li_nonid", "panoramaId", "generatePid", "email", "phone", "profile", "maid"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -781,55 +752,55 @@ public class MultiFieldReq {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!MultiFieldReq.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in MultiFieldReq is not found in the empty JSON string", MultiFieldReq.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in MultiFieldReq is not found in the empty JSON string", MultiFieldReq.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("twitter") != null && !jsonObj.get("twitter").isJsonNull()) && !jsonObj.get("twitter").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `twitter` to be a primitive type in the JSON string but got `%s`", jsonObj.get("twitter").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `twitter` to be a primitive type in the JSON string but got `%s`", jsonObj.get("twitter").toString()));
       }
       if ((jsonObj.get("linkedin") != null && !jsonObj.get("linkedin").isJsonNull()) && !jsonObj.get("linkedin").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `linkedin` to be a primitive type in the JSON string but got `%s`", jsonObj.get("linkedin").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `linkedin` to be a primitive type in the JSON string but got `%s`", jsonObj.get("linkedin").toString()));
       }
       if ((jsonObj.get("recordId") != null && !jsonObj.get("recordId").isJsonNull()) && !jsonObj.get("recordId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `recordId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("recordId").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `recordId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("recordId").toString()));
       }
       if ((jsonObj.get("personId") != null && !jsonObj.get("personId").isJsonNull()) && !jsonObj.get("personId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `personId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("personId").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `personId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("personId").toString()));
       }
       if ((jsonObj.get("partnerId") != null && !jsonObj.get("partnerId").isJsonNull()) && !jsonObj.get("partnerId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `partnerId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("partnerId").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `partnerId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("partnerId").toString()));
       }
       // validate the optional field `location`
       if (jsonObj.get("location") != null && !jsonObj.get("location").isJsonNull()) {
         LocationReq.validateJsonElement(jsonObj.get("location"));
       }
       if ((jsonObj.get("avatar") != null && !jsonObj.get("avatar").isJsonNull()) && !jsonObj.get("avatar").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `avatar` to be a primitive type in the JSON string but got `%s`", jsonObj.get("avatar").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `avatar` to be a primitive type in the JSON string but got `%s`", jsonObj.get("avatar").toString()));
       }
       if ((jsonObj.get("website") != null && !jsonObj.get("website").isJsonNull()) && !jsonObj.get("website").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `website` to be a primitive type in the JSON string but got `%s`", jsonObj.get("website").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `website` to be a primitive type in the JSON string but got `%s`", jsonObj.get("website").toString()));
       }
       if ((jsonObj.get("title") != null && !jsonObj.get("title").isJsonNull()) && !jsonObj.get("title").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `title` to be a primitive type in the JSON string but got `%s`", jsonObj.get("title").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `title` to be a primitive type in the JSON string but got `%s`", jsonObj.get("title").toString()));
       }
       if ((jsonObj.get("organization") != null && !jsonObj.get("organization").isJsonNull()) && !jsonObj.get("organization").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `organization` to be a primitive type in the JSON string but got `%s`", jsonObj.get("organization").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `organization` to be a primitive type in the JSON string but got `%s`", jsonObj.get("organization").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("emails") != null && !jsonObj.get("emails").isJsonNull() && !jsonObj.get("emails").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `emails` to be an array in the JSON string but got `%s`", jsonObj.get("emails").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `emails` to be an array in the JSON string but got `%s`", jsonObj.get("emails").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("phones") != null && !jsonObj.get("phones").isJsonNull() && !jsonObj.get("phones").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `phones` to be an array in the JSON string but got `%s`", jsonObj.get("phones").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `phones` to be an array in the JSON string but got `%s`", jsonObj.get("phones").toString()));
       }
       if (jsonObj.get("profiles") != null && !jsonObj.get("profiles").isJsonNull()) {
         JsonArray jsonArrayprofiles = jsonObj.getAsJsonArray("profiles");
         if (jsonArrayprofiles != null) {
           // ensure the json data is an array
           if (!jsonObj.get("profiles").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `profiles` to be an array in the JSON string but got `%s`", jsonObj.get("profiles").toString()));
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `profiles` to be an array in the JSON string but got `%s`", jsonObj.get("profiles").toString()));
           }
 
           // validate the optional field `profiles` (array)
@@ -840,33 +811,30 @@ public class MultiFieldReq {
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("maids") != null && !jsonObj.get("maids").isJsonNull() && !jsonObj.get("maids").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `maids` to be an array in the JSON string but got `%s`", jsonObj.get("maids").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `maids` to be an array in the JSON string but got `%s`", jsonObj.get("maids").toString()));
       }
       // validate the optional field `name`
       if (jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) {
         PersonNameReq.validateJsonElement(jsonObj.get("name"));
       }
       if ((jsonObj.get("li_nonid") != null && !jsonObj.get("li_nonid").isJsonNull()) && !jsonObj.get("li_nonid").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `li_nonid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("li_nonid").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `li_nonid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("li_nonid").toString()));
       }
       if ((jsonObj.get("panoramaId") != null && !jsonObj.get("panoramaId").isJsonNull()) && !jsonObj.get("panoramaId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `panoramaId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("panoramaId").toString()));
-      }
-      if ((jsonObj.get("placekey") != null && !jsonObj.get("placekey").isJsonNull()) && !jsonObj.get("placekey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `placekey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("placekey").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `panoramaId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("panoramaId").toString()));
       }
       if ((jsonObj.get("email") != null && !jsonObj.get("email").isJsonNull()) && !jsonObj.get("email").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `email` to be a primitive type in the JSON string but got `%s`", jsonObj.get("email").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `email` to be a primitive type in the JSON string but got `%s`", jsonObj.get("email").toString()));
       }
       if ((jsonObj.get("phone") != null && !jsonObj.get("phone").isJsonNull()) && !jsonObj.get("phone").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `phone` to be a primitive type in the JSON string but got `%s`", jsonObj.get("phone").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `phone` to be a primitive type in the JSON string but got `%s`", jsonObj.get("phone").toString()));
       }
       // validate the optional field `profile`
       if (jsonObj.get("profile") != null && !jsonObj.get("profile").isJsonNull()) {
         SocialProfileReq.validateJsonElement(jsonObj.get("profile"));
       }
       if ((jsonObj.get("maid") != null && !jsonObj.get("maid").isJsonNull()) && !jsonObj.get("maid").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `maid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("maid").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `maid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("maid").toString()));
       }
   }
 

@@ -48,36 +48,42 @@ import ai.fideo.client.JSON;
 /**
  * Phone
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
 public class Phone {
   public static final String SERIALIZED_NAME_FIRST_SEEN_MS = "firstSeenMs";
   @SerializedName(SERIALIZED_NAME_FIRST_SEEN_MS)
+  @javax.annotation.Nullable
   private Long firstSeenMs;
 
   public static final String SERIALIZED_NAME_LAST_SEEN_MS = "lastSeenMs";
   @SerializedName(SERIALIZED_NAME_LAST_SEEN_MS)
+  @javax.annotation.Nullable
   private Long lastSeenMs;
 
   public static final String SERIALIZED_NAME_OBSERVATIONS = "observations";
   @SerializedName(SERIALIZED_NAME_OBSERVATIONS)
+  @javax.annotation.Nullable
   private Integer observations;
 
   public static final String SERIALIZED_NAME_CONFIDENCE = "confidence";
   @SerializedName(SERIALIZED_NAME_CONFIDENCE)
+  @javax.annotation.Nullable
   private Double confidence;
 
   public static final String SERIALIZED_NAME_LABEL = "label";
   @SerializedName(SERIALIZED_NAME_LABEL)
+  @javax.annotation.Nullable
   private String label;
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
+  @javax.annotation.Nullable
   private String value;
 
   public Phone() {
   }
 
-  public Phone firstSeenMs(Long firstSeenMs) {
+  public Phone firstSeenMs(@javax.annotation.Nullable Long firstSeenMs) {
     this.firstSeenMs = firstSeenMs;
     return this;
   }
@@ -91,12 +97,12 @@ public class Phone {
     return firstSeenMs;
   }
 
-  public void setFirstSeenMs(Long firstSeenMs) {
+  public void setFirstSeenMs(@javax.annotation.Nullable Long firstSeenMs) {
     this.firstSeenMs = firstSeenMs;
   }
 
 
-  public Phone lastSeenMs(Long lastSeenMs) {
+  public Phone lastSeenMs(@javax.annotation.Nullable Long lastSeenMs) {
     this.lastSeenMs = lastSeenMs;
     return this;
   }
@@ -110,12 +116,12 @@ public class Phone {
     return lastSeenMs;
   }
 
-  public void setLastSeenMs(Long lastSeenMs) {
+  public void setLastSeenMs(@javax.annotation.Nullable Long lastSeenMs) {
     this.lastSeenMs = lastSeenMs;
   }
 
 
-  public Phone observations(Integer observations) {
+  public Phone observations(@javax.annotation.Nullable Integer observations) {
     this.observations = observations;
     return this;
   }
@@ -129,12 +135,12 @@ public class Phone {
     return observations;
   }
 
-  public void setObservations(Integer observations) {
+  public void setObservations(@javax.annotation.Nullable Integer observations) {
     this.observations = observations;
   }
 
 
-  public Phone confidence(Double confidence) {
+  public Phone confidence(@javax.annotation.Nullable Double confidence) {
     this.confidence = confidence;
     return this;
   }
@@ -148,12 +154,12 @@ public class Phone {
     return confidence;
   }
 
-  public void setConfidence(Double confidence) {
+  public void setConfidence(@javax.annotation.Nullable Double confidence) {
     this.confidence = confidence;
   }
 
 
-  public Phone label(String label) {
+  public Phone label(@javax.annotation.Nullable String label) {
     this.label = label;
     return this;
   }
@@ -167,12 +173,12 @@ public class Phone {
     return label;
   }
 
-  public void setLabel(String label) {
+  public void setLabel(@javax.annotation.Nullable String label) {
     this.label = label;
   }
 
 
-  public Phone value(String value) {
+  public Phone value(@javax.annotation.Nullable String value) {
     this.value = value;
     return this;
   }
@@ -186,7 +192,7 @@ public class Phone {
     return value;
   }
 
-  public void setValue(String value) {
+  public void setValue(@javax.annotation.Nullable String value) {
     this.value = value;
   }
 
@@ -233,10 +239,7 @@ public class Phone {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -245,16 +248,10 @@ public class Phone {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("firstSeenMs");
-    openapiFields.add("lastSeenMs");
-    openapiFields.add("observations");
-    openapiFields.add("confidence");
-    openapiFields.add("label");
-    openapiFields.add("value");
+    openapiFields = new HashSet<String>(Arrays.asList("firstSeenMs", "lastSeenMs", "observations", "confidence", "label", "value"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -266,7 +263,7 @@ public class Phone {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Phone.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in Phone is not found in the empty JSON string", Phone.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in Phone is not found in the empty JSON string", Phone.openapiRequiredFields.toString()));
         }
       }
 
@@ -274,15 +271,15 @@ public class Phone {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!Phone.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Phone` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `Phone` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("label") != null && !jsonObj.get("label").isJsonNull()) && !jsonObj.get("label").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `label` to be a primitive type in the JSON string but got `%s`", jsonObj.get("label").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `label` to be a primitive type in the JSON string but got `%s`", jsonObj.get("label").toString()));
       }
       if ((jsonObj.get("value") != null && !jsonObj.get("value").isJsonNull()) && !jsonObj.get("value").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `value` to be a primitive type in the JSON string but got `%s`", jsonObj.get("value").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `value` to be a primitive type in the JSON string but got `%s`", jsonObj.get("value").toString()));
       }
   }
 

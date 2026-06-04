@@ -14,6 +14,7 @@
 package ai.fideo.model;
 
 import java.util.Objects;
+import ai.fideo.model.SignalPatternResponseUnit;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -48,52 +49,92 @@ import ai.fideo.client.JSON;
 /**
  * Email
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.22.0")
 public class Email {
   public static final String SERIALIZED_NAME_FIRST_SEEN_MS = "firstSeenMs";
   @SerializedName(SERIALIZED_NAME_FIRST_SEEN_MS)
+  @javax.annotation.Nullable
   private Long firstSeenMs;
 
   public static final String SERIALIZED_NAME_LAST_SEEN_MS = "lastSeenMs";
   @SerializedName(SERIALIZED_NAME_LAST_SEEN_MS)
+  @javax.annotation.Nullable
   private Long lastSeenMs;
 
   public static final String SERIALIZED_NAME_OBSERVATIONS = "observations";
   @SerializedName(SERIALIZED_NAME_OBSERVATIONS)
+  @javax.annotation.Nullable
   private Integer observations;
 
   public static final String SERIALIZED_NAME_CONFIDENCE = "confidence";
   @SerializedName(SERIALIZED_NAME_CONFIDENCE)
+  @javax.annotation.Nullable
   private Double confidence;
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
+  @javax.annotation.Nullable
   private String value;
 
   public static final String SERIALIZED_NAME_MD5 = "md5";
   @SerializedName(SERIALIZED_NAME_MD5)
+  @javax.annotation.Nullable
   private String md5;
 
   public static final String SERIALIZED_NAME_SHA1 = "sha1";
   @SerializedName(SERIALIZED_NAME_SHA1)
+  @javax.annotation.Nullable
   private String sha1;
 
   public static final String SERIALIZED_NAME_SHA256 = "sha256";
   @SerializedName(SERIALIZED_NAME_SHA256)
+  @javax.annotation.Nullable
   private String sha256;
 
   public static final String SERIALIZED_NAME_LABEL = "label";
   @SerializedName(SERIALIZED_NAME_LABEL)
+  @javax.annotation.Nullable
   private String label;
 
   public static final String SERIALIZED_NAME_ACTIVITY = "activity";
   @SerializedName(SERIALIZED_NAME_ACTIVITY)
+  @javax.annotation.Nullable
   private Double activity;
+
+  public static final String SERIALIZED_NAME_HOUR = "hour";
+  @SerializedName(SERIALIZED_NAME_HOUR)
+  @javax.annotation.Nullable
+  private SignalPatternResponseUnit hour;
+
+  public static final String SERIALIZED_NAME_DAY = "day";
+  @SerializedName(SERIALIZED_NAME_DAY)
+  @javax.annotation.Nullable
+  private SignalPatternResponseUnit day;
+
+  public static final String SERIALIZED_NAME_WEEK = "week";
+  @SerializedName(SERIALIZED_NAME_WEEK)
+  @javax.annotation.Nullable
+  private SignalPatternResponseUnit week;
+
+  public static final String SERIALIZED_NAME_MONTH = "month";
+  @SerializedName(SERIALIZED_NAME_MONTH)
+  @javax.annotation.Nullable
+  private SignalPatternResponseUnit month;
+
+  public static final String SERIALIZED_NAME_SIX_MONTH = "sixMonth";
+  @SerializedName(SERIALIZED_NAME_SIX_MONTH)
+  @javax.annotation.Nullable
+  private SignalPatternResponseUnit sixMonth;
+
+  public static final String SERIALIZED_NAME_YEAR = "year";
+  @SerializedName(SERIALIZED_NAME_YEAR)
+  @javax.annotation.Nullable
+  private SignalPatternResponseUnit year;
 
   public Email() {
   }
 
-  public Email firstSeenMs(Long firstSeenMs) {
+  public Email firstSeenMs(@javax.annotation.Nullable Long firstSeenMs) {
     this.firstSeenMs = firstSeenMs;
     return this;
   }
@@ -107,12 +148,12 @@ public class Email {
     return firstSeenMs;
   }
 
-  public void setFirstSeenMs(Long firstSeenMs) {
+  public void setFirstSeenMs(@javax.annotation.Nullable Long firstSeenMs) {
     this.firstSeenMs = firstSeenMs;
   }
 
 
-  public Email lastSeenMs(Long lastSeenMs) {
+  public Email lastSeenMs(@javax.annotation.Nullable Long lastSeenMs) {
     this.lastSeenMs = lastSeenMs;
     return this;
   }
@@ -126,12 +167,12 @@ public class Email {
     return lastSeenMs;
   }
 
-  public void setLastSeenMs(Long lastSeenMs) {
+  public void setLastSeenMs(@javax.annotation.Nullable Long lastSeenMs) {
     this.lastSeenMs = lastSeenMs;
   }
 
 
-  public Email observations(Integer observations) {
+  public Email observations(@javax.annotation.Nullable Integer observations) {
     this.observations = observations;
     return this;
   }
@@ -145,12 +186,12 @@ public class Email {
     return observations;
   }
 
-  public void setObservations(Integer observations) {
+  public void setObservations(@javax.annotation.Nullable Integer observations) {
     this.observations = observations;
   }
 
 
-  public Email confidence(Double confidence) {
+  public Email confidence(@javax.annotation.Nullable Double confidence) {
     this.confidence = confidence;
     return this;
   }
@@ -164,12 +205,12 @@ public class Email {
     return confidence;
   }
 
-  public void setConfidence(Double confidence) {
+  public void setConfidence(@javax.annotation.Nullable Double confidence) {
     this.confidence = confidence;
   }
 
 
-  public Email value(String value) {
+  public Email value(@javax.annotation.Nullable String value) {
     this.value = value;
     return this;
   }
@@ -183,12 +224,12 @@ public class Email {
     return value;
   }
 
-  public void setValue(String value) {
+  public void setValue(@javax.annotation.Nullable String value) {
     this.value = value;
   }
 
 
-  public Email md5(String md5) {
+  public Email md5(@javax.annotation.Nullable String md5) {
     this.md5 = md5;
     return this;
   }
@@ -202,12 +243,12 @@ public class Email {
     return md5;
   }
 
-  public void setMd5(String md5) {
+  public void setMd5(@javax.annotation.Nullable String md5) {
     this.md5 = md5;
   }
 
 
-  public Email sha1(String sha1) {
+  public Email sha1(@javax.annotation.Nullable String sha1) {
     this.sha1 = sha1;
     return this;
   }
@@ -221,12 +262,12 @@ public class Email {
     return sha1;
   }
 
-  public void setSha1(String sha1) {
+  public void setSha1(@javax.annotation.Nullable String sha1) {
     this.sha1 = sha1;
   }
 
 
-  public Email sha256(String sha256) {
+  public Email sha256(@javax.annotation.Nullable String sha256) {
     this.sha256 = sha256;
     return this;
   }
@@ -240,12 +281,12 @@ public class Email {
     return sha256;
   }
 
-  public void setSha256(String sha256) {
+  public void setSha256(@javax.annotation.Nullable String sha256) {
     this.sha256 = sha256;
   }
 
 
-  public Email label(String label) {
+  public Email label(@javax.annotation.Nullable String label) {
     this.label = label;
     return this;
   }
@@ -259,12 +300,12 @@ public class Email {
     return label;
   }
 
-  public void setLabel(String label) {
+  public void setLabel(@javax.annotation.Nullable String label) {
     this.label = label;
   }
 
 
-  public Email activity(Double activity) {
+  public Email activity(@javax.annotation.Nullable Double activity) {
     this.activity = activity;
     return this;
   }
@@ -278,8 +319,122 @@ public class Email {
     return activity;
   }
 
-  public void setActivity(Double activity) {
+  public void setActivity(@javax.annotation.Nullable Double activity) {
     this.activity = activity;
+  }
+
+
+  public Email hour(@javax.annotation.Nullable SignalPatternResponseUnit hour) {
+    this.hour = hour;
+    return this;
+  }
+
+  /**
+   * Get hour
+   * @return hour
+   */
+  @javax.annotation.Nullable
+  public SignalPatternResponseUnit getHour() {
+    return hour;
+  }
+
+  public void setHour(@javax.annotation.Nullable SignalPatternResponseUnit hour) {
+    this.hour = hour;
+  }
+
+
+  public Email day(@javax.annotation.Nullable SignalPatternResponseUnit day) {
+    this.day = day;
+    return this;
+  }
+
+  /**
+   * Get day
+   * @return day
+   */
+  @javax.annotation.Nullable
+  public SignalPatternResponseUnit getDay() {
+    return day;
+  }
+
+  public void setDay(@javax.annotation.Nullable SignalPatternResponseUnit day) {
+    this.day = day;
+  }
+
+
+  public Email week(@javax.annotation.Nullable SignalPatternResponseUnit week) {
+    this.week = week;
+    return this;
+  }
+
+  /**
+   * Get week
+   * @return week
+   */
+  @javax.annotation.Nullable
+  public SignalPatternResponseUnit getWeek() {
+    return week;
+  }
+
+  public void setWeek(@javax.annotation.Nullable SignalPatternResponseUnit week) {
+    this.week = week;
+  }
+
+
+  public Email month(@javax.annotation.Nullable SignalPatternResponseUnit month) {
+    this.month = month;
+    return this;
+  }
+
+  /**
+   * Get month
+   * @return month
+   */
+  @javax.annotation.Nullable
+  public SignalPatternResponseUnit getMonth() {
+    return month;
+  }
+
+  public void setMonth(@javax.annotation.Nullable SignalPatternResponseUnit month) {
+    this.month = month;
+  }
+
+
+  public Email sixMonth(@javax.annotation.Nullable SignalPatternResponseUnit sixMonth) {
+    this.sixMonth = sixMonth;
+    return this;
+  }
+
+  /**
+   * Get sixMonth
+   * @return sixMonth
+   */
+  @javax.annotation.Nullable
+  public SignalPatternResponseUnit getSixMonth() {
+    return sixMonth;
+  }
+
+  public void setSixMonth(@javax.annotation.Nullable SignalPatternResponseUnit sixMonth) {
+    this.sixMonth = sixMonth;
+  }
+
+
+  public Email year(@javax.annotation.Nullable SignalPatternResponseUnit year) {
+    this.year = year;
+    return this;
+  }
+
+  /**
+   * Get year
+   * @return year
+   */
+  @javax.annotation.Nullable
+  public SignalPatternResponseUnit getYear() {
+    return year;
+  }
+
+  public void setYear(@javax.annotation.Nullable SignalPatternResponseUnit year) {
+    this.year = year;
   }
 
 
@@ -302,12 +457,18 @@ public class Email {
         Objects.equals(this.sha1, email.sha1) &&
         Objects.equals(this.sha256, email.sha256) &&
         Objects.equals(this.label, email.label) &&
-        Objects.equals(this.activity, email.activity);
+        Objects.equals(this.activity, email.activity) &&
+        Objects.equals(this.hour, email.hour) &&
+        Objects.equals(this.day, email.day) &&
+        Objects.equals(this.week, email.week) &&
+        Objects.equals(this.month, email.month) &&
+        Objects.equals(this.sixMonth, email.sixMonth) &&
+        Objects.equals(this.year, email.year);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(firstSeenMs, lastSeenMs, observations, confidence, value, md5, sha1, sha256, label, activity);
+    return Objects.hash(firstSeenMs, lastSeenMs, observations, confidence, value, md5, sha1, sha256, label, activity, hour, day, week, month, sixMonth, year);
   }
 
   @Override
@@ -324,6 +485,12 @@ public class Email {
     sb.append("    sha256: ").append(toIndentedString(sha256)).append("\n");
     sb.append("    label: ").append(toIndentedString(label)).append("\n");
     sb.append("    activity: ").append(toIndentedString(activity)).append("\n");
+    sb.append("    hour: ").append(toIndentedString(hour)).append("\n");
+    sb.append("    day: ").append(toIndentedString(day)).append("\n");
+    sb.append("    week: ").append(toIndentedString(week)).append("\n");
+    sb.append("    month: ").append(toIndentedString(month)).append("\n");
+    sb.append("    sixMonth: ").append(toIndentedString(sixMonth)).append("\n");
+    sb.append("    year: ").append(toIndentedString(year)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -333,10 +500,7 @@ public class Email {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -345,20 +509,10 @@ public class Email {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("firstSeenMs");
-    openapiFields.add("lastSeenMs");
-    openapiFields.add("observations");
-    openapiFields.add("confidence");
-    openapiFields.add("value");
-    openapiFields.add("md5");
-    openapiFields.add("sha1");
-    openapiFields.add("sha256");
-    openapiFields.add("label");
-    openapiFields.add("activity");
+    openapiFields = new HashSet<String>(Arrays.asList("firstSeenMs", "lastSeenMs", "observations", "confidence", "value", "md5", "sha1", "sha256", "label", "activity", "hour", "day", "week", "month", "sixMonth", "year"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -370,7 +524,7 @@ public class Email {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Email.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in Email is not found in the empty JSON string", Email.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in Email is not found in the empty JSON string", Email.openapiRequiredFields.toString()));
         }
       }
 
@@ -378,24 +532,48 @@ public class Email {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!Email.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Email` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `Email` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("value") != null && !jsonObj.get("value").isJsonNull()) && !jsonObj.get("value").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `value` to be a primitive type in the JSON string but got `%s`", jsonObj.get("value").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `value` to be a primitive type in the JSON string but got `%s`", jsonObj.get("value").toString()));
       }
       if ((jsonObj.get("md5") != null && !jsonObj.get("md5").isJsonNull()) && !jsonObj.get("md5").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `md5` to be a primitive type in the JSON string but got `%s`", jsonObj.get("md5").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `md5` to be a primitive type in the JSON string but got `%s`", jsonObj.get("md5").toString()));
       }
       if ((jsonObj.get("sha1") != null && !jsonObj.get("sha1").isJsonNull()) && !jsonObj.get("sha1").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `sha1` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sha1").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `sha1` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sha1").toString()));
       }
       if ((jsonObj.get("sha256") != null && !jsonObj.get("sha256").isJsonNull()) && !jsonObj.get("sha256").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `sha256` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sha256").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `sha256` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sha256").toString()));
       }
       if ((jsonObj.get("label") != null && !jsonObj.get("label").isJsonNull()) && !jsonObj.get("label").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `label` to be a primitive type in the JSON string but got `%s`", jsonObj.get("label").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `label` to be a primitive type in the JSON string but got `%s`", jsonObj.get("label").toString()));
+      }
+      // validate the optional field `hour`
+      if (jsonObj.get("hour") != null && !jsonObj.get("hour").isJsonNull()) {
+        SignalPatternResponseUnit.validateJsonElement(jsonObj.get("hour"));
+      }
+      // validate the optional field `day`
+      if (jsonObj.get("day") != null && !jsonObj.get("day").isJsonNull()) {
+        SignalPatternResponseUnit.validateJsonElement(jsonObj.get("day"));
+      }
+      // validate the optional field `week`
+      if (jsonObj.get("week") != null && !jsonObj.get("week").isJsonNull()) {
+        SignalPatternResponseUnit.validateJsonElement(jsonObj.get("week"));
+      }
+      // validate the optional field `month`
+      if (jsonObj.get("month") != null && !jsonObj.get("month").isJsonNull()) {
+        SignalPatternResponseUnit.validateJsonElement(jsonObj.get("month"));
+      }
+      // validate the optional field `sixMonth`
+      if (jsonObj.get("sixMonth") != null && !jsonObj.get("sixMonth").isJsonNull()) {
+        SignalPatternResponseUnit.validateJsonElement(jsonObj.get("sixMonth"));
+      }
+      // validate the optional field `year`
+      if (jsonObj.get("year") != null && !jsonObj.get("year").isJsonNull()) {
+        SignalPatternResponseUnit.validateJsonElement(jsonObj.get("year"));
       }
   }
 
