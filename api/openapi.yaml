@@ -429,6 +429,9 @@ components:
         - emails
         - emails
         twitter: twitter
+        ssns:
+        - ssns
+        - ssns
         excludedCountries:
         - excludedCountries
         - excludedCountries
@@ -524,6 +527,12 @@ components:
             type: string
           type: array
         phones:
+          items:
+            type: string
+          type: array
+        ssns:
+          description: Full SSN values as digits/dashes or SHA-256 hex digests. Verify
+            accepts at most one.
           items:
             type: string
           type: array
