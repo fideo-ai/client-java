@@ -19,6 +19,7 @@
 |**organization** | **String** |  |  [optional] |
 |**emails** | **List&lt;String&gt;** |  |  [optional] |
 |**phones** | **List&lt;String&gt;** |  |  [optional] |
+|**ssns** | **List&lt;String&gt;** | Full SSN values as digits/dashes or SHA-256 hex digests. Verify accepts at most one. |  [optional] |
 |**profiles** | [**List&lt;SocialProfileReq&gt;**](SocialProfileReq.md) |  |  [optional] |
 |**maids** | **List&lt;String&gt;** |  |  [optional] |
 |**name** | [**PersonNameReq**](PersonNameReq.md) |  |  [optional] |
