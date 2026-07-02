@@ -117,6 +117,11 @@ public class MultiFieldReq {
   @javax.annotation.Nullable
   private List<String> phones = new ArrayList<>();
 
+  public static final String SERIALIZED_NAME_SSN = "ssn";
+  @SerializedName(SERIALIZED_NAME_SSN)
+  @javax.annotation.Nullable
+  private String ssn;
+
   public static final String SERIALIZED_NAME_SSNS = "ssns";
   @SerializedName(SERIALIZED_NAME_SSNS)
   @javax.annotation.Nullable
@@ -424,6 +429,25 @@ public class MultiFieldReq {
   }
 
 
+  public MultiFieldReq ssn(@javax.annotation.Nullable String ssn) {
+    this.ssn = ssn;
+    return this;
+  }
+
+  /**
+   * Singular shortcut for one SSN value. Internally equivalent to ssns with one item.
+   * @return ssn
+   */
+  @javax.annotation.Nullable
+  public String getSsn() {
+    return ssn;
+  }
+
+  public void setSsn(@javax.annotation.Nullable String ssn) {
+    this.ssn = ssn;
+  }
+
+
   public MultiFieldReq ssns(@javax.annotation.Nullable List<String> ssns) {
     this.ssns = ssns;
     return this;
@@ -706,6 +730,7 @@ public class MultiFieldReq {
         Objects.equals(this.organization, multiFieldReq.organization) &&
         Objects.equals(this.emails, multiFieldReq.emails) &&
         Objects.equals(this.phones, multiFieldReq.phones) &&
+        Objects.equals(this.ssn, multiFieldReq.ssn) &&
         Objects.equals(this.ssns, multiFieldReq.ssns) &&
         Objects.equals(this.profiles, multiFieldReq.profiles) &&
         Objects.equals(this.maids, multiFieldReq.maids) &&
@@ -722,7 +747,7 @@ public class MultiFieldReq {
 
   @Override
   public int hashCode() {
-    return Objects.hash(twitter, linkedin, recordId, personId, partnerId, location, avatar, website, title, organization, emails, phones, ssns, profiles, maids, name, partnerKeys, liNonid, panoramaId, generatePid, email, phone, profile, maid);
+    return Objects.hash(twitter, linkedin, recordId, personId, partnerId, location, avatar, website, title, organization, emails, phones, ssn, ssns, profiles, maids, name, partnerKeys, liNonid, panoramaId, generatePid, email, phone, profile, maid);
   }
 
   @Override
@@ -741,6 +766,7 @@ public class MultiFieldReq {
     sb.append("    organization: ").append(toIndentedString(organization)).append("\n");
     sb.append("    emails: ").append(toIndentedString(emails)).append("\n");
     sb.append("    phones: ").append(toIndentedString(phones)).append("\n");
+    sb.append("    ssn: ").append(toIndentedString(ssn)).append("\n");
     sb.append("    ssns: ").append(toIndentedString(ssns)).append("\n");
     sb.append("    profiles: ").append(toIndentedString(profiles)).append("\n");
     sb.append("    maids: ").append(toIndentedString(maids)).append("\n");
@@ -771,7 +797,7 @@ public class MultiFieldReq {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("twitter", "linkedin", "recordId", "personId", "partnerId", "location", "avatar", "website", "title", "organization", "emails", "phones", "ssns", "profiles", "maids", "name", "partnerKeys", "li_nonid", "panoramaId", "generatePid", "email", "phone", "profile", "maid"));
+    openapiFields = new HashSet<String>(Arrays.asList("twitter", "linkedin", "recordId", "personId", "partnerId", "location", "avatar", "website", "title", "organization", "emails", "phones", "ssn", "ssns", "profiles", "maids", "name", "partnerKeys", "li_nonid", "panoramaId", "generatePid", "email", "phone", "profile", "maid"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -828,6 +854,9 @@ public class MultiFieldReq {
       // ensure the optional json data is an array if present
       if (jsonObj.get("phones") != null && !jsonObj.get("phones").isJsonNull() && !jsonObj.get("phones").isJsonArray()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `phones` to be an array in the JSON string but got `%s`", jsonObj.get("phones").toString()));
+      }
+      if ((jsonObj.get("ssn") != null && !jsonObj.get("ssn").isJsonNull()) && !jsonObj.get("ssn").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `ssn` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ssn").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("ssns") != null && !jsonObj.get("ssns").isJsonNull() && !jsonObj.get("ssns").isJsonArray()) {

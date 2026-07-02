@@ -141,6 +141,14 @@ public class MultiFieldReqTest {
     }
 
     /**
+     * Test the property 'ssn'
+     */
+    @Test
+    public void ssnTest() {
+        // TODO: test ssn
+    }
+
+    /**
      * Test the property 'ssns'
      */
     @Test

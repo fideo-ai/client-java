@@ -399,7 +399,7 @@ public class MultiFieldReqWithOptions extends MultiFieldReq {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("twitter", "linkedin", "recordId", "personId", "partnerId", "location", "avatar", "website", "title", "organization", "emails", "phones", "ssns", "profiles", "maids", "name", "partnerKeys", "li_nonid", "panoramaId", "generatePid", "email", "phone", "profile", "maid", "infer", "confidence", "birthday", "ipAddress", "sessionId", "patternInterval", "countries", "excludedCountries"));
+    openapiFields = new HashSet<String>(Arrays.asList("twitter", "linkedin", "recordId", "personId", "partnerId", "location", "avatar", "website", "title", "organization", "emails", "phones", "ssn", "ssns", "profiles", "maids", "name", "partnerKeys", "li_nonid", "panoramaId", "generatePid", "email", "phone", "profile", "maid", "infer", "confidence", "birthday", "ipAddress", "sessionId", "patternInterval", "countries", "excludedCountries"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

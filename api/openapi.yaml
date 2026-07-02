@@ -424,6 +424,7 @@ components:
         linkedin: linkedin
         title: title
         generatePid: true
+        ssn: ssn
         recordId: recordId
         emails:
         - emails
@@ -530,6 +531,10 @@ components:
           items:
             type: string
           type: array
+        ssn:
+          description: Singular shortcut for one SSN value. Internally equivalent
+            to ssns with one item.
+          type: string
         ssns:
           description: Full SSN values as digits/dashes or SHA-256 hex digests. Verify
             accepts at most one.
