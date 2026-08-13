@@ -107,6 +107,8 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.EmploymentDate.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.Evidence.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.IpAddress.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.LensGraphRequest.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.LensGraphResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.Location.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.LocationReq.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.MultiFieldReqWithOptions.CustomTypeAdapterFactory());

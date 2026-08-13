@@ -17,6 +17,9 @@ docs/EmploymentDate.md
 docs/Evidence.md
 docs/IPCountry.md
 docs/IpAddress.md
+docs/LensApi.md
+docs/LensGraphRequest.md
+docs/LensGraphResponse.md
 docs/Location.md
 docs/LocationReq.md
 docs/LocationType.md
@@ -53,6 +56,7 @@ pom.xml
 settings.gradle
 src/main/AndroidManifest.xml
 src/main/java/ai/fideo/api/BetaApi.java
+src/main/java/ai/fideo/api/LensApi.java
 src/main/java/ai/fideo/api/SignalsApi.java
 src/main/java/ai/fideo/api/VerifyApi.java
 src/main/java/ai/fideo/client/ApiCallback.java
@@ -85,6 +89,8 @@ src/main/java/ai/fideo/model/EmploymentDate.java
 src/main/java/ai/fideo/model/Evidence.java
 src/main/java/ai/fideo/model/IPCountry.java
 src/main/java/ai/fideo/model/IpAddress.java
+src/main/java/ai/fideo/model/LensGraphRequest.java
+src/main/java/ai/fideo/model/LensGraphResponse.java
 src/main/java/ai/fideo/model/Location.java
 src/main/java/ai/fideo/model/LocationReq.java
 src/main/java/ai/fideo/model/LocationType.java
@@ -110,6 +116,7 @@ src/main/java/ai/fideo/model/SocialProfileUrls.java
 src/main/java/ai/fideo/model/StatusResponseWithMessage.java
 src/main/java/ai/fideo/model/VerifyResponse.java
 src/test/java/ai/fideo/api/BetaApiTest.java
+src/test/java/ai/fideo/api/LensApiTest.java
 src/test/java/ai/fideo/api/SignalsApiTest.java
 src/test/java/ai/fideo/api/VerifyApiTest.java
 src/test/java/ai/fideo/model/AliasTest.java
@@ -124,6 +131,8 @@ src/test/java/ai/fideo/model/EmploymentTest.java
 src/test/java/ai/fideo/model/EvidenceTest.java
 src/test/java/ai/fideo/model/IPCountryTest.java
 src/test/java/ai/fideo/model/IpAddressTest.java
+src/test/java/ai/fideo/model/LensGraphRequestTest.java
+src/test/java/ai/fideo/model/LensGraphResponseTest.java
 src/test/java/ai/fideo/model/LocationReqTest.java
 src/test/java/ai/fideo/model/LocationTest.java
 src/test/java/ai/fideo/model/LocationTypeTest.java

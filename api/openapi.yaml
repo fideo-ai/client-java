@@ -29,6 +29,8 @@ tags:
     description: Verify Documentation
     url: https://docs.fideo.ai/docs/verify
   name: verify
+- description: Lens Graph
+  name: lens
 - description: Beta Features
   externalDocs:
     description: Beta Features Documentation
@@ -124,6 +126,81 @@ paths:
           description: Claimed or deleted data
       tags:
       - verify
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /v3/lens.graph:
+    post:
+      description: "Query raw or expanded Lens graph edges. Product and datapack entitlements\
+        \ are derived from the account contract, not from the request body."
+      operationId: lensGraph
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LensGraphRequest"
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LensGraphResponse"
+          description: Successful response
+          headers:
+            X-Fideo-Lens-Limit:
+              description: Contract usage limit for Lens. A value of 0 means unlimited.
+              explode: false
+              schema:
+                format: int64
+                minimum: 0
+                type: integer
+              style: simple
+            X-Fideo-Lens-Usage:
+              description: Lens usage after the successful request.
+              explode: false
+              schema:
+                format: int64
+                minimum: 0
+                type: integer
+              style: simple
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/StatusResponseWithMessage"
+          description: Bad request
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/StatusResponseWithMessage"
+          description: Forbidden
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/StatusResponseWithMessage"
+          description: Lens usage limit reached
+          headers:
+            X-Fideo-Lens-Limit:
+              description: Contract usage limit for Lens.
+              explode: false
+              schema:
+                format: int64
+                minimum: 1
+                type: integer
+              style: simple
+            X-Fideo-Lens-Usage:
+              description: Lens usage at the time the request was rejected.
+              explode: false
+              schema:
+                format: int64
+                minimum: 0
+                type: integer
+              style: simple
+      summary: Query the Lens graph
+      tags:
+      - lens
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -226,6 +303,51 @@ components:
       - email
       type: object
       x-parent: true
+    LensGraphRequest:
+      example:
+        mode: expanded
+        query: query
+        hops: 1
+      properties:
+        mode:
+          description: Lens graph response mode.
+          enum:
+          - expanded
+          - raw
+          type: string
+        query:
+          description: Comma-separated Lens graph seed query.
+          type: string
+        hops:
+          default: 2
+          description: Requested graph hop count. Defaults to 2 when omitted.
+          maximum: 2
+          minimum: 1
+          type: integer
+      required:
+      - mode
+      - query
+      type: object
+    LensGraphResponse:
+      example:
+        seed_graph_ids:
+          key:
+          - seed_graph_ids
+          - seed_graph_ids
+        graph:
+        - ""
+        - ""
+      properties:
+        graph:
+          items: {}
+          type: array
+        seed_graph_ids:
+          additionalProperties:
+            items:
+              type: string
+            type: array
+          type: object
+      type: object
     SignalPatternsTimeseriesRequest:
       allOf:
       - $ref: "#/components/schemas/SignalPatternsRequest"
