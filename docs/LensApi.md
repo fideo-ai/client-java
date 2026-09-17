@@ -4,7 +4,7 @@ All URIs are relative to *https://api.fideo.ai*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**lensGraph**](LensApi.md#lensGraph) | **POST** /v3/lens.graph | Query the Lens graph |
+| [**lensGraph**](LensApi.md#lensGraph) | **POST** /lens.graph | Query the Lens graph |
 
 
 <a id="lensGraph"></a>
@@ -72,8 +72,8 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful response |  * X-Fideo-Lens-Limit - Contract usage limit for Lens. A value of 0 means unlimited. <br>  * X-Fideo-Lens-Usage - Lens usage after the successful request. <br>  |
+| **200** | Successful response |  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  |
 | **400** | Bad request |  -  |
 | **403** | Forbidden |  -  |
-| **429** | Lens usage limit reached |  * X-Fideo-Lens-Limit - Contract usage limit for Lens. <br>  * X-Fideo-Lens-Usage - Lens usage after the successful request. <br>  |
+| **429** | Lens usage limit reached |  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  |
 

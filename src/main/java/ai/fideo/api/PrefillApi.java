@@ -28,8 +28,8 @@ import java.io.IOException;
 
 
 import ai.fideo.model.MultiFieldReqWithOptions;
+import ai.fideo.model.PrefillResponse;
 import ai.fideo.model.StatusResponseWithMessage;
-import ai.fideo.model.VerifyResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -37,16 +37,16 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class VerifyApi {
+public class PrefillApi {
     private ApiClient localVarApiClient;
     private int localHostIndex;
     private String localCustomBaseUrl;
 
-    public VerifyApi() {
+    public PrefillApi() {
         this(Configuration.getDefaultApiClient());
     }
 
-    public VerifyApi(ApiClient apiClient) {
+    public PrefillApi(ApiClient apiClient) {
         this.localVarApiClient = apiClient;
     }
 
@@ -75,9 +75,8 @@ public class VerifyApi {
     }
 
     /**
-     * Build call for verifyPost
-     * @param v  (optional)
-     * @param multiFieldReqWithOptions  (optional)
+     * Build call for prefill
+     * @param multiFieldReqWithOptions  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -85,14 +84,14 @@ public class VerifyApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  </td></tr>
-        <tr><td> 201 </td><td> Created new verify session </td><td>  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Prefill match, no-match, or reviewed identity evaluation </td><td>  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Invalid request or malformed Prefill session ID </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Prefill product unavailable </td><td>  -  </td></tr>
         <tr><td> 410 </td><td> Claimed or deleted data </td><td>  -  </td></tr>
-        <tr><td> 429 </td><td> Verify trial usage limit reached </td><td>  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Prefill trial request limit reached </td><td>  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call verifyPostCall(@javax.annotation.Nullable String v, @javax.annotation.Nullable MultiFieldReqWithOptions multiFieldReqWithOptions, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call prefillCall(@javax.annotation.Nonnull MultiFieldReqWithOptions multiFieldReqWithOptions, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -109,17 +108,13 @@ public class VerifyApi {
         Object localVarPostBody = multiFieldReqWithOptions;
 
         // create path and map variables
-        String localVarPath = "/verify";
+        String localVarPath = "/prefill";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        if (v != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("v", v));
-        }
 
         final String[] localVarAccepts = {
             "application/json"
@@ -142,63 +137,65 @@ public class VerifyApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call verifyPostValidateBeforeCall(@javax.annotation.Nullable String v, @javax.annotation.Nullable MultiFieldReqWithOptions multiFieldReqWithOptions, final ApiCallback _callback) throws ApiException {
-        return verifyPostCall(v, multiFieldReqWithOptions, _callback);
+    private okhttp3.Call prefillValidateBeforeCall(@javax.annotation.Nonnull MultiFieldReqWithOptions multiFieldReqWithOptions, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'multiFieldReqWithOptions' is set
+        if (multiFieldReqWithOptions == null) {
+            throw new ApiException("Missing the required parameter 'multiFieldReqWithOptions' when calling prefill(Async)");
+        }
+
+        return prefillCall(multiFieldReqWithOptions, _callback);
 
     }
 
     /**
-     * 
-     * 
-     * @param v  (optional)
-     * @param multiFieldReqWithOptions  (optional)
-     * @return VerifyResponse
+     * Resolve or evaluate onboarding identity fields
+     * The customer is responsible for proving phone possession before the initial request. Omit sessionId to resolve identity fields from a phone. Send the returned sessionId with reviewed or edited identity fields to receive a Verify evaluation. Recent session IDs are reused; valid session IDs older than 10 minutes start a new session.
+     * @param multiFieldReqWithOptions  (required)
+     * @return PrefillResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  </td></tr>
-        <tr><td> 201 </td><td> Created new verify session </td><td>  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Prefill match, no-match, or reviewed identity evaluation </td><td>  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Invalid request or malformed Prefill session ID </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Prefill product unavailable </td><td>  -  </td></tr>
         <tr><td> 410 </td><td> Claimed or deleted data </td><td>  -  </td></tr>
-        <tr><td> 429 </td><td> Verify trial usage limit reached </td><td>  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Prefill trial request limit reached </td><td>  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  </td></tr>
      </table>
      */
-    public VerifyResponse verifyPost(@javax.annotation.Nullable String v, @javax.annotation.Nullable MultiFieldReqWithOptions multiFieldReqWithOptions) throws ApiException {
-        ApiResponse<VerifyResponse> localVarResp = verifyPostWithHttpInfo(v, multiFieldReqWithOptions);
+    public PrefillResponse prefill(@javax.annotation.Nonnull MultiFieldReqWithOptions multiFieldReqWithOptions) throws ApiException {
+        ApiResponse<PrefillResponse> localVarResp = prefillWithHttpInfo(multiFieldReqWithOptions);
         return localVarResp.getData();
     }
 
     /**
-     * 
-     * 
-     * @param v  (optional)
-     * @param multiFieldReqWithOptions  (optional)
-     * @return ApiResponse&lt;VerifyResponse&gt;
+     * Resolve or evaluate onboarding identity fields
+     * The customer is responsible for proving phone possession before the initial request. Omit sessionId to resolve identity fields from a phone. Send the returned sessionId with reviewed or edited identity fields to receive a Verify evaluation. Recent session IDs are reused; valid session IDs older than 10 minutes start a new session.
+     * @param multiFieldReqWithOptions  (required)
+     * @return ApiResponse&lt;PrefillResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  </td></tr>
-        <tr><td> 201 </td><td> Created new verify session </td><td>  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Prefill match, no-match, or reviewed identity evaluation </td><td>  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Invalid request or malformed Prefill session ID </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Prefill product unavailable </td><td>  -  </td></tr>
         <tr><td> 410 </td><td> Claimed or deleted data </td><td>  -  </td></tr>
-        <tr><td> 429 </td><td> Verify trial usage limit reached </td><td>  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Prefill trial request limit reached </td><td>  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<VerifyResponse> verifyPostWithHttpInfo(@javax.annotation.Nullable String v, @javax.annotation.Nullable MultiFieldReqWithOptions multiFieldReqWithOptions) throws ApiException {
-        okhttp3.Call localVarCall = verifyPostValidateBeforeCall(v, multiFieldReqWithOptions, null);
-        Type localVarReturnType = new TypeToken<VerifyResponse>(){}.getType();
+    public ApiResponse<PrefillResponse> prefillWithHttpInfo(@javax.annotation.Nonnull MultiFieldReqWithOptions multiFieldReqWithOptions) throws ApiException {
+        okhttp3.Call localVarCall = prefillValidateBeforeCall(multiFieldReqWithOptions, null);
+        Type localVarReturnType = new TypeToken<PrefillResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     *  (asynchronously)
-     * 
-     * @param v  (optional)
-     * @param multiFieldReqWithOptions  (optional)
+     * Resolve or evaluate onboarding identity fields (asynchronously)
+     * The customer is responsible for proving phone possession before the initial request. Omit sessionId to resolve identity fields from a phone. Send the returned sessionId with reviewed or edited identity fields to receive a Verify evaluation. Recent session IDs are reused; valid session IDs older than 10 minutes start a new session.
+     * @param multiFieldReqWithOptions  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -206,17 +203,17 @@ public class VerifyApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  </td></tr>
-        <tr><td> 201 </td><td> Created new verify session </td><td>  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  </td></tr>
-        <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Prefill match, no-match, or reviewed identity evaluation </td><td>  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  </td></tr>
+        <tr><td> 400 </td><td> Invalid request or malformed Prefill session ID </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Prefill product unavailable </td><td>  -  </td></tr>
         <tr><td> 410 </td><td> Claimed or deleted data </td><td>  -  </td></tr>
-        <tr><td> 429 </td><td> Verify trial usage limit reached </td><td>  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  </td></tr>
+        <tr><td> 429 </td><td> Prefill trial request limit reached </td><td>  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call verifyPostAsync(@javax.annotation.Nullable String v, @javax.annotation.Nullable MultiFieldReqWithOptions multiFieldReqWithOptions, final ApiCallback<VerifyResponse> _callback) throws ApiException {
+    public okhttp3.Call prefillAsync(@javax.annotation.Nonnull MultiFieldReqWithOptions multiFieldReqWithOptions, final ApiCallback<PrefillResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = verifyPostValidateBeforeCall(v, multiFieldReqWithOptions, _callback);
-        Type localVarReturnType = new TypeToken<VerifyResponse>(){}.getType();
+        okhttp3.Call localVarCall = prefillValidateBeforeCall(multiFieldReqWithOptions, _callback);
+        Type localVarReturnType = new TypeToken<PrefillResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

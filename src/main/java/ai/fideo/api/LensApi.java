@@ -84,10 +84,10 @@ public class LensApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  * X-Fideo-Lens-Limit - Contract usage limit for Lens. A value of 0 means unlimited. <br>  * X-Fideo-Lens-Usage - Lens usage after the successful request. <br>  </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 429 </td><td> Lens usage limit reached </td><td>  * X-Fideo-Lens-Limit - Contract usage limit for Lens. <br>  * X-Fideo-Lens-Usage - Lens usage after the successful request. <br>  </td></tr>
+        <tr><td> 429 </td><td> Lens usage limit reached </td><td>  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  </td></tr>
      </table>
      */
     public okhttp3.Call lensGraphCall(@javax.annotation.Nullable LensGraphRequest lensGraphRequest, final ApiCallback _callback) throws ApiException {
@@ -107,7 +107,7 @@ public class LensApi {
         Object localVarPostBody = lensGraphRequest;
 
         // create path and map variables
-        String localVarPath = "/v3/lens.graph";
+        String localVarPath = "/lens.graph";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -151,10 +151,10 @@ public class LensApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  * X-Fideo-Lens-Limit - Contract usage limit for Lens. A value of 0 means unlimited. <br>  * X-Fideo-Lens-Usage - Lens usage after the successful request. <br>  </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 429 </td><td> Lens usage limit reached </td><td>  * X-Fideo-Lens-Limit - Contract usage limit for Lens. <br>  * X-Fideo-Lens-Usage - Lens usage after the successful request. <br>  </td></tr>
+        <tr><td> 429 </td><td> Lens usage limit reached </td><td>  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  </td></tr>
      </table>
      */
     public LensGraphResponse lensGraph(@javax.annotation.Nullable LensGraphRequest lensGraphRequest) throws ApiException {
@@ -172,10 +172,10 @@ public class LensApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  * X-Fideo-Lens-Limit - Contract usage limit for Lens. A value of 0 means unlimited. <br>  * X-Fideo-Lens-Usage - Lens usage after the successful request. <br>  </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 429 </td><td> Lens usage limit reached </td><td>  * X-Fideo-Lens-Limit - Contract usage limit for Lens. <br>  * X-Fideo-Lens-Usage - Lens usage after the successful request. <br>  </td></tr>
+        <tr><td> 429 </td><td> Lens usage limit reached </td><td>  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  </td></tr>
      </table>
      */
     public ApiResponse<LensGraphResponse> lensGraphWithHttpInfo(@javax.annotation.Nullable LensGraphRequest lensGraphRequest) throws ApiException {
@@ -195,10 +195,10 @@ public class LensApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful response </td><td>  * X-Fideo-Lens-Limit - Contract usage limit for Lens. A value of 0 means unlimited. <br>  * X-Fideo-Lens-Usage - Lens usage after the successful request. <br>  </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
-        <tr><td> 429 </td><td> Lens usage limit reached </td><td>  * X-Fideo-Lens-Limit - Contract usage limit for Lens. <br>  * X-Fideo-Lens-Usage - Lens usage after the successful request. <br>  </td></tr>
+        <tr><td> 429 </td><td> Lens usage limit reached </td><td>  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  </td></tr>
      </table>
      */
     public okhttp3.Call lensGraphAsync(@javax.annotation.Nullable LensGraphRequest lensGraphRequest, final ApiCallback<LensGraphResponse> _callback) throws ApiException {

@@ -30,6 +30,9 @@ docs/NameWithAlias.md
 docs/PersonNameReq.md
 docs/Phone.md
 docs/Photo.md
+docs/PrefillApi.md
+docs/PrefillEvaluation.md
+docs/PrefillResponse.md
 docs/ScoreDetails.md
 docs/SignalPatternRecencyResponse.md
 docs/SignalPatternResponseUnit.md
@@ -57,6 +60,7 @@ settings.gradle
 src/main/AndroidManifest.xml
 src/main/java/ai/fideo/api/BetaApi.java
 src/main/java/ai/fideo/api/LensApi.java
+src/main/java/ai/fideo/api/PrefillApi.java
 src/main/java/ai/fideo/api/SignalsApi.java
 src/main/java/ai/fideo/api/VerifyApi.java
 src/main/java/ai/fideo/client/ApiCallback.java
@@ -101,6 +105,8 @@ src/main/java/ai/fideo/model/NameWithAlias.java
 src/main/java/ai/fideo/model/PersonNameReq.java
 src/main/java/ai/fideo/model/Phone.java
 src/main/java/ai/fideo/model/Photo.java
+src/main/java/ai/fideo/model/PrefillEvaluation.java
+src/main/java/ai/fideo/model/PrefillResponse.java
 src/main/java/ai/fideo/model/ScoreDetails.java
 src/main/java/ai/fideo/model/SignalPatternRecencyResponse.java
 src/main/java/ai/fideo/model/SignalPatternResponseUnit.java
@@ -117,6 +123,7 @@ src/main/java/ai/fideo/model/StatusResponseWithMessage.java
 src/main/java/ai/fideo/model/VerifyResponse.java
 src/test/java/ai/fideo/api/BetaApiTest.java
 src/test/java/ai/fideo/api/LensApiTest.java
+src/test/java/ai/fideo/api/PrefillApiTest.java
 src/test/java/ai/fideo/api/SignalsApiTest.java
 src/test/java/ai/fideo/api/VerifyApiTest.java
 src/test/java/ai/fideo/model/AliasTest.java
@@ -143,6 +150,8 @@ src/test/java/ai/fideo/model/NameWithAliasTest.java
 src/test/java/ai/fideo/model/PersonNameReqTest.java
 src/test/java/ai/fideo/model/PhoneTest.java
 src/test/java/ai/fideo/model/PhotoTest.java
+src/test/java/ai/fideo/model/PrefillEvaluationTest.java
+src/test/java/ai/fideo/model/PrefillResponseTest.java
 src/test/java/ai/fideo/model/ScoreDetailsTest.java
 src/test/java/ai/fideo/model/SignalPatternRecencyResponseTest.java
 src/test/java/ai/fideo/model/SignalPatternResponseUnitCountTest.java
