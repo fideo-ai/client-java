@@ -29,6 +29,10 @@ tags:
     description: Verify Documentation
     url: https://docs.fideo.ai/docs/verify
   name: verify
+- description: Lens Graph
+  name: lens
+- description: Prefill onboarding fields from a customer-verified phone
+  name: prefill
 - description: Beta Features
   externalDocs:
     description: Beta Features Documentation
@@ -104,12 +108,22 @@ paths:
               schema:
                 $ref: "#/components/schemas/VerifyResponse"
           description: OK
+          headers:
+            X-Fideo-Limit:
+              $ref: "#/components/headers/FideoLimit"
+            X-Fideo-Usage:
+              $ref: "#/components/headers/FideoUsage"
         "201":
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/VerifyResponse"
           description: Created new verify session
+          headers:
+            X-Fideo-Limit:
+              $ref: "#/components/headers/FideoLimit"
+            X-Fideo-Usage:
+              $ref: "#/components/headers/FideoUsage"
         "400":
           content:
             application/json:
@@ -122,8 +136,131 @@ paths:
               schema:
                 $ref: "#/components/schemas/StatusResponseWithMessage"
           description: Claimed or deleted data
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/StatusResponseWithMessage"
+          description: Verify trial usage limit reached
+          headers:
+            X-Fideo-Limit:
+              $ref: "#/components/headers/FideoLimit"
+            X-Fideo-Usage:
+              $ref: "#/components/headers/FideoUsage"
       tags:
       - verify
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /lens.graph:
+    post:
+      description: "Query raw or expanded Lens graph edges. Product and datapack entitlements\
+        \ are derived from the account contract, not from the request body."
+      operationId: lensGraph
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LensGraphRequest"
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LensGraphResponse"
+          description: Successful response
+          headers:
+            X-Fideo-Limit:
+              $ref: "#/components/headers/FideoLimit"
+            X-Fideo-Usage:
+              $ref: "#/components/headers/FideoUsage"
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/StatusResponseWithMessage"
+          description: Bad request
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/StatusResponseWithMessage"
+          description: Forbidden
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/StatusResponseWithMessage"
+          description: Lens usage limit reached
+          headers:
+            X-Fideo-Limit:
+              $ref: "#/components/headers/FideoLimit"
+            X-Fideo-Usage:
+              $ref: "#/components/headers/FideoUsage"
+      summary: Query the Lens graph
+      tags:
+      - lens
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /prefill:
+    post:
+      description: |-
+        The customer is responsible for proving phone possession before the initial request.
+        Omit sessionId to resolve identity fields from a phone. Send the returned sessionId with
+        reviewed or edited identity fields to receive a Verify evaluation. Recent session IDs are
+        reused; valid session IDs older than 10 minutes start a new session.
+      operationId: prefill
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/MultiFieldReqWithOptions"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PrefillResponse"
+          description: "Prefill match, no-match, or reviewed identity evaluation"
+          headers:
+            X-Fideo-Limit:
+              $ref: "#/components/headers/FideoLimit"
+            X-Fideo-Usage:
+              $ref: "#/components/headers/FideoUsage"
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/StatusResponseWithMessage"
+          description: Invalid request or malformed Prefill session ID
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/StatusResponseWithMessage"
+          description: Prefill product unavailable
+        "410":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/StatusResponseWithMessage"
+          description: Claimed or deleted data
+        "429":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/StatusResponseWithMessage"
+          description: Prefill trial request limit reached
+          headers:
+            X-Fideo-Limit:
+              $ref: "#/components/headers/FideoLimit"
+            X-Fideo-Usage:
+              $ref: "#/components/headers/FideoUsage"
+      summary: Resolve or evaluate onboarding identity fields
+      tags:
+      - prefill
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -199,6 +336,24 @@ paths:
       x-accepts:
       - application/json
 components:
+  headers:
+    FideoLimit:
+      description: Product usage limit. A value of 0 means unlimited.
+      explode: false
+      schema:
+        format: int64
+        minimum: 0
+        type: integer
+      style: simple
+    FideoUsage:
+      description: "Product usage after a successful request, or at admission for\
+        \ a rejected request."
+      explode: false
+      schema:
+        format: int64
+        minimum: 0
+        type: integer
+      style: simple
   schemas:
     StatusResponseWithMessage:
       example:
@@ -226,6 +381,118 @@ components:
       - email
       type: object
       x-parent: true
+    LensGraphRequest:
+      example:
+        mode: expanded
+        query: query
+        hops: 1
+      properties:
+        mode:
+          description: Lens graph response mode.
+          enum:
+          - expanded
+          - raw
+          type: string
+        query:
+          description: Comma-separated Lens graph seed query.
+          type: string
+        hops:
+          default: 2
+          description: Requested graph hop count. Defaults to 2 when omitted.
+          maximum: 2
+          minimum: 1
+          type: integer
+      required:
+      - mode
+      - query
+      type: object
+    LensGraphResponse:
+      example:
+        seed_graph_ids:
+          key:
+          - seed_graph_ids
+          - seed_graph_ids
+        graph:
+        - ""
+        - ""
+      properties:
+        graph:
+          items: {}
+          type: array
+        seed_graph_ids:
+          additionalProperties:
+            items:
+              type: string
+            type: array
+          type: object
+      type: object
+    PrefillResponse:
+      example:
+        evaluation:
+          checks:
+          - name: name
+            description: description
+            checkPackage: checkPackage
+            risk: HIGH
+            id: id
+            state: state
+          - name: name
+            description: description
+            checkPackage: checkPackage
+            risk: HIGH
+            id: id
+            state: state
+          risk: 0.8008281904610115
+        individual: ""
+        sessionId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+        status: match
+      properties:
+        sessionId:
+          description: UUIDv7 session identifier to send with reviewed identity data.
+          format: uuid
+          type: string
+        status:
+          enum:
+          - match
+          - no_match
+          type: string
+        individual:
+          allOf:
+          - $ref: "#/components/schemas/MultiFieldReqWithOptions"
+          description: Resolved identity in the same multifield shape accepted by
+            the follow-up Prefill request. The caller may review or edit these values
+            and resubmit them with the returned sessionId.
+        evaluation:
+          $ref: "#/components/schemas/PrefillEvaluation"
+      required:
+      - sessionId
+      - status
+      type: object
+    PrefillEvaluation:
+      example:
+        checks:
+        - name: name
+          description: description
+          checkPackage: checkPackage
+          risk: HIGH
+          id: id
+          state: state
+        - name: name
+          description: description
+          checkPackage: checkPackage
+          risk: HIGH
+          id: id
+          state: state
+        risk: 0.8008281904610115
+      properties:
+        risk:
+          format: double
+          type: number
+        checks:
+          items:
+            $ref: "#/components/schemas/CheckResult"
+          type: array
+      type: object
     SignalPatternsTimeseriesRequest:
       allOf:
       - $ref: "#/components/schemas/SignalPatternsRequest"
@@ -412,7 +679,6 @@ components:
         type: object
       example:
         birthday: birthday
-        panoramaId: panoramaId
         partnerKeys:
           key: partnerKeys
         phones:
@@ -473,7 +739,6 @@ components:
         countries:
         - countries
         - countries
-        li_nonid: li_nonid
         phone: phone
         infer: true
         organization: organization
@@ -555,10 +820,6 @@ components:
           additionalProperties:
             type: string
           type: object
-        li_nonid:
-          type: string
-        panoramaId:
-          type: string
         generatePid:
           type: boolean
         email:

@@ -107,6 +107,8 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.EmploymentDate.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.Evidence.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.IpAddress.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.LensGraphRequest.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.LensGraphResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.Location.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.LocationReq.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.MultiFieldReqWithOptions.CustomTypeAdapterFactory());
@@ -115,6 +117,8 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.PersonNameReq.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.Phone.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.Photo.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.PrefillEvaluation.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.PrefillResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.ScoreDetails.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.SignalPatternRecencyResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.fideo.model.SignalPatternResponseUnit.CustomTypeAdapterFactory());

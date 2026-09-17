@@ -192,22 +192,6 @@ public class MultiFieldReqWithOptionsTest {
     }
 
     /**
-     * Test the property 'liNonid'
-     */
-    @Test
-    public void liNonidTest() {
-        // TODO: test liNonid
-    }
-
-    /**
-     * Test the property 'panoramaId'
-     */
-    @Test
-    public void panoramaIdTest() {
-        // TODO: test panoramaId
-    }
-
-    /**
      * Test the property 'generatePid'
      */
     @Test
