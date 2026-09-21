@@ -191,7 +191,7 @@ public class PrefillResponse {
   }
 
   /**
-   * Get evaluation
+   * Risk score and Verify checks for resolved fields on an initial match, the original phone fields on an initial no-match, or the fields sent with a sessionId on a reviewed request.
    * @return evaluation
    */
   @javax.annotation.Nullable

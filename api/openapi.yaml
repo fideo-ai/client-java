@@ -207,9 +207,9 @@ paths:
     post:
       description: |-
         The customer is responsible for proving phone possession before the initial request.
-        Omit sessionId to resolve identity fields from a phone. Send the returned sessionId with
-        reviewed or edited identity fields to receive a Verify evaluation. Recent session IDs are
-        reused; valid session IDs older than 10 minutes start a new session.
+        Omit sessionId to resolve identity fields from a phone and receive their evaluation.
+        Send the returned sessionId with reviewed or edited identity fields to reevaluate them.
+        Recent session IDs are reused; valid session IDs older than 10 minutes start a new session.
       operationId: prefill
       requestBody:
         content:
@@ -428,21 +428,7 @@ components:
       type: object
     PrefillResponse:
       example:
-        evaluation:
-          checks:
-          - name: name
-            description: description
-            checkPackage: checkPackage
-            risk: HIGH
-            id: id
-            state: state
-          - name: name
-            description: description
-            checkPackage: checkPackage
-            risk: HIGH
-            id: id
-            state: state
-          risk: 0.8008281904610115
+        evaluation: ""
         individual: ""
         sessionId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
         status: match
@@ -463,27 +449,16 @@ components:
             the follow-up Prefill request. The caller may review or edit these values
             and resubmit them with the returned sessionId.
         evaluation:
-          $ref: "#/components/schemas/PrefillEvaluation"
+          allOf:
+          - $ref: "#/components/schemas/PrefillEvaluation"
+          description: "Risk score and Verify checks for resolved fields on an initial\
+            \ match, the original phone fields on an initial no-match, or the fields\
+            \ sent with a sessionId on a reviewed request."
       required:
       - sessionId
       - status
       type: object
     PrefillEvaluation:
-      example:
-        checks:
-        - name: name
-          description: description
-          checkPackage: checkPackage
-          risk: HIGH
-          id: id
-          state: state
-        - name: name
-          description: description
-          checkPackage: checkPackage
-          risk: HIGH
-          id: id
-          state: state
-        risk: 0.8008281904610115
       properties:
         risk:
           format: double
