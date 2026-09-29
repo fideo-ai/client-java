@@ -9,6 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**age** | **Integer** |  |  [optional] |
 |**ageRange** | **String** |  |  [optional] |
+|**birthday** | **String** |  |  [optional] |
 |**gender** | **String** |  |  [optional] |
 |**locationGeneral** | **String** |  |  [optional] |
 

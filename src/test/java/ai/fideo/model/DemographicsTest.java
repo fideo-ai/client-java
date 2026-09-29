@@ -54,6 +54,14 @@ public class DemographicsTest {
     }
 
     /**
+     * Test the property 'birthday'
+     */
+    @Test
+    public void birthdayTest() {
+        // TODO: test birthday
+    }
+
+    /**
      * Test the property 'gender'
      */
     @Test

@@ -1018,6 +1018,7 @@ components:
         message: message
         demographics:
           ageRange: ageRange
+          birthday: birthday
           gender: gender
           locationGeneral: locationGeneral
           age: 0
@@ -1306,6 +1307,7 @@ components:
     Demographics:
       example:
         ageRange: ageRange
+        birthday: birthday
         gender: gender
         locationGeneral: locationGeneral
         age: 0
@@ -1314,6 +1316,8 @@ components:
           format: int32
           type: integer
         ageRange:
+          type: string
+        birthday:
           type: string
         gender:
           type: string
