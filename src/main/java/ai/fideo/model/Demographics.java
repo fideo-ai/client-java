@@ -60,6 +60,11 @@ public class Demographics {
   @javax.annotation.Nullable
   private String ageRange;
 
+  public static final String SERIALIZED_NAME_BIRTHDAY = "birthday";
+  @SerializedName(SERIALIZED_NAME_BIRTHDAY)
+  @javax.annotation.Nullable
+  private String birthday;
+
   public static final String SERIALIZED_NAME_GENDER = "gender";
   @SerializedName(SERIALIZED_NAME_GENDER)
   @javax.annotation.Nullable
@@ -108,6 +113,25 @@ public class Demographics {
 
   public void setAgeRange(@javax.annotation.Nullable String ageRange) {
     this.ageRange = ageRange;
+  }
+
+
+  public Demographics birthday(@javax.annotation.Nullable String birthday) {
+    this.birthday = birthday;
+    return this;
+  }
+
+  /**
+   * Get birthday
+   * @return birthday
+   */
+  @javax.annotation.Nullable
+  public String getBirthday() {
+    return birthday;
+  }
+
+  public void setBirthday(@javax.annotation.Nullable String birthday) {
+    this.birthday = birthday;
   }
 
 
@@ -161,13 +185,14 @@ public class Demographics {
     Demographics demographics = (Demographics) o;
     return Objects.equals(this.age, demographics.age) &&
         Objects.equals(this.ageRange, demographics.ageRange) &&
+        Objects.equals(this.birthday, demographics.birthday) &&
         Objects.equals(this.gender, demographics.gender) &&
         Objects.equals(this.locationGeneral, demographics.locationGeneral);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(age, ageRange, gender, locationGeneral);
+    return Objects.hash(age, ageRange, birthday, gender, locationGeneral);
   }
 
   @Override
@@ -176,6 +201,7 @@ public class Demographics {
     sb.append("class Demographics {\n");
     sb.append("    age: ").append(toIndentedString(age)).append("\n");
     sb.append("    ageRange: ").append(toIndentedString(ageRange)).append("\n");
+    sb.append("    birthday: ").append(toIndentedString(birthday)).append("\n");
     sb.append("    gender: ").append(toIndentedString(gender)).append("\n");
     sb.append("    locationGeneral: ").append(toIndentedString(locationGeneral)).append("\n");
     sb.append("}");
@@ -196,7 +222,7 @@ public class Demographics {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("age", "ageRange", "gender", "locationGeneral"));
+    openapiFields = new HashSet<String>(Arrays.asList("age", "ageRange", "birthday", "gender", "locationGeneral"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -225,6 +251,9 @@ public class Demographics {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("ageRange") != null && !jsonObj.get("ageRange").isJsonNull()) && !jsonObj.get("ageRange").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `ageRange` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ageRange").toString()));
+      }
+      if ((jsonObj.get("birthday") != null && !jsonObj.get("birthday").isJsonNull()) && !jsonObj.get("birthday").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `birthday` to be a primitive type in the JSON string but got `%s`", jsonObj.get("birthday").toString()));
       }
       if ((jsonObj.get("gender") != null && !jsonObj.get("gender").isJsonNull()) && !jsonObj.get("gender").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `gender` to be a primitive type in the JSON string but got `%s`", jsonObj.get("gender").toString()));

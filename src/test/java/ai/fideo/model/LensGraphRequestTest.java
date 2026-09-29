@@ -24,57 +24,41 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for Demographics
+ * Model tests for LensGraphRequest
  */
-public class DemographicsTest {
-    private final Demographics model = new Demographics();
+public class LensGraphRequestTest {
+    private final LensGraphRequest model = new LensGraphRequest();
 
     /**
-     * Model tests for Demographics
+     * Model tests for LensGraphRequest
      */
     @Test
-    public void testDemographics() {
-        // TODO: test Demographics
+    public void testLensGraphRequest() {
+        // TODO: test LensGraphRequest
     }
 
     /**
-     * Test the property 'age'
+     * Test the property 'mode'
      */
     @Test
-    public void ageTest() {
-        // TODO: test age
+    public void modeTest() {
+        // TODO: test mode
     }
 
     /**
-     * Test the property 'ageRange'
+     * Test the property 'query'
      */
     @Test
-    public void ageRangeTest() {
-        // TODO: test ageRange
+    public void queryTest() {
+        // TODO: test query
     }
 
     /**
-     * Test the property 'birthday'
+     * Test the property 'hops'
      */
     @Test
-    public void birthdayTest() {
-        // TODO: test birthday
-    }
-
-    /**
-     * Test the property 'gender'
-     */
-    @Test
-    public void genderTest() {
-        // TODO: test gender
-    }
-
-    /**
-     * Test the property 'locationGeneral'
-     */
-    @Test
-    public void locationGeneralTest() {
-        // TODO: test locationGeneral
+    public void hopsTest() {
+        // TODO: test hops
     }
 
 }

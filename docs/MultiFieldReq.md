@@ -25,8 +25,6 @@
 |**maids** | **List&lt;String&gt;** |  |  [optional] |
 |**name** | [**PersonNameReq**](PersonNameReq.md) |  |  [optional] |
 |**partnerKeys** | **Map&lt;String, String&gt;** |  |  [optional] |
-|**liNonid** | **String** |  |  [optional] |
-|**panoramaId** | **String** |  |  [optional] |
 |**generatePid** | **Boolean** |  |  [optional] |
 |**email** | **String** |  |  [optional] |
 |**phone** | **String** |  |  [optional] |

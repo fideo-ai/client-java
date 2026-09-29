@@ -13,6 +13,8 @@
 
 package ai.fideo.model;
 
+import ai.fideo.model.MultiFieldReqWithOptions;
+import ai.fideo.model.PrefillEvaluation;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -20,61 +22,54 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.UUID;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for Demographics
+ * Model tests for PrefillResponse
  */
-public class DemographicsTest {
-    private final Demographics model = new Demographics();
+public class PrefillResponseTest {
+    private final PrefillResponse model = new PrefillResponse();
 
     /**
-     * Model tests for Demographics
+     * Model tests for PrefillResponse
      */
     @Test
-    public void testDemographics() {
-        // TODO: test Demographics
+    public void testPrefillResponse() {
+        // TODO: test PrefillResponse
     }
 
     /**
-     * Test the property 'age'
+     * Test the property 'sessionId'
      */
     @Test
-    public void ageTest() {
-        // TODO: test age
+    public void sessionIdTest() {
+        // TODO: test sessionId
     }
 
     /**
-     * Test the property 'ageRange'
+     * Test the property 'status'
      */
     @Test
-    public void ageRangeTest() {
-        // TODO: test ageRange
+    public void statusTest() {
+        // TODO: test status
     }
 
     /**
-     * Test the property 'birthday'
+     * Test the property 'individual'
      */
     @Test
-    public void birthdayTest() {
-        // TODO: test birthday
+    public void individualTest() {
+        // TODO: test individual
     }
 
     /**
-     * Test the property 'gender'
+     * Test the property 'evaluation'
      */
     @Test
-    public void genderTest() {
-        // TODO: test gender
-    }
-
-    /**
-     * Test the property 'locationGeneral'
-     */
-    @Test
-    public void locationGeneralTest() {
-        // TODO: test locationGeneral
+    public void evaluationTest() {
+        // TODO: test evaluation
     }
 
 }

@@ -19,62 +19,42 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for Demographics
+ * Model tests for LensGraphResponse
  */
-public class DemographicsTest {
-    private final Demographics model = new Demographics();
+public class LensGraphResponseTest {
+    private final LensGraphResponse model = new LensGraphResponse();
 
     /**
-     * Model tests for Demographics
+     * Model tests for LensGraphResponse
      */
     @Test
-    public void testDemographics() {
-        // TODO: test Demographics
+    public void testLensGraphResponse() {
+        // TODO: test LensGraphResponse
     }
 
     /**
-     * Test the property 'age'
+     * Test the property 'graph'
      */
     @Test
-    public void ageTest() {
-        // TODO: test age
+    public void graphTest() {
+        // TODO: test graph
     }
 
     /**
-     * Test the property 'ageRange'
+     * Test the property 'seedGraphIds'
      */
     @Test
-    public void ageRangeTest() {
-        // TODO: test ageRange
-    }
-
-    /**
-     * Test the property 'birthday'
-     */
-    @Test
-    public void birthdayTest() {
-        // TODO: test birthday
-    }
-
-    /**
-     * Test the property 'gender'
-     */
-    @Test
-    public void genderTest() {
-        // TODO: test gender
-    }
-
-    /**
-     * Test the property 'locationGeneral'
-     */
-    @Test
-    public void locationGeneralTest() {
-        // TODO: test locationGeneral
+    public void seedGraphIdsTest() {
+        // TODO: test seedGraphIds
     }
 
 }

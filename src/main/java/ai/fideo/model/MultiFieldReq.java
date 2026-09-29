@@ -147,16 +147,6 @@ public class MultiFieldReq {
   @javax.annotation.Nullable
   private Map<String, String> partnerKeys = new HashMap<>();
 
-  public static final String SERIALIZED_NAME_LI_NONID = "li_nonid";
-  @SerializedName(SERIALIZED_NAME_LI_NONID)
-  @javax.annotation.Nullable
-  private String liNonid;
-
-  public static final String SERIALIZED_NAME_PANORAMA_ID = "panoramaId";
-  @SerializedName(SERIALIZED_NAME_PANORAMA_ID)
-  @javax.annotation.Nullable
-  private String panoramaId;
-
   public static final String SERIALIZED_NAME_GENERATE_PID = "generatePid";
   @SerializedName(SERIALIZED_NAME_GENERATE_PID)
   @javax.annotation.Nullable
@@ -575,44 +565,6 @@ public class MultiFieldReq {
   }
 
 
-  public MultiFieldReq liNonid(@javax.annotation.Nullable String liNonid) {
-    this.liNonid = liNonid;
-    return this;
-  }
-
-  /**
-   * Get liNonid
-   * @return liNonid
-   */
-  @javax.annotation.Nullable
-  public String getLiNonid() {
-    return liNonid;
-  }
-
-  public void setLiNonid(@javax.annotation.Nullable String liNonid) {
-    this.liNonid = liNonid;
-  }
-
-
-  public MultiFieldReq panoramaId(@javax.annotation.Nullable String panoramaId) {
-    this.panoramaId = panoramaId;
-    return this;
-  }
-
-  /**
-   * Get panoramaId
-   * @return panoramaId
-   */
-  @javax.annotation.Nullable
-  public String getPanoramaId() {
-    return panoramaId;
-  }
-
-  public void setPanoramaId(@javax.annotation.Nullable String panoramaId) {
-    this.panoramaId = panoramaId;
-  }
-
-
   public MultiFieldReq generatePid(@javax.annotation.Nullable Boolean generatePid) {
     this.generatePid = generatePid;
     return this;
@@ -736,8 +688,6 @@ public class MultiFieldReq {
         Objects.equals(this.maids, multiFieldReq.maids) &&
         Objects.equals(this.name, multiFieldReq.name) &&
         Objects.equals(this.partnerKeys, multiFieldReq.partnerKeys) &&
-        Objects.equals(this.liNonid, multiFieldReq.liNonid) &&
-        Objects.equals(this.panoramaId, multiFieldReq.panoramaId) &&
         Objects.equals(this.generatePid, multiFieldReq.generatePid) &&
         Objects.equals(this.email, multiFieldReq.email) &&
         Objects.equals(this.phone, multiFieldReq.phone) &&
@@ -747,7 +697,7 @@ public class MultiFieldReq {
 
   @Override
   public int hashCode() {
-    return Objects.hash(twitter, linkedin, recordId, personId, partnerId, location, avatar, website, title, organization, emails, phones, ssn, ssns, profiles, maids, name, partnerKeys, liNonid, panoramaId, generatePid, email, phone, profile, maid);
+    return Objects.hash(twitter, linkedin, recordId, personId, partnerId, location, avatar, website, title, organization, emails, phones, ssn, ssns, profiles, maids, name, partnerKeys, generatePid, email, phone, profile, maid);
   }
 
   @Override
@@ -772,8 +722,6 @@ public class MultiFieldReq {
     sb.append("    maids: ").append(toIndentedString(maids)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    partnerKeys: ").append(toIndentedString(partnerKeys)).append("\n");
-    sb.append("    liNonid: ").append(toIndentedString(liNonid)).append("\n");
-    sb.append("    panoramaId: ").append(toIndentedString(panoramaId)).append("\n");
     sb.append("    generatePid: ").append(toIndentedString(generatePid)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
@@ -797,7 +745,7 @@ public class MultiFieldReq {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("twitter", "linkedin", "recordId", "personId", "partnerId", "location", "avatar", "website", "title", "organization", "emails", "phones", "ssn", "ssns", "profiles", "maids", "name", "partnerKeys", "li_nonid", "panoramaId", "generatePid", "email", "phone", "profile", "maid"));
+    openapiFields = new HashSet<String>(Arrays.asList("twitter", "linkedin", "recordId", "personId", "partnerId", "location", "avatar", "website", "title", "organization", "emails", "phones", "ssn", "ssns", "profiles", "maids", "name", "partnerKeys", "generatePid", "email", "phone", "profile", "maid"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -883,12 +831,6 @@ public class MultiFieldReq {
       // validate the optional field `name`
       if (jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) {
         PersonNameReq.validateJsonElement(jsonObj.get("name"));
-      }
-      if ((jsonObj.get("li_nonid") != null && !jsonObj.get("li_nonid").isJsonNull()) && !jsonObj.get("li_nonid").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `li_nonid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("li_nonid").toString()));
-      }
-      if ((jsonObj.get("panoramaId") != null && !jsonObj.get("panoramaId").isJsonNull()) && !jsonObj.get("panoramaId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `panoramaId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("panoramaId").toString()));
       }
       if ((jsonObj.get("email") != null && !jsonObj.get("email").isJsonNull()) && !jsonObj.get("email").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `email` to be a primitive type in the JSON string but got `%s`", jsonObj.get("email").toString()));

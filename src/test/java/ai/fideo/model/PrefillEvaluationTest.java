@@ -13,68 +13,47 @@
 
 package ai.fideo.model;
 
+import ai.fideo.model.CheckResult;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for Demographics
+ * Model tests for PrefillEvaluation
  */
-public class DemographicsTest {
-    private final Demographics model = new Demographics();
+public class PrefillEvaluationTest {
+    private final PrefillEvaluation model = new PrefillEvaluation();
 
     /**
-     * Model tests for Demographics
+     * Model tests for PrefillEvaluation
      */
     @Test
-    public void testDemographics() {
-        // TODO: test Demographics
+    public void testPrefillEvaluation() {
+        // TODO: test PrefillEvaluation
     }
 
     /**
-     * Test the property 'age'
+     * Test the property 'risk'
      */
     @Test
-    public void ageTest() {
-        // TODO: test age
+    public void riskTest() {
+        // TODO: test risk
     }
 
     /**
-     * Test the property 'ageRange'
+     * Test the property 'checks'
      */
     @Test
-    public void ageRangeTest() {
-        // TODO: test ageRange
-    }
-
-    /**
-     * Test the property 'birthday'
-     */
-    @Test
-    public void birthdayTest() {
-        // TODO: test birthday
-    }
-
-    /**
-     * Test the property 'gender'
-     */
-    @Test
-    public void genderTest() {
-        // TODO: test gender
-    }
-
-    /**
-     * Test the property 'locationGeneral'
-     */
-    @Test
-    public void locationGeneralTest() {
-        // TODO: test locationGeneral
+    public void checksTest() {
+        // TODO: test checks
     }
 
 }

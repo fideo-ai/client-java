@@ -1,17 +1,19 @@
-# VerifyApi
+# LensApi
 
 All URIs are relative to *https://api.fideo.ai*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**verifyPost**](VerifyApi.md#verifyPost) | **POST** /verify |  |
+| [**lensGraph**](LensApi.md#lensGraph) | **POST** /lens.graph | Query the Lens graph |
 
 
-<a id="verifyPost"></a>
-# **verifyPost**
-> VerifyResponse verifyPost(v, multiFieldReqWithOptions)
+<a id="lensGraph"></a>
+# **lensGraph**
+> LensGraphResponse lensGraph(lensGraphRequest)
 
+Query the Lens graph
 
+Query raw or expanded Lens graph edges. Product and datapack entitlements are derived from the account contract, not from the request body.
 
 ### Example
 ```java
@@ -21,7 +23,7 @@ import ai.fideo.client.ApiException;
 import ai.fideo.client.Configuration;
 import ai.fideo.client.auth.*;
 import ai.fideo.client.models.*;
-import ai.fideo.api.VerifyApi;
+import ai.fideo.api.LensApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -32,14 +34,13 @@ public class Example {
     HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
     bearerAuth.setBearerToken("BEARER TOKEN");
 
-    VerifyApi apiInstance = new VerifyApi(defaultClient);
-    String v = "v_example"; // String | 
-    MultiFieldReqWithOptions multiFieldReqWithOptions = new MultiFieldReqWithOptions(); // MultiFieldReqWithOptions | 
+    LensApi apiInstance = new LensApi(defaultClient);
+    LensGraphRequest lensGraphRequest = new LensGraphRequest(); // LensGraphRequest | 
     try {
-      VerifyResponse result = apiInstance.verifyPost(v, multiFieldReqWithOptions);
+      LensGraphResponse result = apiInstance.lensGraph(lensGraphRequest);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling VerifyApi#verifyPost");
+      System.err.println("Exception when calling LensApi#lensGraph");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -53,12 +54,11 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **v** | **String**|  | [optional] |
-| **multiFieldReqWithOptions** | [**MultiFieldReqWithOptions**](MultiFieldReqWithOptions.md)|  | [optional] |
+| **lensGraphRequest** | [**LensGraphRequest**](LensGraphRequest.md)|  | [optional] |
 
 ### Return type
 
-[**VerifyResponse**](VerifyResponse.md)
+[**LensGraphResponse**](LensGraphResponse.md)
 
 ### Authorization
 
@@ -72,9 +72,8 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  |
-| **201** | Created new verify session |  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  |
+| **200** | Successful response |  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  |
 | **400** | Bad request |  -  |
-| **410** | Claimed or deleted data |  -  |
-| **429** | Verify trial usage limit reached |  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  |
+| **403** | Forbidden |  -  |
+| **429** | Lens usage limit reached |  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  |
 

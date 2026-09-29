@@ -27,9 +27,9 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import ai.fideo.model.MultiFieldReqWithOptions;
+import ai.fideo.model.LensGraphRequest;
+import ai.fideo.model.LensGraphResponse;
 import ai.fideo.model.StatusResponseWithMessage;
-import ai.fideo.model.VerifyResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -37,16 +37,16 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class VerifyApi {
+public class LensApi {
     private ApiClient localVarApiClient;
     private int localHostIndex;
     private String localCustomBaseUrl;
 
-    public VerifyApi() {
+    public LensApi() {
         this(Configuration.getDefaultApiClient());
     }
 
-    public VerifyApi(ApiClient apiClient) {
+    public LensApi(ApiClient apiClient) {
         this.localVarApiClient = apiClient;
     }
 
@@ -75,9 +75,8 @@ public class VerifyApi {
     }
 
     /**
-     * Build call for verifyPost
-     * @param v  (optional)
-     * @param multiFieldReqWithOptions  (optional)
+     * Build call for lensGraph
+     * @param lensGraphRequest  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -85,14 +84,13 @@ public class VerifyApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  </td></tr>
-        <tr><td> 201 </td><td> Created new verify session </td><td>  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
-        <tr><td> 410 </td><td> Claimed or deleted data </td><td>  -  </td></tr>
-        <tr><td> 429 </td><td> Verify trial usage limit reached </td><td>  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Lens usage limit reached </td><td>  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call verifyPostCall(@javax.annotation.Nullable String v, @javax.annotation.Nullable MultiFieldReqWithOptions multiFieldReqWithOptions, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call lensGraphCall(@javax.annotation.Nullable LensGraphRequest lensGraphRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -106,20 +104,16 @@ public class VerifyApi {
             basePath = null;
         }
 
-        Object localVarPostBody = multiFieldReqWithOptions;
+        Object localVarPostBody = lensGraphRequest;
 
         // create path and map variables
-        String localVarPath = "/verify";
+        String localVarPath = "/lens.graph";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        if (v != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("v", v));
-        }
 
         final String[] localVarAccepts = {
             "application/json"
@@ -142,63 +136,58 @@ public class VerifyApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call verifyPostValidateBeforeCall(@javax.annotation.Nullable String v, @javax.annotation.Nullable MultiFieldReqWithOptions multiFieldReqWithOptions, final ApiCallback _callback) throws ApiException {
-        return verifyPostCall(v, multiFieldReqWithOptions, _callback);
+    private okhttp3.Call lensGraphValidateBeforeCall(@javax.annotation.Nullable LensGraphRequest lensGraphRequest, final ApiCallback _callback) throws ApiException {
+        return lensGraphCall(lensGraphRequest, _callback);
 
     }
 
     /**
-     * 
-     * 
-     * @param v  (optional)
-     * @param multiFieldReqWithOptions  (optional)
-     * @return VerifyResponse
+     * Query the Lens graph
+     * Query raw or expanded Lens graph edges. Product and datapack entitlements are derived from the account contract, not from the request body.
+     * @param lensGraphRequest  (optional)
+     * @return LensGraphResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  </td></tr>
-        <tr><td> 201 </td><td> Created new verify session </td><td>  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
-        <tr><td> 410 </td><td> Claimed or deleted data </td><td>  -  </td></tr>
-        <tr><td> 429 </td><td> Verify trial usage limit reached </td><td>  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Lens usage limit reached </td><td>  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  </td></tr>
      </table>
      */
-    public VerifyResponse verifyPost(@javax.annotation.Nullable String v, @javax.annotation.Nullable MultiFieldReqWithOptions multiFieldReqWithOptions) throws ApiException {
-        ApiResponse<VerifyResponse> localVarResp = verifyPostWithHttpInfo(v, multiFieldReqWithOptions);
+    public LensGraphResponse lensGraph(@javax.annotation.Nullable LensGraphRequest lensGraphRequest) throws ApiException {
+        ApiResponse<LensGraphResponse> localVarResp = lensGraphWithHttpInfo(lensGraphRequest);
         return localVarResp.getData();
     }
 
     /**
-     * 
-     * 
-     * @param v  (optional)
-     * @param multiFieldReqWithOptions  (optional)
-     * @return ApiResponse&lt;VerifyResponse&gt;
+     * Query the Lens graph
+     * Query raw or expanded Lens graph edges. Product and datapack entitlements are derived from the account contract, not from the request body.
+     * @param lensGraphRequest  (optional)
+     * @return ApiResponse&lt;LensGraphResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  </td></tr>
-        <tr><td> 201 </td><td> Created new verify session </td><td>  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
-        <tr><td> 410 </td><td> Claimed or deleted data </td><td>  -  </td></tr>
-        <tr><td> 429 </td><td> Verify trial usage limit reached </td><td>  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Lens usage limit reached </td><td>  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  </td></tr>
      </table>
      */
-    public ApiResponse<VerifyResponse> verifyPostWithHttpInfo(@javax.annotation.Nullable String v, @javax.annotation.Nullable MultiFieldReqWithOptions multiFieldReqWithOptions) throws ApiException {
-        okhttp3.Call localVarCall = verifyPostValidateBeforeCall(v, multiFieldReqWithOptions, null);
-        Type localVarReturnType = new TypeToken<VerifyResponse>(){}.getType();
+    public ApiResponse<LensGraphResponse> lensGraphWithHttpInfo(@javax.annotation.Nullable LensGraphRequest lensGraphRequest) throws ApiException {
+        okhttp3.Call localVarCall = lensGraphValidateBeforeCall(lensGraphRequest, null);
+        Type localVarReturnType = new TypeToken<LensGraphResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     *  (asynchronously)
-     * 
-     * @param v  (optional)
-     * @param multiFieldReqWithOptions  (optional)
+     * Query the Lens graph (asynchronously)
+     * Query raw or expanded Lens graph edges. Product and datapack entitlements are derived from the account contract, not from the request body.
+     * @param lensGraphRequest  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -206,17 +195,16 @@ public class VerifyApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  </td></tr>
-        <tr><td> 201 </td><td> Created new verify session </td><td>  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  </td></tr>
+        <tr><td> 200 </td><td> Successful response </td><td>  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  </td></tr>
         <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
-        <tr><td> 410 </td><td> Claimed or deleted data </td><td>  -  </td></tr>
-        <tr><td> 429 </td><td> Verify trial usage limit reached </td><td>  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Lens usage limit reached </td><td>  * X-Fideo-Limit -  <br>  * X-Fideo-Usage -  <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call verifyPostAsync(@javax.annotation.Nullable String v, @javax.annotation.Nullable MultiFieldReqWithOptions multiFieldReqWithOptions, final ApiCallback<VerifyResponse> _callback) throws ApiException {
+    public okhttp3.Call lensGraphAsync(@javax.annotation.Nullable LensGraphRequest lensGraphRequest, final ApiCallback<LensGraphResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = verifyPostValidateBeforeCall(v, multiFieldReqWithOptions, _callback);
-        Type localVarReturnType = new TypeToken<VerifyResponse>(){}.getType();
+        okhttp3.Call localVarCall = lensGraphValidateBeforeCall(lensGraphRequest, _callback);
+        Type localVarReturnType = new TypeToken<LensGraphResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
